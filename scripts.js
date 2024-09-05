@@ -1,17 +1,11 @@
-// Example: Function to show an alert when a project is clicked
-function showAlert(projectName) {
-    alert(`You clicked on ${projectName}`);
-}
-
-// Abrir venlaces en nueva ventana
 document.addEventListener("DOMContentLoaded", function () {
+    // Abrir enlaces en una nueva ventana
     var links = document.querySelectorAll('a');
     links.forEach(function(link) {
         link.setAttribute('target', '_blank');
     });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
+    // Funcionalidad para la primera tabla
     var toggleButton = document.getElementById('toggleButton');
     var coursesTable = document.getElementById('coursesTable');
 
@@ -25,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Añadir funcionalidad para la segunda tabla
+    // Funcionalidad para la segunda tabla
     var toggleButton2 = document.getElementById('toggleButton2');
     var professionalCertificateTable = document.getElementById('professionalCertificateTable');
 
@@ -39,4 +33,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
 
