@@ -1,9 +1,9 @@
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #ddd8d8;
     margin: 0;
     padding: 0;
-    /*background-image: url('images/python1.png');*/
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -11,6 +11,10 @@ body {
 
 h1, h2, h4 {
     margin: 0;
+}
+
+h2 {
+    font-weight: bold;
 }
 
 .card {
@@ -69,3 +73,13 @@ a:hover {
          1px  1px 0 #000; /* Crea un bordeado negro en las letras */
 }
 
+.hidden {
+    display: none; /* Oculta inicialmente la tabla */
+}
+
+
+
+.card-text small {
+    color: #ccc;
+    font-style: italic;
+}
