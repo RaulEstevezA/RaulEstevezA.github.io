@@ -8,44 +8,128 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="bg-dark text-white text-right py-2">
-        <div class="container"> 
-            <h1 class="display-4">RAUL ESTEVEZ</h1>
-            <h4 class="mb-1">Programmer</h4>
+    <!--Pagina inicial con transicion -->
+    <div id="intro-screen">
+        <h1 class="intro-title">RAUL ESTEVEZ</h1>
+        <h2 class="intro-subtitle">PROGRAMMER</h2>
+        <br><br><br><br>
+        <p class="intro-scroll">Scroll down ⬇️</p>
+    </div>
+    
+    <!--Barra superior siempre fija-->
+    <header class="navbar bg-dark text-white py-3 fixed-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="branding">
+                <h2 class="display-4">RAUL ESTEVEZ</h2>
+                <h5 class="mb-3">Programmer</h5>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-white btn btn-outline-light mx-2" href="#profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white btn btn-outline-light mx-2" href="#formation">Formation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white btn btn-outline-light mx-2" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white btn btn-outline-light mx-2" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
     
-    <div class="container mt-5">
-        <div class="row">
-            
-            <div class="col-md-4">
-                <div>
-                    <h2>Contact</h2><br>
-                    <ul class="list-unstyled">
-                        <li>Email: <a href="mailto:r.estevezabella@gmail.com">r.estevezbella@gmail.com</a></li>
-                        <li>LinkedIn: <a href="https://www.linkedin.com/in/raulesteveza/" target="_blank">Profile</a></li>
-                        <li>GitHub: <a href="https://github.com/RaulEstevezA" target="_blank">Profile</a></li>
-                    </ul>
+    <!-- ================
+       PROFILE
+    ================= -->
+    
+    <section id="profile" class="py-5">
+        <div class="container text-center">
+            <!-- Título central "PROFILE" con línea decorativa -->
+            <h2 class="section-title">PROFILE</h2>
+            <hr class="section-divider">
+        </div>
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Métodos de contacto -->
+                <div class="col-md-4">
+                    <div>
+                        <h3>Contact</h3>
+                        <ul class="list-unstyled mt-3">
+                            <li>Email: <a href="mailto:r.estevezabella@gmail.com">r.estevezbella@gmail.com</a></li>
+                            <li>LinkedIn: <a href="https://www.linkedin.com/in/raulesteveza/" target="_blank">Profile</a></li>
+                            <li>GitHub: <a href="https://github.com/RaulEstevezA" target="_blank">Profile</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <h2>Studies</h2><br>
-                    <ul class="list-unstyled">
-                        <li>2002 - School Graduate</li>
-                        <li>2013 - Passing the University Access Test</li>
-                        <li>2024 - Start Higher Degree in Multiplatform Applications</li>
-                    </ul>
+    
+                <!-- Texto "About Me" -->
+                <div class="col-md-8">
+                    <h3>About Me</h3>
+                    <p class="mt-3">
+                        Hello, my name is Raul Estevez and I am a Junior Programmer.
+                    </p>
+                    <p>
+                        After years of working in fields that didn't appeal to me, I decided to make a significant change in my life to 
+                        pursue something I truly enjoy. For the past couple of years, I have been training in the world of programming. 
+                        I have completed several courses at various universities, including some in English-speaking countries, and I 
+                        am currently enrolled in a formal education program, specifically a Higher Degree in Multiplatform Applications.
+                    </p>
+                    <p>
+                        I am passionate about solving complex problems and creating efficient, scalable solutions. I have worked on 
+                        several projects as part of my studies, which are detailed in the portfolio. My strength lies in back-end 
+                        development, particularly with Python, although I am also capable of working as a full stack developer. 
+                        I am proficient in Python and SQL, and have experience with frameworks such as Django and Bootstrap.
+                    </p>
+                    <p>
+                        I am looking for a position where I can apply all my training and skills, and continue to grow as a developer.
+                    </p>
                 </div>
             </div>
-            <div class="col-md-8">
-                <h2>About Me</h2><br>
-                    <p>Hello, my name is Raul Estevez and I am a Junior Programmer.</p>
-                    <p>After years of working in fields that didn't appeal to me, I decided to make a significant change in my life to pursue something I truly enjoy. For the past couple of years, I have been training in the world of programming. I have completed several courses at various universities, including some in English-speaking countries, and I am currently enrolled in a formal education program, specifically a Higher Degree in Multiplatform Applications.</p>
-                    <p>I am passionate about solving complex problems and creating efficient, scalable solutions. I have worked on several projects as part of my studies, which are detailed in the portfolio. My strength lies in back-end development, particularly with Python, although I am also capable of working as a full stack developer. I am proficient in Python and SQL, and have experience with frameworks such as Django and Bootstrap.</p>
-                    <p>I am looking for a position where I can apply all my training and skills, and continue to grow as a developer.</p>
+        </div>
+    </section>
+    
+    <!-- ================
+       FIN PROFILE
+    ================= -->
+
+    <!-- ================
+       FORMATION
+    ================= -->
+    
+    <section id="formation" class="py-5">
+        <div class="container text-center">
+            <!-- Título central "FORMATION" con línea decorativa -->
+            <h2 class="section-title">FORMATION</h2>
+            <hr class="section-divider">
+        </div>
+        <div class="container mt-4">
+            <!-- Formación académica -->
+            <div class="row">
+                <!-- Columna izquierda: Studies -->
+                <div class="col-md-6">
+                    <h3>Studies</h3>
+                    <ul class="list-unstyled studies-list">
+                        <li class="studies-text">2002 - School Graduate</li>
+                        <li class="studies-text">2013 - Passing the University Access Test</li>
+                        <li class="studies-text">2024 - Start Higher Degree in Multiplatform Applications</li>
+                    </ul>
+                </div>
+    
+                <!-- Columna derecha: Espacio reservado para futuro -->
+                 
+                <div class="col-md-6">
+                    <!-- <h3>Future Content</h3>
+                    <p class="future-text text-muted">Placeholder for languages, technologies, or additional details.</p> -->
+                </div>
             </div>
-            <div>
-                <br>
-                <h2>Courses</h2>
+    
+            <!-- Cursos -->
+            <div class="mt-5">
+                <h3>Courses</h3>
                 <p class="text-muted small">Click the button to view the courses and access to the certificates</p>
                 <button id="toggleButton" class="btn btn-outline-secondary">Show</button>
                 <br><br>
@@ -161,6 +245,12 @@
                             <td>Git and GitHub Basics</td>
                             <td><a href="https://courses.edx.org/certificates/08078eaed98d4d82bbbc4acbd722509b">Access Certificate</a></td>
                         </tr>
+                        <tr>
+                            <td>2025</td>
+                            <td>IBM</td>
+                            <td>Developing Front End Apps with React</td>
+                            <td><a href="https://courses.edx.org/certificates/def215badd614c44a50be1957c69c568">Access Certificate</a></td>
+                        </tr>
                         <!-- <tr>
                             <td>2024</td>
                             <td>IBM</td>
@@ -170,9 +260,10 @@
                     </tbody>
                 </table>
             </div>
-            <div>
-                <br>
-                <h2>Professional Certificate</h2>
+
+            <!-- Certificados profesionales -->
+            <div class="mt-5">
+                <h3>Professional Certificates</h3>
                 <p class="text-muted small">Click the button to view the courses and access to the Professional Certificates</p>
                 <button id="toggleButton2" class="btn btn-outline-secondary">Show</button>
                 <br><br>
@@ -181,7 +272,7 @@
                         <tr>
                             <th>Date</th>
                             <th>University</th>
-                            <th>Profesional Certificate Name</th>
+                            <th>Certificate Name</th>
                             <th>Register Program</th>
                             <th>Certificate</th>
                         </tr>
@@ -233,79 +324,152 @@
                 </table>
             </div>
         </div>
+    </section>
 
-        <div>
-            <br>
-            <div class="row">
-                <h2>Portfolio</h2>
-                <br><br>
-                
-                <!-- Project X 
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <a href="https://github.com/username/project1" target="_blank">
-                            <img src="path/to/project1-image.jpg" class="card-img" alt="Project 1">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">Project 1 Title</h5>
-                                <p class="card-text">This is a brief description of the project. It explains the key features and technologies used.</p>
-                                <p class="card-text"><small>Completed: August 2023</small></p>
-                            </div>
-                        </a>
-                    </div>
-                </div>-->
+    <!-- ================
+       FIN FORMATION
+    ================= -->
 
-                <!-- Project 3 -->
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <a href="https://github.com/RaulEstevezA/final_project_cs50w" target="_blank">
-                            <img src="images/final_project_cs50w.png" class="card-img" alt="Project 1">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">DuckyWare</h5>
-                                <p class="card-text">Online store for the sale of computer components with stock control, orders. APIs integration to be able to make payments.</p>
-                                <p class="card-text"><small>Completed: August 2024</small></p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+    <!-- ================
+        PROJECTS
+    ================= -->
 
-                <!-- Project 2 -->
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <a href="https://github.com/RaulEstevezA/final_project_cs50p" target="_blank">
-                            <img src="images/final_project_cs50p.png" class="card-img" alt="Project 1">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">Anglo-Saxon system converter to Decimal Metric</h5>
-                                <p class="card-text">Program to convert units of measurement between the decimal metric system and the Anglo-Saxon system.</p>
-                                <p class="card-text"><small>Completed: December 2023</small></p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-        
-                <!-- Project 1 -->
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <a href="https://github.com/RaulEstevezA/final_project_cs50" target="_blank">
-                            <img src="images/final_project_cs50.png" class="card-img" alt="Project 1">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">Final Project CS50x</h5>
-                                <p class="card-text">It's a small program for creating random characters based on previous choices using HTML, CSS, Python, Flask and Jinja.</p>
-                                <p class="card-text"><small>Completed: August 2023</small></p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                
-            </div> <!-- End of row -->
+    <!-- Inicio seccion projects -->
+    <section id="projects" class="py-5">
+        <div class="container text-center">
+            <!-- Título central de la sección -->
+            <h2 class="section-title">PROJECTS</h2>
+            <hr class="section-divider">
         </div>
-    </div>
+        <div class="container mt-4">
+            <!-- Carrusel estático -->
+            <div id="projectsCarousel" class="carousel slide" data-bs-interval="false">
+                <div class="carousel-inner">
+                    <!-- Proyecto 1 -->
+                    <div class="carousel-item active">
+                        <!-- Nombre del proyecto -->
+                        <h3 class="project-title text-center">DuckyWare - Final Project CS50W</h3>
+                        <!-- Descripción del proyecto -->
+                        <div class="text-center my-3">
+                            <p>
+                                Online store for the sale of computer components with stock control, orders, and APIs integration to handle payments.
+                            </p>
+                            <br>
+                        </div>
+                        <!-- Contenido en dos columnas -->
+                        <div class="row">
+                            <!-- Columna izquierda: Imagen -->
+                            <div class="col-md-8 text-center">
+                                <img src="images/final_project_cs50w.png" class="project-img img-fluid" alt="DuckyWare">
+                            </div>
+                            <!-- Columna derecha: Detalles del proyecto -->
+                            <div class="col-md-4">
+                                <h4 class="section-subtitle">Project Details</h4>
+                                <p><strong>Technologies:</strong> Python, Django, REST APIs</p>
+                                <p><strong>Completed:</strong> August 2024</p>
+                                <p><strong>Video:</strong> <a href="https://youtu.be/ckqKTbNd3lc" target="_blank">Watch on YouTube</a></p>
+                            </div>
+                        </div>
+                        <!-- Botón centrado -->
+                        <div class="text-center mt-4">
+                            <a href="https://github.com/RaulEstevezA/final_project_cs50w" target="_blank" class="btn btn-outline-dark">View Project</a>
+                        </div>
+                    </div>
+                    <!-- Proyecto 2 -->
+                    <div class="carousel-item">
+                        <h3 class="project-title text-center">Anglo-Saxon System Converter - Final Project CS50P</h3>
+                        <div class="text-center my-3">
+                            <p>
+                                Program to convert units of measurement between the decimal metric system and the Anglo-Saxon system.
+                            </p>
+                            <br>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 text-center">
+                                <img src="images/final_project_cs50p.png" class="project-img img-fluid" alt="Anglo-Saxon Converter">
+                            </div>
+                            <div class="col-md-4">
+                                <h4 class="section-subtitle">Project Details</h4>
+                                <p><strong>Technologies:</strong> Python, CLI</p>
+                                <p><strong>Completed:</strong> December 2023</p>
+                                <p><strong>Video:</strong> <a href="https://youtu.be/gQ491b5lro0" target="_blank">Watch on YouTube</a></p>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="https://github.com/RaulEstevezA/final_project_cs50p" target="_blank" class="btn btn-outline-dark">View Project</a>
+                        </div>
+                    </div>
+                    <!-- Proyecto 3 -->
+                    <div class="carousel-item">
+                        <h3 class="project-title text-center">Character Creator - Final Project CS50x</h3>
+                        <div class="text-center my-3">
+                            <p>
+                                Small program for creating random characters based on user choices using HTML, CSS, Python, Flask, and Jinja.
+                            </p>
+                            <br>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 text-center">
+                                <img src="images/final_project_cs50.png" class="project-img img-fluid" alt="CS50x Project">
+                            </div>
+                            <div class="col-md-4">
+                                <h4 class="section-subtitle">Project Details</h4>
+                                <p><strong>Technologies:</strong> Python, Flask, Jinja</p>
+                                <p><strong>Completed:</strong> August 2023</p>
+                                <p><strong>Video:</strong> <a href="https://youtu.be/3sdUplYJKD0" target="_blank">Watch on YouTube</a></p>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="https://github.com/RaulEstevezA/final_project_cs50" target="_blank" class="btn btn-outline-dark">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                                
+                <!-- Controles del carrusel -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================
+       FIN PROJECTS
+    ================= -->
+
+    <!-- ================
+       CONTACT
+    ================= -->
     
-    <footer class="bg-dark text-white text-center py-3 mt-5">
+    <!-- Métodos de contacto antes del footer -->
+    <section id="contact" class="py-5" style="background-color: #f9f9f9;">
+        <div class="container text-center">
+            <h3 class="section-title">Contact</h3>
+            <hr class="section-divider">
+            <ul class="list-unstyled mt-4">
+                <li>Email: <a href="mailto:r.estevezabella@gmail.com">r.estevezbella@gmail.com</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/raulesteveza/" target="_blank">Profile</a></li>
+                <li>GitHub: <a href="https://github.com/RaulEstevezA" target="_blank">Profile</a></li>
+            </ul>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 Raul Estevez. All rights reserved.</p>
     </footer>
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Bootstrap y Scripts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
+
 
