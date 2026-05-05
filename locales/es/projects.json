@@ -31,7 +31,19 @@
   "cs50ai_desc":       "Proyecto final del curso CS50's Introduction to Artificial Intelligence with Python de HarvardX. Enfocado en técnicas de inteligencia artificial aplicada y resolución de problemas con enfoques modernos de IA.",
   "cs50ai_tech":       "Python, Inteligencia Artificial",
 
-  "eplant_desc":  "Aplicación web frontend desarrollada con React y Redux, mostrando gestión de estado y arquitectura basada en componentes.",
-  "unity_desc":   "Proyectos académicos desarrollados con Unity, enfocados en experiencias de realidad aumentada y virtual.",
-  "android_desc": "Aplicación móvil desarrollada como parte del trabajo académico usando Kotlin."
+  "other_toggle": "Ver todos los proyectos",
+
+  "eplant_desc":       "Aplicación web frontend desarrollada con React y Redux, mostrando gestión de estado y arquitectura basada en componentes.",
+  "unity_desc":        "Proyectos académicos desarrollados con Unity, enfocados en experiencias de realidad aumentada y virtual.",
+  "android_desc":      "Aplicación móvil desarrollada como parte del trabajo académico usando Kotlin.",
+  "tetris_desc":       "Juego Tetris clásico implementado desde cero en Python usando Pygame.",
+  "flutter_desc":      "Ejercicios prácticos de Flutter y Dart de un curso avanzado de desarrollo móvil.",
+  "smartcity_desc":    "Panel de monitorización IoT desplegado en ThingsBoard Cloud, simulando datos de sensores de ciudad inteligente con Python.",
+  "devnet_desc":       "Técnicas de persistencia de datos y desarrollo de aplicaciones orientadas a ERP con C# y .NET.",
+  "kotlinkaos_desc":   "Aplicación móvil Android nativa desarrollada con Kotlin como parte del trabajo académico de la UOC.",
+  "woodshop_desc":     "Sistema de gestión de clientes, productos, tiendas y simulación de ventas desarrollado en Java.",
+  "fleetcontrol_desc": "Aplicación de gestión de flotas desarrollada en C, con enfoque en el manejo estructurado de datos y programación a nivel de sistema.",
+  "cs50final_desc":    "Proyecto final para la asignatura CS50 Introducción a la Informática de Harvard.",
+  "djangoibm_desc":    "Aplicación web Django para la generación automatizada de exámenes tipo test, desarrollada como proyecto final del curso de IBM.",
+  "ibmai_desc":        "Proyecto de inteligencia artificial aplicada y aprendizaje automático desarrollado como parte del programa IBM AI Engineering."
 }

@@ -31,7 +31,19 @@
   "cs50ai_desc":       "Final project for CS50's Introduction to Artificial Intelligence with Python by HarvardX. Focused on applied artificial intelligence techniques and problem-solving using modern AI approaches.",
   "cs50ai_tech":       "Python, Artificial Intelligence",
 
-  "eplant_desc":  "Frontend web application developed with React and Redux, showcasing state management and component-based architecture.",
-  "unity_desc":   "Academic projects developed with Unity, focused on augmented and virtual reality experiences.",
-  "android_desc": "Mobile application developed as part of academic coursework using Kotlin."
+  "other_toggle": "Show all projects",
+
+  "eplant_desc":       "Frontend web application developed with React and Redux, showcasing state management and component-based architecture.",
+  "unity_desc":        "Academic projects developed with Unity, focused on augmented and virtual reality experiences.",
+  "android_desc":      "Mobile application developed as part of academic coursework using Kotlin.",
+  "tetris_desc":       "Classic Tetris game implemented from scratch in Python using Pygame.",
+  "flutter_desc":      "Hands-on Flutter and Dart exercises from an advanced mobile development course.",
+  "smartcity_desc":    "IoT monitoring dashboard deployed on ThingsBoard Cloud, simulating smart city sensor data with Python.",
+  "devnet_desc":       "Data persistence techniques and ERP-oriented application development using C# and .NET.",
+  "kotlinkaos_desc":   "Native Android mobile application developed with Kotlin as part of UOC coursework.",
+  "woodshop_desc":     "Management system for clients, products, stores and sales simulation built in Java.",
+  "fleetcontrol_desc": "Fleet management application developed in C, focused on structured data handling and system-level programming.",
+  "cs50final_desc":    "Final project for Harvard's CS50 Introduction to Computer Science.",
+  "djangoibm_desc":    "Django web application for generating automated multiple-choice exams, built as IBM course final project.",
+  "ibmai_desc":        "Applied artificial intelligence and machine learning project developed as part of IBM's AI Engineering program."
 }
