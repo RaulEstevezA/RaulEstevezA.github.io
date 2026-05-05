@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://raulesteveza.github.io/sitemap.xml
+LLMs: https://raulesteveza.github.io/llms.txt
+Profile: https://raulesteveza.github.io/profile.json

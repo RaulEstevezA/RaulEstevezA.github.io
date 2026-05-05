@@ -1,7 +1,7 @@
 # Raúl Estévez — Software Developer
 
 > Backend, Desktop and AI-focused software developer. Based in Spain.
-> Specialized in Java, Python, SQL, Kotlin and Git.
+> Specialized in Java, Python, SQL, Kotlin, Flutter and Git.
 
 ## Summary
 
@@ -22,7 +22,7 @@ Development (DAM) with a GPA of 9.3/10.
 ## Education
 
 - **Higher Technician in Multiplatform Application Development (DAM)**
-  Jesuites Educiacio - UOC — 2024–2026 — GPA: 9.3 / 10
+  Jesuites Educacio - UOC — 2024–2026 — GPA: 9.3 / 10
 
 - **CS50's Introduction to Computer Science** — HarvardX
 - **CS50's Introduction to Programming with Python** — HarvardX
@@ -82,5 +82,6 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
 ## Contact & Profiles
 
 - Website: https://raulesteveza.github.io
+- Email: contact.raulesteveza@gmail.com
 - GitHub: https://github.com/RaulEstevezA
 - LinkedIn: https://www.linkedin.com/in/raulesteveza/
