@@ -1,39 +1,52 @@
 /* =====================================================
-   VARIABLES GLOBALES 
+   VARIABLES
 ===================================================== */
 
 :root {
-  /* fondos */
-  --page-bg: #f2f2f7;      /* fondo general  */
-  --window-bg: #ffffff;   /* fondo de las ventanas */
-
-  /* texto */
-  --text: #111111;
-  --muted: #555555;
-
-  /* acento */
-  --accent: #2563eb;
-
-  /* botones  */
-  --btn-bg: #e5e7eb;
-  --btn-text: #111111;
-  --btn-border: #d1d5db;
-  --btn-hover: #d1d5db;
+  --page-bg:    #0d1117;
+  --window-bg:  #161b22;
+  --text:       #e6edf3;
+  --muted:      #8b949e;
+  --accent:     #58a6ff;
+  --btn-bg:     #21262d;
+  --btn-text:   #c9d1d9;
+  --btn-border: #30363d;
+  --btn-hover:  #30363d;
+  --border:     #30363d;
+  --tag-bg:     #1a2740;
+  --tag-text:   #79c0ff;
 }
 
 /* =====================================================
-   ESTILOS BASE (HTML / BODY)
+   BASE
 ===================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--page-bg);
   color: var(--text);
+  line-height: 1.5;
+}
+
+::selection {
+  background: rgba(88, 166, 255, 0.25);
+  color: var(--text);
 }
 
 /* =====================================================
-   CONTENEDOR GENERAL (ANCHO MÁXIMO)
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar              { width: 8px; height: 8px; }
+::-webkit-scrollbar-track        { background: var(--page-bg); }
+::-webkit-scrollbar-thumb        { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover  { background: var(--muted); }
+
+/* =====================================================
+   LAYOUT
 ===================================================== */
 
 .container {
@@ -43,7 +56,7 @@ body {
 }
 
 /* =====================================================
-   NAVEGACIÓN SUPERIOR
+   NAVIGATION
 ===================================================== */
 
 .nav {
@@ -52,153 +65,430 @@ body {
   align-items: center;
 }
 
-/* logo de la cabecera */
 .logo {
   font-weight: 600;
   text-decoration: none;
   color: inherit;
+  transition: opacity 0.15s;
 }
 
-.logo:hover {
-  opacity: 0.85;
-}
+.logo:hover { opacity: 0.75; }
+
+.lang { display: flex; gap: 0.5rem; }
 
 .lang a {
-  margin-left: 0.5rem;
   text-decoration: none;
   color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color 0.15s;
+  cursor: pointer;
 }
 
 .lang a.active {
   color: var(--text);
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.lang a:hover { color: var(--text); }
+
+/* =====================================================
+   PROFILE (photo + heading row)
+===================================================== */
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.profile-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.profile-text { flex: 1; min-width: 0; }
+.profile-text h1 { margin-bottom: 0.2rem; }
+.profile-text h2 { margin-bottom: 0.5rem; }
+.profile-text .stack { margin-top: 0; }
+
+@media (max-width: 560px) {
+  .profile { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+  .profile-photo { width: 88px; height: 88px; }
 }
 
 /* =====================================================
-   SECCIÓN HERO (HOME)
+   HERO / MAIN SECTION
 ===================================================== */
 
-.hero {
-  margin-top: 2rem;
-}
+.hero { margin-top: 2rem; }
+.home .hero { margin-top: 4rem; }
 
-.home .hero {
-  margin-top: 4rem;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-h2 {
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: var(--muted);
-}
+h1 { font-size: 2.4rem; margin: 0 0 0.4rem; }
+h2 { font-size: 1.35rem; font-weight: 400; color: var(--muted); margin: 0 0 1rem; }
+h3 { font-size: 1.1rem; margin: 0 0 0.75rem; }
 
 .stack {
-  margin-top: 1rem;
+  margin: 1rem 0 0;
   font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .intro {
-  max-width: 600px;
-  margin-top: 1.5rem;
-  line-height: 1.6;
-}
-
-.actions {
-  margin-top: 2rem;
+  max-width: 620px;
+  margin: 1.25rem 0 0;
+  line-height: 1.65;
+  color: var(--muted);
 }
 
 /* =====================================================
-   BOTONES 
+   ACTIONS / BUTTONS
 ===================================================== */
+
+.actions { margin-top: 2rem; }
 
 .btn {
   display: inline-block;
-  margin-right: 0.75rem;
-  margin-bottom: 0.75rem;
-  padding: 0.55rem 1.2rem;
-
+  margin: 0 0.6rem 0.6rem 0;
+  padding: 0.5rem 1.15rem;
   background: var(--btn-bg);
   color: var(--btn-text);
-
   border: 1px solid var(--btn-border);
   border-radius: 8px;
-
   text-decoration: none;
   font-weight: 500;
-
-  transition: background-color 0.15s ease;
+  font-size: 0.9rem;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
-.btn:hover {
-  background: var(--btn-hover);
-}
+.btn:hover { background: var(--btn-hover); border-color: var(--muted); }
 
-/* botón principal (CTA destacado) */
 .btn.primary {
-  background: #111111;
-  color: #ffffff;
-  border-color: #111111;
+  background: var(--accent);
+  color: #0d1117;
+  border-color: var(--accent);
 }
 
-.btn.primary:hover {
-  background: #000000;
-}
+.btn.primary:hover { background: #79c0ff; border-color: #79c0ff; }
 
-/* accesibilidad (teclado) */
 .btn:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
 /* =====================================================
-   VENTANA ESTILO macOS
+   WINDOW (macOS style)
 ===================================================== */
 
 .window {
   background: var(--window-bg);
   border-radius: 14px;
+  border: 1px solid var(--border);
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.08),
-    0 1px 3px rgba(0, 0, 0, 0.1);
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 1px 0 rgba(255, 255, 255, 0.04);
   overflow: hidden;
 }
 
-/* barra superior de la ventana */
 .window-header {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 16px;
-  background: #f5f5f7;
-  border-bottom: 1px solid #e5e5e5;
+  padding: 13px 16px;
+  background: #1c2128;
+  border-bottom: 1px solid var(--border);
 }
 
-/* botones tipo macOS */
 .dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
-.dot.red {
-  background: #ff5f57;
+.dot.red    { background: #ff5f57; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green  { background: #28c840; }
+
+.window-content { padding: 2.25rem 2.5rem; }
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+section { margin-top: 2rem; }
+
+section + section {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
 }
 
-.dot.yellow {
-  background: #ffbd2e;
+/* =====================================================
+   TECH TAGS
+===================================================== */
+
+.tech-tags { margin: 0.5rem 0 1rem; }
+
+.tag {
+  display: inline-block;
+  margin: 2px 3px 2px 0;
+  padding: 3px 10px;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
 }
 
-.dot.green {
-  background: #28c840;
+/* =====================================================
+   PROJECT CARDS
+===================================================== */
+
+.project-card {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
 }
 
-/* contenido interno de la ventana */
-.window-content {
-  padding: 2rem;
+.project-card:last-child { border-bottom: none; }
+
+.project-card h3 { margin-bottom: 0.5rem; }
+
+/* =====================================================
+   OTHER PROJECTS LIST
+===================================================== */
+
+.project-list {
+  padding-left: 1.25rem;
+  margin: 0;
 }
 
+.project-list li {
+  margin-bottom: 0.9rem;
+  line-height: 1.6;
+}
+
+.project-list a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 0.25rem;
+}
+
+.project-list a:hover { text-decoration: underline; }
+
+/* =====================================================
+   JOB CARD (experience)
+===================================================== */
+
+.job-card { padding: 0.5rem 0; }
+.job-card h3 { font-size: 1.15rem; margin-bottom: 0.75rem; }
+.job-card p   { margin: 0 0 0.85rem; line-height: 1.65; }
+
+/* =====================================================
+   EDUCATION CARD (courses)
+===================================================== */
+
+.edu-card {
+  padding: 1.25rem 1.5rem;
+  background: var(--page-bg);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.edu-card p { margin: 0 0 0.3rem; }
+.edu-card p:last-child { margin-bottom: 0; }
+
+/* =====================================================
+   COURSE / LANGUAGE LISTS
+===================================================== */
+
+ul {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 0;
+}
+
+ul li {
+  margin-bottom: 0.45rem;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   CERTIFICATE GRID (professional programs)
+===================================================== */
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cert-card {
+  padding: 1.1rem 1.25rem;
+  background: var(--page-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.15s;
+}
+
+.cert-card:hover { border-color: var(--muted); }
+
+.cert-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.cert-provider {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.cert-year {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.cert-name {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* =====================================================
+   CERTIFICATE BADGES (link buttons)
+===================================================== */
+
+.cert-badges { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.cert-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: opacity 0.15s;
+}
+
+.cert-badge:hover { opacity: 0.75; }
+
+.cert-badge--edx    { background: #02262b; color: #ffffff; }
+.cert-badge--cs50   { background: #c00000; color: #ffffff; }
+.cert-badge--credly { background: #f47920; color: #ffffff; }
+
+/* =====================================================
+   INDIVIDUAL COURSES LIST (collapsible)
+===================================================== */
+
+.certs-details {
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.certs-details summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  cursor: pointer;
+  font-weight: 500;
+  list-style: none;
+  user-select: none;
+}
+
+.certs-details summary::-webkit-details-marker { display: none; }
+
+.certs-details summary::before {
+  content: '▶';
+  font-size: 0.65rem;
+  color: var(--muted);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.certs-details[open] summary::before { transform: rotate(90deg); }
+
+.certs-details summary:hover { background: var(--page-bg); }
+
+.cert-count { color: var(--muted); font-size: 0.875rem; }
+
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--border);
+}
+
+.cert-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cert-item:last-child { border-bottom: none; }
+
+.cert-item-name {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.cert-item-provider {
+  font-size: 0.78rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .cert-item {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE — MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+  .container      { padding: 1rem; }
+  .hero           { margin-top: 1rem; }
+  .home .hero     { margin-top: 2rem; }
+  .window-content { padding: 1.5rem 1.25rem; }
+
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.1rem; }
+
+  .btn { margin-bottom: 0.5rem; }
+
+  .project-card { padding: 1.25rem 0; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.5rem; }
+  .window-content { padding: 1.25rem 1rem; }
+}

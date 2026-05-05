@@ -1,0 +1,37 @@
+{
+  "_template_featured": {
+    "_use": "To add a featured project: copy the 3 keys below, replace 'newproject' with a short slug, fill in the values. Then add an <article class='project-card'> block in projects.html using the same data-i18n keys.",
+    "newproject_title": "Project Name — Type",
+    "newproject_desc":  "Description of what the project does and its main features.",
+    "newproject_tech":  "Tech1, Tech2, Tech3"
+  },
+
+  "_template_other": {
+    "_use": "To add an other/secondary project: copy the 1 key below, replace 'newproject' with a slug, fill in the value. Then add a <li> in the 'Other Projects' section of projects.html.",
+    "newproject_desc": "Short project description."
+  },
+
+  "page_title": "Projects | Raúl Estévez",
+  "page_desc":  "Selection of academic and personal software development projects by Raúl Estévez.",
+
+  "heading":          "Projects",
+  "intro":            "Selection of academic and personal projects focused on backend development, software engineering and applied artificial intelligence.",
+  "featured_heading": "Featured Projects",
+  "other_heading":    "Other Academic & Technical Projects",
+
+  "duckyware_title":   "DuckyWare — Web Backend Application",
+  "duckyware_desc":    "Full-featured e-commerce web application developed with Python and Django. The project includes user authentication and roles, product and stock management, order processing, and payment integration. It also provides an administrative interface for store management and staff operations.",
+  "duckyware_tech":    "Python, Django, SQL, HTML, CSS, JavaScript",
+
+  "onlinestore_title": "OnlineStore — Desktop Application (JavaFX)",
+  "onlinestore_desc":  "Desktop application developed in Java using JavaFX, designed following a clean MVC architecture. The project implements DAO and ORM patterns for data persistence and focuses on maintainability, scalability and separation of concerns within a real-world academic scenario.",
+  "onlinestore_tech":  "Java, JavaFX, ORM, DAO, MVC",
+
+  "cs50ai_title":      "CS50 AI — Artificial Intelligence Project",
+  "cs50ai_desc":       "Final project for CS50's Introduction to Artificial Intelligence with Python by HarvardX. Focused on applied artificial intelligence techniques and problem-solving using modern AI approaches.",
+  "cs50ai_tech":       "Python, Artificial Intelligence",
+
+  "eplant_desc":  "Frontend web application developed with React and Redux, showcasing state management and component-based architecture.",
+  "unity_desc":   "Academic projects developed with Unity, focused on augmented and virtual reality experiences.",
+  "android_desc": "Mobile application developed as part of academic coursework using Kotlin."
+}

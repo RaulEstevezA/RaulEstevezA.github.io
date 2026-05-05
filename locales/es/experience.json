@@ -1,0 +1,24 @@
+{
+  "_template": {
+    "_use": "Para añadir un nuevo trabajo: copia el bloque de abajo, incrementa el número (job2, job3…) y rellena los valores. Luego añade un <article class='job-card'> en experience.html con las mismas claves data-i18n.",
+    "job2_title":  "Cargo",
+    "job2_p1":     "Primera responsabilidad o descripción de tarea.",
+    "job2_p2":     "Segunda responsabilidad o descripción de tarea.",
+    "job2_p3":     "Tercera responsabilidad o descripción de tarea.",
+    "job2_tech":   "Tech1, Tech2, Tech3",
+    "job2_period": "AAAA – AAAA"
+  },
+
+  "page_title": "Experiencia | Raúl Estévez",
+  "page_desc":  "Experiencia profesional en desarrollo de software en entornos reales.",
+
+  "heading": "Experiencia",
+  "intro":   "Experiencia profesional en desarrollo de software en entornos reales.",
+
+  "job1_title":  "Desarrollador de Software (Prácticas)",
+  "job1_p1":     "Desarrollo de una aplicación móvil con Flutter para adaptar y extender las funcionalidades del ERP a dispositivos móviles, permitiendo a los empleados acceder y utilizar el sistema desde sus smartphones.",
+  "job1_p2":     "Integración con el backend existente (PHP/Laravel), consumiendo APIs y gestionando autenticación, sesiones y comunicación con el sistema.",
+  "job1_p3":     "Participación en el diseño e implementación de funcionalidades clave, trasladando los procesos internos del ERP al entorno móvil.",
+  "job1_tech":   "Flutter, Dart, PHP, Laravel",
+  "job1_period": "2026 – Presente"
+}

@@ -1,0 +1,30 @@
+{
+  "_template_language": {
+    "_use": "Para añadir un idioma: copia la 1 clave de abajo, renómbrala (lang_XX) y rellena el valor. Luego añade un <li data-i18n=\"courses.lang_XX\"> en la sección 'Idiomas' de courses.html.",
+    "lang_XX": "Idioma — Nivel (certificación si aplica)"
+  },
+
+  "page_title": "Formación & Educación | Raúl Estévez",
+  "page_desc":  "Formación reglada, certificados profesionales y cursos individuales de Raúl Estévez en desarrollo de software e informática.",
+
+  "heading": "Formación & Educación",
+  "intro":   "Resumen de mi formación reglada, certificados profesionales y cursos individuales enfocados en el desarrollo de software y la informática.",
+
+  "formal_heading": "Formación Reglada",
+  "dam_title":      "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)",
+  "dam_school":     "Jesuites Educiació - UOC",
+  "dam_period":     "2024 – 2026",
+  "dam_gpa":        "Nota media: 9,3 / 10",
+
+  "prof_certs_heading": "Certificados Profesionales",
+  "prof_certs_intro":   "Certificados de programa otorgados al completar una serie completa de cursos.",
+
+  "all_certs_heading": "Certificados de Cursos Individuales",
+  "all_certs_toggle":  "Mostrar todos los certificados individuales",
+
+  "langs_heading": "Idiomas",
+  "lang_es":       "Español — Nativo",
+  "lang_ca":       "Catalán — Nativo",
+  "lang_en":       "Inglés — Intermedio (B1.1, UOC)",
+  "lang_it":       "Italiano — Conversacional básico (experiencia laboral)"
+}

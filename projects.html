@@ -3,149 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Projects | Raúl Estévez</title>
-
-  <meta name="description"
-        content="Selection of academic and personal software development projects by Raúl Estévez, focused on backend development, desktop applications and applied artificial intelligence." />
-
+  <meta name="description" content="Selection of academic and personal software development projects by Raúl Estévez, focused on backend development, desktop applications and applied artificial intelligence." />
   <link rel="stylesheet" href="/css/styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Software Projects by Raúl Estévez",
+    "itemListElement": [
+      {
+        "@type": "SoftwareApplication",
+        "position": 1,
+        "name": "DuckyWare",
+        "description": "Full-featured e-commerce web application with user authentication, product management, order processing and payment integration.",
+        "applicationCategory": "WebApplication",
+        "programmingLanguage": ["Python", "Django", "SQL", "JavaScript"],
+        "codeRepository": "https://github.com/RaulEstevezA/final_project_cs50w"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "position": 2,
+        "name": "OnlineStore",
+        "description": "Desktop application in Java using JavaFX with MVC architecture, DAO and ORM patterns for data persistence.",
+        "applicationCategory": "DesktopApplication",
+        "programmingLanguage": ["Java", "JavaFX"],
+        "codeRepository": "https://github.com/RaulEstevezA/UOC_ojoaldato"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "position": 3,
+        "name": "CS50 AI",
+        "description": "Final project for CS50's Introduction to Artificial Intelligence with Python by HarvardX.",
+        "applicationCategory": "Application",
+        "programmingLanguage": ["Python"],
+        "codeRepository": "https://github.com/RaulEstevezA/harvard_ia"
+      }
+    ]
+  }
+  </script>
 </head>
 
-<body>
+<body data-page="projects">
 
-  <!-- Header común -->
   <header class="container">
     <nav class="nav">
       <a href="/index.html" class="logo">Raúl Estévez</a>
       <div class="lang">
-        <a href="/projects.html" class="active">EN</a>
-        <a href="/es/projects.html">ES</a>
+        <a href="#" data-lang="en" class="active">EN</a>
+        <a href="#" data-lang="es">ES</a>
       </div>
     </nav>
   </header>
 
-  <!-- Contenido principal -->
   <main class="container hero">
     <div class="window">
+      <div class="window-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
       <div class="window-content">
 
-        <h1>Projects</h1>
-
-        <p class="intro">
+        <h1 data-i18n="projects.heading">Projects</h1>
+        <p class="intro" data-i18n="projects.intro">
           Selection of academic and personal projects focused on backend development,
           software engineering and applied artificial intelligence.
         </p>
 
-        <!-- ================= FEATURED PROJECTS ================= -->
-
+        <!-- Featured -->
         <section>
-          <h2>Featured Projects</h2>
+          <h2 data-i18n="projects.featured_heading">Featured Projects</h2>
 
-          <!-- DuckyWare -->
-          <article>
-            <h3>DuckyWare — Web Backend Application</h3>
-
-            <p>
+          <article class="project-card">
+            <h3 data-i18n="projects.duckyware_title">DuckyWare — Web Backend Application</h3>
+            <p data-i18n="projects.duckyware_desc">
               Full-featured e-commerce web application developed with Python and Django.
-              The project includes user authentication and roles, product and stock
-              management, order processing, and payment integration. It also provides
-              an administrative interface for store management and staff operations.
             </p>
-
-            <p>
-              <strong>Technologies:</strong> Python, Django, SQL, HTML, CSS, JavaScript
-            </p>
-
+            <p class="tech-tags" data-i18n="projects.duckyware_tech">Python, Django, SQL, HTML, CSS, JavaScript</p>
             <p>
               <a href="https://github.com/RaulEstevezA/final_project_cs50w"
-                 class="btn primary" target="_blank">View on GitHub</a>
+                 class="btn primary" target="_blank" rel="noopener"
+                 data-i18n="common.view_github">View on GitHub</a>
             </p>
           </article>
 
-          <!-- OnlineStore -->
-          <article>
-            <h3>OnlineStore — Desktop Application (JavaFX)</h3>
-
-            <p>
-              Desktop application developed in Java using JavaFX, designed following
-              a clean MVC architecture. The project implements DAO and ORM patterns
-              for data persistence and focuses on maintainability, scalability and
-              separation of concerns within a real-world academic scenario.
+          <article class="project-card">
+            <h3 data-i18n="projects.onlinestore_title">OnlineStore — Desktop Application (JavaFX)</h3>
+            <p data-i18n="projects.onlinestore_desc">
+              Desktop application developed in Java using JavaFX, designed following a clean MVC architecture.
             </p>
-
-            <p>
-              <strong>Technologies:</strong> Java, JavaFX, ORM, DAO, MVC
-            </p>
-
+            <p class="tech-tags" data-i18n="projects.onlinestore_tech">Java, JavaFX, ORM, DAO, MVC</p>
             <p>
               <a href="https://github.com/RaulEstevezA/UOC_ojoaldato"
-                 class="btn primary" target="_blank">View on GitHub</a>
+                 class="btn primary" target="_blank" rel="noopener"
+                 data-i18n="common.view_github">View on GitHub</a>
             </p>
           </article>
 
-          <!-- CS50 AI -->
-          <article>
-            <h3>CS50 AI — Artificial Intelligence Project</h3>
-
-            <p>
-              Final project for CS50’s Introduction to Artificial Intelligence with Python
-              by HarvardX. Focused on applied artificial intelligence techniques and
-              problem-solving using modern AI approaches.
+          <article class="project-card">
+            <h3 data-i18n="projects.cs50ai_title">CS50 AI — Artificial Intelligence Project</h3>
+            <p data-i18n="projects.cs50ai_desc">
+              Final project for CS50's Introduction to Artificial Intelligence with Python by HarvardX.
             </p>
-
-            <p>
-              <strong>Technologies:</strong> Python, Artificial Intelligence
-            </p>
-
+            <p class="tech-tags" data-i18n="projects.cs50ai_tech">Python, Artificial Intelligence</p>
             <p>
               <a href="https://github.com/RaulEstevezA/harvard_ia"
-                 class="btn primary" target="_blank">View on GitHub</a>
+                 class="btn primary" target="_blank" rel="noopener"
+                 data-i18n="common.view_github">View on GitHub</a>
             </p>
           </article>
-
         </section>
 
-        <!-- ================= OTHER PROJECTS ================= -->
-
+        <!-- Other -->
         <section>
-          <h2>Other Academic & Technical Projects</h2>
+          <h2 data-i18n="projects.other_heading">Other Academic &amp; Technical Projects</h2>
 
-          <ul>
+          <ul class="project-list">
             <li>
-              <strong>E-Plant</strong> — Frontend web application developed with React
-              and Redux, showcasing state management and component-based architecture.
-              <a href="https://github.com/RaulEstevezA/e-plantShopping" target="_blank">GitHub</a>
+              <strong>E-Plant</strong> —
+              <span data-i18n="projects.eplant_desc">Frontend web application developed with React and Redux.</span>
+              <a href="https://github.com/RaulEstevezA/e-plantShopping"
+                 target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
             </li>
 
             <li>
-              <strong>Unity AR / VR Projects</strong> — Academic projects developed
-              with Unity, focused on augmented and virtual reality experiences.
-              <a href="https://github.com/RaulEstevezA/tioar" target="_blank">Repo 1</a>,
-              <a href="https://github.com/RaulEstevezA/UOC_programacion_juego_vr_ar" target="_blank">Repo 2</a>
+              <strong>Unity AR / VR</strong> —
+              <span data-i18n="projects.unity_desc">Academic projects developed with Unity, focused on augmented and virtual reality.</span>
+              <a href="https://github.com/RaulEstevezA/tioar"
+                 target="_blank" rel="noopener" data-i18n="common.repo1">Repo 1</a>,
+              <a href="https://github.com/RaulEstevezA/UOC_programacion_juego_vr_ar"
+                 target="_blank" rel="noopener" data-i18n="common.repo2">Repo 2</a>
             </li>
 
             <li>
-              <strong>Android Application (Kotlin)</strong> — Mobile application
-              developed as part of academic coursework using Kotlin.
-              <a href="https://github.com/RaulEstevezA/FP_JE_UOC" target="_blank">GitHub</a>
+              <strong>Android Application (Kotlin)</strong> —
+              <span data-i18n="projects.android_desc">Mobile application developed as part of academic coursework using Kotlin.</span>
+              <a href="https://github.com/RaulEstevezA/FP_JE_UOC"
+                 target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
             </li>
           </ul>
         </section>
 
-        <!-- ================= NAVEGACIÓN ================= -->
-
         <div class="actions">
-            <a href="/index.html" class="btn">Home</a>
-            <a href="/experience.html" class="btn primary">Experience</a>
-            <a href="/courses.html" class="btn">Courses</a>
-            <a href="https://github.com/RaulEstevezA" class="btn">GitHub</a>
-            <a href="https://www.linkedin.com/in/raulesteveza/" class="btn">LinkedIn</a>
+          <a href="/index.html"      class="btn"         data-i18n="common.btn_home">Home</a>
+          <a href="/experience.html" class="btn primary" data-i18n="common.btn_experience">Experience</a>
+          <a href="/courses.html"    class="btn"         data-i18n="common.btn_courses">Courses</a>
+          <a href="https://github.com/RaulEstevezA"          class="btn" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/raulesteveza/" class="btn" target="_blank" rel="noopener">LinkedIn</a>
         </div>
 
       </div>
     </div>
   </main>
 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="/js/i18n.js"></script>
 </body>
 </html>
