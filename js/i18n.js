@@ -41,7 +41,7 @@
 
   function setLang(lang) {
     var pageKey = $('body').data('page') || 'home';
-    var base    = '/locales/' + lang + '/';
+    var base    = 'locales/' + lang + '/';
 
     localStorage.setItem('lang', lang);
     $('html').attr('lang', lang);
