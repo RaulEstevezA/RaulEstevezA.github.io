@@ -102,42 +102,81 @@
           <h2 data-i18n="projects.featured_heading">Featured Projects</h2>
 
           <article class="project-card">
-            <h3 data-i18n="projects.duckyware_title">DuckyWare — Web Backend Application</h3>
-            <p data-i18n="projects.duckyware_desc">
-              Full-featured e-commerce web application developed with Python and Django.
-            </p>
-            <p class="tech-tags" data-i18n="projects.duckyware_tech">Python, Django, SQL, HTML, CSS, JavaScript</p>
-            <p>
+            <div class="project-thumb-wrap"
+                 data-title="DuckyWare — Web Backend Application"
+                 data-title-es="DuckyWare — Aplicación Web Backend"
+                 data-desc="Full e-commerce platform built as CS50W capstone, specialising in computer hardware. Implements hierarchical categories, real-time discount calculations, PayPal payments, and dynamic product search."
+                 data-desc-es="Plataforma e-commerce completa como proyecto final de CS50W, especializada en hardware. Incluye categorías jerárquicas, descuentos en tiempo real, pagos con PayPal y búsqueda dinámica de productos."
+                 data-features="Hierarchical category and subcategory system|Shopping cart with real-time discounts|PayPal payment integration|Dynamic product search with image results|User profiles with address management|Mobile responsive design"
+                 data-features-es="Sistema de categorías y subcategorías jerárquico|Carrito con descuentos en tiempo real|Integración de pagos con PayPal|Búsqueda dinámica con resultados de imagen|Perfiles de usuario con gestión de direcciones|Diseño responsive para móvil"
+                 data-tech="Python, Django, SQL, JavaScript, Bootstrap"
+                 data-github="https://github.com/RaulEstevezA/final_project_cs50w">
+              <img src="img/duckyware.png" alt="DuckyWare screenshot" class="project-thumb" onerror="this.parentElement.style.display='none'">
+            </div>
+            <div class="project-card-body">
+              <h3 data-i18n="projects.duckyware_title">DuckyWare — Web Backend Application</h3>
+              <p data-i18n="projects.duckyware_desc">
+                Full-featured e-commerce web application developed with Python and Django.
+              </p>
+            </div>
+            <div class="project-card-footer">
+              <p class="tech-tags" data-i18n="projects.duckyware_tech">Python, Django, SQL, HTML, CSS, JavaScript</p>
               <a href="https://github.com/RaulEstevezA/final_project_cs50w"
                  class="btn primary" target="_blank" rel="noopener"
                  data-i18n="common.view_github">View on GitHub</a>
-            </p>
+            </div>
           </article>
 
           <article class="project-card">
-            <h3 data-i18n="projects.onlinestore_title">OnlineStore — Desktop Application (JavaFX)</h3>
-            <p data-i18n="projects.onlinestore_desc">
-              Desktop application developed in Java using JavaFX, designed following a clean MVC architecture.
-            </p>
-            <p class="tech-tags" data-i18n="projects.onlinestore_tech">Java, JavaFX, ORM, DAO, MVC</p>
-            <p>
+            <div class="project-thumb-wrap"
+                 data-title="OnlineStore — Desktop Application (JavaFX)"
+                 data-title-es="OnlineStore — Aplicación de Escritorio (JavaFX)"
+                 data-desc="Desktop application in Java simulating an online store with customer, product and order management. Built across iterative phases from UML design to JavaFX interface, following MVC throughout."
+                 data-desc-es="Aplicación de escritorio en Java que simula una tienda online con gestión de clientes, productos y pedidos. Desarrollada en fases iterativas desde diseño UML hasta interfaz JavaFX con arquitectura MVC."
+                 data-features="MVC architecture with DAO and Factory patterns|Hibernate/JPA ORM and JDBC persistence|MySQL database with stored procedures|JavaFX GUI with console-mode fallback|JUnit test suite"
+                 data-features-es="Arquitectura MVC con patrones DAO y Factory|ORM Hibernate/JPA y persistencia JDBC|Base de datos MySQL con procedimientos almacenados|Interfaz JavaFX con modo consola alternativo|Batería de tests con JUnit"
+                 data-tech="Java, JavaFX, MySQL, Hibernate, JPA, JDBC, JUnit"
+                 data-github="https://github.com/RaulEstevezA/UOC_ojoaldato">
+              <img src="img/onlinestore.png" alt="OnlineStore screenshot" class="project-thumb">
+            </div>
+            <div class="project-card-body">
+              <h3 data-i18n="projects.onlinestore_title">OnlineStore — Desktop Application (JavaFX)</h3>
+              <p data-i18n="projects.onlinestore_desc">
+                Desktop application developed in Java using JavaFX, designed following a clean MVC architecture.
+              </p>
+            </div>
+            <div class="project-card-footer">
+              <p class="tech-tags" data-i18n="projects.onlinestore_tech">Java, JavaFX, ORM, DAO, MVC</p>
               <a href="https://github.com/RaulEstevezA/UOC_ojoaldato"
                  class="btn primary" target="_blank" rel="noopener"
                  data-i18n="common.view_github">View on GitHub</a>
-            </p>
+            </div>
           </article>
 
           <article class="project-card">
-            <h3 data-i18n="projects.cs50ai_title">CS50 AI — Artificial Intelligence Project</h3>
-            <p data-i18n="projects.cs50ai_desc">
-              Final project for CS50's Introduction to Artificial Intelligence with Python by HarvardX.
-            </p>
-            <p class="tech-tags" data-i18n="projects.cs50ai_tech">Python, Artificial Intelligence</p>
-            <p>
+            <div class="project-thumb-wrap"
+                 data-title="CS50 AI — Artificial Intelligence Project"
+                 data-title-es="CS50 IA — Proyecto de Inteligencia Artificial"
+                 data-desc="Complete repository for Harvard's CS50 AI course covering 6 units of foundational AI with Python. Projects span search, logic, probability, optimization, machine learning, and neural networks."
+                 data-desc-es="Repositorio completo del curso CS50 IA de Harvard con 6 unidades de IA en Python. Los proyectos abarcan búsqueda, lógica, probabilidad, optimización, machine learning y redes neuronales."
+                 data-features="Minimax Tic Tac Toe and BFS actor search (Search)|Minesweeper solver via logic inference (Knowledge)|PageRank and genetic inheritance (Probability)|Crossword generator with CSP (Optimization)|Q-learning Nim and shopping predictor (ML)|CNN traffic sign classifier (Neural Networks)"
+                 data-features-es="Tres en raya Minimax y búsqueda BFS (Búsqueda)|IA Buscaminas por inferencia lógica (Conocimiento)|PageRank y herencia genética (Probabilidad)|Generador de crucigramas con CSP (Optimización)|Nim con Q-learning y predictor de compras (ML)|Clasificador CNN señales de tráfico (Redes Neuronales)"
+                 data-tech="Python, Pygame, scikit-learn, TensorFlow"
+                 data-github="https://github.com/RaulEstevezA/harvard_ia">
+              <img src="img/cs50ai.png" alt="CS50 AI project screenshot" class="project-thumb">
+            </div>
+            <div class="project-card-body">
+              <h3 data-i18n="projects.cs50ai_title">CS50 AI — Artificial Intelligence Project</h3>
+              <p data-i18n="projects.cs50ai_desc">
+                Final project for CS50's Introduction to Artificial Intelligence with Python by HarvardX.
+              </p>
+            </div>
+            <div class="project-card-footer">
+              <p class="tech-tags" data-i18n="projects.cs50ai_tech">Python, Artificial Intelligence</p>
               <a href="https://github.com/RaulEstevezA/harvard_ia"
                  class="btn primary" target="_blank" rel="noopener"
                  data-i18n="common.view_github">View on GitHub</a>
-            </p>
+            </div>
           </article>
         </section>
 
@@ -145,30 +184,106 @@
         <section>
           <h2 data-i18n="projects.other_heading">Other Academic &amp; Technical Projects</h2>
 
-          <ul class="project-list">
-            <li>
-              <strong>E-Plant</strong> —
-              <span data-i18n="projects.eplant_desc">Frontend web application developed with React and Redux.</span>
-              <a href="https://github.com/RaulEstevezA/e-plantShopping"
-                 target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
-            </li>
+          <details class="certs-details">
+            <summary>
+              <span data-i18n="projects.other_toggle">Show all projects</span>
+              <span class="cert-count">(13)</span>
+            </summary>
+            <ul class="project-list">
+              <li>
+                <strong>E-Plant</strong> —
+                <span data-i18n="projects.eplant_desc">Frontend web application developed with React and Redux.</span>
+                <a href="https://github.com/RaulEstevezA/e-plantShopping"
+                   target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
+              </li>
 
-            <li>
-              <strong>Unity AR / VR</strong> —
-              <span data-i18n="projects.unity_desc">Academic projects developed with Unity, focused on augmented and virtual reality.</span>
-              <a href="https://github.com/RaulEstevezA/tioar"
-                 target="_blank" rel="noopener" data-i18n="common.repo1">Repo 1</a>,
-              <a href="https://github.com/RaulEstevezA/UOC_programacion_juego_vr_ar"
-                 target="_blank" rel="noopener" data-i18n="common.repo2">Repo 2</a>
-            </li>
+              <li>
+                <strong>Unity AR / VR</strong> —
+                <span data-i18n="projects.unity_desc">Academic projects developed with Unity, focused on augmented and virtual reality.</span>
+                <a href="https://github.com/RaulEstevezA/tioar"
+                   target="_blank" rel="noopener" data-i18n="common.repo1">Repo 1</a>,
+                <a href="https://github.com/RaulEstevezA/UOC_Gamers"
+                   target="_blank" rel="noopener" data-i18n="common.repo2">Repo 2</a>
+              </li>
 
-            <li>
-              <strong>Android Application (Kotlin)</strong> —
-              <span data-i18n="projects.android_desc">Mobile application developed as part of academic coursework using Kotlin.</span>
-              <a href="https://github.com/RaulEstevezA/FP_JE_UOC"
-                 target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
-            </li>
-          </ul>
+              <li>
+                <strong>Android Application (Kotlin)</strong> —
+                <span data-i18n="projects.android_desc">Mobile application developed as part of academic coursework using Kotlin.</span>
+                <a href="https://github.com/RaulEstevezA/FP_JE_UOC"
+                   target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
+              </li>
+
+              <li>
+                <strong>Tetris in Python</strong> —
+                <span data-i18n="projects.tetris_desc">Classic Tetris game implemented from scratch in Python using Pygame.</span>
+                <a href="https://github.com/RaulEstevezA/tetrisInPython"
+                   target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
+              </li>
+
+              <li>
+                <strong>Flutter Exercises</strong> —
+                <span data-i18n="projects.flutter_desc">Hands-on Flutter and Dart exercises from an advanced mobile development course.</span>
+                <a href="https://github.com/RaulEstevezA/FlutterExercises"
+                   target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
+              </li>
+
+              <li>
+                <strong>Smart City — ThingsBoard IoT</strong> —
+                <span data-i18n="projects.smartcity_desc">IoT monitoring dashboard deployed on ThingsBoard Cloud, simulating smart city sensor data with Python.</span>
+                <a href="https://github.com/RaulEstevezA/smart-city-thingsboard"
+                   target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
+              </li>
+
+              <li>
+                <strong>UOC DevNet — .NET ERP</strong> —
+                <span data-i18n="projects.devnet_desc">Data persistence techniques and ERP-oriented application development using C# and .NET.</span>
+                <a href="https://github.com/RaulEstevezA/uoc_devnet"
+                   target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
+              </li>
+
+              <li>
+                <strong>Kotlin Kaos</strong> —
+                <span data-i18n="projects.kotlinkaos_desc">Native Android mobile application developed with Kotlin as part of UOC coursework.</span>
+                <a href="https://github.com/RaulEstevezA/Kotlin_Kaos_UOC"
+                   target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
+              </li>
+
+              <li>
+                <strong>WoodShop Java</strong> —
+                <span data-i18n="projects.woodshop_desc">Management system for clients, products, stores and sales simulation built in Java.</span>
+                <a href="https://github.com/RaulEstevezA/WoodShop_Java"
+                   target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
+              </li>
+
+              <li>
+                <strong>Fleet Control</strong> —
+                <span data-i18n="projects.fleetcontrol_desc">Fleet management application developed in C, focused on structured data handling and system-level programming.</span>
+                <a href="https://github.com/RaulEstevezA/fleetControl"
+                   target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
+              </li>
+
+              <li>
+                <strong>CS50 Final Project</strong> —
+                <span data-i18n="projects.cs50final_desc">Final project for Harvard's CS50 Introduction to Computer Science.</span>
+                <a href="https://github.com/RaulEstevezA/final_project_cs50"
+                   target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
+              </li>
+
+              <li>
+                <strong>Django Exam Generator (IBM)</strong> —
+                <span data-i18n="projects.djangoibm_desc">Django web application for generating automated multiple-choice exams, built as IBM course final project.</span>
+                <a href="https://github.com/RaulEstevezA/final_project_Django_IBM"
+                   target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
+              </li>
+
+              <li>
+                <strong>AI &amp; ML — IBM</strong> —
+                <span data-i18n="projects.ibmai_desc">Applied artificial intelligence and machine learning project developed as part of IBM's AI Engineering program.</span>
+                <a href="https://github.com/RaulEstevezA/final_project_python_AI_ibm"
+                   target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
+              </li>
+            </ul>
+          </details>
         </section>
 
         <div class="actions">
@@ -183,8 +298,25 @@
     </div>
   </main>
 
+  <div id="proj-modal" role="dialog" aria-modal="true" aria-labelledby="proj-modal-title">
+    <div id="proj-modal-inner">
+      <img id="proj-modal-img" src="" alt="">
+      <div id="proj-modal-body">
+        <div id="proj-modal-header">
+          <h3 id="proj-modal-title"></h3>
+          <button id="proj-modal-close" aria-label="Close">×</button>
+        </div>
+        <p id="proj-modal-desc"></p>
+        <ul id="proj-modal-features"></ul>
+        <p id="proj-modal-tech" class="tech-tags"></p>
+        <a id="proj-modal-github" class="btn primary" target="_blank" rel="noopener" data-i18n="common.view_github">View on GitHub</a>
+      </div>
+    </div>
+  </div>
+
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
           integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="js/i18n.js"></script>
+  <script src="js/lightbox.js"></script>
 </body>
 </html>
