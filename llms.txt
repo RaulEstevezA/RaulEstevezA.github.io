@@ -1,0 +1,86 @@
+# Raúl Estévez — Software Developer
+
+> Backend, Desktop and AI-focused software developer. Based in Spain.
+> Specialized in Java, Python, SQL, Kotlin and Git.
+
+## Summary
+
+Software developer with a strong academic background and hands-on experience
+in backend systems, desktop applications, and artificial intelligence projects.
+Currently completing a Higher Technician degree in Multiplatform Application
+Development (DAM) with a GPA of 9.3/10.
+
+## Current Experience
+
+- **Role:** Software Developer Intern (2026 – Present)
+- **Stack:** Flutter, Dart, PHP, Laravel
+- **Focus:** Development of a mobile ERP application. Adapted ERP system
+  functionalities to mobile devices using Flutter, integrated with an existing
+  PHP/Laravel backend via REST APIs. Handled authentication, session management
+  and system communication.
+
+## Education
+
+- **Higher Technician in Multiplatform Application Development (DAM)**
+  Jesuites Educiacio - UOC — 2024–2026 — GPA: 9.3 / 10
+
+- **CS50's Introduction to Computer Science** — HarvardX
+- **CS50's Introduction to Programming with Python** — HarvardX
+- **CS50's Web Programming with Python and JavaScript** — HarvardX
+- **CS50's Introduction to Artificial Intelligence with Python** — HarvardX
+- **Computer Science for Python Programming** — HarvardX
+- **Introduction to Java Programming** — UC3Mx
+
+### Professional Program Certificates
+- **Computer Science for Artificial Intelligence** — HarvardX (2026)
+- **Computer Science for Web Programming** — HarvardX (2024)
+- **Learning Python for Data Science** — HarvardX (2024)
+- **Computer Science for Python Programming** — HarvardX (2023)
+- **CS50's AP® Computer Science Principles** — HarvardX (2023)
+- **Introducción a la programación en C** — UAMx (2023)
+- **Introducción a la programación en Java** — UC3Mx (2025)
+
+Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX available at https://raulesteveza.github.io/courses.html
+
+## Featured Projects
+
+- **DuckyWare** — E-commerce backend web application.
+  Stack: Python, Django, SQL, HTML, CSS, JavaScript.
+  Includes user authentication, product management, order processing and payment integration.
+  Repository: https://github.com/RaulEstevezA/final_project_cs50w
+
+- **OnlineStore** — Desktop application with JavaFX and MVC architecture.
+  Stack: Java, JavaFX, ORM, DAO, MVC.
+  Focused on data persistence, maintainability and separation of concerns.
+  Repository: https://github.com/RaulEstevezA/UOC_ojoaldato
+
+- **CS50 AI** — Final project for CS50's AI with Python (HarvardX).
+  Stack: Python, Artificial Intelligence.
+  Repository: https://github.com/RaulEstevezA/harvard_ia
+
+## Other Projects
+
+- **E-Plant** — Frontend React/Redux application. https://github.com/RaulEstevezA/e-plantShopping
+- **Unity AR / VR** — Augmented and virtual reality academic projects.
+  https://github.com/RaulEstevezA/tioar · https://github.com/RaulEstevezA/UOC_programacion_juego_vr_ar
+- **Android App (Kotlin)** — Mobile application academic coursework. https://github.com/RaulEstevezA/FP_JE_UOC
+
+## Technical Skills
+
+- **Languages:** Java, Python, SQL, Kotlin, Dart, JavaScript, PHP, C
+- **Frameworks & Libraries:** Django, Flutter, Laravel, JavaFX, React, Redux
+- **Tools:** Git, GitHub, Unity, Android SDK
+- **Paradigms:** MVC, DAO, ORM, REST APIs, component-based architecture
+
+## Human Languages
+
+- Spanish — Native
+- Catalan — Native
+- English — Intermediate (B1.1, UOC certified)
+- Italian — Basic conversational (work experience)
+
+## Contact & Profiles
+
+- Website: https://raulesteveza.github.io
+- GitHub: https://github.com/RaulEstevezA
+- LinkedIn: https://www.linkedin.com/in/raulesteveza/

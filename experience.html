@@ -3,87 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Experience | Raúl Estévez</title>
-
-  <meta name="description"
-        content="Professional experience in software development." />
-
+  <meta name="description" content="Professional experience in software development within real-world environments." />
   <link rel="stylesheet" href="/css/styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Raúl Estévez",
+    "url": "https://raulesteveza.github.io",
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Software Developer Intern",
+      "startDate": "2026",
+      "description": "Development of a mobile ERP application using Flutter and Dart, integrated with a PHP/Laravel backend.",
+      "skills": "Flutter, Dart, PHP, Laravel",
+      "occupationLocation": { "@type": "Country", "name": "Spain" }
+    }
+  }
+  </script>
 </head>
 
-<body>
+<body data-page="experience">
 
-  <!-- Header común -->
   <header class="container">
     <nav class="nav">
       <a href="/index.html" class="logo">Raúl Estévez</a>
-
       <div class="lang">
-        <a href="/experience.html" class="active">EN</a>
-        <a href="/es/experience.html">ES</a>
+        <a href="#" data-lang="en" class="active">EN</a>
+        <a href="#" data-lang="es">ES</a>
       </div>
     </nav>
   </header>
 
-  <!-- Contenido principal -->
   <main class="container hero">
     <div class="window">
+      <div class="window-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
       <div class="window-content">
 
-        <h1>Experience</h1>
-
-        <p class="intro">
+        <h1 data-i18n="experience.heading">Experience</h1>
+        <p class="intro" data-i18n="experience.intro">
           Professional experience in software development within real-world environments.
         </p>
 
-        <!-- ================= EXPERIENCE ================= -->
+        <section>
+          <article class="job-card">
+            <h3 data-i18n="experience.job1_title">Software Developer Intern</h3>
 
-          <section>
+            <p data-i18n="experience.job1_p1">
+              Development of a mobile application using Flutter to adapt and extend
+              ERP functionalities to mobile devices, enabling employees to access
+              and use the system from smartphones.
+            </p>
 
-            <article>
-              <h3>Software Developer Intern</h3>
+            <p data-i18n="experience.job1_p2">
+              Integration with the existing backend (PHP/Laravel), consuming APIs
+              and handling authentication, session management, and system communication.
+            </p>
 
-              <p>
-                Development of a mobile application using Flutter to adapt and extend
-                ERP functionalities to mobile devices, enabling employees to access
-                and use the system from smartphones.
-              </p>
+            <p data-i18n="experience.job1_p3">
+              Involvement in the design and implementation of key features,
+              translating internal ERP processes into a mobile environment.
+            </p>
 
-              <p>
-                Integration with the existing backend (PHP/Laravel), consuming APIs
-                and handling authentication, session management, and system communication.
-              </p>
+            <p>
+              <strong data-i18n="common.tech_label">Technologies:</strong>
+              <span class="tech-tags" data-i18n="experience.job1_tech">Flutter, Dart, PHP, Laravel</span>
+            </p>
 
-              <p>
-                Involvement in the design and implementation of key features,
-                translating internal ERP processes into a mobile environment.
-              </p>
-
-              <p>
-                <strong>Technologies:</strong> Flutter, Dart, PHP, Laravel
-              </p>
-
-              <p>
-                <strong>Period:</strong> 2026 – Present
-              </p>
-            </article>
-
-          </section>
-
-        <!-- ================= NAVEGACIÓN ================= -->
+            <p>
+              <strong data-i18n="common.period_label">Period:</strong>
+              <span data-i18n="experience.job1_period">2026 – Present</span>
+            </p>
+          </article>
+        </section>
 
         <div class="actions">
-          <a href="/index.html" class="btn">Home</a>
-          <a href="courses.html" class="btn">Courses</a>
-          <a href="projects.html" class="btn">Projects</a>
-          <a href="https://github.com/RaulEstevezA" class="btn">GitHub</a>
-          <a href="https://www.linkedin.com/in/raulesteveza/" class="btn">LinkedIn</a>
+          <a href="/index.html"      class="btn"         data-i18n="common.btn_home">Home</a>
+          <a href="/projects.html"   class="btn"         data-i18n="common.btn_projects">Projects</a>
+          <a href="/courses.html"    class="btn"         data-i18n="common.btn_courses">Courses</a>
+          <a href="https://github.com/RaulEstevezA"          class="btn" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/raulesteveza/" class="btn" target="_blank" rel="noopener">LinkedIn</a>
         </div>
 
       </div>
     </div>
   </main>
 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="/js/i18n.js"></script>
 </body>
 </html>

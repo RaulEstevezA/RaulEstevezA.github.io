@@ -5,50 +5,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Raúl Estévez | Software Developer</title>
   <meta name="description" content="Software Developer specialized in backend development, desktop applications and AI projects." />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Raúl Estévez",
+    "url": "https://raulesteveza.github.io",
+    "jobTitle": "Software Developer",
+    "description": "Backend, Desktop and AI-focused software developer. Specialized in Java, Python, SQL, Kotlin and Git.",
+    "sameAs": [
+      "https://github.com/RaulEstevezA",
+      "https://www.linkedin.com/in/raulesteveza/"
+    ],
+    "knowsAbout": ["Java", "Python", "SQL", "Kotlin", "Git", "Django", "Flutter", "Laravel", "React", "Unity", "Android", "Dart", "PHP"],
+    "knowsLanguage": [
+      { "@type": "Language", "name": "Spanish" },
+      { "@type": "Language", "name": "Catalan" },
+      { "@type": "Language", "name": "English" },
+      { "@type": "Language", "name": "Italian" }
+    ],
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Jesuites Educiacio - UOC",
+      "description": "Higher Technician in Multiplatform Application Development (DAM), 2024–2026"
+    },
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Software Developer Intern",
+      "occupationLocation": { "@type": "Country", "name": "Spain" },
+      "skills": "Flutter, Dart, PHP, Laravel"
+    }
+  }
+  </script>
 </head>
 
-<body class="home">
+<body class="home" data-page="home">
 
-  <!-- header -->
   <header class="container">
     <nav class="nav">
       <a href="/index.html" class="logo">Raúl Estévez</a>
       <div class="lang">
-        <a href="/index.html" class="active">EN</a>
-        <a href="/es/index.html">ES</a>
+        <a href="#" data-lang="en" class="active">EN</a>
+        <a href="#" data-lang="es">ES</a>
       </div>
     </nav>
   </header>
 
-  <!-- principal -->
   <main class="container hero">
-  <div class="window">
+    <div class="window">
+      <div class="window-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <div class="window-content">
 
-    <div class="window-content">
-      <h1>Raúl Estévez — Software Developer</h1>
+        <div class="profile">
+          <img src="/img/raulestevezio.jpg" alt="Raúl Estévez" class="profile-photo" />
+          <div class="profile-text">
+            <h1 data-i18n="home.heading">Raúl Estévez — Software Developer</h1>
+            <h2 data-i18n="home.subheading">Backend, Desktop &amp; AI-focused developer</h2>
+            <p class="stack" data-i18n="home.stack">Java · Python · SQL · Kotlin · Git</p>
+          </div>
+        </div>
 
-      <h2>Backend, Desktop & AI-focused developer</h2>
+        <p class="intro" data-i18n="home.intro">
+          Software developer with a strong academic background and hands-on experience
+          in backend systems, desktop applications, and artificial intelligence projects.
+        </p>
 
-      <p class="stack">
-        Java · Python · SQL · Kotlin · Git
-      </p>
+        <div class="actions">
+          <a href="/experience.html" class="btn primary" data-i18n="home.btn_experience">Experience</a>
+          <a href="/projects.html"   class="btn"         data-i18n="home.btn_projects">Projects</a>
+          <a href="/courses.html"    class="btn"         data-i18n="home.btn_courses">Courses</a>
+          <a href="https://github.com/RaulEstevezA"          class="btn" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/raulesteveza/" class="btn" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
 
-      <p class="intro">
-        Software developer with a strong academic background and hands-on experience
-        in backend systems, desktop applications, and artificial intelligence projects.
-      </p>
-
-      <!-- enlaces -->
-      <div class="actions">
-        <a href="/experience.html" class="btn primary">Experience</a>
-        <a href="/projects.html" class="btn">Projects</a>
-        <a href="/courses.html" class="btn">Courses</a>
-        <a href="https://github.com/RaulEstevezA" class="btn">GitHub</a>
-        <a href="https://www.linkedin.com/in/raulesteveza/" class="btn">LinkedIn</a>
       </div>
     </div>
-  </div>
-</main>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="/js/i18n.js"></script>
 </body>
 </html>

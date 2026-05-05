@@ -1,0 +1,37 @@
+{
+  "_template_featured": {
+    "_use": "Para añadir un proyecto destacado: copia las 3 claves de abajo, reemplaza 'newproject' con un slug corto y rellena los valores. Luego añade un <article class='project-card'> en projects.html con las mismas claves data-i18n.",
+    "newproject_title": "Nombre del Proyecto — Tipo",
+    "newproject_desc":  "Descripción de lo que hace el proyecto y sus características principales.",
+    "newproject_tech":  "Tech1, Tech2, Tech3"
+  },
+
+  "_template_other": {
+    "_use": "Para añadir un proyecto secundario: copia la 1 clave de abajo, reemplaza 'newproject' con un slug y rellena el valor. Luego añade un <li> en la sección 'Otros proyectos' de projects.html.",
+    "newproject_desc": "Descripción breve del proyecto."
+  },
+
+  "page_title": "Proyectos | Raúl Estévez",
+  "page_desc":  "Selección de proyectos académicos y personales de Raúl Estévez.",
+
+  "heading":          "Proyectos",
+  "intro":            "Selección de proyectos académicos y personales enfocados en desarrollo backend, ingeniería de software e inteligencia artificial aplicada.",
+  "featured_heading": "Proyectos Destacados",
+  "other_heading":    "Otros Proyectos Académicos y Técnicos",
+
+  "duckyware_title":   "DuckyWare — Aplicación Web Backend",
+  "duckyware_desc":    "Aplicación web de comercio electrónico completa desarrollada con Python y Django. El proyecto incluye autenticación y roles de usuario, gestión de productos y stock, procesamiento de pedidos e integración de pagos. También dispone de una interfaz administrativa para la gestión de la tienda.",
+  "duckyware_tech":    "Python, Django, SQL, HTML, CSS, JavaScript",
+
+  "onlinestore_title": "OnlineStore — Aplicación de Escritorio (JavaFX)",
+  "onlinestore_desc":  "Aplicación de escritorio desarrollada en Java con JavaFX, diseñada siguiendo una arquitectura MVC limpia. El proyecto implementa los patrones DAO y ORM para la persistencia de datos y se enfoca en la mantenibilidad, escalabilidad y separación de responsabilidades.",
+  "onlinestore_tech":  "Java, JavaFX, ORM, DAO, MVC",
+
+  "cs50ai_title":      "CS50 IA — Proyecto de Inteligencia Artificial",
+  "cs50ai_desc":       "Proyecto final del curso CS50's Introduction to Artificial Intelligence with Python de HarvardX. Enfocado en técnicas de inteligencia artificial aplicada y resolución de problemas con enfoques modernos de IA.",
+  "cs50ai_tech":       "Python, Inteligencia Artificial",
+
+  "eplant_desc":  "Aplicación web frontend desarrollada con React y Redux, mostrando gestión de estado y arquitectura basada en componentes.",
+  "unity_desc":   "Proyectos académicos desarrollados con Unity, enfocados en experiencias de realidad aumentada y virtual.",
+  "android_desc": "Aplicación móvil desarrollada como parte del trabajo académico usando Kotlin."
+}

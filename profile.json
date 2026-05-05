@@ -1,0 +1,107 @@
+{
+  "name": "Raúl Estévez",
+  "title": "Software Developer",
+  "focus": ["Backend", "Desktop Applications", "Artificial Intelligence"],
+  "location": "Spain",
+  "website": "https://raulesteveza.github.io",
+  "github": "https://github.com/RaulEstevezA",
+  "linkedin": "https://www.linkedin.com/in/raulesteveza/",
+
+  "summary": "Software developer with a strong academic background and hands-on experience in backend systems, desktop applications, and artificial intelligence projects.",
+
+  "skills": {
+    "languages":   ["Java", "Python", "SQL", "Kotlin", "Dart", "JavaScript", "PHP", "C"],
+    "frameworks":  ["Django", "Flutter", "Laravel", "JavaFX", "React", "Redux"],
+    "tools":       ["Git", "GitHub", "Unity", "Android SDK"],
+    "paradigms":   ["MVC", "DAO", "ORM", "REST APIs", "Component-based architecture"]
+  },
+
+  "experience": [
+    {
+      "role":        "Software Developer Intern",
+      "period":      "2026 – Present",
+      "stack":       ["Flutter", "Dart", "PHP", "Laravel"],
+      "description": "Development of a mobile ERP application using Flutter. Integration with a PHP/Laravel backend via REST APIs, handling authentication and session management."
+    }
+  ],
+
+  "education": [
+    {
+      "degree":      "Higher Technician in Multiplatform Application Development (DAM)",
+      "institution": "Jesuites Educiacio - UOC",
+      "period":      "2024 – 2026",
+      "gpa":         "9.3 / 10"
+    }
+  ],
+
+  "courses": [
+    { "name": "Computer Science for Artificial Intelligence",                    "provider": "HarvardX", "type": "Professional Certificate", "year": 2026 },
+    { "name": "CS50's Introduction to Computer Science",                       "provider": "HarvardX" },
+    { "name": "CS50's Introduction to Programming with Python",                "provider": "HarvardX" },
+    { "name": "CS50's Web Programming with Python and JavaScript",             "provider": "HarvardX" },
+    { "name": "CS50's Introduction to Artificial Intelligence with Python",    "provider": "HarvardX" },
+    { "name": "Computer Science for Python Programming",                       "provider": "HarvardX" },
+    { "name": "Introduction to Java Programming",                              "provider": "UC3Mx"    }
+  ],
+
+  "projects": [
+    {
+      "name":        "DuckyWare",
+      "type":        "Web Backend Application",
+      "description": "Full-featured e-commerce application with authentication, product management, order processing and payment integration.",
+      "stack":       ["Python", "Django", "SQL", "HTML", "CSS", "JavaScript"],
+      "repository":  "https://github.com/RaulEstevezA/final_project_cs50w",
+      "featured":    true
+    },
+    {
+      "name":        "OnlineStore",
+      "type":        "Desktop Application",
+      "description": "Desktop app built with JavaFX using MVC architecture, DAO and ORM patterns for data persistence.",
+      "stack":       ["Java", "JavaFX", "ORM", "DAO", "MVC"],
+      "repository":  "https://github.com/RaulEstevezA/UOC_ojoaldato",
+      "featured":    true
+    },
+    {
+      "name":        "CS50 AI",
+      "type":        "Artificial Intelligence Project",
+      "description": "Final project for CS50's Introduction to Artificial Intelligence with Python — HarvardX.",
+      "stack":       ["Python", "Artificial Intelligence"],
+      "repository":  "https://github.com/RaulEstevezA/harvard_ia",
+      "featured":    true
+    },
+    {
+      "name":        "E-Plant",
+      "type":        "Frontend Web Application",
+      "description": "React and Redux application showcasing state management and component-based architecture.",
+      "stack":       ["React", "Redux", "JavaScript"],
+      "repository":  "https://github.com/RaulEstevezA/e-plantShopping",
+      "featured":    false
+    },
+    {
+      "name":        "Unity AR / VR",
+      "type":        "Augmented & Virtual Reality",
+      "description": "Academic Unity projects focused on AR and VR experiences.",
+      "stack":       ["Unity", "C#"],
+      "repositories": [
+        "https://github.com/RaulEstevezA/tioar",
+        "https://github.com/RaulEstevezA/UOC_programacion_juego_vr_ar"
+      ],
+      "featured": false
+    },
+    {
+      "name":        "Android Application",
+      "type":        "Mobile Application",
+      "description": "Mobile application developed as academic coursework using Kotlin.",
+      "stack":       ["Kotlin", "Android SDK"],
+      "repository":  "https://github.com/RaulEstevezA/FP_JE_UOC",
+      "featured":    false
+    }
+  ],
+
+  "languages": [
+    { "language": "Spanish", "level": "Native"                          },
+    { "language": "Catalan", "level": "Native"                          },
+    { "language": "English", "level": "Intermediate", "cert": "B1.1 UOC" },
+    { "language": "Italian", "level": "Basic conversational"            }
+  ]
+}

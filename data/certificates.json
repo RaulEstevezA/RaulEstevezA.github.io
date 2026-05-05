@@ -1,0 +1,290 @@
+{
+  "_template": {
+    "_use_program": "To add a professional program certificate: copy one object from 'programs', fill in name/provider/year/certs. Each cert needs a label (shown on the badge) and a url.",
+    "_use_course":  "To add an individual course: copy one object from 'courses', fill in name/provider/year/certs. Multiple cert objects = multiple badges shown.",
+    "_example_cert": { "label": "EDX", "url": "https://courses.edx.org/certificates/..." }
+  },
+
+  "programs": [
+    {
+      "name":     "Introducción a la programación en C",
+      "provider": "UAMx",
+      "year":     2023,
+      "certs": [
+        { "label": "EDX", "url": "https://credentials.edx.org/credentials/876ce52293e24b589e48c66dfe60948e/" }
+      ]
+    },
+    {
+      "name":     "CS50's AP® Computer Science Principles",
+      "provider": "HarvardX",
+      "year":     2023,
+      "certs": [
+        { "label": "EDX", "url": "https://credentials.edx.org/credentials/91fe8349677a45198cdbb41526bee134/" }
+      ]
+    },
+    {
+      "name":     "Computer Science for Python Programming",
+      "provider": "HarvardX",
+      "year":     2023,
+      "certs": [
+        { "label": "EDX", "url": "https://credentials.edx.org/credentials/b5eae31001394feeb4d27ec41067b491/" }
+      ]
+    },
+    {
+      "name":     "Learning Python for Data Science",
+      "provider": "HarvardX",
+      "year":     2024,
+      "certs": [
+        { "label": "EDX", "url": "https://credentials.edx.org/credentials/260d5100225b419e883903061d2124c6/" }
+      ]
+    },
+    {
+      "name":     "Computer Science for Web Programming",
+      "provider": "HarvardX",
+      "year":     2024,
+      "certs": [
+        { "label": "EDX", "url": "https://credentials.edx.org/credentials/824d44492b19480eb74d9cdf84a9e9d8/" }
+      ]
+    },
+    {
+      "name":     "Introducción a la programación en Java",
+      "provider": "UC3Mx",
+      "year":     2025,
+      "certs": [
+        { "label": "EDX", "url": "https://credentials.edx.org/credentials/22805cb124b24600b9a7b2688358dc27/" }
+      ]
+    },
+    {
+      "name":     "Computer Science for Artificial Intelligence",
+      "provider": "HarvardX",
+      "year":     2026,
+      "certs": [
+        { "label": "EDX", "url": "https://credentials.edx.org/credentials/cd48ab44ee304bfc8a06f63d3c9365b4/" }
+      ]
+    }
+  ],
+
+  "courses": [
+    {
+      "name":     "Python: aprender a programar",
+      "provider": "UPValenciaX",
+      "year":     2022,
+      "certs": [
+        { "label": "EDX", "url": "https://courses.edx.org/certificates/7d87da16e5e84b1b82ac32fee614824a" }
+      ]
+    },
+    {
+      "name":     "Introducción al desarrollo de aplicaciones web",
+      "provider": "UAMx",
+      "year":     2022,
+      "certs": [
+        { "label": "EDX", "url": "https://courses.edx.org/certificates/943473f08498462090a03945925a0bc7" }
+      ]
+    },
+    {
+      "name":     "Introducción a SQL y bases de datos relacionales",
+      "provider": "UPValenciaX",
+      "year":     2022,
+      "certs": [
+        { "label": "EDX", "url": "https://courses.edx.org/certificates/ce76e7e26687487b875e4413a64334c4" }
+      ]
+    },
+    {
+      "name":     "CS50's Understanding Technology",
+      "provider": "HarvardX",
+      "year":     2023,
+      "certs": [
+        { "label": "EDX",  "url": "https://courses.edx.org/certificates/54c6bfd4230b46998fa8d92d1e40d279" },
+        { "label": "CS50", "url": "https://certificates.cs50.io/d09ea82b-a40c-4f08-bcbf-7f4f44e1868f.pdf?size=letter" }
+      ]
+    },
+    {
+      "name":     "Introducción a la programación en C: Tipos de datos y estructuras",
+      "provider": "UAMx",
+      "year":     2023,
+      "certs": [
+        { "label": "EDX", "url": "https://courses.edx.org/certificates/4fc3f070f93d4e6cb3e1440f71020dca" }
+      ]
+    },
+    {
+      "name":     "Introducción a la programación en C: Instrucciones de control y ficheros de texto",
+      "provider": "UAMx",
+      "year":     2023,
+      "certs": [
+        { "label": "EDX", "url": "https://courses.edx.org/certificates/a6d9c14166c14d94a26410cee67c5d59" }
+      ]
+    },
+    {
+      "name":     "Introducción a la programación en C: Funciones y punteros",
+      "provider": "UAMx",
+      "year":     2023,
+      "certs": [
+        { "label": "EDX", "url": "https://courses.edx.org/certificates/5be62f7637874379a57cd8d05dd469ee" }
+      ]
+    },
+    {
+      "name":     "CS50's Introduction to Computer Science",
+      "provider": "HarvardX",
+      "year":     2023,
+      "certs": [
+        { "label": "EDX",  "url": "https://courses.edx.org/certificates/8bc60e5bd90449c7bd371c47e671fb13" },
+        { "label": "CS50", "url": "https://certificates.cs50.io/63afc921-bedf-42cc-bd7f-997c91dd8b5c.pdf?size=letter" }
+      ]
+    },
+    {
+      "name":     "Programación en Python: visualización de datos",
+      "provider": "UPValenciaX",
+      "year":     2023,
+      "certs": [
+        { "label": "EDX", "url": "https://courses.edx.org/certificates/2acee54526b742e4b18d2b66ac0bcaf1" }
+      ]
+    },
+    {
+      "name":     "Introducción a ChatGPT",
+      "provider": "UPValenciaX",
+      "year":     2023,
+      "certs": [
+        { "label": "EDX", "url": "https://courses.edx.org/certificates/2655eb446233445992f4c1393a9e0449" }
+      ]
+    },
+    {
+      "name":     "CS50's Introduction to Programming with Python",
+      "provider": "HarvardX",
+      "year":     2023,
+      "certs": [
+        { "label": "EDX",  "url": "https://courses.edx.org/certificates/f23d965730c04766b6bbf61072f675bf" },
+        { "label": "CS50", "url": "https://certificates.cs50.io/f9f0e85c-ace5-4390-9251-c8d5458daf5c.png?size=letter" }
+      ]
+    },
+    {
+      "name":     "Fat Chance: Probability from the Ground Up",
+      "provider": "HarvardX",
+      "year":     2023,
+      "certs": [
+        { "label": "EDX", "url": "https://courses.edx.org/certificates/66501a758a334d2193fc8becef2cf598" }
+      ]
+    },
+    {
+      "name":     "Introduction to Data Science with Python",
+      "provider": "HarvardX",
+      "year":     2024,
+      "certs": [
+        { "label": "EDX", "url": "https://courses.edx.org/certificates/456bdf43812d4443a7e7727ef568a3ca" }
+      ]
+    },
+    {
+      "name":     "Introduction to Cloud Computing",
+      "provider": "IBM",
+      "year":     2024,
+      "certs": [
+        { "label": "EDX",    "url": "https://courses.edx.org/certificates/50f817122315488eb67a31d66578d39e" },
+        { "label": "Credly", "url": "https://www.credly.com/badges/9eefe427-28ca-4e38-8ea4-59a4ea5ca920" }
+      ]
+    },
+    {
+      "name":     "Python Basics for Data Science",
+      "provider": "IBM",
+      "year":     2024,
+      "certs": [
+        { "label": "EDX",    "url": "https://courses.edx.org/certificates/5af8188b26614f8699f5b403c6e22868" },
+        { "label": "Credly", "url": "https://www.credly.com/badges/19eca317-5eb6-405d-a424-c78e8c9cf45c" }
+      ]
+    },
+    {
+      "name":     "Introduction to Web Development with HTML5, CSS3, and JavaScript",
+      "provider": "IBM",
+      "year":     2024,
+      "certs": [
+        { "label": "EDX",    "url": "https://courses.edx.org/certificates/5e3e4bd4798d4900a41f3ec4d3f8f423" },
+        { "label": "Credly", "url": "https://www.credly.com/badges/2edb6f45-8f48-4250-a559-0e8281b33674" }
+      ]
+    },
+    {
+      "name":     "CS50's Web Programming with Python and JavaScript",
+      "provider": "HarvardX",
+      "year":     2024,
+      "certs": [
+        { "label": "EDX",  "url": "https://courses.edx.org/certificates/82ba3be9559e4b9e83fb599001221b64" },
+        { "label": "CS50", "url": "https://certificates.cs50.io/dc96a3d3-00c1-4cc2-99e8-3ab53d0576b9.png?size=letter" }
+      ]
+    },
+    {
+      "name":     "Git and GitHub Basics",
+      "provider": "IBM",
+      "year":     2024,
+      "certs": [
+        { "label": "EDX",    "url": "https://courses.edx.org/certificates/08078eaed98d4d82bbbc4acbd722509b" },
+        { "label": "Credly", "url": "https://www.credly.com/badges/8be6f154-3d91-4fbe-8897-7cfaf2b0e2a8" }
+      ]
+    },
+    {
+      "name":     "Developing Front End Apps with React",
+      "provider": "IBM",
+      "year":     2025,
+      "certs": [
+        { "label": "EDX",    "url": "https://courses.edx.org/certificates/def215badd614c44a50be1957c69c568" },
+        { "label": "Credly", "url": "https://www.credly.com/badges/64cf8bdf-152c-4bd7-87e8-d41e7cdf6bd2" }
+      ]
+    },
+    {
+      "name":     "Back-end Application Development with Node.js and Express",
+      "provider": "IBM",
+      "year":     2025,
+      "certs": [
+        { "label": "EDX",    "url": "https://courses.edx.org/certificates/80adb6f52a154a3ba0da8857fa285511" },
+        { "label": "Credly", "url": "https://www.credly.com/badges/38eb93b7-f17b-41f5-b17f-ce7c60829a0e" }
+      ]
+    },
+    {
+      "name":     "Introducción a la programación en Java: empezando a programar",
+      "provider": "UC3Mx",
+      "year":     2025,
+      "certs": [
+        { "label": "EDX", "url": "https://courses.edx.org/certificates/340ae7e5ce85402cb47db523a33c415c" }
+      ]
+    },
+    {
+      "name":     "Introducción a la programación en Java: escribiendo buen código",
+      "provider": "UC3Mx",
+      "year":     2025,
+      "certs": [
+        { "label": "EDX", "url": "https://courses.edx.org/certificates/5912184bfbf64516906f10083f4039b7" }
+      ]
+    },
+    {
+      "name":     "Introducción a la programación en Java: estructuras de datos y algoritmos",
+      "provider": "UC3Mx",
+      "year":     2025,
+      "certs": [
+        { "label": "EDX", "url": "https://courses.edx.org/certificates/b68925c7ef2f4d3895d2e4f0fd751cf0" }
+      ]
+    },
+    {
+      "name":     "CS50's Introduction to Artificial Intelligence with Python",
+      "provider": "HarvardX",
+      "year":     2026,
+      "certs": [
+        { "label": "EDX",  "url": "https://courses.edx.org/certificates/961b6de4df75427582ffd7198e57afbe" },
+        { "label": "CS50", "url": "https://certificates.cs50.io/05e72972-1f08-43f1-a660-e2a8e61b503e.pdf?size=letter" }
+      ]
+    },
+    {
+      "name":     "Python for AI & Development Project",
+      "provider": "IBM",
+      "year":     2026,
+      "certs": [
+        { "label": "EDX",    "url": "https://courses.edx.org/certificates/110d9e3298dd496d880e561bf4276851" },
+        { "label": "Credly", "url": "https://www.credly.com/badges/6b2e84cf-445a-494b-accb-a113aa0bc769" }
+      ]
+    },
+    {
+      "name":     "Django Application Development with SQL and Databases",
+      "provider": "IBM",
+      "year":     2026,
+      "certs": [
+        { "label": "EDX",    "url": "https://courses.edx.org/certificates/7014250a34dd478e860226a9280ff795" },
+        { "label": "Credly", "url": "https://www.credly.com/badges/d18213da-2ce5-4e2f-af09-281682dc75a2" }
+      ]
+    }
+  ]
+}

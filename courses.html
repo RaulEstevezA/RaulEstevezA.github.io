@@ -3,116 +3,133 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Courses & Education | Raúl Estévez</title>
-
-  <meta name="description"
-        content="Formal education, core academic programs, professional training and languages of Raúl Estévez, focused on software development and computer science." />
-
+  <title>Courses &amp; Education | Raúl Estévez</title>
+  <meta name="description" content="Formal education, core academic programs, professional training and languages of Raúl Estévez, focused on software development and computer science." />
   <link rel="stylesheet" href="/css/styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Raúl Estévez",
+    "url": "https://raulesteveza.github.io",
+    "alumniOf": [
+      { "@type": "EducationalOrganization", "name": "Jesuites Educiacio - UOC",
+        "description": "Higher Technician in Multiplatform Application Development (DAM), GPA 9.3/10, 2024–2026" },
+      { "@type": "EducationalOrganization", "name": "HarvardX",
+        "description": "CS50x, CS50P, CS50W, CS50AI, Computer Science for Python Programming, Computer Science for Web Programming, Learning Python for Data Science" },
+      { "@type": "EducationalOrganization", "name": "IBM" },
+      { "@type": "EducationalOrganization", "name": "UC3Mx",
+        "description": "Introduction to Java Programming (professional program)" }
+    ],
+    "hasCredential": [
+      { "@type": "EducationalOccupationalCredential", "name": "Computer Science for Artificial Intelligence", "credentialCategory": "Professional Certificate", "recognizedBy": { "@type": "Organization", "name": "HarvardX" } },
+      { "@type": "EducationalOccupationalCredential", "name": "Computer Science for Web Programming",      "credentialCategory": "Professional Certificate", "recognizedBy": { "@type": "Organization", "name": "HarvardX" } },
+      { "@type": "EducationalOccupationalCredential", "name": "Learning Python for Data Science",         "credentialCategory": "Professional Certificate", "recognizedBy": { "@type": "Organization", "name": "HarvardX" } },
+      { "@type": "EducationalOccupationalCredential", "name": "Computer Science for Python Programming",  "credentialCategory": "Professional Certificate", "recognizedBy": { "@type": "Organization", "name": "HarvardX" } },
+      { "@type": "EducationalOccupationalCredential", "name": "CS50's AP Computer Science Principles",   "credentialCategory": "Professional Certificate", "recognizedBy": { "@type": "Organization", "name": "HarvardX" } },
+      { "@type": "EducationalOccupationalCredential", "name": "Introducción a la programación en C",     "credentialCategory": "Professional Certificate", "recognizedBy": { "@type": "Organization", "name": "UAMx" } },
+      { "@type": "EducationalOccupationalCredential", "name": "Introducción a la programación en Java",  "credentialCategory": "Professional Certificate", "recognizedBy": { "@type": "Organization", "name": "UC3Mx" } }
+    ],
+    "knowsLanguage": [
+      { "@type": "Language", "name": "Spanish" },
+      { "@type": "Language", "name": "Catalan" },
+      { "@type": "Language", "name": "English", "description": "Intermediate B1.1" },
+      { "@type": "Language", "name": "Italian", "description": "Basic conversational" }
+    ]
+  }
+  </script>
 </head>
 
-<body>
+<body data-page="courses">
 
-  <!-- Header común -->
   <header class="container">
     <nav class="nav">
       <a href="/index.html" class="logo">Raúl Estévez</a>
       <div class="lang">
-        <a href="/courses.html" class="active">EN</a>
-        <a href="/es/courses.html">ES</a>
+        <a href="#" data-lang="en" class="active">EN</a>
+        <a href="#" data-lang="es">ES</a>
       </div>
     </nav>
   </header>
 
-  <!-- Contenido principal -->
   <main class="container hero">
     <div class="window">
+      <div class="window-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
       <div class="window-content">
 
-        <h1>Courses & Education</h1>
-
-        <p class="intro">
-          Overview of my formal education, core academic programs and complementary
-          training focused on software development and computer science.
+        <h1 data-i18n="courses.heading">Courses &amp; Education</h1>
+        <p class="intro" data-i18n="courses.intro">
+          Overview of my formal education, professional certificates and individual
+          courses focused on software development and computer science.
         </p>
 
-        <!-- Formación reglada -->
+        <!-- Formal Education -->
         <section>
-          <h2>Formal Education</h2>
+          <h2 data-i18n="courses.formal_heading">Formal Education</h2>
+          <div class="edu-card">
+            <p><strong data-i18n="courses.dam_title">Higher Technician in Multiplatform Application Development (DAM)</strong></p>
+            <p data-i18n="courses.dam_school">Jesuites Educiacio - UOC</p>
+            <p data-i18n="courses.dam_period">2024 – 2026</p>
+            <p><em data-i18n="courses.dam_gpa">GPA: 9.3 / 10</em></p>
+          </div>
+        </section>
 
-          <p>
-            <strong>Higher Technician in Multiplatform Application Development (DAM)</strong><br>
-            Jesuites Educiacio - UOC<br>
-            2024 – 2026<br>
-            <em>GPA: 9.3 / 10</em>
+        <!-- Professional Certificates -->
+        <section>
+          <h2 data-i18n="courses.prof_certs_heading">Professional Certificates</h2>
+          <p class="intro" data-i18n="courses.prof_certs_intro">
+            Program-level certificates awarded upon completing a full series of courses.
           </p>
+          <div class="cert-grid" id="certs-programs">
+            <!-- populated by certs.js -->
+          </div>
         </section>
 
-        <!-- Programas y cursos principales -->
+        <!-- Individual Course Certificates -->
         <section>
-          <h2>Core Programs & Courses</h2>
+          <h2 data-i18n="courses.all_certs_heading">Individual Course Certificates</h2>
+          <details class="certs-details">
+            <summary>
+              <span data-i18n="courses.all_certs_toggle">Show all individual course certificates</span>
+              <span class="cert-count">(<span id="certs-all-count">…</span>)</span>
+            </summary>
+            <ul class="cert-list" id="certs-all-list">
+              <!-- populated by certs.js -->
+            </ul>
+          </details>
+        </section>
 
+        <!-- Languages -->
+        <section>
+          <h2 data-i18n="courses.langs_heading">Languages</h2>
           <ul>
-            <li><strong>CS50’s Introduction to Computer Science</strong> – HarvardX</li>
-            <li><strong>CS50’s Introduction to Programming with Python</strong> – HarvardX</li>
-            <li><strong>CS50’s Web Programming with Python and JavaScript</strong> – HarvardX</li>
-            <li><strong>Computer Science for Python Programming</strong> – HarvardX</li>
-            <li><strong>Introduction to Java Programming</strong> – UC3Mx (program)</li>
-            <li><strong>CS50’s Introduction to Artificial Intelligence with Python</strong> – HarvardX</li>
+            <li data-i18n="courses.lang_es">Spanish — Native</li>
+            <li data-i18n="courses.lang_ca">Catalan — Native</li>
+            <li data-i18n="courses.lang_en">English — Intermediate (B1.1, UOC)</li>
+            <li data-i18n="courses.lang_it">Italian — Basic conversational (work experience)</li>
           </ul>
         </section>
 
-        <!-- Formación complementaria -->
-        <section>
-          <h2>Complementary Training</h2>
-
-          <ul>
-            <li>Python programming and data visualization</li>
-            <li>Data Science fundamentals with Python</li>
-            <li>Relational databases and SQL</li>
-            <li>C programming fundamentals</li>
-            <li>Web development fundamentals (HTML, CSS, JavaScript)</li>
-            <li>Version control with Git and GitHub</li>
-            <li>Introduction to cloud computing</li>
-            <li>Android development with Kotlin (academic coursework)</li>
-          </ul>
-        </section>
-
-        <!-- Certificaciones -->
-        <section>
-          <h2>Certifications</h2>
-
-          <p>
-            Several verified certificates from HarvardX, IBM and Spanish universities are available.
-            Certificates can be provided upon request.
-          </p>
-        </section>
-
-        <!-- Idiomas -->
-        <section>
-          <h2>Languages</h2>
-
-          <ul>
-            <li>Spanish — Native</li>
-            <li>Catalan — Native</li>
-            <li>English — Intermediate (B1.1, UOC)</li>
-            <li>Italian — Basic conversational (work experience)</li>
-          </ul>
-        </section>
-
-        <!-- Navegación secundaria -->
         <div class="actions">
-            <a href="/index.html" class="btn">Home</a>
-            <a href="/experience.html" class="btn primary">Experience</a>
-            <a href="/projects.html" class="btn">Projects</a>
-            <a href="https://github.com/RaulEstevezA" class="btn">GitHub</a>
-            <a href="https://www.linkedin.com/in/raulesteveza/" class="btn">LinkedIn</a>
+          <a href="/index.html"      class="btn"         data-i18n="common.btn_home">Home</a>
+          <a href="/experience.html" class="btn primary" data-i18n="common.btn_experience">Experience</a>
+          <a href="/projects.html"   class="btn"         data-i18n="common.btn_projects">Projects</a>
+          <a href="https://github.com/RaulEstevezA"          class="btn" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/raulesteveza/" class="btn" target="_blank" rel="noopener">LinkedIn</a>
         </div>
 
       </div>
     </div>
   </main>
 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/certs.js"></script>
 </body>
 </html>

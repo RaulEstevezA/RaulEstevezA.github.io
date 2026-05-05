@@ -1,0 +1,30 @@
+{
+  "_template_language": {
+    "_use": "To add a language: copy the 1 key below, rename it (lang_XX), fill in the value. Then add a <li data-i18n=\"courses.lang_XX\"> in the 'Languages' section of courses.html.",
+    "lang_XX": "Language — Level (certification if any)"
+  },
+
+  "page_title": "Courses & Education | Raúl Estévez",
+  "page_desc":  "Formal education, professional certificates and individual courses by Raúl Estévez, focused on software development and computer science.",
+
+  "heading": "Courses & Education",
+  "intro":   "Overview of my formal education, professional certificates and individual courses focused on software development and computer science.",
+
+  "formal_heading": "Formal Education",
+  "dam_title":      "Higher Technician in Multiplatform Application Development (DAM)",
+  "dam_school":     "Jesuites Educiacio - UOC",
+  "dam_period":     "2024 – 2026",
+  "dam_gpa":        "GPA: 9.3 / 10",
+
+  "prof_certs_heading": "Professional Certificates",
+  "prof_certs_intro":   "Program-level certificates awarded upon completing a full series of courses.",
+
+  "all_certs_heading": "Individual Course Certificates",
+  "all_certs_toggle":  "Show all individual course certificates",
+
+  "langs_heading": "Languages",
+  "lang_es":       "Spanish — Native",
+  "lang_ca":       "Catalan — Native",
+  "lang_en":       "English — Intermediate (B1.1, UOC)",
+  "lang_it":       "Italian — Basic conversational (work experience)"
+}

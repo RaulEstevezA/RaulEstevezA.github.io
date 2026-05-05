@@ -1,0 +1,17 @@
+{
+  "_template": {
+    "_use": "Add here any string shared across two or more pages. Then reference it in HTML as data-i18n=\"common.your_key\"",
+    "your_key": "Your translated string"
+  },
+
+  "btn_home":       "Home",
+  "btn_experience": "Experience",
+  "btn_projects":   "Projects",
+  "btn_courses":    "Courses",
+  "tech_label":     "Technologies:",
+  "period_label":   "Period:",
+  "view_github":    "View on GitHub",
+  "github":         "GitHub",
+  "repo1":          "Repo 1",
+  "repo2":          "Repo 2"
+}

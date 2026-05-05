@@ -1,0 +1,17 @@
+{
+  "_template": {
+    "_use": "Añade aquí cualquier cadena compartida entre dos o más páginas. Referenciarla en HTML como data-i18n=\"common.tu_clave\"",
+    "tu_clave": "Tu cadena traducida"
+  },
+
+  "btn_home":       "Inicio",
+  "btn_experience": "Experiencia",
+  "btn_projects":   "Proyectos",
+  "btn_courses":    "Formación",
+  "tech_label":     "Tecnologías:",
+  "period_label":   "Período:",
+  "view_github":    "Ver en GitHub",
+  "github":         "GitHub",
+  "repo1":          "Repo 1",
+  "repo2":          "Repo 2"
+}
