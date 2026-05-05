@@ -4,6 +4,7 @@
   "focus": ["Backend", "Desktop Applications", "Artificial Intelligence"],
   "location": "Spain",
   "website": "https://raulesteveza.github.io",
+  "email": "contact.raulesteveza@gmail.com",
   "github": "https://github.com/RaulEstevezA",
   "linkedin": "https://www.linkedin.com/in/raulesteveza/",
 
@@ -28,7 +29,7 @@
   "education": [
     {
       "degree":      "Higher Technician in Multiplatform Application Development (DAM)",
-      "institution": "Jesuites Educiacio - UOC",
+      "institution": "Jesuites Educacio - UOC",
       "period":      "2024 – 2026",
       "gpa":         "9.3 / 10"
     }
