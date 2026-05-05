@@ -45,7 +45,7 @@
     $('#certs-all-list').html(html);
   }
 
-  $.getJSON('/data/certificates.json').done(function (data) {
+  $.getJSON('data/certificates.json').done(function (data) {
     if (data.programs) renderPrograms(data.programs);
     if (data.courses)  renderCourses(data.courses);
   });
