@@ -1,15 +1,5 @@
 {
-  "_template_featured": {
-    "_use": "Para añadir un proyecto destacado: copia las 3 claves de abajo, reemplaza 'newproject' con un slug corto y rellena los valores. Luego añade un <article class='project-card'> en projects.html con las mismas claves data-i18n.",
-    "newproject_title": "Nombre del Proyecto — Tipo",
-    "newproject_desc":  "Descripción de lo que hace el proyecto y sus características principales.",
-    "newproject_tech":  "Tech1, Tech2, Tech3"
-  },
-
-  "_template_other": {
-    "_use": "Para añadir un proyecto secundario: copia la 1 clave de abajo, reemplaza 'newproject' con un slug y rellena el valor. Luego añade un <li> en la sección 'Otros proyectos' de projects.html.",
-    "newproject_desc": "Descripción breve del proyecto."
-  },
+  "_note": "Los datos de proyectos destacados y secundarios están en data/projects.json — edita ahí para añadir, eliminar o reordenar proyectos.",
 
   "page_title": "Proyectos | Raúl Estévez",
   "page_desc":  "Selección de proyectos académicos y personales de Raúl Estévez.",
@@ -19,32 +9,5 @@
   "featured_heading": "Proyectos Destacados",
   "other_heading":    "Otros Proyectos Académicos y Técnicos",
 
-  "duckyware_title":   "DuckyWare — Aplicación Web Backend",
-  "duckyware_desc":    "Plataforma e-commerce de hardware desarrollada con Python y Django. Implementa catálogo por categorías desde base de datos, carrito con lógica de stock y descuentos, pedidos, perfiles de usuario, búsqueda dinámica e integración de pagos con PayPal.",
-  "duckyware_tech":    "Python, Django, SQL, HTML, CSS, JavaScript",
-
-  "onlinestore_title": "OnlineStore — Aplicación de Escritorio (JavaFX)",
-  "onlinestore_desc":  "Aplicación de escritorio en Java y JavaFX para gestionar clientes, productos, stock y pedidos de una tienda online. Evoluciona desde diseño UML hasta interfaz gráfica, con arquitectura MVC, persistencia MySQL mediante JDBC y Hibernate/JPA, patrones DAO/Factory y pruebas JUnit.",
-  "onlinestore_tech":  "Java, JavaFX, ORM, DAO, MVC",
-
-  "cs50ai_title":      "CS50 IA — Proyecto de Inteligencia Artificial",
-  "cs50ai_desc":       "Repositorio estructurado de CS50 IA con 13 ejercicios en Python sobre búsqueda, lógica, incertidumbre, optimización, machine learning, redes neuronales y procesamiento del lenguaje natural.",
-  "cs50ai_tech":       "Python, IA, Machine Learning, TensorFlow, scikit-learn, NLTK, Pygame",
-
-  "other_toggle": "Ver todos los proyectos",
-
-  "eplant_desc":       "Ejercicio de tienda de plantas con React y Redux de un curso de IBM, con listado de productos, categorías de plantas, flujo de carrito y demo en GitHub Pages. Completado a partir de una base inicial proporcionada.",
-  "unity_desc":        "Proyectos académicos desarrollados con Unity, enfocados en experiencias de realidad aumentada y virtual.",
-  "android_desc":      "Aplicación móvil desarrollada como parte del trabajo académico usando Kotlin.",
-  "tetris_desc":       "Juego Tetris clásico implementado desde cero en Python usando Pygame.",
-  "flutter_desc":      "Ejercicios prácticos de Flutter y Dart de un curso avanzado de desarrollo móvil.",
-  "smartcity_desc":    "Panel de monitorización IoT desplegado en ThingsBoard Cloud, simulando datos de sensores de ciudad inteligente con Python.",
-  "devnet_desc":       "Técnicas de persistencia de datos y desarrollo de aplicaciones orientadas a ERP con C# y .NET.",
-  "bingo_desc":        "Simulador automático de bingo en C que genera cartones, extrae números aleatorios, marca aciertos y determina el ganador.",
-  "woodshop_desc":     "Sistema de gestión de clientes, productos, tiendas y simulación de ventas desarrollado en Java.",
-  "fleetcontrol_desc": "Aplicación de gestión de flotas desarrollada en C, con enfoque en el manejo estructurado de datos y programación a nivel de sistema.",
-  "cs50final_desc":    "Proyecto final para la asignatura CS50 Introducción a la Informática de Harvard.",
-  "djangoibm_desc":    "Aplicación web Django para la generación automatizada de exámenes tipo test, desarrollada como proyecto final del curso de IBM.",
-  "ibmai_desc":        "Proyecto de inteligencia artificial aplicada y aprendizaje automático desarrollado como parte del programa IBM AI Engineering.",
-  "expressbookreview_desc": "API REST con Node.js y Express para consultar libros y gestionar reseñas de usuarios, desarrollada sobre una base inicial de un curso de IBM."
+  "other_toggle": "Ver todos los proyectos"
 }

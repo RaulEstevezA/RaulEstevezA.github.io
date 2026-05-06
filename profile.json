@@ -36,7 +36,7 @@
   ],
 
   "courses": [
-    { "name": "Computer Science for Artificial Intelligence",                    "provider": "HarvardX", "type": "Professional Certificate", "year": 2026 },
+    { "name": "Computer Science for Artificial Intelligence",                  "provider": "HarvardX", "type": "Professional Certificate", "year": 2026 },
     { "name": "CS50's Introduction to Computer Science",                       "provider": "HarvardX" },
     { "name": "CS50's Introduction to Programming with Python",                "provider": "HarvardX" },
     { "name": "CS50's Web Programming with Python and JavaScript",             "provider": "HarvardX" },
@@ -90,11 +90,83 @@
       "featured":    false
     },
     {
+      "name":        "Tetris in Python",
+      "type":        "Game",
+      "description": "Classic Tetris game implemented from scratch in Python using Pygame.",
+      "stack":       ["Python", "Pygame"],
+      "repository":  "https://github.com/RaulEstevezA/tetrisInPython",
+      "featured":    false
+    },
+    {
+      "name":        "Flutter Exercises",
+      "type":        "Mobile Development",
+      "description": "Hands-on Flutter and Dart exercises from an advanced mobile development course.",
+      "stack":       ["Flutter", "Dart"],
+      "repository":  "https://github.com/RaulEstevezA/FlutterExercises",
+      "featured":    false
+    },
+    {
+      "name":        "Smart City — ThingsBoard IoT",
+      "type":        "IoT Dashboard",
+      "description": "IoT monitoring dashboard deployed on ThingsBoard Cloud, simulating smart city sensor data with Python.",
+      "stack":       ["Python", "ThingsBoard", "MQTT", "IoT"],
+      "repository":  "https://github.com/RaulEstevezA/smart-city-thingsboard",
+      "featured":    false
+    },
+    {
+      "name":        "UOC DevNet — .NET ERP",
+      "type":        "ERP Application",
+      "description": "Data persistence techniques and ERP-oriented application development using C# and .NET.",
+      "stack":       ["C#", ".NET", "SQL"],
+      "repository":  "https://github.com/RaulEstevezA/uoc_devnet",
+      "featured":    false
+    },
+    {
       "name":        "Bingo Simulator in C",
       "type":        "Console Application",
       "description": "Automatic bingo simulator in C that generates player cards, draws random numbers, marks matches and determines the winner.",
-      "stack":       ["C", "GCC", "Structured Programming"],
+      "stack":       ["C"],
       "repository":  "https://github.com/RaulEstevezA/bingo",
+      "featured":    false
+    },
+    {
+      "name":        "WoodShop Java",
+      "type":        "Management Application",
+      "description": "Management system for clients, products, stores and sales simulation built in Java.",
+      "stack":       ["Java"],
+      "repository":  "https://github.com/RaulEstevezA/WoodShop_Java",
+      "featured":    false
+    },
+    {
+      "name":        "Fleet Control",
+      "type":        "Console Application",
+      "description": "Fleet management application developed in C, focused on structured data handling and system-level programming.",
+      "stack":       ["C"],
+      "repository":  "https://github.com/RaulEstevezA/fleetControl",
+      "featured":    false
+    },
+    {
+      "name":        "CS50 Final Project",
+      "type":        "Academic Project",
+      "description": "Final project for Harvard's CS50 Introduction to Computer Science.",
+      "stack":       ["Python"],
+      "repository":  "https://github.com/RaulEstevezA/final_project_cs50",
+      "featured":    false
+    },
+    {
+      "name":        "Django Exam Generator",
+      "type":        "Web Application",
+      "description": "Django web application for generating automated multiple-choice exams, built as IBM course final project.",
+      "stack":       ["Python", "Django", "SQL"],
+      "repository":  "https://github.com/RaulEstevezA/final_project_Django_IBM",
+      "featured":    false
+    },
+    {
+      "name":        "AI & ML — IBM",
+      "type":        "Machine Learning Project",
+      "description": "Applied artificial intelligence and machine learning project developed as part of IBM's AI Engineering program.",
+      "stack":       ["Python", "Machine Learning", "scikit-learn", "TensorFlow"],
+      "repository":  "https://github.com/RaulEstevezA/final_project_python_AI_ibm",
       "featured":    false
     },
     {
