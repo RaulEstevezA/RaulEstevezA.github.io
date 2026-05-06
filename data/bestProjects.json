@@ -1,0 +1,160 @@
+{
+  "_note": "Featured projects shown as cards on projects.html. Order here = display order.",
+  "_fields": {
+    "thumb":              "Path to the card thumbnail image (img/...)",
+    "thumb_alt":          "Alt text for the thumbnail",
+    "title_en/es":        "Project title shown on the card and in the modal header",
+    "card_desc_en/es":    "Short description shown on the card (1-2 sentences)",
+    "card_tech":          "Comma-separated tech tags shown in the card footer",
+    "modal_desc_en/es":   "Full description shown in the modal (2-4 sentences)",
+    "modal_features_en/es": "Array of bullet points shown in the modal feature list",
+    "modal_tech":         "Comma-separated tech tags shown in the modal (can be more detailed than card_tech)",
+    "modal_images":       "Array of image paths for the modal carousel (first image shown on open)",
+    "github":             "GitHub repository URL for the card and modal buttons"
+  },
+  "_also_update": [
+    "llms.txt          → ## Featured Projects section",
+    "profile.json      → projects array (featured: true)",
+    "projects.html     → <script type='application/ld+json'> itemListElement"
+  ],
+
+  "projects": [
+    {
+      "thumb":     "img/cs50ai.png",
+      "thumb_alt": "CS50 AI project screenshot",
+
+      "title_en": "CS50 AI — Artificial Intelligence Project",
+      "title_es": "CS50 IA — Proyecto de Inteligencia Artificial",
+
+      "card_desc_en": "Structured CS50 AI repository with 13 completed Python exercises across search, logic, uncertainty, optimization, machine learning, neural networks, and natural language processing.",
+      "card_desc_es": "Repositorio estructurado de CS50 IA con 13 ejercicios en Python sobre búsqueda, lógica, incertidumbre, optimización, machine learning, redes neuronales y procesamiento del lenguaje natural.",
+
+      "card_tech": "Python, AI, Machine Learning, TensorFlow, scikit-learn, NLTK, Pygame",
+
+      "modal_desc_en": "Structured repository of CS50's Introduction to Artificial Intelligence with Python, organized as a course library with 13 completed exercises across 7 AI units. It covers graph search, adversarial search, propositional logic, probabilistic reasoning, constraint satisfaction, supervised learning, reinforcement learning, neural networks, and natural language processing.",
+      "modal_desc_es": "Repositorio estructurado de CS50's Introduction to Artificial Intelligence with Python, organizado como una biblioteca del curso con 13 ejercicios completados en 7 unidades de IA. Cubre búsqueda en grafos, búsqueda adversarial, lógica proposicional, razonamiento probabilístico, satisfacción de restricciones, aprendizaje supervisado, aprendizaje por refuerzo, redes neuronales y procesamiento del lenguaje natural.",
+
+      "modal_features_en": [
+        "Search: Degrees with BFS and Tic Tac Toe with Minimax",
+        "Knowledge: Knights with propositional logic and Minesweeper with inference",
+        "Uncertainty: PageRank via sampling/iteration and Heredity with joint probabilities",
+        "Optimization: Crossword as a CSP with AC-3, MRV, Degree, LCV, and backtracking",
+        "Learning: Shopping with k-NN and Nim with Q-learning through self-play",
+        "Neural Networks: Traffic with a TensorFlow/Keras CNN and approximately 98% test accuracy",
+        "Language: Parser with CFG/NLTK and Attention with BERT self-attention visualization"
+      ],
+      "modal_features_es": [
+        "Búsqueda: Degrees con BFS y Tic Tac Toe con Minimax",
+        "Conocimiento: Knights con lógica proposicional y Minesweeper con inferencia",
+        "Incertidumbre: PageRank por muestreo/iteración y Heredity con probabilidades conjuntas",
+        "Optimización: Crossword como CSP con AC-3, MRV, Degree, LCV y backtracking",
+        "Aprendizaje: Shopping con k-NN y Nim con Q-learning por self-play",
+        "Redes neuronales: Traffic con CNN en TensorFlow/Keras y precisión de test cercana al 98%",
+        "Lenguaje: Parser con CFG/NLTK y Attention con visualización de self-attention en BERT"
+      ],
+
+      "modal_tech":   "Python, Artificial Intelligence, Machine Learning, TensorFlow, scikit-learn, NLTK, Pygame",
+      "modal_images": [
+        "img/hardvard_ia/attention.png",
+        "img/hardvard_ia/tictactoe.png",
+        "img/hardvard_ia/crossword2.png",
+        "img/hardvard_ia/parser.png",
+        "img/hardvard_ia/minesweeper.png"
+      ],
+
+      "github": "https://github.com/RaulEstevezA/harvard_ai"
+    },
+    {
+      "thumb":     "img/duckyware.png",
+      "thumb_alt": "DuckyWare screenshot",
+
+      "title_en": "DuckyWare — Web Backend Application",
+      "title_es": "DuckyWare — Aplicación Web Backend",
+
+      "card_desc_en": "Hardware e-commerce platform built with Python and Django. It implements database-driven catalog categories, carts with stock and discount logic, order processing, user profiles, dynamic search, and PayPal payment integration.",
+      "card_desc_es": "Plataforma e-commerce de hardware desarrollada con Python y Django. Implementa catálogo por categorías desde base de datos, carrito con lógica de stock y descuentos, pedidos, perfiles de usuario, búsqueda dinámica e integración de pagos con PayPal.",
+
+      "card_tech": "Python, Django, SQL, HTML, CSS, JavaScript",
+
+      "modal_desc_en": "Complete hardware-focused e-commerce platform built as the CS50W capstone. Beyond a product listing site, it models a real store flow: database-driven catalog navigation, stock-aware carts, order creation, profile and shipping data, PayPal checkout, and JavaScript interactions for search, validation, and smoother updates.",
+      "modal_desc_es": "Plataforma e-commerce completa orientada a hardware, desarrollada como proyecto final de CS50W. Va más allá de un listado de productos: modela el flujo real de una tienda con catálogo desde base de datos, carrito sensible al stock, creación de pedidos, perfil y datos de envío, pago con PayPal e interacciones en JavaScript para búsqueda, validación y actualizaciones más fluidas.",
+
+      "modal_features_en": [
+        "Database-driven hierarchical categories and subcategories",
+        "Dynamic homepage with featured, best-selling, and last-unit products",
+        "Cart and order flow with stock and discount business logic",
+        "PayPal checkout integration",
+        "Live product search with image-backed results",
+        "User profiles with contact and shipping address management",
+        "Responsive interface built with Django templates, Bootstrap, and JavaScript"
+      ],
+      "modal_features_es": [
+        "Categorías y subcategorías jerárquicas cargadas desde base de datos",
+        "Página de inicio dinámica con productos destacados, más vendidos y últimas unidades",
+        "Flujo de carrito y pedidos con lógica de stock y descuentos",
+        "Integración de pago con PayPal",
+        "Búsqueda dinámica de productos con resultados apoyados en imágenes",
+        "Perfiles de usuario con gestión de contacto y dirección de envío",
+        "Interfaz responsive con plantillas Django, Bootstrap y JavaScript"
+      ],
+
+      "modal_tech":   "Python, Django, SQL, JavaScript, Bootstrap",
+      "modal_images": [
+        "img/duckstore/loginPanel.png",
+        "img/duckstore/payment.png",
+        "img/duckstore/menu.png",
+        "img/duckstore/cpuProducts.png",
+        "img/duckstore/productDetail1.png"
+      ],
+
+      "github": "https://github.com/RaulEstevezA/final_project_cs50w"
+    },
+    {
+      "thumb":     "img/onlinestore.png",
+      "thumb_alt": "OnlineStore screenshot",
+
+      "title_en": "OnlineStore — Desktop Application (JavaFX)",
+      "title_es": "OnlineStore — Aplicación de Escritorio (JavaFX)",
+
+      "card_desc_en": "Java and JavaFX desktop application for managing customers, products, stock, and orders in an online store. It evolves from UML design to a graphical interface, using MVC architecture, MySQL persistence through JDBC and Hibernate/JPA, DAO/Factory patterns, and JUnit tests.",
+      "card_desc_es": "Aplicación de escritorio en Java y JavaFX para gestionar clientes, productos, stock y pedidos de una tienda online. Evoluciona desde diseño UML hasta interfaz gráfica, con arquitectura MVC, persistencia MySQL mediante JDBC y Hibernate/JPA, patrones DAO/Factory y pruebas JUnit.",
+
+      "card_tech": "Java, JavaFX, ORM, DAO, MVC",
+
+      "modal_desc_en": "Java desktop application that simulates the back-office flow of an online store. Developed iteratively from UML design to a JavaFX interface, it separates presentation, controllers, business logic, and persistence with MVC while supporting customer, product, stock, and order operations.",
+      "modal_desc_es": "Aplicación de escritorio en Java que simula el flujo de gestión interna de una tienda online. Desarrollada de forma iterativa desde el diseño UML hasta una interfaz JavaFX, separa presentación, controladores, lógica de negocio y persistencia mediante MVC, dando soporte a clientes, productos, stock y pedidos.",
+
+      "modal_features_en": [
+        "Customer management with creation, consultation, and classification",
+        "Product and stock management backed by MySQL",
+        "Order creation, consultation, and cancellation workflows",
+        "DAO and Factory patterns with JDBC persistence",
+        "Hibernate/JPA ORM layer preserving the MVC structure",
+        "SQL scripts with sample data and stored procedures for safe stock updates",
+        "JavaFX forms, tables, navigation, and validations with console-mode fallback",
+        "JUnit tests across the Java implementation phases"
+      ],
+      "modal_features_es": [
+        "Gestión de clientes con creación, consulta y clasificación",
+        "Gestión de productos y stock respaldada por MySQL",
+        "Flujos de creación, consulta y cancelación de pedidos",
+        "Patrones DAO y Factory con persistencia JDBC",
+        "Capa ORM con Hibernate/JPA manteniendo la estructura MVC",
+        "Scripts SQL con datos de prueba y procedimientos almacenados para actualizar stock de forma segura",
+        "Formularios, tablas, navegación y validaciones en JavaFX con modo consola alternativo",
+        "Pruebas JUnit a lo largo de las fases de implementación Java"
+      ],
+
+      "modal_tech":   "Java, JavaFX, MySQL, Hibernate, JPA, JDBC, JUnit",
+      "modal_images": [
+        "img/onlineStore/menu_principal.png",
+        "img/onlineStore/anadir_articulo.png",
+        "img/onlineStore/gestion_pedidos.png",
+        "img/onlineStore/nuevo_pedido.png",
+        "img/onlineStore/gestion_clientes.png"
+      ],
+
+      "github": "https://github.com/RaulEstevezA/UOC_ojoaldato"
+    }
+  ]
+}

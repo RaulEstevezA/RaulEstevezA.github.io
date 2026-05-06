@@ -1,9 +1,17 @@
 {
-  "_template": {
-    "_use_program": "To add a professional program certificate: copy one object from 'programs', fill in name/provider/year/certs. Each cert needs a label (shown on the badge) and a url.",
-    "_use_course":  "To add an individual course: copy one object from 'courses', fill in name/provider/year/certs. Multiple cert objects = multiple badges shown.",
-    "_example_cert": { "label": "EDX", "url": "https://courses.edx.org/certificates/..." }
+  "_note": "Certificate data for courses.html. 'programs' = professional program cards (top grid). 'courses' = individual course list (collapsible). Both sections are rendered automatically — the count updates on its own.",
+  "_fields": {
+    "name":     "Certificate or course name",
+    "provider": "Issuing organization (HarvardX, IBM, UC3Mx, UAMx, UPValenciaX…)",
+    "year":     "Year of completion (integer)",
+    "certs":    "Array of badge objects. Each needs 'label' (EDX | CS50 | Credly) and 'url' (direct certificate link)"
   },
+  "_also_update": [
+    "llms.txt          → ## Education / ## Professional Program Certificates section",
+    "profile.json      → courses array",
+    "courses.html      → <script type='application/ld+json'> hasCredential / alumniOf"
+  ],
+  "_example_cert": { "label": "EDX", "url": "https://courses.edx.org/certificates/..." },
 
   "programs": [
     {

@@ -1,0 +1,129 @@
+{
+  "_note": "Secondary projects shown in the collapsible list on projects.html. Order here = display order. Featured projects are in data/bestProjects.json.",
+  "_fields": {
+    "name":        "Project name shown in bold",
+    "desc_en/es":  "Short description (1-2 sentences)",
+    "links":       "Array of link objects. Each needs 'type' (github | demo | repo1 | repo2) and 'url'"
+  },
+  "_also_update": [
+    "llms.txt     → ## Other Projects section",
+    "profile.json → projects array (featured: false)"
+  ],
+
+  "other": [
+    {
+      "name": "Unity AR / VR",
+      "desc_en": "Academic projects developed with Unity, focused on augmented and virtual reality experiences.",
+      "desc_es": "Proyectos académicos desarrollados con Unity, enfocados en experiencias de realidad aumentada y virtual.",
+      "links": [
+        { "type": "repo1", "url": "https://github.com/RaulEstevezA/tioar" },
+        { "type": "repo2", "url": "https://github.com/RaulEstevezA/UOC_Gamers" }
+      ]
+    },
+    {
+      "name": "Android Application (Kotlin)",
+      "desc_en": "Mobile application developed as part of academic coursework using Kotlin.",
+      "desc_es": "Aplicación móvil desarrollada como parte del trabajo académico usando Kotlin.",
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/FP_JE_UOC" }
+      ]
+    },
+    {
+      "name": "Tetris in Python",
+      "desc_en": "Classic Tetris game implemented from scratch in Python using Pygame.",
+      "desc_es": "Juego Tetris clásico implementado desde cero en Python usando Pygame.",
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/tetrisInPython" }
+      ]
+    },
+    {
+      "name": "Flutter Exercises",
+      "desc_en": "Hands-on Flutter and Dart exercises from an advanced mobile development course.",
+      "desc_es": "Ejercicios prácticos de Flutter y Dart de un curso avanzado de desarrollo móvil.",
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/FlutterExercises" }
+      ]
+    },
+    {
+      "name": "Smart City — ThingsBoard IoT",
+      "desc_en": "IoT monitoring dashboard deployed on ThingsBoard Cloud, simulating smart city sensor data with Python.",
+      "desc_es": "Panel de monitorización IoT desplegado en ThingsBoard Cloud, simulando datos de sensores de ciudad inteligente con Python.",
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/smart-city-thingsboard" }
+      ]
+    },
+    {
+      "name": "UOC DevNet — .NET ERP",
+      "desc_en": "Data persistence techniques and ERP-oriented application development using C# and .NET.",
+      "desc_es": "Técnicas de persistencia de datos y desarrollo de aplicaciones orientadas a ERP con C# y .NET.",
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/uoc_devnet" }
+      ]
+    },
+    {
+      "name": "Bingo Simulator in C",
+      "desc_en": "Automatic bingo simulator in C that generates player cards, draws random numbers, marks matches and determines the winner.",
+      "desc_es": "Simulador automático de bingo en C que genera cartones, extrae números aleatorios, marca aciertos y determina el ganador.",
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/bingo" }
+      ]
+    },
+    {
+      "name": "WoodShop Java",
+      "desc_en": "Management system for clients, products, stores and sales simulation built in Java.",
+      "desc_es": "Sistema de gestión de clientes, productos, tiendas y simulación de ventas desarrollado en Java.",
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/WoodShop_Java" }
+      ]
+    },
+    {
+      "name": "Fleet Control",
+      "desc_en": "Fleet management application developed in C, focused on structured data handling and system-level programming.",
+      "desc_es": "Aplicación de gestión de flotas desarrollada en C, con enfoque en el manejo estructurado de datos y programación a nivel de sistema.",
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/fleetControl" }
+      ]
+    },
+    {
+      "name": "CS50 Final Project",
+      "desc_en": "Final project for Harvard's CS50 Introduction to Computer Science.",
+      "desc_es": "Proyecto final para la asignatura CS50 Introducción a la Informática de Harvard.",
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/final_project_cs50" }
+      ]
+    },
+    {
+      "name": "Django Exam Generator (IBM)",
+      "desc_en": "Django web application for generating automated multiple-choice exams, built as IBM course final project.",
+      "desc_es": "Aplicación web Django para la generación automatizada de exámenes tipo test, desarrollada como proyecto final del curso de IBM.",
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/final_project_Django_IBM" }
+      ]
+    },
+    {
+      "name": "AI & ML — IBM",
+      "desc_en": "Applied artificial intelligence and machine learning project developed as part of IBM's AI Engineering program.",
+      "desc_es": "Proyecto de inteligencia artificial aplicada y aprendizaje automático desarrollado como parte del programa IBM AI Engineering.",
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/final_project_python_AI_ibm" }
+      ]
+    },
+    {
+      "name": "E-Plant — IBM React course",
+      "desc_en": "React and Redux plant store exercise from an IBM course, with product listings, plant categories, cart flow, and a GitHub Pages demo. Completed from a provided starter base.",
+      "desc_es": "Ejercicio de tienda de plantas con React y Redux de un curso de IBM, con listado de productos, categorías de plantas, flujo de carrito y demo en GitHub Pages. Completado a partir de una base inicial proporcionada.",
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/e-plantShopping" },
+        { "type": "demo",   "url": "https://raulpracticareact.github.io/plantShopping/" }
+      ]
+    },
+    {
+      "name": "Express Book Review — IBM",
+      "desc_en": "Node.js and Express REST API for browsing books and managing user reviews, built from an IBM course starter base.",
+      "desc_es": "API REST con Node.js y Express para consultar libros y gestionar reseñas de usuarios, desarrollada sobre una base inicial de un curso de IBM.",
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/expressBookReviews" }
+      ]
+    }
+  ]
+}

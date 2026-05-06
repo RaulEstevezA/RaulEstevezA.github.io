@@ -61,12 +61,21 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
 
 ## Other Projects
 
-- **Unity AR / VR** — Augmented and virtual reality academic projects.
+- **Unity AR / VR** — Augmented and virtual reality academic projects (Unity, C#).
   https://github.com/RaulEstevezA/tioar · https://github.com/RaulEstevezA/UOC_Gamers
-- **Android App (Kotlin)** — Mobile application academic coursework. https://github.com/RaulEstevezA/FP_JE_UOC
-- **Bingo Simulator in C** — Automatic bingo simulator with random draws, card marking and winner detection. https://github.com/RaulEstevezA/bingo
+- **Android App (Kotlin)** — Mobile application academic coursework (Kotlin, Android SDK). https://github.com/RaulEstevezA/FP_JE_UOC
+- **Tetris in Python** — Classic Tetris game implemented from scratch using Pygame (Python, Pygame). https://github.com/RaulEstevezA/tetrisInPython
+- **Flutter Exercises** — Hands-on exercises from an advanced mobile development course (Flutter, Dart). https://github.com/RaulEstevezA/FlutterExercises
+- **Smart City — ThingsBoard IoT** — IoT monitoring dashboard on ThingsBoard Cloud simulating smart city sensor data (Python, MQTT, IoT). https://github.com/RaulEstevezA/smart-city-thingsboard
+- **UOC DevNet — .NET ERP** — Data persistence and ERP-oriented application development (C#, .NET, SQL). https://github.com/RaulEstevezA/uoc_devnet
+- **Bingo Simulator in C** — Automatic bingo simulator with random draws, card marking and winner detection (C). https://github.com/RaulEstevezA/bingo
+- **WoodShop Java** — Management system for clients, products, stores and sales simulation (Java). https://github.com/RaulEstevezA/WoodShop_Java
+- **Fleet Control** — Fleet management application focused on structured data handling and system-level programming (C). https://github.com/RaulEstevezA/fleetControl
+- **CS50 Final Project** — Final project for Harvard's CS50 Introduction to Computer Science. https://github.com/RaulEstevezA/final_project_cs50
+- **Django Exam Generator (IBM)** — Django web app for generating automated multiple-choice exams, built as IBM course final project (Python, Django, SQL). https://github.com/RaulEstevezA/final_project_Django_IBM
+- **AI & ML — IBM** — Applied AI and machine learning project from IBM's AI Engineering program (Python, Machine Learning, scikit-learn, TensorFlow). https://github.com/RaulEstevezA/final_project_python_AI_ibm
 - **E-Plant — IBM React course** — React/Redux plant store exercise from IBM's Developing Front-End Applications with React course, with product listings, plant categories, cart flow and a GitHub Pages demo. Completed from a provided starter base. Repository: https://github.com/RaulEstevezA/e-plantShopping Demo: https://raulpracticareact.github.io/plantShopping/
-- **Express Book Review — IBM** — Node.js/Express REST API for book lookup and review management, built from an IBM course starter base. https://github.com/RaulEstevezA/expressBookReviews
+- **Express Book Review — IBM** — Node.js/Express REST API for book lookup and review management, built from an IBM course starter base (Node.js, Express, JWT). https://github.com/RaulEstevezA/expressBookReviews
 
 ## Technical Skills
 
