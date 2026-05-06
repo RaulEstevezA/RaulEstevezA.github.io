@@ -61,11 +61,11 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
 
 ## Other Projects
 
-- **E-Plant** — Frontend React/Redux application. https://github.com/RaulEstevezA/e-plantShopping
 - **Unity AR / VR** — Augmented and virtual reality academic projects.
   https://github.com/RaulEstevezA/tioar · https://github.com/RaulEstevezA/UOC_Gamers
 - **Android App (Kotlin)** — Mobile application academic coursework. https://github.com/RaulEstevezA/FP_JE_UOC
 - **Bingo Simulator in C** — Automatic bingo simulator with random draws, card marking and winner detection. https://github.com/RaulEstevezA/bingo
+- **E-Plant — IBM React course** — React/Redux plant store exercise from IBM's Developing Front-End Applications with React course, with product listings, plant categories, cart flow and a GitHub Pages demo. Completed from a provided starter base. Repository: https://github.com/RaulEstevezA/e-plantShopping Demo: https://raulpracticareact.github.io/plantShopping/
 - **Express Book Review — IBM** — Node.js/Express REST API for book lookup and review management, built from an IBM course starter base. https://github.com/RaulEstevezA/expressBookReviews
 
 ## Technical Skills
