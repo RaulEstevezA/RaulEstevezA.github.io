@@ -41,29 +41,29 @@
       {
         "@type": "SoftwareApplication",
         "position": 1,
-        "name": "DuckyWare",
-        "description": "Full-featured e-commerce web application with user authentication, product management, order processing and payment integration.",
-        "applicationCategory": "WebApplication",
-        "programmingLanguage": ["Python", "Django", "SQL", "JavaScript"],
-        "codeRepository": "https://github.com/RaulEstevezA/final_project_cs50w"
+        "name": "CS50 AI",
+        "description": "Structured repository of 13 CS50 AI exercises across search, logic, uncertainty, optimization, machine learning, neural networks and natural language processing.",
+        "applicationCategory": "EducationalApplication",
+        "programmingLanguage": ["Python", "Artificial Intelligence", "Machine Learning", "TensorFlow", "scikit-learn", "NLTK", "Pygame"],
+        "codeRepository": "https://github.com/RaulEstevezA/harvard_ai"
       },
       {
         "@type": "SoftwareApplication",
         "position": 2,
-        "name": "OnlineStore",
-        "description": "Desktop application in Java using JavaFX with MVC architecture, DAO and ORM patterns for data persistence.",
-        "applicationCategory": "DesktopApplication",
-        "programmingLanguage": ["Java", "JavaFX"],
-        "codeRepository": "https://github.com/RaulEstevezA/UOC_ojoaldato"
+        "name": "DuckyWare",
+        "description": "Hardware e-commerce platform with database-driven categories, stock-aware carts, discount logic, order processing, user profiles, dynamic search and PayPal payment integration.",
+        "applicationCategory": "WebApplication",
+        "programmingLanguage": ["Python", "Django", "SQL", "HTML", "CSS", "JavaScript"],
+        "codeRepository": "https://github.com/RaulEstevezA/final_project_cs50w"
       },
       {
         "@type": "SoftwareApplication",
         "position": 3,
-        "name": "CS50 AI",
-        "description": "Final project for CS50's Introduction to Artificial Intelligence with Python by HarvardX.",
-        "applicationCategory": "Application",
-        "programmingLanguage": ["Python"],
-        "codeRepository": "https://github.com/RaulEstevezA/harvard_ia"
+        "name": "OnlineStore",
+        "description": "JavaFX desktop store-management application with customer, product, stock and order workflows, MVC architecture, MySQL persistence through JDBC and Hibernate/JPA, DAO/Factory patterns and JUnit tests.",
+        "applicationCategory": "DesktopApplication",
+        "programmingLanguage": ["Java", "JavaFX", "MySQL", "Hibernate", "JPA", "JDBC", "JUnit"],
+        "codeRepository": "https://github.com/RaulEstevezA/UOC_ojoaldato"
       }
     ]
   }
@@ -103,12 +103,38 @@
 
           <article class="project-card">
             <div class="project-thumb-wrap"
+                 data-title="CS50 AI — Artificial Intelligence Project"
+                 data-title-es="CS50 IA — Proyecto de Inteligencia Artificial"
+                 data-desc="Structured repository of CS50's Introduction to Artificial Intelligence with Python, organized as a course library with 13 completed exercises across 7 AI units. It covers graph search, adversarial search, propositional logic, probabilistic reasoning, constraint satisfaction, supervised learning, reinforcement learning, neural networks, and natural language processing."
+                 data-desc-es="Repositorio estructurado de CS50's Introduction to Artificial Intelligence with Python, organizado como una biblioteca del curso con 13 ejercicios completados en 7 unidades de IA. Cubre búsqueda en grafos, búsqueda adversarial, lógica proposicional, razonamiento probabilístico, satisfacción de restricciones, aprendizaje supervisado, aprendizaje por refuerzo, redes neuronales y procesamiento del lenguaje natural."
+                 data-features="Search: Degrees with BFS and Tic Tac Toe with Minimax|Knowledge: Knights with propositional logic and Minesweeper with inference|Uncertainty: PageRank via sampling/iteration and Heredity with joint probabilities|Optimization: Crossword as a CSP with AC-3, MRV, Degree, LCV, and backtracking|Learning: Shopping with k-NN and Nim with Q-learning through self-play|Neural Networks: Traffic with a TensorFlow/Keras CNN and approximately 98% test accuracy|Language: Parser with CFG/NLTK and Attention with BERT self-attention visualization"
+                 data-features-es="Búsqueda: Degrees con BFS y Tic Tac Toe con Minimax|Conocimiento: Knights con lógica proposicional y Minesweeper con inferencia|Incertidumbre: PageRank por muestreo/iteración y Heredity con probabilidades conjuntas|Optimización: Crossword como CSP con AC-3, MRV, Degree, LCV y backtracking|Aprendizaje: Shopping con k-NN y Nim con Q-learning por self-play|Redes neuronales: Traffic con CNN en TensorFlow/Keras y precisión de test cercana al 98%|Lenguaje: Parser con CFG/NLTK y Attention con visualización de self-attention en BERT"
+                 data-tech="Python, Artificial Intelligence, Machine Learning, TensorFlow, scikit-learn, NLTK, Pygame"
+                 data-github="https://github.com/RaulEstevezA/harvard_ai">
+              <img src="img/cs50ai.png" alt="CS50 AI project screenshot" class="project-thumb">
+            </div>
+            <div class="project-card-body">
+              <h3 data-i18n="projects.cs50ai_title">CS50 AI — Artificial Intelligence Project</h3>
+              <p data-i18n="projects.cs50ai_desc">
+                Structured repository of CS50 AI exercises across core artificial intelligence topics.
+              </p>
+            </div>
+            <div class="project-card-footer">
+              <p class="tech-tags" data-i18n="projects.cs50ai_tech">Python, AI, Machine Learning, TensorFlow, scikit-learn, NLTK, Pygame</p>
+              <a href="https://github.com/RaulEstevezA/harvard_ai"
+                 class="btn primary" target="_blank" rel="noopener"
+                 data-i18n="common.view_github">View on GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb-wrap"
                  data-title="DuckyWare — Web Backend Application"
                  data-title-es="DuckyWare — Aplicación Web Backend"
-                 data-desc="Full e-commerce platform built as CS50W capstone, specialising in computer hardware. Implements hierarchical categories, real-time discount calculations, PayPal payments, and dynamic product search."
-                 data-desc-es="Plataforma e-commerce completa como proyecto final de CS50W, especializada en hardware. Incluye categorías jerárquicas, descuentos en tiempo real, pagos con PayPal y búsqueda dinámica de productos."
-                 data-features="Hierarchical category and subcategory system|Shopping cart with real-time discounts|PayPal payment integration|Dynamic product search with image results|User profiles with address management|Mobile responsive design"
-                 data-features-es="Sistema de categorías y subcategorías jerárquico|Carrito con descuentos en tiempo real|Integración de pagos con PayPal|Búsqueda dinámica con resultados de imagen|Perfiles de usuario con gestión de direcciones|Diseño responsive para móvil"
+                 data-desc="Complete hardware-focused e-commerce platform built as the CS50W capstone. Beyond a product listing site, it models a real store flow: database-driven catalog navigation, stock-aware carts, order creation, profile and shipping data, PayPal checkout, and JavaScript interactions for search, validation, and smoother updates."
+                 data-desc-es="Plataforma e-commerce completa orientada a hardware, desarrollada como proyecto final de CS50W. Va más allá de un listado de productos: modela el flujo real de una tienda con catálogo desde base de datos, carrito sensible al stock, creación de pedidos, perfil y datos de envío, pago con PayPal e interacciones en JavaScript para búsqueda, validación y actualizaciones más fluidas."
+                 data-features="Database-driven hierarchical categories and subcategories|Dynamic homepage with featured, best-selling, and last-unit products|Cart and order flow with stock and discount business logic|PayPal checkout integration|Live product search with image-backed results|User profiles with contact and shipping address management|Responsive interface built with Django templates, Bootstrap, and JavaScript"
+                 data-features-es="Categorías y subcategorías jerárquicas cargadas desde base de datos|Página de inicio dinámica con productos destacados, más vendidos y últimas unidades|Flujo de carrito y pedidos con lógica de stock y descuentos|Integración de pago con PayPal|Búsqueda dinámica de productos con resultados apoyados en imágenes|Perfiles de usuario con gestión de contacto y dirección de envío|Interfaz responsive con plantillas Django, Bootstrap y JavaScript"
                  data-tech="Python, Django, SQL, JavaScript, Bootstrap"
                  data-github="https://github.com/RaulEstevezA/final_project_cs50w">
               <img src="img/duckyware.png" alt="DuckyWare screenshot" class="project-thumb" onerror="this.parentElement.style.display='none'">
@@ -131,10 +157,10 @@
             <div class="project-thumb-wrap"
                  data-title="OnlineStore — Desktop Application (JavaFX)"
                  data-title-es="OnlineStore — Aplicación de Escritorio (JavaFX)"
-                 data-desc="Desktop application in Java simulating an online store with customer, product and order management. Built across iterative phases from UML design to JavaFX interface, following MVC throughout."
-                 data-desc-es="Aplicación de escritorio en Java que simula una tienda online con gestión de clientes, productos y pedidos. Desarrollada en fases iterativas desde diseño UML hasta interfaz JavaFX con arquitectura MVC."
-                 data-features="MVC architecture with DAO and Factory patterns|Hibernate/JPA ORM and JDBC persistence|MySQL database with stored procedures|JavaFX GUI with console-mode fallback|JUnit test suite"
-                 data-features-es="Arquitectura MVC con patrones DAO y Factory|ORM Hibernate/JPA y persistencia JDBC|Base de datos MySQL con procedimientos almacenados|Interfaz JavaFX con modo consola alternativo|Batería de tests con JUnit"
+                 data-desc="Java desktop application that simulates the back-office flow of an online store. Developed iteratively from UML design to a JavaFX interface, it separates presentation, controllers, business logic, and persistence with MVC while supporting customer, product, stock, and order operations."
+                 data-desc-es="Aplicación de escritorio en Java que simula el flujo de gestión interna de una tienda online. Desarrollada de forma iterativa desde el diseño UML hasta una interfaz JavaFX, separa presentación, controladores, lógica de negocio y persistencia mediante MVC, dando soporte a clientes, productos, stock y pedidos."
+                 data-features="Customer management with creation, consultation, and classification|Product and stock management backed by MySQL|Order creation, consultation, and cancellation workflows|DAO and Factory patterns with JDBC persistence|Hibernate/JPA ORM layer preserving the MVC structure|SQL scripts with sample data and stored procedures for safe stock updates|JavaFX forms, tables, navigation, and validations with console-mode fallback|JUnit tests across the Java implementation phases"
+                 data-features-es="Gestión de clientes con creación, consulta y clasificación|Gestión de productos y stock respaldada por MySQL|Flujos de creación, consulta y cancelación de pedidos|Patrones DAO y Factory con persistencia JDBC|Capa ORM con Hibernate/JPA manteniendo la estructura MVC|Scripts SQL con datos de prueba y procedimientos almacenados para actualizar stock de forma segura|Formularios, tablas, navegación y validaciones en JavaFX con modo consola alternativo|Pruebas JUnit a lo largo de las fases de implementación Java"
                  data-tech="Java, JavaFX, MySQL, Hibernate, JPA, JDBC, JUnit"
                  data-github="https://github.com/RaulEstevezA/UOC_ojoaldato">
               <img src="img/onlinestore.png" alt="OnlineStore screenshot" class="project-thumb">
@@ -152,32 +178,6 @@
                  data-i18n="common.view_github">View on GitHub</a>
             </div>
           </article>
-
-          <article class="project-card">
-            <div class="project-thumb-wrap"
-                 data-title="CS50 AI — Artificial Intelligence Project"
-                 data-title-es="CS50 IA — Proyecto de Inteligencia Artificial"
-                 data-desc="Complete repository for Harvard's CS50 AI course covering 6 units of foundational AI with Python. Projects span search, logic, probability, optimization, machine learning, and neural networks."
-                 data-desc-es="Repositorio completo del curso CS50 IA de Harvard con 6 unidades de IA en Python. Los proyectos abarcan búsqueda, lógica, probabilidad, optimización, machine learning y redes neuronales."
-                 data-features="Minimax Tic Tac Toe and BFS actor search (Search)|Minesweeper solver via logic inference (Knowledge)|PageRank and genetic inheritance (Probability)|Crossword generator with CSP (Optimization)|Q-learning Nim and shopping predictor (ML)|CNN traffic sign classifier (Neural Networks)"
-                 data-features-es="Tres en raya Minimax y búsqueda BFS (Búsqueda)|IA Buscaminas por inferencia lógica (Conocimiento)|PageRank y herencia genética (Probabilidad)|Generador de crucigramas con CSP (Optimización)|Nim con Q-learning y predictor de compras (ML)|Clasificador CNN señales de tráfico (Redes Neuronales)"
-                 data-tech="Python, Pygame, scikit-learn, TensorFlow"
-                 data-github="https://github.com/RaulEstevezA/harvard_ia">
-              <img src="img/cs50ai.png" alt="CS50 AI project screenshot" class="project-thumb">
-            </div>
-            <div class="project-card-body">
-              <h3 data-i18n="projects.cs50ai_title">CS50 AI — Artificial Intelligence Project</h3>
-              <p data-i18n="projects.cs50ai_desc">
-                Final project for CS50's Introduction to Artificial Intelligence with Python by HarvardX.
-              </p>
-            </div>
-            <div class="project-card-footer">
-              <p class="tech-tags" data-i18n="projects.cs50ai_tech">Python, Artificial Intelligence</p>
-              <a href="https://github.com/RaulEstevezA/harvard_ia"
-                 class="btn primary" target="_blank" rel="noopener"
-                 data-i18n="common.view_github">View on GitHub</a>
-            </div>
-          </article>
         </section>
 
         <!-- Other -->
@@ -187,7 +187,7 @@
           <details class="certs-details">
             <summary>
               <span data-i18n="projects.other_toggle">Show all projects</span>
-              <span class="cert-count">(13)</span>
+              <span class="cert-count">(14)</span>
             </summary>
             <ul class="project-list">
               <li>
@@ -242,9 +242,9 @@
               </li>
 
               <li>
-                <strong>Kotlin Kaos</strong> —
-                <span data-i18n="projects.kotlinkaos_desc">Native Android mobile application developed with Kotlin as part of UOC coursework.</span>
-                <a href="https://github.com/RaulEstevezA/Kotlin_Kaos_UOC"
+                <strong>Bingo Simulator in C</strong> —
+                <span data-i18n="projects.bingo_desc">Automatic bingo simulator in C that generates player cards, draws random numbers and determines the winner.</span>
+                <a href="https://github.com/RaulEstevezA/bingo"
                    target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
               </li>
 
@@ -280,6 +280,13 @@
                 <strong>AI &amp; ML — IBM</strong> —
                 <span data-i18n="projects.ibmai_desc">Applied artificial intelligence and machine learning project developed as part of IBM's AI Engineering program.</span>
                 <a href="https://github.com/RaulEstevezA/final_project_python_AI_ibm"
+                   target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
+              </li>
+
+              <li>
+                <strong>Express Book Review — IBM</strong> —
+                <span data-i18n="projects.expressbookreview_desc">Node.js and Express REST API for browsing books and managing user reviews, built from an IBM course starter base.</span>
+                <a href="https://github.com/RaulEstevezA/expressBookReviews"
                    target="_blank" rel="noopener" data-i18n="common.github">GitHub</a>
               </li>
             </ul>

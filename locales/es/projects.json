@@ -20,16 +20,16 @@
   "other_heading":    "Otros Proyectos Académicos y Técnicos",
 
   "duckyware_title":   "DuckyWare — Aplicación Web Backend",
-  "duckyware_desc":    "Aplicación web de comercio electrónico completa desarrollada con Python y Django. El proyecto incluye autenticación y roles de usuario, gestión de productos y stock, procesamiento de pedidos e integración de pagos. También dispone de una interfaz administrativa para la gestión de la tienda.",
+  "duckyware_desc":    "Plataforma e-commerce de hardware desarrollada con Python y Django. Implementa catálogo por categorías desde base de datos, carrito con lógica de stock y descuentos, pedidos, perfiles de usuario, búsqueda dinámica e integración de pagos con PayPal.",
   "duckyware_tech":    "Python, Django, SQL, HTML, CSS, JavaScript",
 
   "onlinestore_title": "OnlineStore — Aplicación de Escritorio (JavaFX)",
-  "onlinestore_desc":  "Aplicación de escritorio desarrollada en Java con JavaFX, diseñada siguiendo una arquitectura MVC limpia. El proyecto implementa los patrones DAO y ORM para la persistencia de datos y se enfoca en la mantenibilidad, escalabilidad y separación de responsabilidades.",
+  "onlinestore_desc":  "Aplicación de escritorio en Java y JavaFX para gestionar clientes, productos, stock y pedidos de una tienda online. Evoluciona desde diseño UML hasta interfaz gráfica, con arquitectura MVC, persistencia MySQL mediante JDBC y Hibernate/JPA, patrones DAO/Factory y pruebas JUnit.",
   "onlinestore_tech":  "Java, JavaFX, ORM, DAO, MVC",
 
   "cs50ai_title":      "CS50 IA — Proyecto de Inteligencia Artificial",
-  "cs50ai_desc":       "Proyecto final del curso CS50's Introduction to Artificial Intelligence with Python de HarvardX. Enfocado en técnicas de inteligencia artificial aplicada y resolución de problemas con enfoques modernos de IA.",
-  "cs50ai_tech":       "Python, Inteligencia Artificial",
+  "cs50ai_desc":       "Repositorio estructurado de CS50 IA con 13 ejercicios en Python sobre búsqueda, lógica, incertidumbre, optimización, machine learning, redes neuronales y procesamiento del lenguaje natural.",
+  "cs50ai_tech":       "Python, IA, Machine Learning, TensorFlow, scikit-learn, NLTK, Pygame",
 
   "other_toggle": "Ver todos los proyectos",
 
@@ -40,10 +40,11 @@
   "flutter_desc":      "Ejercicios prácticos de Flutter y Dart de un curso avanzado de desarrollo móvil.",
   "smartcity_desc":    "Panel de monitorización IoT desplegado en ThingsBoard Cloud, simulando datos de sensores de ciudad inteligente con Python.",
   "devnet_desc":       "Técnicas de persistencia de datos y desarrollo de aplicaciones orientadas a ERP con C# y .NET.",
-  "kotlinkaos_desc":   "Aplicación móvil Android nativa desarrollada con Kotlin como parte del trabajo académico de la UOC.",
+  "bingo_desc":        "Simulador automático de bingo en C que genera cartones, extrae números aleatorios, marca aciertos y determina el ganador.",
   "woodshop_desc":     "Sistema de gestión de clientes, productos, tiendas y simulación de ventas desarrollado en Java.",
   "fleetcontrol_desc": "Aplicación de gestión de flotas desarrollada en C, con enfoque en el manejo estructurado de datos y programación a nivel de sistema.",
   "cs50final_desc":    "Proyecto final para la asignatura CS50 Introducción a la Informática de Harvard.",
   "djangoibm_desc":    "Aplicación web Django para la generación automatizada de exámenes tipo test, desarrollada como proyecto final del curso de IBM.",
-  "ibmai_desc":        "Proyecto de inteligencia artificial aplicada y aprendizaje automático desarrollado como parte del programa IBM AI Engineering."
+  "ibmai_desc":        "Proyecto de inteligencia artificial aplicada y aprendizaje automático desarrollado como parte del programa IBM AI Engineering.",
+  "expressbookreview_desc": "API REST con Node.js y Express para consultar libros y gestionar reseñas de usuarios, desarrollada sobre una base inicial de un curso de IBM."
 }

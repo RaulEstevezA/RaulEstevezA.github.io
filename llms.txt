@@ -44,26 +44,29 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
 
 ## Featured Projects
 
-- **DuckyWare** — E-commerce backend web application.
+- **CS50 AI** — Structured repository of 13 CS50 AI exercises across 7 course units.
+  Stack: Python, Artificial Intelligence, Machine Learning, TensorFlow, scikit-learn, NLTK, Pygame.
+  Covers graph search, Minimax, propositional inference, probabilistic reasoning, CSP optimization, k-NN, Q-learning, CNN image classification and NLP/attention exercises.
+  Repository: https://github.com/RaulEstevezA/harvard_ai
+
+- **DuckyWare** — Hardware e-commerce backend web application.
   Stack: Python, Django, SQL, HTML, CSS, JavaScript.
-  Includes user authentication, product management, order processing and payment integration.
+  Includes database-driven categories, stock-aware carts, discount logic, order processing, user profiles, dynamic search and PayPal payment integration.
   Repository: https://github.com/RaulEstevezA/final_project_cs50w
 
-- **OnlineStore** — Desktop application with JavaFX and MVC architecture.
+- **OnlineStore** — Desktop store-management application with JavaFX and MVC architecture.
   Stack: Java, JavaFX, ORM, DAO, MVC.
-  Focused on data persistence, maintainability and separation of concerns.
+  Includes customer, product, stock and order workflows, MySQL persistence through JDBC and Hibernate/JPA, DAO/Factory patterns, SQL scripts and JUnit tests.
   Repository: https://github.com/RaulEstevezA/UOC_ojoaldato
-
-- **CS50 AI** — Final project for CS50's AI with Python (HarvardX).
-  Stack: Python, Artificial Intelligence.
-  Repository: https://github.com/RaulEstevezA/harvard_ia
 
 ## Other Projects
 
 - **E-Plant** — Frontend React/Redux application. https://github.com/RaulEstevezA/e-plantShopping
 - **Unity AR / VR** — Augmented and virtual reality academic projects.
-  https://github.com/RaulEstevezA/tioar · https://github.com/RaulEstevezA/UOC_programacion_juego_vr_ar
+  https://github.com/RaulEstevezA/tioar · https://github.com/RaulEstevezA/UOC_Gamers
 - **Android App (Kotlin)** — Mobile application academic coursework. https://github.com/RaulEstevezA/FP_JE_UOC
+- **Bingo Simulator in C** — Automatic bingo simulator with random draws, card marking and winner detection. https://github.com/RaulEstevezA/bingo
+- **Express Book Review — IBM** — Node.js/Express REST API for book lookup and review management, built from an IBM course starter base. https://github.com/RaulEstevezA/expressBookReviews
 
 ## Technical Skills
 

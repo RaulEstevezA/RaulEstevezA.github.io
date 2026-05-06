@@ -47,9 +47,17 @@
 
   "projects": [
     {
+      "name":        "CS50 AI",
+      "type":        "Artificial Intelligence Project",
+      "description": "Structured CS50 AI exercise repository with 13 Python implementations across search, logic, uncertainty, optimization, machine learning, neural networks and natural language processing.",
+      "stack":       ["Python", "Artificial Intelligence", "Machine Learning", "TensorFlow", "scikit-learn", "NLTK", "Pygame"],
+      "repository":  "https://github.com/RaulEstevezA/harvard_ai",
+      "featured":    true
+    },
+    {
       "name":        "DuckyWare",
       "type":        "Web Backend Application",
-      "description": "Full-featured e-commerce application with authentication, product management, order processing and payment integration.",
+      "description": "Hardware e-commerce platform with database-driven categories, stock-aware carts, discount logic, order processing, user profiles, dynamic search and PayPal payment integration.",
       "stack":       ["Python", "Django", "SQL", "HTML", "CSS", "JavaScript"],
       "repository":  "https://github.com/RaulEstevezA/final_project_cs50w",
       "featured":    true
@@ -57,17 +65,9 @@
     {
       "name":        "OnlineStore",
       "type":        "Desktop Application",
-      "description": "Desktop app built with JavaFX using MVC architecture, DAO and ORM patterns for data persistence.",
+      "description": "JavaFX desktop store-management app with customer, product, stock and order workflows, MVC architecture, MySQL persistence through JDBC and Hibernate/JPA, DAO/Factory patterns and JUnit tests.",
       "stack":       ["Java", "JavaFX", "ORM", "DAO", "MVC"],
       "repository":  "https://github.com/RaulEstevezA/UOC_ojoaldato",
-      "featured":    true
-    },
-    {
-      "name":        "CS50 AI",
-      "type":        "Artificial Intelligence Project",
-      "description": "Final project for CS50's Introduction to Artificial Intelligence with Python — HarvardX.",
-      "stack":       ["Python", "Artificial Intelligence"],
-      "repository":  "https://github.com/RaulEstevezA/harvard_ia",
       "featured":    true
     },
     {
@@ -85,7 +85,7 @@
       "stack":       ["Unity", "C#"],
       "repositories": [
         "https://github.com/RaulEstevezA/tioar",
-        "https://github.com/RaulEstevezA/UOC_programacion_juego_vr_ar"
+        "https://github.com/RaulEstevezA/UOC_Gamers"
       ],
       "featured": false
     },
@@ -95,6 +95,22 @@
       "description": "Mobile application developed as academic coursework using Kotlin.",
       "stack":       ["Kotlin", "Android SDK"],
       "repository":  "https://github.com/RaulEstevezA/FP_JE_UOC",
+      "featured":    false
+    },
+    {
+      "name":        "Bingo Simulator in C",
+      "type":        "Console Application",
+      "description": "Automatic bingo simulator in C that generates player cards, draws random numbers, marks matches and determines the winner.",
+      "stack":       ["C", "GCC", "Structured Programming"],
+      "repository":  "https://github.com/RaulEstevezA/bingo",
+      "featured":    false
+    },
+    {
+      "name":        "Express Book Review",
+      "type":        "REST API",
+      "description": "Node.js and Express REST API for browsing books and managing user reviews, built from an IBM course starter base.",
+      "stack":       ["Node.js", "Express.js", "Express-Session", "JWT", "Axios"],
+      "repository":  "https://github.com/RaulEstevezA/expressBookReviews",
       "featured":    false
     }
   ],
