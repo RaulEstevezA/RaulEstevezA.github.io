@@ -33,7 +33,7 @@
 
   "other_toggle": "Show all projects",
 
-  "eplant_desc":       "Frontend web application developed with React and Redux, showcasing state management and component-based architecture.",
+  "eplant_desc":       "React and Redux plant store exercise from an IBM course, with product listings, plant categories, cart flow, and a GitHub Pages demo. Completed from a provided starter base.",
   "unity_desc":        "Academic projects developed with Unity, focused on augmented and virtual reality experiences.",
   "android_desc":      "Mobile application developed as part of academic coursework using Kotlin.",
   "tetris_desc":       "Classic Tetris game implemented from scratch in Python using Pygame.",

@@ -33,7 +33,7 @@
 
   "other_toggle": "Ver todos los proyectos",
 
-  "eplant_desc":       "Aplicación web frontend desarrollada con React y Redux, mostrando gestión de estado y arquitectura basada en componentes.",
+  "eplant_desc":       "Ejercicio de tienda de plantas con React y Redux de un curso de IBM, con listado de productos, categorías de plantas, flujo de carrito y demo en GitHub Pages. Completado a partir de una base inicial proporcionada.",
   "unity_desc":        "Proyectos académicos desarrollados con Unity, enfocados en experiencias de realidad aumentada y virtual.",
   "android_desc":      "Aplicación móvil desarrollada como parte del trabajo académico usando Kotlin.",
   "tetris_desc":       "Juego Tetris clásico implementado desde cero en Python usando Pygame.",

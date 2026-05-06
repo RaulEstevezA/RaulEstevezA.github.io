@@ -71,14 +71,6 @@
       "featured":    true
     },
     {
-      "name":        "E-Plant",
-      "type":        "Frontend Web Application",
-      "description": "React and Redux application showcasing state management and component-based architecture.",
-      "stack":       ["React", "Redux", "JavaScript"],
-      "repository":  "https://github.com/RaulEstevezA/e-plantShopping",
-      "featured":    false
-    },
-    {
       "name":        "Unity AR / VR",
       "type":        "Augmented & Virtual Reality",
       "description": "Academic Unity projects focused on AR and VR experiences.",
@@ -111,6 +103,15 @@
       "description": "Node.js and Express REST API for browsing books and managing user reviews, built from an IBM course starter base.",
       "stack":       ["Node.js", "Express.js", "Express-Session", "JWT", "Axios"],
       "repository":  "https://github.com/RaulEstevezA/expressBookReviews",
+      "featured":    false
+    },
+    {
+      "name":        "E-Plant",
+      "type":        "IBM Course Exercise",
+      "description": "React and Redux plant store exercise from IBM's Developing Front-End Applications with React course, with product listings, plant categories, cart flow and a GitHub Pages demo. Completed from a provided starter base.",
+      "stack":       ["React", "Redux", "Vite", "JavaScript", "CSS", "GitHub Pages"],
+      "repository":  "https://github.com/RaulEstevezA/e-plantShopping",
+      "demo":        "https://raulpracticareact.github.io/plantShopping/",
       "featured":    false
     }
   ],
