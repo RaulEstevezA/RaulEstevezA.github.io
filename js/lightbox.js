@@ -1,13 +1,53 @@
 $(function () {
   var $modal = $('#proj-modal');
+  var carouselDelay = 2000;
+  var modalTimer = null;
+
+  function getProjectImages($wrap, $thumb) {
+    var images = ($wrap.data('images') || '').split('|').filter(Boolean);
+    return images.length ? images : [$thumb.attr('src')].filter(Boolean);
+  }
+
+  function setProjectImage($img, images, index) {
+    if (!images.length) return;
+    $img.attr('src', images[index % images.length]);
+  }
+
+  function stopModalCarousel() {
+    if (modalTimer) {
+      clearInterval(modalTimer);
+      modalTimer = null;
+    }
+  }
+
+  function closeModal() {
+    stopModalCarousel();
+    $modal.removeClass('active');
+  }
+
+  function startModalCarousel(images, initialIndex) {
+    var $modalImg = $('#proj-modal-img');
+    var currentIndex = initialIndex || 0;
+
+    stopModalCarousel();
+    setProjectImage($modalImg, images, currentIndex);
+
+    if (images.length < 2) return;
+
+    modalTimer = setInterval(function () {
+      currentIndex = (currentIndex + 1) % images.length;
+      setProjectImage($modalImg, images, currentIndex);
+    }, carouselDelay);
+  }
 
   $(document).on('click', '.project-card', function (e) {
     if ($(e.target).closest('a, button').length) return;
     var $wrap  = $(this).find('.project-thumb-wrap');
     var $thumb = $(this).find('.project-thumb');
     var isEs   = (localStorage.getItem('lang') || 'en') === 'es';
+    var images = getProjectImages($wrap, $thumb);
 
-    $('#proj-modal-img').attr('src', $thumb.attr('src')).attr('alt', $thumb.attr('alt'));
+    $('#proj-modal-img').attr('alt', $thumb.attr('alt'));
     $('#proj-modal-title').text($wrap.data(isEs ? 'title-es' : 'title'));
     $('#proj-modal-desc').text($wrap.data(isEs ? 'desc-es' : 'desc'));
 
@@ -24,19 +64,20 @@ $(function () {
 
     $('#proj-modal-github').attr('href', $wrap.data('github'));
     $modal.addClass('active');
+    startModalCarousel(images, 0);
   });
 
   $modal.on('click', function (e) {
     if (!$(e.target).closest('#proj-modal-inner').length) {
-      $modal.removeClass('active');
+      closeModal();
     }
   });
 
   $('#proj-modal-close').on('click', function () {
-    $modal.removeClass('active');
+    closeModal();
   });
 
   $(document).on('keydown', function (e) {
-    if (e.key === 'Escape') $modal.removeClass('active');
+    if (e.key === 'Escape') closeModal();
   });
 });
