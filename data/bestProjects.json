@@ -20,7 +20,7 @@
 
   "projects": [
     {
-      "thumb":     "img/cs50ai.png",
+      "thumb":     "img/thumbs/cs50a1.webp",
       "thumb_alt": "CS50 AI project screenshot",
 
       "title_en": "CS50 AI — Artificial Intelligence Project",
@@ -55,17 +55,17 @@
 
       "modal_tech":   "Python, Artificial Intelligence, Machine Learning, TensorFlow, scikit-learn, NLTK, Pygame",
       "modal_images": [
-        "img/hardvard_ia/attention.png",
-        "img/hardvard_ia/tictactoe.png",
-        "img/hardvard_ia/crossword2.png",
-        "img/hardvard_ia/parser.png",
-        "img/hardvard_ia/minesweeper.png"
+        "img/hardvard_ia/attention.webp",
+        "img/hardvard_ia/tictactoe.webp",
+        "img/hardvard_ia/crossword2.webp",
+        "img/hardvard_ia/parser.webp",
+        "img/hardvard_ia/minesweeper.webp"
       ],
 
       "github": "https://github.com/RaulEstevezA/harvard_ai"
     },
     {
-      "thumb":     "img/duckyware.png",
+      "thumb":     "img/thumbs/duckware.webp",
       "thumb_alt": "DuckyWare screenshot",
 
       "title_en": "DuckyWare — Web Backend Application",
@@ -100,17 +100,17 @@
 
       "modal_tech":   "Python, Django, SQL, JavaScript, Bootstrap",
       "modal_images": [
-        "img/duckstore/loginPanel.png",
-        "img/duckstore/payment.png",
-        "img/duckstore/menu.png",
-        "img/duckstore/cpuProducts.png",
-        "img/duckstore/productDetail1.png"
+        "img/duckstore/loginPanel.webp",
+        "img/duckstore/payment.webp",
+        "img/duckstore/menu.webp",
+        "img/duckstore/cpuProducts.webp",
+        "img/duckstore/productDetail1.webp"
       ],
 
       "github": "https://github.com/RaulEstevezA/final_project_cs50w"
     },
     {
-      "thumb":     "img/onlinestore.png",
+      "thumb":     "img/thumbs/online.webp",
       "thumb_alt": "OnlineStore screenshot",
 
       "title_en": "OnlineStore — Desktop Application (JavaFX)",
@@ -147,11 +147,11 @@
 
       "modal_tech":   "Java, JavaFX, MySQL, Hibernate, JPA, JDBC, JUnit",
       "modal_images": [
-        "img/onlineStore/menu_principal.png",
-        "img/onlineStore/anadir_articulo.png",
-        "img/onlineStore/gestion_pedidos.png",
-        "img/onlineStore/nuevo_pedido.png",
-        "img/onlineStore/gestion_clientes.png"
+        "img/onlineStore/menu_principal.webp",
+        "img/onlineStore/anadir_articulo.webp",
+        "img/onlineStore/gestion_pedidos.webp",
+        "img/onlineStore/nuevo_pedido.webp",
+        "img/onlineStore/gestion_clientes.webp"
       ],
 
       "github": "https://github.com/RaulEstevezA/UOC_ojoaldato"
