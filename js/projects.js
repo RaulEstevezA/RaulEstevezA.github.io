@@ -1,100 +1,129 @@
-(function ($) {
+(function () {
   'use strict';
 
   var VIEW_GITHUB = { en: 'View on GitHub', es: 'Ver en GitHub' };
 
   var LINK_LABELS = {
     github: 'GitHub',
-    demo:   'Demo',
-    repo1:  'Repo 1',
-    repo2:  'Repo 2'
+    demo: 'Demo',
+    repo1: 'Repo 1',
+    repo2: 'Repo 2'
   };
 
+  var bestProjects = null;
+  var otherProjects = null;
+
   function escapeHtml(str) {
-    return $('<span>').text(str).html();
+    var span = document.createElement('span');
+    span.textContent = str == null ? '' : String(str);
+    return span.innerHTML;
   }
 
   function escapeAttr(str) {
-    return $('<span>').text(String(str || '')).html().replace(/"/g, '&quot;');
+    return escapeHtml(str).replace(/"/g, '&quot;');
+  }
+
+  function getJson(url) {
+    return fetch(url).then(function (response) {
+      if (!response.ok) throw new Error('Could not load ' + url);
+      return response.json();
+    });
   }
 
   function renderTags(techStr) {
-    return (techStr || '').split(',').map(function (t) {
-      return '<span class="tag">' + escapeHtml(t.trim()) + '</span>';
+    return (techStr || '').split(',').map(function (tag) {
+      return '<span class="tag">' + escapeHtml(tag.trim()) + '</span>';
     }).join('');
   }
 
   function renderFeatured(projects, lang) {
+    var container = document.getElementById('projects-featured');
+    if (!container) return;
+
     var isEs = lang === 'es';
-    var html = projects.map(function (p) {
-      var title    = isEs ? p.title_es     : p.title_en;
-      var cardDesc = isEs ? p.card_desc_es : p.card_desc_en;
+    var html = projects.map(function (project) {
+      var title = isEs ? project.title_es : project.title_en;
+      var cardDesc = isEs ? project.card_desc_es : project.card_desc_en;
       var btnLabel = VIEW_GITHUB[lang] || VIEW_GITHUB.en;
 
       return '<article class="project-card">' +
         '<div class="project-thumb-wrap"' +
-          ' data-title="'       + escapeAttr(p.title_en)                    + '"' +
-          ' data-title-es="'    + escapeAttr(p.title_es)                    + '"' +
-          ' data-desc="'        + escapeAttr(p.modal_desc_en)               + '"' +
-          ' data-desc-es="'     + escapeAttr(p.modal_desc_es)               + '"' +
-          ' data-features="'    + escapeAttr(p.modal_features_en.join('|')) + '"' +
-          ' data-features-es="' + escapeAttr(p.modal_features_es.join('|')) + '"' +
-          ' data-tech="'        + escapeAttr(p.modal_tech)                  + '"' +
-          ' data-images="'      + escapeAttr(p.modal_images.join('|'))      + '"' +
-          ' data-github="'      + escapeAttr(p.github)                      + '">' +
-          '<img src="'          + escapeAttr(p.thumb)                       + '"' +
-               ' alt="'         + escapeAttr(p.thumb_alt)                   + '"' +
+          ' data-title="' + escapeAttr(project.title_en) + '"' +
+          ' data-title-es="' + escapeAttr(project.title_es) + '"' +
+          ' data-desc="' + escapeAttr(project.modal_desc_en) + '"' +
+          ' data-desc-es="' + escapeAttr(project.modal_desc_es) + '"' +
+          ' data-features="' + escapeAttr(project.modal_features_en.join('|')) + '"' +
+          ' data-features-es="' + escapeAttr(project.modal_features_es.join('|')) + '"' +
+          ' data-tech="' + escapeAttr(project.modal_tech) + '"' +
+          ' data-images="' + escapeAttr(project.modal_images.join('|')) + '"' +
+          ' data-github="' + escapeAttr(project.github) + '">' +
+          '<img src="' + escapeAttr(project.thumb) + '"' +
+               ' alt="' + escapeAttr(project.thumb_alt) + '"' +
                ' class="project-thumb"' +
+               ' width="160" height="120" decoding="async"' +
                ' onerror="this.parentElement.style.display=\'none\'">' +
         '</div>' +
         '<div class="project-card-body">' +
-          '<h3>' + escapeHtml(title)    + '</h3>' +
-          '<p>'  + escapeHtml(cardDesc) + '</p>' +
+          '<h3>' + escapeHtml(title) + '</h3>' +
+          '<p>' + escapeHtml(cardDesc) + '</p>' +
         '</div>' +
         '<div class="project-card-footer">' +
-          '<p class="tech-tags">' + renderTags(p.card_tech) + '</p>' +
-          '<a href="' + escapeAttr(p.github) + '" class="btn primary" target="_blank" rel="noopener">' +
+          '<p class="tech-tags">' + renderTags(project.card_tech) + '</p>' +
+          '<a href="' + escapeAttr(project.github) + '" class="btn primary" target="_blank" rel="noopener">' +
             escapeHtml(btnLabel) +
           '</a>' +
         '</div>' +
       '</article>';
     }).join('');
 
-    $('#projects-featured').html(html);
+    container.innerHTML = html;
   }
 
   function renderOther(projects, lang) {
-    var html = projects.map(function (p) {
-      var desc  = lang === 'es' ? p.desc_es : p.desc_en;
-      var links = (p.links || []).map(function (l) {
-        return '<a href="' + escapeAttr(l.url) + '" target="_blank" rel="noopener">' +
-          escapeHtml(LINK_LABELS[l.type] || l.type) + '</a>';
+    var list = document.getElementById('projects-other-list');
+    var count = document.getElementById('projects-other-count');
+    if (!list) return;
+
+    var html = projects.map(function (project) {
+      var desc = lang === 'es' ? project.desc_es : project.desc_en;
+      var links = (project.links || []).map(function (link) {
+        return '<a href="' + escapeAttr(link.url) + '" target="_blank" rel="noopener">' +
+          escapeHtml(LINK_LABELS[link.type] || link.type) + '</a>';
       }).join(', ');
 
-      return '<li><strong>' + escapeHtml(p.name) + '</strong> — ' +
+      return '<li><strong>' + escapeHtml(project.name) + '</strong> &mdash; ' +
         escapeHtml(desc) + ' ' + links + '</li>';
     }).join('');
 
-    $('#projects-other-list').html(html);
-    $('#projects-other-count').text(projects.length);
+    list.innerHTML = html;
+    if (count) count.textContent = projects.length;
   }
 
-  $.when(
-    $.getJSON('data/bestProjects.json'),
-    $.getJSON('data/projects.json')
-  ).done(function (bestRes, otherRes) {
-    var best     = bestRes[0].projects;
-    var projects = otherRes[0];
-    var lang = localStorage.getItem('lang') || 'en';
+  function currentLang() {
+    return localStorage.getItem('lang') || document.documentElement.lang || 'en';
+  }
 
-    if (best)           renderFeatured(best, lang);
-    if (projects.other) renderOther(projects.other, lang);
+  function renderAll(lang) {
+    if (bestProjects) renderFeatured(bestProjects, lang);
+    if (otherProjects) renderOther(otherProjects, lang);
+  }
 
-    $(document).on('click', '.lang a[data-lang]', function () {
-      var newLang = $(this).data('lang');
-      if (best)           renderFeatured(best, newLang);
-      if (projects.other) renderOther(projects.other, newLang);
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!document.getElementById('projects-featured')) return;
+
+    Promise.all([
+      getJson('data/bestProjects.json'),
+      getJson('data/projects.json')
+    ]).then(function (results) {
+      bestProjects = results[0].projects;
+      otherProjects = results[1].other;
+      renderAll(currentLang());
+    }).catch(function (error) {
+      console.error(error);
     });
   });
 
-}(jQuery));
+  document.addEventListener('languagechange:site', function (event) {
+    renderAll(event.detail.lang);
+  });
+}());

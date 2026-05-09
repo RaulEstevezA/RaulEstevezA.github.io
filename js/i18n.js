@@ -1,72 +1,101 @@
-(function ($) {
+(function () {
   'use strict';
 
   var SUPPORTED = ['en', 'es'];
-  var DEFAULT   = 'en';
+  var DEFAULT = 'en';
 
   function detectLang() {
     var stored = localStorage.getItem('lang');
     if (stored && SUPPORTED.indexOf(stored) !== -1) return stored;
+
     var browser = (navigator.language || navigator.userLanguage || '').slice(0, 2).toLowerCase();
     return SUPPORTED.indexOf(browser) !== -1 ? browser : DEFAULT;
   }
 
   function resolve(data, key) {
-    return key.split('.').reduce(function (o, k) { return o && o[k]; }, data);
+    return key.split('.').reduce(function (obj, part) {
+      return obj && obj[part];
+    }, data);
   }
 
-  function renderTechTags($el, text) {
-    var tags = text.split(',').map(function (t) { return t.trim(); }).filter(Boolean);
-    $el.html(tags.map(function (t) {
-      return '<span class="tag">' + $('<span>').text(t).html() + '</span>';
-    }).join(''));
+  function escapeHtml(str) {
+    var span = document.createElement('span');
+    span.textContent = str;
+    return span.innerHTML;
+  }
+
+  function renderTechTags(el, text) {
+    var tags = text.split(',').map(function (tag) {
+      return tag.trim();
+    }).filter(Boolean);
+
+    el.innerHTML = tags.map(function (tag) {
+      return '<span class="tag">' + escapeHtml(tag) + '</span>';
+    }).join('');
   }
 
   function applyTranslations(data) {
-    $('[data-i18n]').each(function () {
-      var val = resolve(data, $(this).data('i18n'));
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var val = resolve(data, el.dataset.i18n);
       if (val === undefined) return;
-      if ($(this).hasClass('tech-tags')) {
-        renderTechTags($(this), val);
+
+      if (el.classList.contains('tech-tags')) {
+        renderTechTags(el, val);
       } else {
-        $(this).text(val);
+        el.textContent = val;
       }
     });
   }
 
   function updatePageMeta(pageData) {
+    var description = document.querySelector('meta[name="description"]');
+
     if (pageData.page_title) document.title = pageData.page_title;
-    if (pageData.page_desc)  $('meta[name="description"]').attr('content', pageData.page_desc);
+    if (pageData.page_desc && description) description.setAttribute('content', pageData.page_desc);
+  }
+
+  function getJson(url) {
+    return fetch(url).then(function (response) {
+      if (!response.ok) throw new Error('Could not load ' + url);
+      return response.json();
+    });
   }
 
   function setLang(lang) {
-    var pageKey = $('body').data('page') || 'home';
-    var base    = 'locales/' + lang + '/';
+    var pageKey = document.body.dataset.page || 'home';
+    var base = 'locales/' + lang + '/';
 
     localStorage.setItem('lang', lang);
-    $('html').attr('lang', lang);
-    $('.lang a[data-lang]').removeClass('active')
-      .filter('[data-lang="' + lang + '"]').addClass('active');
+    document.documentElement.setAttribute('lang', lang);
 
-    // Load common strings and page strings in parallel
-    $.when(
-      $.getJSON(base + 'common.json'),
-      $.getJSON(base + pageKey + '.json')
-    ).done(function (commonRes, pageRes) {
-      var data         = {};
-      data['common']   = commonRes[0];
-      data[pageKey]    = pageRes[0];
+    document.querySelectorAll('.lang a[data-lang]').forEach(function (link) {
+      link.classList.toggle('active', link.dataset.lang === lang);
+    });
+
+    return Promise.all([
+      getJson(base + 'common.json'),
+      getJson(base + pageKey + '.json')
+    ]).then(function (results) {
+      var data = {};
+      data.common = results[0];
+      data[pageKey] = results[1];
+
       applyTranslations(data);
-      updatePageMeta(pageRes[0]);
+      updatePageMeta(results[1]);
+      document.dispatchEvent(new CustomEvent('languagechange:site', { detail: { lang: lang } }));
+    }).catch(function (error) {
+      console.error(error);
     });
   }
 
-  $(document).ready(function () {
-    $('.lang a[data-lang]').on('click', function (e) {
-      e.preventDefault();
-      setLang($(this).data('lang'));
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.lang a[data-lang]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        setLang(link.dataset.lang);
+      });
     });
+
     setLang(detectLang());
   });
-
-}(jQuery));
+}());

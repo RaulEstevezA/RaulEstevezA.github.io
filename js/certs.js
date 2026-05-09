@@ -1,53 +1,71 @@
-(function ($) {
+(function () {
   'use strict';
 
-  if (!$('#certs-programs').length) return;
-
   function escapeHtml(str) {
-    return $('<span>').text(str).html();
+    var span = document.createElement('span');
+    span.textContent = str == null ? '' : String(str);
+    return span.innerHTML;
+  }
+
+  function getJson(url) {
+    return fetch(url).then(function (response) {
+      if (!response.ok) throw new Error('Could not load ' + url);
+      return response.json();
+    });
   }
 
   function certBadges(certs) {
-    return certs.map(function (c) {
-      var cls = 'cert-badge cert-badge--' + c.label.toLowerCase();
-      return '<a href="' + escapeHtml(c.url) + '" class="' + cls + '" target="_blank" rel="noopener">' +
-        escapeHtml(c.label) + '</a>';
+    return certs.map(function (cert) {
+      var cls = 'cert-badge cert-badge--' + cert.label.toLowerCase();
+      return '<a href="' + escapeHtml(cert.url) + '" class="' + cls + '" target="_blank" rel="noopener">' +
+        escapeHtml(cert.label) + '</a>';
     }).join('');
   }
 
   function renderPrograms(programs) {
-    var html = programs.map(function (p) {
+    var container = document.getElementById('certs-programs');
+    if (!container) return;
+
+    var html = programs.map(function (program) {
       return '<div class="cert-card">' +
         '<div class="cert-card-meta">' +
-          '<span class="cert-provider">' + escapeHtml(p.provider) + '</span>' +
-          '<span class="cert-year">'     + escapeHtml(String(p.year)) + '</span>' +
+          '<span class="cert-provider">' + escapeHtml(program.provider) + '</span>' +
+          '<span class="cert-year">' + escapeHtml(program.year) + '</span>' +
         '</div>' +
-        '<p class="cert-name">' + escapeHtml(p.name) + '</p>' +
-        '<div class="cert-badges">' + certBadges(p.certs) + '</div>' +
+        '<p class="cert-name">' + escapeHtml(program.name) + '</p>' +
+        '<div class="cert-badges">' + certBadges(program.certs) + '</div>' +
       '</div>';
     }).join('');
-    $('#certs-programs').html(html);
+
+    container.innerHTML = html;
   }
 
   function renderCourses(courses) {
-    var count = courses.length;
+    var count = document.getElementById('certs-all-count');
+    var list = document.getElementById('certs-all-list');
+    if (!list) return;
 
-    // Update the summary count
-    $('#certs-all-count').text(count);
+    if (count) count.textContent = courses.length;
 
-    var html = courses.map(function (c) {
+    var html = courses.map(function (course) {
       return '<li class="cert-item">' +
-        '<span class="cert-item-name">'     + escapeHtml(c.name)     + '</span>' +
-        '<span class="cert-item-provider">' + escapeHtml(c.provider) + ' · ' + escapeHtml(String(c.year)) + '</span>' +
-        '<span class="cert-badges">'        + certBadges(c.certs)    + '</span>' +
+        '<span class="cert-item-name">' + escapeHtml(course.name) + '</span>' +
+        '<span class="cert-item-provider">' + escapeHtml(course.provider) + ' &middot; ' + escapeHtml(course.year) + '</span>' +
+        '<span class="cert-badges">' + certBadges(course.certs) + '</span>' +
       '</li>';
     }).join('');
-    $('#certs-all-list').html(html);
+
+    list.innerHTML = html;
   }
 
-  $.getJSON('data/certificates.json').done(function (data) {
-    if (data.programs) renderPrograms(data.programs);
-    if (data.courses)  renderCourses(data.courses);
-  });
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!document.getElementById('certs-programs')) return;
 
-}(jQuery));
+    getJson('data/certificates.json').then(function (data) {
+      if (data.programs) renderPrograms(data.programs);
+      if (data.courses) renderCourses(data.courses);
+    }).catch(function (error) {
+      console.error(error);
+    });
+  });
+}());
