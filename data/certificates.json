@@ -293,6 +293,15 @@
         { "label": "EDX",    "url": "https://courses.edx.org/certificates/7014250a34dd478e860226a9280ff795" },
         { "label": "Credly", "url": "https://www.credly.com/badges/d18213da-2ce5-4e2f-af09-281682dc75a2" }
       ]
+    },
+    {
+      "name":     "Introduction to Cloud Native, DevOps, Agile, and NoSQL",
+      "provider": "IBM",
+      "year":     2026,
+      "certs": [
+        { "label": "EDX",    "url": "https://courses.edx.org/certificates/6503d28f8149442b9b78b2686fdc5598" },
+        { "label": "Credly", "url": "https://www.credly.com/earner/earned/badge/a0007a71-1677-4c88-a5d6-059d42637d13" }
+      ]
     }
   ]
 }
