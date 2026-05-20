@@ -186,7 +186,7 @@
       "year":     2024,
       "certs": [
         { "label": "EDX",    "url": "https://courses.edx.org/certificates/50f817122315488eb67a31d66578d39e" },
-        { "label": "Credly", "url": "https://www.credly.com/badges/9eefe427-28ca-4e38-8ea4-59a4ea5ca920" }
+        { "label": "Credly", "url": "https://www.credly.com/badges/9eefe427-28ca-4e38-8ea4-59a4ea5ca920/public_url" }
       ]
     },
     {
@@ -195,7 +195,7 @@
       "year":     2024,
       "certs": [
         { "label": "EDX",    "url": "https://courses.edx.org/certificates/5af8188b26614f8699f5b403c6e22868" },
-        { "label": "Credly", "url": "https://www.credly.com/badges/19eca317-5eb6-405d-a424-c78e8c9cf45c" }
+        { "label": "Credly", "url": "https://www.credly.com/badges/19eca317-5eb6-405d-a424-c78e8c9cf45c/public_url" }
       ]
     },
     {
@@ -204,7 +204,7 @@
       "year":     2024,
       "certs": [
         { "label": "EDX",    "url": "https://courses.edx.org/certificates/5e3e4bd4798d4900a41f3ec4d3f8f423" },
-        { "label": "Credly", "url": "https://www.credly.com/badges/2edb6f45-8f48-4250-a559-0e8281b33674" }
+        { "label": "Credly", "url": "https://www.credly.com/badges/2edb6f45-8f48-4250-a559-0e8281b33674/public_url" }
       ]
     },
     {
@@ -222,7 +222,7 @@
       "year":     2024,
       "certs": [
         { "label": "EDX",    "url": "https://courses.edx.org/certificates/08078eaed98d4d82bbbc4acbd722509b" },
-        { "label": "Credly", "url": "https://www.credly.com/badges/8be6f154-3d91-4fbe-8897-7cfaf2b0e2a8" }
+        { "label": "Credly", "url": "https://www.credly.com/badges/8be6f154-3d91-4fbe-8897-7cfaf2b0e2a8/public_url" }
       ]
     },
     {
@@ -231,7 +231,7 @@
       "year":     2025,
       "certs": [
         { "label": "EDX",    "url": "https://courses.edx.org/certificates/def215badd614c44a50be1957c69c568" },
-        { "label": "Credly", "url": "https://www.credly.com/badges/64cf8bdf-152c-4bd7-87e8-d41e7cdf6bd2" }
+        { "label": "Credly", "url": "https://www.credly.com/badges/64cf8bdf-152c-4bd7-87e8-d41e7cdf6bd2/public_url" }
       ]
     },
     {
@@ -240,7 +240,7 @@
       "year":     2025,
       "certs": [
         { "label": "EDX",    "url": "https://courses.edx.org/certificates/80adb6f52a154a3ba0da8857fa285511" },
-        { "label": "Credly", "url": "https://www.credly.com/badges/38eb93b7-f17b-41f5-b17f-ce7c60829a0e" }
+        { "label": "Credly", "url": "https://www.credly.com/badges/38eb93b7-f17b-41f5-b17f-ce7c60829a0e/public_url" }
       ]
     },
     {
@@ -282,7 +282,7 @@
       "year":     2026,
       "certs": [
         { "label": "EDX",    "url": "https://courses.edx.org/certificates/110d9e3298dd496d880e561bf4276851" },
-        { "label": "Credly", "url": "https://www.credly.com/badges/6b2e84cf-445a-494b-accb-a113aa0bc769" }
+        { "label": "Credly", "url": "https://www.credly.com/badges/6b2e84cf-445a-494b-accb-a113aa0bc769/public_url" }
       ]
     },
     {
@@ -291,7 +291,7 @@
       "year":     2026,
       "certs": [
         { "label": "EDX",    "url": "https://courses.edx.org/certificates/7014250a34dd478e860226a9280ff795" },
-        { "label": "Credly", "url": "https://www.credly.com/badges/d18213da-2ce5-4e2f-af09-281682dc75a2" }
+        { "label": "Credly", "url": "https://www.credly.com/badges/d18213da-2ce5-4e2f-af09-281682dc75a2/public_url" }
       ]
     },
     {
@@ -300,7 +300,16 @@
       "year":     2026,
       "certs": [
         { "label": "EDX",    "url": "https://courses.edx.org/certificates/6503d28f8149442b9b78b2686fdc5598" },
-        { "label": "Credly", "url": "https://www.credly.com/earner/earned/badge/a0007a71-1677-4c88-a5d6-059d42637d13" }
+        { "label": "Credly", "url": "https://www.credly.com/badges/a0007a71-1677-4c88-a5d6-059d42637d13/public_url" }
+      ]
+    },
+    {
+      "name":     "Introduction to Containers, Kubernetes and OpenShift",
+      "provider": "IBM",
+      "year":     2026,
+      "certs": [
+        { "label": "EDX",    "url": "https://courses.edx.org/certificates/729cbd7c6b974e48af1665080d12ce29" },
+        { "label": "Credly", "url": "https://www.credly.com/badges/0a1e366b-0f43-486e-86e2-0b3454c5856a/public_url" }
       ]
     }
   ]
