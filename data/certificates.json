@@ -311,6 +311,15 @@
         { "label": "EDX",    "url": "https://courses.edx.org/certificates/729cbd7c6b974e48af1665080d12ce29" },
         { "label": "Credly", "url": "https://www.credly.com/badges/0a1e366b-0f43-486e-86e2-0b3454c5856a/public_url" }
       ]
+    },
+    {
+      "name":     "Microservices and Serverless",
+      "provider": "IBM",
+      "year":     2026,
+      "certs": [
+        { "label": "EDX",    "url": "https://courses.edx.org/certificates/e16c8700601a4e00a0dac40fab2bff0e" },
+        { "label": "Credly", "url": "https://www.credly.com/badges/1bcab2b8-a519-47d4-b72b-a749e0fc9c1e/public_url" }
+      ]
     }
   ]
 }
