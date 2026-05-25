@@ -69,6 +69,14 @@
       "certs": [
         { "label": "EDX", "url": "https://credentials.edx.org/credentials/cd48ab44ee304bfc8a06f63d3c9365b4/" }
       ]
+    },
+    {
+      "name":     "Full Stack Application Development",
+      "provider": "IBM",
+      "year":     2026,
+      "certs": [
+        { "label": "EDX", "url": "https://credentials.edx.org/credentials/ba62e281ff11468eb2ebd1350f903ef5/" }
+      ]
     }
   ],
 
@@ -329,6 +337,15 @@
       "certs": [
         { "label": "EDX",    "url": "https://courses.edx.org/certificates/07a87f9ff36a4ad3b802deba89d6438d" },
         { "label": "Credly", "url": "https://www.credly.com/badges/84c8c7e8-e4d3-4406-837c-993c2450e4b5/public_url" }
+      ]
+    },
+    {
+      "name":     "Full Stack Application Developer Capstone",
+      "provider": "IBM",
+      "year":     2026,
+      "certs": [
+        { "label": "EDX",    "url": "https://courses.edx.org/certificates/be3b0cd8e1d4468697959732035325d9" },
+        { "label": "Credly", "url": "https://www.credly.com/badges/9674f6e7-e7f8-4faf-b20d-4cb383bafec2/public_url" }
       ]
     }
   ]
