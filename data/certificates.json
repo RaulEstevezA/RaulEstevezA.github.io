@@ -273,7 +273,8 @@
       "year":     2026,
       "certs": [
         { "label": "EDX",  "url": "https://courses.edx.org/certificates/961b6de4df75427582ffd7198e57afbe" },
-        { "label": "CS50", "url": "https://certificates.cs50.io/05e72972-1f08-43f1-a660-e2a8e61b503e.pdf?size=letter" }
+        { "label": "CS50", "url": "https://certificates.cs50.io/05e72972-1f08-43f1-a660-e2a8e61b503e.pdf?size=letter" },
+        { "label": "Credly", "url": "https://www.credly.com/badges/ea3bb3ba-b7d3-43fd-90a4-bc39d7d13983/public_url" }
       ]
     },
     {
@@ -319,6 +320,15 @@
       "certs": [
         { "label": "EDX",    "url": "https://courses.edx.org/certificates/e16c8700601a4e00a0dac40fab2bff0e" },
         { "label": "Credly", "url": "https://www.credly.com/badges/1bcab2b8-a519-47d4-b72b-a749e0fc9c1e/public_url" }
+      ]
+    },
+    {
+      "name":     "Full Stack Application Development Project",
+      "provider": "IBM",
+      "year":     2026,
+      "certs": [
+        { "label": "EDX",    "url": "https://courses.edx.org/certificates/07a87f9ff36a4ad3b802deba89d6438d" },
+        { "label": "Credly", "url": "https://www.credly.com/badges/84c8c7e8-e4d3-4406-837c-993c2450e4b5/public_url" }
       ]
     }
   ]
