@@ -1,0 +1,5 @@
+# Force GitHub Linguist to classify this repository as Dart.
+*.html linguist-language=Dart
+*.css linguist-language=Dart
+*.js linguist-language=Dart
+
