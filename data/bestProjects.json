@@ -20,6 +20,61 @@
 
   "projects": [
     {
+      "thumb":     "img/thumbs/erpApp.webp",
+      "thumb_alt": "Microvalencia ERP App screenshot",
+
+      "title_en": "Microvalencia ERP App — Mobile Application (Flutter)",
+      "title_es": "Microvalencia ERP App — Aplicación Móvil (Flutter)",
+
+      "card_desc_en": "Mobile app built in Flutter during my internship at Microvalencia, integrated with their ERP via Laravel/PHP REST APIs. Covers time tracking, work orders, client management, internal messaging, holidays and more. Soon on Google Play Store and App Store.",
+      "card_desc_es": "App móvil desarrollada en Flutter durante mis prácticas en Microvalencia, integrada con su ERP mediante APIs REST Laravel/PHP. Cubre fichaje, partes de trabajo, gestión de clientes, mensajería interna, vacaciones y más. Próximamente en Google Play Store y App Store.",
+
+      "card_tech": "Flutter, Dart, PHP, Laravel, REST API",
+
+      "cta_label_en": "Watch demo",
+      "cta_label_es": "Ver demo",
+      "portrait": true,
+
+      "modal_desc_en": "Mobile application built in Flutter during my internship at Microvalencia Soluciones Informáticas. It acts as a mobile gateway for the company ERP, consuming data for users, permissions, clients, time tracking, work orders, visits, holidays, documents and internal messaging through REST APIs designed and implemented specifically for this project on a Laravel/PHP backend.",
+      "modal_desc_es": "Aplicación móvil desarrollada en Flutter durante las prácticas en Microvalencia Soluciones Informáticas. Actúa como puerta móvil al ERP de la empresa, consumiendo datos de usuarios, permisos, clientes, fichajes, partes de trabajo, visitas, vacaciones, documentos y mensajería a través de APIs REST diseñadas e implementadas específicamente para este proyecto sobre un backend Laravel/PHP.",
+
+      "modal_features_en": [
+        "Authentication with configurable server URL, automatic session restore and secure logout",
+        "Time tracking with optional GPS location, monthly accordion history and grouped admin view",
+        "Internal messaging with real-time polling, unread badge, and audio/image attachments",
+        "Work orders with lines, file attachments and digital client signature",
+        "Client search, detail view, five document types (quotes, orders, delivery notes, invoices) and Maps integration",
+        "Holiday management with visual calendar, requests, approval, rejection and cancellation",
+        "Role-based access control: superAdmin, admin, user, worker, client, supplier",
+        "Internationalization in Spanish, Valencian, Catalan and English",
+        "Clean MVVM architecture with SOLID principles, per-module ViewModels and immutable state",
+        "Two app variants from the same codebase via Flutter Flavors (full and lite)"
+      ],
+      "modal_features_es": [
+        "Autenticación con URL de servidor configurable, restauración automática de sesión y cierre seguro",
+        "Fichaje con ubicación GPS opcional, historial mensual con acordeón y vista agrupada para administradores",
+        "Mensajería interna con polling en tiempo real, badge de no leídos y adjuntos de audio e imagen",
+        "Partes de trabajo con líneas, archivos adjuntos y firma digital del cliente",
+        "Búsqueda de clientes, ficha de detalle, cinco tipos de documentos (presupuestos, pedidos, albaranes, facturas) e integración con Maps",
+        "Gestión de vacaciones con calendario visual, solicitudes, aprobación, rechazo y cancelación",
+        "Control de acceso por roles: superAdmin, admin, usuario, trabajador, cliente, proveedor",
+        "Internacionalización en español, valenciano, catalán e inglés",
+        "Arquitectura limpia MVVM con principios SOLID, ViewModels por módulo y estado inmutable",
+        "Dos variantes de la app desde el mismo código base mediante Flutter Flavors (full y lite)"
+      ],
+
+      "modal_tech":   "Flutter, Dart, PHP, Laravel, REST API, MVVM, Dio, Flutter Secure Storage, Geolocator",
+      "modal_images": [
+        "img/erpApp/login.webp",
+        "img/erpApp/home.webp",
+        "img/erpApp/lateral_bar.webp",
+        "img/erpApp/client_detail.webp",
+        "img/erpApp/offline.webp"
+      ],
+
+      "github": "https://youtu.be/lrgRXaBEdI4"
+    },
+    {
       "thumb":     "img/thumbs/cs50a1.webp",
       "thumb_alt": "CS50 AI project screenshot",
 

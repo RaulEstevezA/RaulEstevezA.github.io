@@ -2,6 +2,7 @@
   'use strict';
 
   var VIEW_GITHUB = { en: 'View on GitHub', es: 'Ver en GitHub' };
+  var VIEW_DEMO   = { en: 'Watch demo',     es: 'Ver demo' };
 
   var LINK_LABELS = {
     github: 'GitHub',
@@ -44,7 +45,10 @@
     var html = projects.map(function (project) {
       var title = isEs ? project.title_es : project.title_en;
       var cardDesc = isEs ? project.card_desc_es : project.card_desc_en;
-      var btnLabel = VIEW_GITHUB[lang] || VIEW_GITHUB.en;
+      var hasCustomCta = project.cta_label_en || project.cta_label_es;
+      var btnLabel = hasCustomCta
+        ? (isEs ? (project.cta_label_es || VIEW_DEMO.es) : (project.cta_label_en || VIEW_DEMO.en))
+        : (VIEW_GITHUB[lang] || VIEW_GITHUB.en);
 
       return '<article class="project-card">' +
         '<div class="project-thumb-wrap"' +
@@ -56,7 +60,10 @@
           ' data-features-es="' + escapeAttr(project.modal_features_es.join('|')) + '"' +
           ' data-tech="' + escapeAttr(project.modal_tech) + '"' +
           ' data-images="' + escapeAttr(project.modal_images.join('|')) + '"' +
-          ' data-github="' + escapeAttr(project.github) + '">' +
+          ' data-github="' + escapeAttr(project.github) + '"' +
+          ' data-cta-label="' + escapeAttr(project.cta_label_en || VIEW_GITHUB.en) + '"' +
+          ' data-cta-label-es="' + escapeAttr(project.cta_label_es || VIEW_GITHUB.es) + '"' +
+          (project.portrait ? ' data-portrait="true"' : '') + '>' +
           '<img src="' + escapeAttr(project.thumb) + '"' +
                ' alt="' + escapeAttr(project.thumb_alt) + '"' +
                ' class="project-thumb"' +

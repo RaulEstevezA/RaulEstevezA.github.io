@@ -47,6 +47,14 @@
 
   "projects": [
     {
+      "name":        "Microvalencia ERP App",
+      "type":        "Mobile ERP Application",
+      "description": "Mobile application built in Flutter during an internship at Microvalencia Soluciones Informáticas. Integrated with the company ERP via custom Laravel/PHP REST APIs. Covers authentication, time tracking with GPS, work orders with digital signature, internal messaging, client management, holidays and role-based access control. Internationalization in ES/VA/CA/EN. Clean MVVM architecture, Flutter Flavors for two app variants (full and lite). Planned for Google Play Store and App Store.",
+      "stack":       ["Flutter", "Dart", "PHP", "Laravel", "REST API", "MVVM", "Dio", "Flutter Secure Storage", "Geolocator"],
+      "demo":        "https://youtu.be/lrgRXaBEdI4",
+      "featured":    true
+    },
+    {
       "name":        "CS50 AI",
       "type":        "Artificial Intelligence Project",
       "description": "Structured CS50 AI exercise repository with 13 Python implementations across search, logic, uncertainty, optimization, machine learning, neural networks and natural language processing.",
