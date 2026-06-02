@@ -199,26 +199,6 @@ h3 { font-size: 1.1rem; margin: 0 0 0.75rem; }
   overflow: hidden;
 }
 
-.window-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 13px 16px;
-  background: #1c2128;
-  border-bottom: 1px solid var(--border);
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.dot.red    { background: #ff5f57; }
-.dot.yellow { background: #ffbd2e; }
-.dot.green  { background: #28c840; }
-
 .window-content { padding: 2.25rem 2.5rem; }
 
 /* =====================================================
@@ -339,6 +319,17 @@ section + section {
   object-position: top center;
   border-radius: 14px 14px 0 0;
   display: block;
+}
+
+#proj-modal-img.portrait {
+  height: 480px;
+  object-fit: contain;
+  object-position: center;
+  background: var(--page-bg);
+}
+
+.project-thumb-wrap[data-portrait] .project-thumb {
+  object-position: center;
 }
 
 #proj-modal-body { padding: 1.5rem; }
