@@ -87,7 +87,17 @@
         appendTag(techList, tag);
       });
 
-      document.getElementById('proj-modal-github').setAttribute('href', wrap.dataset.github || '#');
+      var modalBtn = document.getElementById('proj-modal-github');
+      modalBtn.setAttribute('href', wrap.dataset.github || '#');
+      modalBtn.textContent = isEs ? (wrap.dataset.ctaLabelEs || 'Ver en GitHub') : (wrap.dataset.ctaLabel || 'View on GitHub');
+
+      var modalImg = document.getElementById('proj-modal-img');
+      if (wrap.dataset.portrait) {
+        modalImg.classList.add('portrait');
+      } else {
+        modalImg.classList.remove('portrait');
+      }
+
       modal.classList.add('active');
       startModalCarousel(images, 0);
     });

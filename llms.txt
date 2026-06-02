@@ -44,6 +44,11 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
 
 ## Featured Projects
 
+- **Microvalencia ERP App** — Mobile application built in Flutter during an internship at Microvalencia Soluciones Informáticas.
+  Stack: Flutter, Dart, PHP, Laravel, REST API, MVVM, Dio, Flutter Secure Storage, Geolocator.
+  Integrated with the company ERP via custom-built Laravel/PHP REST APIs. Modules: authentication with configurable server URL, time tracking with GPS, work orders with digital signature, internal messaging, client management, holidays, role-based access control (superAdmin, admin, user, worker, client, supplier). Internationalization in Spanish, Valencian, Catalan and English. Clean MVVM architecture with SOLID principles. Two variants via Flutter Flavors (full and lite). Planned for release on Google Play Store and App Store.
+  Demo: https://youtu.be/lrgRXaBEdI4
+
 - **CS50 AI** — Structured repository of 13 CS50 AI exercises across 7 course units.
   Stack: Python, Artificial Intelligence, Machine Learning, TensorFlow, scikit-learn, NLTK, Pygame.
   Covers graph search, Minimax, propositional inference, probabilistic reasoning, CSP optimization, k-NN, Q-learning, CNN image classification and NLP/attention exercises.
