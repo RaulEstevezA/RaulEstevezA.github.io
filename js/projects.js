@@ -71,6 +71,7 @@
                ' onerror="this.parentElement.style.display=\'none\'">' +
         '</div>' +
         '<div class="project-card-body">' +
+          (project.badge_en ? '<span class="project-badge">' + escapeHtml(isEs ? project.badge_es : project.badge_en) + '</span>' : '') +
           '<h3>' + escapeHtml(title) + '</h3>' +
           '<p>' + escapeHtml(cardDesc) + '</p>' +
         '</div>' +
