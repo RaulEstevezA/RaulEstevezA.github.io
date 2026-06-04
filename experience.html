@@ -19,6 +19,11 @@
   <meta name="twitter:description" content="Professional experience in software development within real-world environments." />
   <meta name="twitter:image" content="https://raulesteveza.github.io/img/raulestevezio.jpg" />
   <link rel="stylesheet" href="css/styles.css?v=20260505-2" />
+  <link rel="preload" href="data/experience.json" as="fetch" crossorigin="anonymous" />
+  <link rel="preload" href="locales/en/common.json" as="fetch" crossorigin="anonymous" />
+  <link rel="preload" href="locales/en/experience.json" as="fetch" crossorigin="anonymous" />
+  <link rel="preload" href="locales/es/common.json" as="fetch" crossorigin="anonymous" />
+  <link rel="preload" href="locales/es/experience.json" as="fetch" crossorigin="anonymous" />
 
   <script type="application/ld+json">
   {
@@ -34,14 +39,18 @@
       "https://github.com/RaulEstevezA",
       "https://www.linkedin.com/in/raulesteveza/"
     ],
-    "knowsAbout": ["Flutter", "Dart", "PHP", "Laravel", "REST APIs", "Authentication", "Session management", "Mobile ERP applications"],
+    "knowsAbout": ["Flutter", "Dart", "PHP", "Laravel", "REST APIs", "Clean Architecture", "MVVM", "SOLID", "Mobile ERP applications"],
     "hasOccupation": {
-      "@type": "Occupation",
-      "name": "Software Developer Intern",
-      "startDate": "2026",
-      "description": "Development of a mobile ERP application using Flutter and Dart, integrated with a PHP/Laravel backend.",
-      "skills": "Flutter, Dart, PHP, Laravel",
-      "occupationLocation": { "@type": "Country", "name": "Spain" }
+      "@type": "Role",
+      "roleName": "Software Developer Intern",
+      "startDate": "2026-03-23",
+      "endDate": "2026-06-01",
+      "description": "Designed and developed a full-featured Flutter mobile application integrated with a PHP/Laravel ERP backend. Implemented approximately 90% of the backend API layer from scratch. Application covers authentication, clock-in/out with GPS, incident tracking, internal messaging, work orders with digital signature, visit reports, client management, holiday management, and role-based access control.",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Microvalencia Soluciones Informáticas S.L.",
+        "address": { "@type": "PostalAddress", "addressCountry": "ES", "addressLocality": "Valencia" }
+      }
     }
   }
   </script>
@@ -68,36 +77,8 @@
           Professional experience in software development within real-world environments.
         </p>
 
-        <section>
-          <article class="job-card">
-            <h3 data-i18n="experience.job1_title">Software Developer Intern</h3>
-
-            <p data-i18n="experience.job1_p1">
-              Development of a mobile application using Flutter to adapt and extend
-              ERP functionalities to mobile devices, enabling employees to access
-              and use the system from smartphones.
-            </p>
-
-            <p data-i18n="experience.job1_p2">
-              Integration with the existing backend (PHP/Laravel), consuming APIs
-              and handling authentication, session management, and system communication.
-            </p>
-
-            <p data-i18n="experience.job1_p3">
-              Involvement in the design and implementation of key features,
-              translating internal ERP processes into a mobile environment.
-            </p>
-
-            <p>
-              <strong data-i18n="common.tech_label">Technologies:</strong>
-              <span class="tech-tags" data-i18n="experience.job1_tech">Flutter, Dart, PHP, Laravel</span>
-            </p>
-
-            <p>
-              <strong data-i18n="common.period_label">Period:</strong>
-              <span data-i18n="experience.job1_period">2026 – Present</span>
-            </p>
-          </article>
+        <section id="experience-list">
+          <!-- populated by experience.js -->
         </section>
 
         <div class="actions">
@@ -113,5 +94,6 @@
   </main>
 
   <script src="js/i18n.js?v=20260509-1"></script>
+  <script src="js/experience.js?v=20260604-1"></script>
 </body>
 </html>

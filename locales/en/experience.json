@@ -1,24 +1,9 @@
 {
-  "_template": {
-    "_use": "To add a new job: copy the block below, increment the number (job2, job3…), fill in the values. Then add a matching <article class='job-card'> in experience.html with the same data-i18n keys.",
-    "job2_title":  "Job Title",
-    "job2_p1":     "First responsibility or task description.",
-    "job2_p2":     "Second responsibility or task description.",
-    "job2_p3":     "Third responsibility or task description.",
-    "job2_tech":   "Tech1, Tech2, Tech3",
-    "job2_period": "YYYY – YYYY"
-  },
+  "_note": "Job data lives in data/experience.json (bilingual fields with _en/_es suffixes). Only static page strings go here.",
 
   "page_title": "Experience | Raúl Estévez",
   "page_desc":  "Professional experience in software development within real-world environments.",
 
   "heading": "Experience",
-  "intro":   "Professional experience in software development within real-world environments.",
-
-  "job1_title":  "Software Developer Intern",
-  "job1_p1":     "Development of a mobile application using Flutter to adapt and extend ERP functionalities to mobile devices, enabling employees to access and use the system from smartphones.",
-  "job1_p2":     "Integration with the existing backend (PHP/Laravel), consuming APIs and handling authentication, session management, and system communication.",
-  "job1_p3":     "Involvement in the design and implementation of key features, translating internal ERP processes into a mobile environment.",
-  "job1_tech":   "Flutter, Dart, PHP, Laravel",
-  "job1_period": "2026 – Present"
+  "intro":   "Professional experience in software development within real-world environments."
 }

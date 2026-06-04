@@ -1,0 +1,60 @@
+{
+  "_note": "Job experience data for experience.html. Add new entries to the 'jobs' array — order here = display order.",
+  "_fields": {
+    "title_en/es":        "Job title",
+    "company":            "Company name",
+    "paragraphs_en/es":   "Array of main description paragraphs",
+    "highlights_en/es":   "Array of technical bullet points (optional)",
+    "tech":               "Comma-separated technologies (language-neutral)",
+    "period_en/es":       "Employment period"
+  },
+  "_also_update": [
+    "llms.txt          → ## Experience section",
+    "profile.json      → experience array",
+    "experience.html   → <script type='application/ld+json'> hasOccupation"
+  ],
+
+  "jobs": [
+    {
+      "title_en": "Software Developer Intern",
+      "title_es": "Desarrollador de Software (Prácticas)",
+
+      "company": "Microvalencia Soluciones Informáticas S.L.",
+
+      "paragraphs_en": [
+        "Designed and developed a full-featured Flutter mobile application to extend Microvalencia's proprietary ERP system to smartphones, enabling field employees to access core business workflows in mobility. The project covered both sides of the stack: approximately 90% of the PHP/Laravel API controllers and routes consumed by the app were designed and implemented from scratch, including mobile-optimised response structures, role-based endpoint permissions, and data formats specifically tailored for Flutter.",
+        "The application spans nine functional modules: authentication with a user-configurable server URL, remember-URL and remember-user options, and automatic session restore; clock-in/out with optional GPS location and an admin-facing grouped history view; clock-in incident tracking; internal messaging with real-time polling and unread badge count; work orders with line items, audio recording and image attachments, and digital client signature; visit reports linked to clients; a full client module with access to five document types and Maps integration; holiday management with a visual calendar and approval workflow; and role-based access control across six user profiles.",
+        "The project was built following feature-based clean architecture with MVVM and SOLID principles, strict layer separation, and immutable UI state per module. The app includes a dark/light theme toggle. Began with no prior experience in PHP, Laravel, or Flutter — all three were learned and applied within this production project. Delivered with a maintained changelog, semantic versioning, and handoff-ready technical documentation. The company plans to publish the app on Google Play Store and App Store."
+      ],
+      "paragraphs_es": [
+        "Diseño y desarrollo de una aplicación móvil completa en Flutter para extender el ERP propietario de Microvalencia al teléfono, permitiendo a los empleados de campo acceder a los flujos de trabajo clave en movilidad. El proyecto abarcó ambas partes del stack: aproximadamente el 90% de los controladores y rutas de la API PHP/Laravel que consume la app se diseñaron e implementaron desde cero, incluyendo respuestas optimizadas para móvil, permisos de endpoint por rol y formatos de datos adaptados específicamente al consumo desde Flutter.",
+        "La aplicación comprende nueve módulos funcionales: autenticación con URL de servidor configurable, opciones de recordar URL y usuario, y restauración automática de sesión; fichaje con ubicación GPS opcional y vista agrupada por empleado para administradores; seguimiento de incidencias de fichaje; mensajería interna con polling en tiempo real y badge de mensajes no leídos; partes de trabajo con líneas, grabación de audio y adjuntos de imagen, y firma digital del cliente; partes de visita vinculados a clientes; módulo completo de clientes con acceso a cinco tipos de documentos e integración con Maps; gestión de vacaciones con calendario visual y flujo de aprobación; y control de acceso por roles con seis perfiles de usuario.",
+        "El proyecto sigue una arquitectura limpia por funcionalidades con MVVM y principios SOLID, separación estricta de capas y estado inmutable por módulo. La app incluye un toggle de tema oscuro/claro. Se inició sin experiencia previa en PHP, Laravel ni Flutter — los tres se aprendieron y aplicaron íntegramente dentro de este proyecto en producción. Entregado con changelog mantenido, versionado semántico y documentación técnica preparada para transferencia de conocimiento. La empresa tiene previsto publicar la aplicación en Google Play Store y App Store."
+      ],
+
+      "highlights_en": [
+        "Three-layer error handling pipeline (network exception → domain exception → localised UI message) covering 15 specific error cases, from SSL certificate errors and timeouts to invalid credentials and server downtime",
+        "Session credentials stored with native device encryption (FlutterSecureStorage), including a specific fallback for Xiaomi/MIUI Keystore irregularities",
+        "Real-time server downtime detection with graceful navigation lockout, preventing orphaned screens mid-session",
+        "Both the home shortcuts and the side drawer resolve role-based module visibility from locally cached session data, so the full navigation is available immediately even when the server does not respond on startup",
+        "Correct Android system back-gesture handling and adaptive bottom padding for gesture-navigation devices",
+        "Two production app variants (full and lite) built from a single codebase via Flutter Flavors, without code duplication",
+        "Chat polling compares message count and last message ID before notifying listeners, avoiding unnecessary UI rebuilds when there is no new activity"
+      ],
+      "highlights_es": [
+        "Sistema de manejo de errores en tres capas (excepción de red → excepción de dominio → mensaje de UI localizado) con 15 tipos de error específicos, desde errores de certificado SSL y timeouts hasta credenciales incorrectas y caída del servidor",
+        "Credenciales de sesión almacenadas con cifrado nativo del dispositivo (FlutterSecureStorage), con fallback específico para irregularidades del Keystore en dispositivos Xiaomi/MIUI",
+        "Detección en tiempo real de caída del servidor con bloqueo de navegación controlado, evitando pantallas huérfanas a mitad de sesión",
+        "Tanto los accesos rápidos del home como el menú lateral resuelven la visibilidad de módulos por rol desde datos de sesión en caché local, de modo que la navegación completa está disponible de inmediato aunque el servidor no responda al arrancar",
+        "Gestión correcta del gesto de retroceso del sistema en Android y adaptación del padding inferior para dispositivos con navegación por gestos",
+        "Dos variantes de producción (full y lite) construidas desde un único código base mediante Flutter Flavors, sin duplicación de código",
+        "El polling del chat compara el número de mensajes y el ID del último antes de notificar a los listeners, evitando rebuilds innecesarios cuando no hay actividad nueva"
+      ],
+
+      "tech": "Flutter, Dart, PHP, Laravel, REST API, MVVM, SOLID, Dio, FlutterSecureStorage, Geolocator, Flutter Flavors",
+
+      "period_en": "March – June 2026 · 383 h",
+      "period_es": "Marzo – Junio 2026 · 383 h"
+    }
+  ]
+}
