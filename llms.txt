@@ -33,6 +33,7 @@ Development (DAM) with a GPA of 9.3/10.
 
 ### Professional Program Certificates
 - **Computer Science for Artificial Intelligence** — HarvardX (2026)
+- **Full Stack Application Development** — IBM (2026)
 - **Computer Science for Web Programming** — HarvardX (2024)
 - **Learning Python for Data Science** — HarvardX (2024)
 - **Computer Science for Python Programming** — HarvardX (2023)
