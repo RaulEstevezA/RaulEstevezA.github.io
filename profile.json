@@ -20,9 +20,11 @@
   "experience": [
     {
       "role":        "Software Developer Intern",
-      "period":      "2026 – Present",
-      "stack":       ["Flutter", "Dart", "PHP", "Laravel"],
-      "description": "Development of a mobile ERP application using Flutter. Integration with a PHP/Laravel backend via REST APIs, handling authentication and session management."
+      "company":     "Microvalencia Soluciones Informáticas S.L.",
+      "period":      "March – June 2026",
+      "hours":       383,
+      "stack":       ["Flutter", "Dart", "PHP", "Laravel", "REST API", "MVVM", "SOLID", "Dio", "FlutterSecureStorage", "Geolocator", "Flutter Flavors"],
+      "description": "Designed and developed a full-featured Flutter mobile app to extend the company ERP to smartphones. Implemented ~90% of the PHP/Laravel API layer from scratch. App covers authentication (configurable server URL, remember URL/user, auto session restore), clock-in/out with optional GPS, incident tracking, internal messaging with real-time polling, work orders with audio/image attachments and digital client signature, visit reports, client management (5 document types, Maps), holiday management, and role-based access control (6 profiles). Feature-based clean architecture with MVVM and SOLID, 3-layer error handling (15 error types), FlutterSecureStorage with Xiaomi/MIUI Keystore fallback, real-time server downtime detection, dark/light theme toggle, and two production variants via Flutter Flavors."
     }
   ],
 

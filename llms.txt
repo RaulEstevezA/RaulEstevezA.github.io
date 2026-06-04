@@ -10,14 +10,24 @@ in backend systems, desktop applications, and artificial intelligence projects.
 Currently completing a Higher Technician degree in Multiplatform Application
 Development (DAM) with a GPA of 9.3/10.
 
-## Current Experience
+## Experience
 
-- **Role:** Software Developer Intern (2026 – Present)
-- **Stack:** Flutter, Dart, PHP, Laravel
-- **Focus:** Development of a mobile ERP application. Adapted ERP system
-  functionalities to mobile devices using Flutter, integrated with an existing
-  PHP/Laravel backend via REST APIs. Handled authentication, session management
-  and system communication.
+- **Role:** Software Developer Intern — Microvalencia Soluciones Informáticas S.L.
+- **Period:** March – June 2026 (383 h)
+- **Stack:** Flutter, Dart, PHP, Laravel, REST API, MVVM, SOLID, Dio, FlutterSecureStorage, Geolocator, Flutter Flavors
+- **Scope:** Full-stack internship. Designed and developed a complete Flutter mobile
+  app to extend the company ERP to smartphones. Implemented ~90% of the PHP/Laravel
+  API layer from scratch (endpoints, role-based permissions, mobile-optimised responses).
+  App covers nine modules: authentication with configurable server URL, remember-URL/user
+  options and automatic session restore; clock-in/out with optional GPS; incident tracking;
+  internal messaging with real-time polling and unread badge; work orders with audio
+  recording, image attachments and digital client signature; visit reports linked to clients;
+  client management with five document types and Maps integration; holiday management;
+  and role-based access control across six user profiles. Feature-based clean architecture
+  with MVVM and SOLID, immutable state per module, 3-layer error handling (15 error types),
+  FlutterSecureStorage with Xiaomi/MIUI Keystore fallback, real-time server downtime
+  detection with navigation lockout, dark/light theme toggle, and two production variants
+  (full and lite) from the same codebase via Flutter Flavors.
 
 ## Education
 
@@ -45,9 +55,15 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
 
 ## Featured Projects
 
-- **Microvalencia ERP App** — Mobile application built in Flutter during an internship at Microvalencia Soluciones Informáticas.
-  Stack: Flutter, Dart, PHP, Laravel, REST API, MVVM, Dio, Flutter Secure Storage, Geolocator.
-  Integrated with the company ERP via custom-built Laravel/PHP REST APIs. Modules: authentication with configurable server URL, time tracking with GPS, work orders with digital signature, internal messaging, client management, holidays, role-based access control (superAdmin, admin, user, worker, client, supplier). Internationalization in Spanish, Valencian, Catalan and English. Clean MVVM architecture with SOLID principles. Two variants via Flutter Flavors (full and lite). Planned for release on Google Play Store and App Store.
+- **Microvalencia ERP App** — Full-featured Flutter mobile app built during an internship at Microvalencia Soluciones Informáticas S.L.
+  Stack: Flutter, Dart, PHP, Laravel, REST API, MVVM, SOLID, Dio, FlutterSecureStorage, Geolocator, Flutter Flavors.
+  Acts as a mobile gateway to the company ERP. ~90% of the PHP/Laravel API layer was designed and implemented from scratch.
+  Modules: authentication (configurable server URL, remember URL/user, auto session restore), clock-in/out with optional GPS,
+  incident tracking, internal messaging with real-time polling, work orders with audio/image attachments and digital client signature,
+  visit reports linked to clients, client management (5 document types, Maps), holiday management, role-based access control
+  (superAdmin, admin, user, worker, client, supplier). Internationalisation in Spanish, Valencian, Catalan and English.
+  Dark/light theme toggle. 3-layer error handling (15 types). FlutterSecureStorage with Xiaomi/MIUI fallback.
+  Real-time server downtime detection. Two production variants (full/lite) via Flutter Flavors. Planned for Google Play Store and App Store.
   Demo: https://youtu.be/lrgRXaBEdI4
 
 - **CS50 AI** — Structured repository of 13 CS50 AI exercises across 7 course units.
