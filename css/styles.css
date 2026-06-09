@@ -439,6 +439,8 @@ section + section {
 .job-card ul  { padding-left: 1.25rem; margin: 0 0 0.85rem; }
 .job-card li  { line-height: 1.65; margin-bottom: 0.35rem; }
 .job-card li:last-child { margin-bottom: 0; }
+.job-card .job-letter { margin-top: 1.5rem; }
+.job-card .btn.primary { color: #ffffff; text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);}
 
 /* =====================================================
    EDUCATION CARD (courses)

@@ -2,7 +2,9 @@
   'use strict';
 
   var LABELS = {
-    tech: { en: 'Technologies:', es: 'Tecnologías:' }
+    tech:         { en: 'Technologies:',                                                          es: 'Tecnologías:' },
+    recLetter:    { en: 'Recommendation Letter',                                                  es: 'Carta de recomendación' },
+    recLetterNote:{ en: 'The original unredacted version is available upon request.',             es: 'La versión original sin censura está disponible bajo petición.' }
   };
 
   var jobs = null;
@@ -31,7 +33,9 @@
     if (!container || !jobs) return;
 
     var isEs = lang === 'es';
-    var techLabel = LABELS.tech[lang] || LABELS.tech.en;
+    var techLabel         = LABELS.tech[lang]         || LABELS.tech.en;
+    var recLetterLabel    = LABELS.recLetter[lang]    || LABELS.recLetter.en;
+    var recLetterNote     = LABELS.recLetterNote[lang]|| LABELS.recLetterNote.en;
 
     var html = jobs.map(function (job) {
       var title      = isEs ? job.title_es      : job.title_en;
@@ -58,6 +62,13 @@
         }).join('') + '</ul>';
       }
 
+      var recLetterLink = '';
+      if (job.rec_letter) {
+        recLetterLink = '<p class="job-letter"><a href="' + escapeHtml(job.rec_letter) + '" class="btn primary" target="_blank" rel="noopener noreferrer">' +
+          escapeHtml(recLetterLabel) + ' ↗</a></p>' +
+          '<p class="job-meta">' + escapeHtml(recLetterNote) + '</p>';
+      }
+
       return '<article class="job-card">' +
         '<h3>' + escapeHtml(title) + '</h3>' +
         meta +
@@ -66,6 +77,7 @@
         '<p><strong>' + escapeHtml(techLabel) + '</strong> ' +
           '<span class="tech-tags">' + renderTags(job.tech) + '</span>' +
         '</p>' +
+        recLetterLink +
       '</article>';
     }).join('');
 
