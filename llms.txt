@@ -29,6 +29,19 @@ Development (DAM) with a GPA of 9.3/10.
   detection with navigation lockout, dark/light theme toggle, and two production variants
   (full and lite) from the same codebase via Flutter Flavors.
 
+## Recommendation Letter
+
+- **Issued by:** Pau Moraleda Martínez — Microvalencia Soluciones Informáticas S.L.
+- **Date:** June 2026
+- **PDF:** https://raulesteveza.github.io/doc/carta_recomendacion_microvalencia_censura.pdf
+
+Highlights noted by the direct supervisor:
+- **Technical capacity and problem-solving:** Excellent theoretical and practical knowledge; handled tasks with a technical criterion above average for an intern profile; demonstrated ability to rapidly learn languages and environments not previously studied.
+- **Results and product quality:** Fully satisfied with the results obtained; the final product delivers real value to the organisation.
+- **Attitude and teamwork:** Entrepreneurial attitude and excellent disposition for learning in new areas.
+
+Conclusion: "Raúl Estévez is a professional ready for a real work environment. We are convinced he will be a great asset for any organisation that decides to incorporate him into their team."
+
 ## Education
 
 - **Higher Technician in Multiplatform Application Development (DAM)**
