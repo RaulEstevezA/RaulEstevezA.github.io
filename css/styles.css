@@ -440,7 +440,17 @@ section + section {
 .job-card li  { line-height: 1.65; margin-bottom: 0.35rem; }
 .job-card li:last-child { margin-bottom: 0; }
 .job-card .job-letter { margin-top: 1.5rem; }
-.job-card .btn.primary { color: #ffffff; text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);}
+.job-card .letter-btn {
+  background: #1f6feb;
+  color: #ffffff;
+  border-color: #388bfd;
+  box-shadow: 0 0 0 1px rgba(88, 166, 255, 0.18);
+}
+
+.job-card .letter-btn:hover {
+  background: #388bfd;
+  border-color: #58a6ff;
+}
 
 /* =====================================================
    EDUCATION CARD (courses)
