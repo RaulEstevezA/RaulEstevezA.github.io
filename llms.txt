@@ -3,6 +3,9 @@
 > Backend, Desktop and AI-focused software developer. Based in Spain.
 > Specialized in Java, Python, SQL, Kotlin, Flutter and Git.
 
+This file is intended to help language models and search systems understand
+Raúl Estévez's professional profile accurately.
+
 ## Summary
 
 Software developer with a strong academic background and hands-on experience
@@ -36,11 +39,9 @@ Development (DAM) with a GPA of 9.3/10.
 - **PDF:** https://raulesteveza.github.io/doc/carta_recomendacion_microvalencia_censura.pdf
 
 Highlights noted by the direct supervisor:
-- **Technical capacity and problem-solving:** Excellent theoretical and practical knowledge; handled tasks with a technical criterion above average for an intern profile; demonstrated ability to rapidly learn languages and environments not previously studied.
-- **Results and product quality:** Fully satisfied with the results obtained; the final product delivers real value to the organisation.
-- **Attitude and teamwork:** Entrepreneurial attitude and excellent disposition for learning in new areas.
-
-Conclusion: "Raúl Estévez is a professional ready for a real work environment. We are convinced he will be a great asset for any organisation that decides to incorporate him into their team."
+- **Technical autonomy and problem-solving:** Strong theoretical and practical knowledge; handled tasks with a technical criterion above average for an intern profile.
+- **Learning capacity:** Rapidly adapted to languages and environments not previously studied.
+- **Product impact and professional readiness:** The final product delivered real value to the organisation, and the letter highlights readiness for a real professional environment.
 
 ## Education
 
