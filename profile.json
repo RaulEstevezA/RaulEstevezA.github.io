@@ -69,6 +69,15 @@
       "featured":    true
     },
     {
+      "name":        "Cinema App",
+      "type":        "Mobile Application (Movie Discovery)",
+      "description": "Flutter movie discovery app consuming 9 REST endpoints from The Movie Database (TMDB) API through a dedicated datasource and mapper layer (MovieMapper, ActorMapper, GenreMapper) that converts API DTOs into domain entities. Built with Clean Architecture, Riverpod state management and Drift (SQLite) for local persistence of favorite movies. Features an autoplay slideshow, infinite-scroll movie lists, debounced search, genre-based browsing with per-genre pagination, and a custom app icon.",
+      "stack":       ["Flutter", "Dart", "Riverpod", "go_router", "Dio", "DTO/Entity Mapping", "Drift", "SQLite"],
+      "repository":  "https://github.com/RaulEstevezA/Cinema_App",
+      "demo":        "https://youtube.com/shorts/67coTqVxwA4?feature=share",
+      "featured":    true
+    },
+    {
       "name":        "CS50 AI",
       "type":        "Artificial Intelligence Project",
       "description": "Structured CS50 AI exercise repository with 13 Python implementations across search, logic, uncertainty, optimization, machine learning, neural networks and natural language processing.",
