@@ -80,6 +80,12 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
   Real-time server downtime detection. Two production variants (full/lite) via Flutter Flavors. Planned for Google Play Store and App Store.
   Demo: https://youtu.be/lrgRXaBEdI4
 
+- **Cinema App** — Flutter movie discovery app consuming 9 REST endpoints of The Movie Database (TMDB) API.
+  Stack: Flutter, Dart, Riverpod, go_router, Dio, DTO/Entity Mapping, Drift (SQLite), Postman.
+  Clean Architecture (domain/infrastructure/presentation) with a dedicated datasource and mapper layer (MovieMapper, ActorMapper, GenreMapper) converting TMDB API DTOs into domain entities, with endpoint responses inspected and verified in Postman before modeling the DTOs. Riverpod state management, go_router StatefulShellRoute navigation, and Drift/SQLite for local favorites persistence. Features an autoplay slideshow, four infinite-scroll movie lists, debounced search, genre-based browsing with per-genre pagination, and a favorites masonry grid. Includes a unit test suite (mappers, repositories, pagination notifier) with mocktail.
+  Repository: https://github.com/RaulEstevezA/Cinema_App
+  Demo: https://youtube.com/shorts/67coTqVxwA4?feature=share
+
 - **CS50 AI** — Structured repository of 13 CS50 AI exercises across 7 course units.
   Stack: Python, Artificial Intelligence, Machine Learning, TensorFlow, scikit-learn, NLTK, Pygame.
   Covers graph search, Minimax, propositional inference, probabilistic reasoning, CSP optimization, k-NN, Q-learning, CNN image classification and NLP/attention exercises.
