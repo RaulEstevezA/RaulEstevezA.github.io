@@ -90,6 +90,18 @@
       var modalBtn = document.getElementById('proj-modal-github');
       modalBtn.setAttribute('href', wrap.dataset.github || '#');
       modalBtn.textContent = isEs ? (wrap.dataset.ctaLabelEs || 'Ver en GitHub') : (wrap.dataset.ctaLabel || 'View on GitHub');
+      modalBtn.className = wrap.dataset.ctaDemo ? 'btn btn-demo' : 'btn primary';
+
+      var demoBtn = document.getElementById('proj-modal-demo');
+      if (demoBtn) {
+        if (wrap.dataset.demo) {
+          demoBtn.setAttribute('href', wrap.dataset.demo);
+          demoBtn.textContent = isEs ? 'Ver demo' : 'Watch demo';
+          demoBtn.style.display = '';
+        } else {
+          demoBtn.style.display = 'none';
+        }
+      }
 
       var modalImg = document.getElementById('proj-modal-img');
       if (wrap.dataset.portrait) {

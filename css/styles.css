@@ -185,6 +185,17 @@ h3 { font-size: 1.1rem; margin: 0 0 0.75rem; }
   outline-offset: 2px;
 }
 
+.btn.btn-demo {
+  background: rgba(255, 68, 68, 0.1);
+  color: #ff6b6b;
+  border-color: #ff4444;
+}
+
+.btn.btn-demo:hover {
+  background: rgba(255, 68, 68, 0.2);
+  border-color: #ff6b6b;
+}
+
 /* =====================================================
    WINDOW (macOS style)
 ===================================================== */
@@ -302,6 +313,13 @@ section + section {
 
 .project-card-footer .tech-tags { flex: 1; margin: 0; }
 
+.project-card-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 /* Project Modal */
 #proj-modal {
   display: none;
@@ -390,6 +408,12 @@ section + section {
 }
 
 #proj-modal .tech-tags { margin: 0 0 1.25rem; }
+
+.modal-buttons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
 
 @media (max-width: 600px) {
   .project-card { grid-template-columns: 1fr; }

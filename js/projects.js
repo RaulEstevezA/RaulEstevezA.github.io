@@ -46,9 +46,19 @@
       var title = isEs ? project.title_es : project.title_en;
       var cardDesc = isEs ? project.card_desc_es : project.card_desc_en;
       var hasCustomCta = project.cta_label_en || project.cta_label_es;
-      var btnLabel = hasCustomCta
+      var githubLabel = hasCustomCta
         ? (isEs ? (project.cta_label_es || VIEW_DEMO.es) : (project.cta_label_en || VIEW_DEMO.en))
         : (VIEW_GITHUB[lang] || VIEW_GITHUB.en);
+
+      var githubBtnClass = hasCustomCta ? 'btn btn-demo' : 'btn primary';
+      var buttons = '<a href="' + escapeAttr(project.github) + '" class="' + githubBtnClass + '" target="_blank" rel="noopener">' +
+        escapeHtml(githubLabel) +
+      '</a>';
+      if (project.demo) {
+        buttons += '<a href="' + escapeAttr(project.demo) + '" class="btn btn-demo" target="_blank" rel="noopener">' +
+          escapeHtml(VIEW_DEMO[lang] || VIEW_DEMO.en) +
+        '</a>';
+      }
 
       return '<article class="project-card">' +
         '<div class="project-thumb-wrap"' +
@@ -61,8 +71,10 @@
           ' data-tech="' + escapeAttr(project.modal_tech) + '"' +
           ' data-images="' + escapeAttr(project.modal_images.join('|')) + '"' +
           ' data-github="' + escapeAttr(project.github) + '"' +
+          (project.demo ? ' data-demo="' + escapeAttr(project.demo) + '"' : '') +
           ' data-cta-label="' + escapeAttr(project.cta_label_en || VIEW_GITHUB.en) + '"' +
           ' data-cta-label-es="' + escapeAttr(project.cta_label_es || VIEW_GITHUB.es) + '"' +
+          (hasCustomCta ? ' data-cta-demo="true"' : '') +
           (project.portrait ? ' data-portrait="true"' : '') + '>' +
           '<img src="' + escapeAttr(project.thumb) + '"' +
                ' alt="' + escapeAttr(project.thumb_alt) + '"' +
@@ -77,9 +89,7 @@
         '</div>' +
         '<div class="project-card-footer">' +
           '<p class="tech-tags">' + renderTags(project.card_tech) + '</p>' +
-          '<a href="' + escapeAttr(project.github) + '" class="btn primary" target="_blank" rel="noopener">' +
-            escapeHtml(btnLabel) +
-          '</a>' +
+          '<div class="project-card-buttons">' + buttons + '</div>' +
         '</div>' +
       '</article>';
     }).join('');
