@@ -196,6 +196,17 @@ h3 { font-size: 1.1rem; margin: 0 0 0.75rem; }
   border-color: #ff6b6b;
 }
 
+.btn.btn-web {
+  background: rgba(63, 185, 80, 0.1);
+  color: #56d364;
+  border-color: #3fb950;
+}
+
+.btn.btn-web:hover {
+  background: rgba(63, 185, 80, 0.2);
+  border-color: #56d364;
+}
+
 /* =====================================================
    WINDOW (macOS style)
 ===================================================== */

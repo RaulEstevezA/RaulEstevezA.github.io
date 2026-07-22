@@ -10,8 +10,7 @@
     "modal_features_en/es": "Array of bullet points shown in the modal feature list",
     "modal_tech":         "Comma-separated tech tags shown in the modal (can be more detailed than card_tech)",
     "modal_images":       "Array of image paths for the modal carousel (first image shown on open)",
-    "github":             "GitHub repository URL for the card and modal buttons",
-    "demo":               "Optional demo URL (video, live site, etc.). When present, an extra demo button is shown alongside the GitHub button on the card and in the modal"
+    "links":              "Array of { type, url } shown as buttons on the card and in the modal, in this order. type is one of: github, demo, web. Each type has its own label and color (github = blue, demo = red/YouTube, web = green)"
   },
   "_also_update": [
     "llms.txt          → ## Featured Projects section",
@@ -35,9 +34,10 @@
 
       "card_tech": "Flutter, Dart, PHP, Laravel, REST API",
 
-      "cta_label_en": "Watch demo",
-      "cta_label_es": "Ver demo",
       "portrait": true,
+      "links": [
+        { "type": "demo", "url": "https://youtu.be/lrgRXaBEdI4" }
+      ],
 
       "modal_desc_en": "Mobile application built in Flutter during my internship at Microvalencia Soluciones Informáticas. It acts as a mobile gateway for the company ERP, consuming data for users, permissions, clients, time tracking, work orders, visits, holidays, documents and internal messaging through REST APIs designed and implemented specifically for this project on a Laravel/PHP backend.",
       "modal_desc_es": "Aplicación móvil desarrollada en Flutter durante las prácticas en Microvalencia Soluciones Informáticas. Actúa como puerta móvil al ERP de la empresa, consumiendo datos de usuarios, permisos, clientes, fichajes, partes de trabajo, visitas, vacaciones, documentos y mensajería a través de APIs REST diseñadas e implementadas específicamente para este proyecto sobre un backend Laravel/PHP.",
@@ -78,9 +78,7 @@
         "img/erpApp/lateral_bar.webp",
         "img/erpApp/client_detail.webp",
         "img/erpApp/offline.webp"
-      ],
-
-      "github": "https://youtu.be/lrgRXaBEdI4"
+      ]
     },
     {
       "thumb":     "img/thumbs/cinema_app.webp",
@@ -94,7 +92,10 @@
 
       "card_tech": "Flutter, Dart, Riverpod, Drift, go_router, Dio",
       "portrait": true,
-      "demo": "https://youtube.com/shorts/67coTqVxwA4?feature=share",
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/Cinema_App" },
+        { "type": "demo",   "url": "https://youtube.com/shorts/67coTqVxwA4?feature=share" }
+      ],
 
       "modal_desc_en": "Movie discovery application built in Flutter, consuming 9 REST endpoints of The Movie Database (TMDB) API via Dio. Structured with Clean Architecture across domain, infrastructure and presentation layers: a dedicated datasource and mapper layer (MovieMapper, ActorMapper, GenreMapper) transforms the raw TMDB JSON responses (DTOs) into domain entities, keeping the rest of the app decoupled from the external API shape. Uses Riverpod for state management, go_router with a StatefulShellRoute for tabbed navigation, and Drift (SQLite) for local persistence of favorite movies.",
       "modal_desc_es": "Aplicación de descubrimiento de películas desarrollada en Flutter, que consume 9 endpoints REST de la API de The Movie Database (TMDB) mediante Dio. Estructurada con Clean Architecture en capas de dominio, infraestructura y presentación: una capa dedicada de datasources y mappers (MovieMapper, ActorMapper, GenreMapper) transforma las respuestas JSON de TMDB (DTOs) en entidades de dominio, manteniendo el resto de la app desacoplado de la forma de la API externa. Usa Riverpod para la gestión de estado, go_router con StatefulShellRoute para la navegación por pestañas, y Drift (SQLite) para la persistencia local de películas favoritas.",
@@ -134,9 +135,7 @@
         "img/cinema_app/favorites_view.webp",
         "img/cinema_app/genres_list_view.webp",
         "img/cinema_app/movie_by_genre.webp"
-      ],
-
-      "github": "https://github.com/RaulEstevezA/Cinema_App"
+      ]
     },
     {
       "thumb":     "img/thumbs/cs50a1.webp",
@@ -180,8 +179,9 @@
         "img/hardvard_ia/parser.webp",
         "img/hardvard_ia/minesweeper.webp"
       ],
-
-      "github": "https://github.com/RaulEstevezA/harvard_ai"
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/harvard_ai" }
+      ]
     },
     {
       "thumb":     "img/thumbs/duckware.webp",
@@ -225,8 +225,9 @@
         "img/duckstore/cpuProducts.webp",
         "img/duckstore/productDetail1.webp"
       ],
-
-      "github": "https://github.com/RaulEstevezA/final_project_cs50w"
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/final_project_cs50w" }
+      ]
     },
     {
       "thumb":     "img/thumbs/online.webp",
@@ -272,8 +273,9 @@
         "img/onlineStore/nuevo_pedido.webp",
         "img/onlineStore/gestion_clientes.webp"
       ],
-
-      "github": "https://github.com/RaulEstevezA/UOC_ojoaldato"
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/UOC_ojoaldato" }
+      ]
     }
   ]
 }

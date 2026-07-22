@@ -1,15 +1,20 @@
 (function () {
   'use strict';
 
-  var VIEW_GITHUB = { en: 'View on GitHub', es: 'Ver en GitHub' };
-  var VIEW_DEMO   = { en: 'Watch demo',     es: 'Ver demo' };
-
   var LINK_LABELS = {
     github: 'GitHub',
     demo: 'Demo',
     repo1: 'Repo 1',
     repo2: 'Repo 2'
   };
+
+  // Shared with lightbox.js: how each featured-project link type is labeled and styled.
+  var FEATURED_LINK_TYPES = {
+    github: { label: { en: 'View on GitHub', es: 'Ver en GitHub' }, className: 'btn primary' },
+    demo:   { label: { en: 'Watch demo',     es: 'Ver demo' },      className: 'btn btn-demo' },
+    web:    { label: { en: 'View website',   es: 'Ver web' },       className: 'btn btn-web' }
+  };
+  window.FEATURED_LINK_TYPES = FEATURED_LINK_TYPES;
 
   var bestProjects = null;
   var otherProjects = null;
@@ -45,20 +50,15 @@
     var html = projects.map(function (project) {
       var title = isEs ? project.title_es : project.title_en;
       var cardDesc = isEs ? project.card_desc_es : project.card_desc_en;
-      var hasCustomCta = project.cta_label_en || project.cta_label_es;
-      var githubLabel = hasCustomCta
-        ? (isEs ? (project.cta_label_es || VIEW_DEMO.es) : (project.cta_label_en || VIEW_DEMO.en))
-        : (VIEW_GITHUB[lang] || VIEW_GITHUB.en);
+      var links = project.links || [];
 
-      var githubBtnClass = hasCustomCta ? 'btn btn-demo' : 'btn primary';
-      var buttons = '<a href="' + escapeAttr(project.github) + '" class="' + githubBtnClass + '" target="_blank" rel="noopener">' +
-        escapeHtml(githubLabel) +
-      '</a>';
-      if (project.demo) {
-        buttons += '<a href="' + escapeAttr(project.demo) + '" class="btn btn-demo" target="_blank" rel="noopener">' +
-          escapeHtml(VIEW_DEMO[lang] || VIEW_DEMO.en) +
+      var buttons = links.map(function (link) {
+        var type = FEATURED_LINK_TYPES[link.type] || FEATURED_LINK_TYPES.github;
+        var label = type.label[lang] || type.label.en;
+        return '<a href="' + escapeAttr(link.url) + '" class="' + type.className + '" target="_blank" rel="noopener">' +
+          escapeHtml(label) +
         '</a>';
-      }
+      }).join('');
 
       return '<article class="project-card">' +
         '<div class="project-thumb-wrap"' +
@@ -70,11 +70,7 @@
           ' data-features-es="' + escapeAttr(project.modal_features_es.join('|')) + '"' +
           ' data-tech="' + escapeAttr(project.modal_tech) + '"' +
           ' data-images="' + escapeAttr(project.modal_images.join('|')) + '"' +
-          ' data-github="' + escapeAttr(project.github) + '"' +
-          (project.demo ? ' data-demo="' + escapeAttr(project.demo) + '"' : '') +
-          ' data-cta-label="' + escapeAttr(project.cta_label_en || VIEW_GITHUB.en) + '"' +
-          ' data-cta-label-es="' + escapeAttr(project.cta_label_es || VIEW_GITHUB.es) + '"' +
-          (hasCustomCta ? ' data-cta-demo="true"' : '') +
+          ' data-links="' + escapeAttr(JSON.stringify(links)) + '"' +
           (project.portrait ? ' data-portrait="true"' : '') + '>' +
           '<img src="' + escapeAttr(project.thumb) + '"' +
                ' alt="' + escapeAttr(project.thumb_alt) + '"' +
