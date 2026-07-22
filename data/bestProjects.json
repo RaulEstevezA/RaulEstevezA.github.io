@@ -10,7 +10,8 @@
     "modal_features_en/es": "Array of bullet points shown in the modal feature list",
     "modal_tech":         "Comma-separated tech tags shown in the modal (can be more detailed than card_tech)",
     "modal_images":       "Array of image paths for the modal carousel (first image shown on open)",
-    "github":             "GitHub repository URL for the card and modal buttons"
+    "github":             "GitHub repository URL for the card and modal buttons",
+    "demo":               "Optional demo URL (video, live site, etc.). When present, an extra demo button is shown alongside the GitHub button on the card and in the modal"
   },
   "_also_update": [
     "llms.txt          → ## Featured Projects section",
@@ -93,6 +94,7 @@
 
       "card_tech": "Flutter, Dart, Riverpod, Drift, go_router, Dio",
       "portrait": true,
+      "demo": "https://youtube.com/shorts/67coTqVxwA4?feature=share",
 
       "modal_desc_en": "Movie discovery application built in Flutter, consuming 9 REST endpoints of The Movie Database (TMDB) API via Dio. Structured with Clean Architecture across domain, infrastructure and presentation layers: a dedicated datasource and mapper layer (MovieMapper, ActorMapper, GenreMapper) transforms the raw TMDB JSON responses (DTOs) into domain entities, keeping the rest of the app decoupled from the external API shape. Uses Riverpod for state management, go_router with a StatefulShellRoute for tabbed navigation, and Drift (SQLite) for local persistence of favorite movies.",
       "modal_desc_es": "Aplicación de descubrimiento de películas desarrollada en Flutter, que consume 9 endpoints REST de la API de The Movie Database (TMDB) mediante Dio. Estructurada con Clean Architecture en capas de dominio, infraestructura y presentación: una capa dedicada de datasources y mappers (MovieMapper, ActorMapper, GenreMapper) transforma las respuestas JSON de TMDB (DTOs) en entidades de dominio, manteniendo el resto de la app desacoplado de la forma de la API externa. Usa Riverpod para la gestión de estado, go_router con StatefulShellRoute para la navegación por pestañas, y Drift (SQLite) para la persistencia local de películas favoritas.",
@@ -108,8 +110,7 @@
         "Genre browsing with a dedicated categories screen and per-genre movie listings with pagination",
         "Remote and local infinite pagination with in-memory caching of movie details and cast by ID",
         "Custom app icon generated for Android and iOS, and animated tab transitions",
-        "Unit test suite (mappers, repositories, pagination notifier) with flutter_test and mocktail",
-        "Demo video: https://youtube.com/shorts/67coTqVxwA4?feature=share"
+        "Unit test suite (mappers, repositories, pagination notifier) with flutter_test and mocktail"
       ],
       "modal_features_es": [
         "Consume 9 endpoints REST de TMDB (en cartelera, populares, próximos estrenos, mejor valoradas, detalle, reparto, búsqueda, listado de géneros, descubrir por género) mediante datasources basados en Dio",
@@ -122,8 +123,7 @@
         "Navegación por géneros con pantalla de categorías dedicada y listados de películas por género con paginación",
         "Paginación infinita remota y local con caché en memoria de detalles de película y reparto por ID",
         "Icono de la app generado para Android e iOS, y animaciones de transición entre pestañas",
-        "Suite de tests unitarios (mappers, repositorios, notifier de paginación) con flutter_test y mocktail",
-        "Vídeo demo: https://youtube.com/shorts/67coTqVxwA4?feature=share"
+        "Suite de tests unitarios (mappers, repositorios, notifier de paginación) con flutter_test y mocktail"
       ],
 
       "modal_tech":   "Flutter, Dart, Riverpod, go_router, Dio, DTO/Entity Mapping, Drift (SQLite), flutter_staggered_grid, animate_do, card_swiper, TMDB API, Postman",
