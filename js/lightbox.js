@@ -87,20 +87,27 @@
         appendTag(techList, tag);
       });
 
-      var modalBtn = document.getElementById('proj-modal-github');
-      modalBtn.setAttribute('href', wrap.dataset.github || '#');
-      modalBtn.textContent = isEs ? (wrap.dataset.ctaLabelEs || 'Ver en GitHub') : (wrap.dataset.ctaLabel || 'View on GitHub');
-      modalBtn.className = wrap.dataset.ctaDemo ? 'btn btn-demo' : 'btn primary';
-
-      var demoBtn = document.getElementById('proj-modal-demo');
-      if (demoBtn) {
-        if (wrap.dataset.demo) {
-          demoBtn.setAttribute('href', wrap.dataset.demo);
-          demoBtn.textContent = isEs ? 'Ver demo' : 'Watch demo';
-          demoBtn.style.display = '';
-        } else {
-          demoBtn.style.display = 'none';
+      var linkTypes = window.FEATURED_LINK_TYPES || {};
+      var modalLinks = document.getElementById('proj-modal-links');
+      if (modalLinks) {
+        var projectLinks = [];
+        try {
+          projectLinks = JSON.parse(wrap.dataset.links || '[]');
+        } catch (error) {
+          projectLinks = [];
         }
+
+        modalLinks.innerHTML = '';
+        projectLinks.forEach(function (link) {
+          var type = linkTypes[link.type] || linkTypes.github;
+          var a = document.createElement('a');
+          a.href = link.url;
+          a.className = type.className;
+          a.target = '_blank';
+          a.rel = 'noopener';
+          a.textContent = type.label[isEs ? 'es' : 'en'] || type.label.en;
+          modalLinks.appendChild(a);
+        });
       }
 
       var modalImg = document.getElementById('proj-modal-img');
