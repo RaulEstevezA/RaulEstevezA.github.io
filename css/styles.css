@@ -458,6 +458,9 @@ section + section {
 
 .project-list a:hover { text-decoration: underline; }
 
+.project-list a.link-demo { color: #ff6b6b; }
+.project-list a.link-web  { color: #56d364; }
+
 .certs-details .project-list {
   padding: 0.75rem 1.5rem 1rem;
   border-top: 1px solid var(--border);
