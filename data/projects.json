@@ -3,7 +3,7 @@
   "_fields": {
     "name":        "Project name shown in bold",
     "desc_en/es":  "Short description (1-2 sentences)",
-    "links":       "Array of link objects. Each needs 'type' (github | demo | repo1 | repo2) and 'url'"
+    "links":       "Array of link objects. Each needs 'type' (github | demo | web | repo1 | repo2) and 'url'"
   },
   "_also_update": [
     "llms.txt     → ## Other Projects section",
@@ -114,7 +114,7 @@
       "desc_es": "Ejercicio de tienda de plantas con React y Redux de un curso de IBM, con listado de productos, categorías de plantas, flujo de carrito y demo en GitHub Pages. Completado a partir de una base inicial proporcionada.",
       "links": [
         { "type": "github", "url": "https://github.com/RaulEstevezA/e-plantShopping" },
-        { "type": "demo",   "url": "https://raulpracticareact.github.io/plantShopping/" }
+        { "type": "web",    "url": "https://raulpracticareact.github.io/plantShopping/" }
       ]
     },
     {

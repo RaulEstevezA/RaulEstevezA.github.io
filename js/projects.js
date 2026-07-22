@@ -4,6 +4,7 @@
   var LINK_LABELS = {
     github: 'GitHub',
     demo: 'Demo',
+    web: 'Web',
     repo1: 'Repo 1',
     repo2: 'Repo 2'
   };
@@ -101,7 +102,7 @@
     var html = projects.map(function (project) {
       var desc = lang === 'es' ? project.desc_es : project.desc_en;
       var links = (project.links || []).map(function (link) {
-        return '<a href="' + escapeAttr(link.url) + '" target="_blank" rel="noopener">' +
+        return '<a href="' + escapeAttr(link.url) + '" class="link-' + escapeAttr(link.type) + '" target="_blank" rel="noopener">' +
           escapeHtml(LINK_LABELS[link.type] || link.type) + '</a>';
       }).join(', ');
 
