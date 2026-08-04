@@ -315,18 +315,20 @@ section + section {
   grid-column: 1 / -1;
   grid-row: 2;
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
   margin-top: 0.75rem;
   padding-top: 0.75rem;
   border-top: 1px solid var(--border);
 }
 
-.project-card-footer .tech-tags { flex: 1; margin: 0; }
+.project-card-footer .tech-tags { margin: 0; }
 
 .project-card-buttons {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.5rem;
   flex-wrap: wrap;
 }
@@ -422,6 +424,7 @@ section + section {
 
 .modal-buttons {
   display: flex;
+  justify-content: flex-end;
   gap: 0.75rem;
   flex-wrap: wrap;
 }
