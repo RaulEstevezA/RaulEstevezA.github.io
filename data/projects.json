@@ -114,7 +114,7 @@
       "desc_es": "Ejercicio de tienda de plantas con React y Redux de un curso de IBM, con listado de productos, categorías de plantas, flujo de carrito y demo en GitHub Pages. Completado a partir de una base inicial proporcionada.",
       "links": [
         { "type": "github", "url": "https://github.com/RaulEstevezA/e-plantShopping" },
-        { "type": "web",    "url": "https://raulpracticareact.github.io/plantShopping/" }
+        { "type": "web",    "url": "https://raulesteveza.github.io/e-plantShopping/" }
       ]
     },
     {
