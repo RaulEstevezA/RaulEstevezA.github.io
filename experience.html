@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Experience | Raúl Estévez" />
   <meta name="twitter:description" content="Professional experience in software development within real-world environments." />
   <meta name="twitter:image" content="https://raulesteveza.github.io/img/raulestevezio.jpg" />
-  <link rel="stylesheet" href="css/styles.css?v=20260609-2" />
+  <link rel="stylesheet" href="css/styles.css?v=20260916-1" />
   <link rel="prefetch" href="data/experience.json" as="fetch" crossorigin="anonymous" />
   <link rel="prefetch" href="locales/en/common.json" as="fetch" crossorigin="anonymous" />
   <link rel="prefetch" href="locales/en/experience.json" as="fetch" crossorigin="anonymous" />
@@ -93,7 +93,16 @@
     </div>
   </main>
 
+  <dialog id="letter-dialog" aria-labelledby="letter-dialog-title">
+    <div class="letter-dialog-header">
+      <h2 id="letter-dialog-title">Recommendation letter</h2>
+      <button type="button" id="letter-dialog-close" aria-label="Close">×</button>
+    </div>
+    <iframe id="letter-dialog-frame" title="Recommendation letter PDF"></iframe>
+    <a id="letter-dialog-open" class="btn" target="_blank" rel="noopener noreferrer">Open PDF</a>
+  </dialog>
+
   <script src="js/i18n.js?v=20260509-1"></script>
-  <script src="js/experience.js?v=20260609-2"></script>
+  <script src="js/experience.js?v=20260916-1"></script>
 </body>
 </html>

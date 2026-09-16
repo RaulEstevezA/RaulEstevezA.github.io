@@ -4,6 +4,9 @@
   var LABELS = {
     tech:         { en: 'Technologies:',                                                          es: 'Tecnologías:' },
     recLetter:    { en: 'View recommendation letter',                                             es: 'Ver carta de recomendación' },
+    recLetterTitle: { en: 'Recommendation letter', es: 'Carta de recomendación' },
+    recLetterOpen: { en: 'Open PDF', es: 'Abrir PDF' },
+    recLetterClose: { en: 'Close', es: 'Cerrar' },
     recLetterNote:{ en: 'The original unredacted version is available upon request.',             es: 'La versión original sin censura está disponible bajo petición.' }
   };
 
@@ -37,7 +40,7 @@
     var recLetterLabel    = LABELS.recLetter[lang]    || LABELS.recLetter.en;
     var recLetterNote     = LABELS.recLetterNote[lang]|| LABELS.recLetterNote.en;
 
-    var html = jobs.map(function (job) {
+    var html = jobs.map(function (job, index) {
       var title      = isEs ? job.title_es      : job.title_en;
       var paragraphs = isEs ? job.paragraphs_es : job.paragraphs_en;
       var highlights = isEs ? job.highlights_es : job.highlights_en;
@@ -64,8 +67,8 @@
 
       var recLetterLink = '';
       if (job.rec_letter) {
-        recLetterLink = '<p class="job-letter"><a href="' + escapeHtml(job.rec_letter) + '" class="btn primary letter-btn" target="_blank" rel="noopener noreferrer">' +
-          escapeHtml(recLetterLabel) + ' ↗</a></p>' +
+        recLetterLink = '<p class="job-letter"><button type="button" class="btn primary letter-btn" data-letter-index="' + index + '">' +
+          escapeHtml(recLetterLabel) + '</button></p>' +
           '<p class="job-meta">' + escapeHtml(recLetterNote) + '</p>';
       }
 
@@ -88,8 +91,41 @@
     return localStorage.getItem('lang') || document.documentElement.lang || 'en';
   }
 
+  function updateDialogLabels(lang) {
+    var title = LABELS.recLetterTitle[lang] || LABELS.recLetterTitle.en;
+    document.getElementById('letter-dialog-title').textContent = title;
+    document.getElementById('letter-dialog-frame').title = title + ' PDF';
+    document.getElementById('letter-dialog-open').textContent = LABELS.recLetterOpen[lang] || LABELS.recLetterOpen.en;
+    document.getElementById('letter-dialog-close').setAttribute('aria-label', LABELS.recLetterClose[lang] || LABELS.recLetterClose.en);
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     if (!document.getElementById('experience-list')) return;
+
+    var dialog = document.getElementById('letter-dialog');
+    var frame = document.getElementById('letter-dialog-frame');
+    var openLink = document.getElementById('letter-dialog-open');
+
+    document.getElementById('experience-list').addEventListener('click', function (event) {
+      var button = event.target.closest('[data-letter-index]');
+      if (!button || !jobs) return;
+      var job = jobs[Number(button.dataset.letterIndex)];
+      if (!job || !job.rec_letter) return;
+      frame.src = job.rec_letter;
+      openLink.href = job.rec_letter;
+      dialog.showModal();
+    });
+
+    document.getElementById('letter-dialog-close').addEventListener('click', function () {
+      dialog.close();
+    });
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('close', function () {
+      frame.removeAttribute('src');
+    });
+    updateDialogLabels(currentLang());
 
     getJson('data/experience.json').then(function (data) {
       jobs = data.jobs;
@@ -101,5 +137,6 @@
 
   document.addEventListener('languagechange:site', function (event) {
     renderJobs(event.detail.lang);
+    updateDialogLabels(event.detail.lang);
   });
 }());
