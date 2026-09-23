@@ -11,7 +11,7 @@ Raúl Estévez's professional profile accurately.
 Software developer with a strong academic background and hands-on experience
 in backend systems, desktop applications, and artificial intelligence projects.
 Currently completing a Higher Technician degree in Multiplatform Application
-Development (DAM) with a GPA of 9.3/10.
+Development (DAM) with a GPA of 9.1/10.
 
 ## Experience
 
@@ -36,7 +36,7 @@ Development (DAM) with a GPA of 9.3/10.
 
 - **Issued by:** Pau Moraleda Martínez — Microvalencia Soluciones Informáticas S.L.
 - **Date:** June 2026
-- **PDF:** https://raulesteveza.github.io/doc/carta_recomendacion_microvalencia_censura.pdf
+- **PDF:** https://raulesteveza.github.io/doc/carta_recomendacion/carta_recomendacion_microvalencia_censura.pdf
 
 Highlights noted by the direct supervisor:
 - **Technical autonomy and problem-solving:** Strong theoretical and practical knowledge; handled tasks with a technical criterion above average for an intern profile.
@@ -46,7 +46,7 @@ Highlights noted by the direct supervisor:
 ## Education
 
 - **Higher Technician in Multiplatform Application Development (DAM)**
-  Jesuites Educacio - UOC — 2024–2026 — GPA: 9.3 / 10
+  Jesuites Educacio - UOC — 2024–2026 — GPA: 9.1 / 10
 
 - **CS50's Introduction to Computer Science** — HarvardX
 - **CS50's Introduction to Programming with Python** — HarvardX

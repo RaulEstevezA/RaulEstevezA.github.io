@@ -19,6 +19,7 @@
   <meta name="twitter:description" content="Formal education, professional certificates and individual courses by Raúl Estévez, focused on software development and computer science." />
   <meta name="twitter:image" content="https://raulesteveza.github.io/img/raulestevezio.jpg" />
   <link rel="stylesheet" href="css/styles.css?v=20260609-2" />
+  <link rel="prefetch" href="data/education.json" as="fetch" crossorigin="anonymous" />
   <link rel="prefetch" href="data/certificates.json" as="fetch" crossorigin="anonymous" />
   <link rel="prefetch" href="locales/en/common.json" as="fetch" crossorigin="anonymous" />
   <link rel="prefetch" href="locales/en/courses.json" as="fetch" crossorigin="anonymous" />
@@ -41,7 +42,7 @@
     ],
     "alumniOf": [
       { "@type": "EducationalOrganization", "name": "Jesuites Educacio - UOC",
-        "description": "Higher Technician in Multiplatform Application Development (DAM), GPA 9.3/10, 2024–2026" },
+        "description": "Higher Technician in Multiplatform Application Development (DAM), GPA 9.1/10, 2024–2026" },
       { "@type": "EducationalOrganization", "name": "HarvardX",
         "description": "CS50x, CS50P, CS50W, CS50AI, Computer Science for Python Programming, Computer Science for Web Programming, Learning Python for Data Science" },
       { "@type": "EducationalOrganization", "name": "IBM" },
@@ -93,11 +94,8 @@
         <!-- Formal Education -->
         <section>
           <h2 data-i18n="courses.formal_heading">Formal Education</h2>
-          <div class="edu-card">
-            <p><strong data-i18n="courses.dam_title">Higher Technician in Multiplatform Application Development (DAM)</strong></p>
-            <p data-i18n="courses.dam_school">Jesuites Educacio - UOC</p>
-            <p data-i18n="courses.dam_period">2024 – 2026</p>
-            <p><em data-i18n="courses.dam_gpa">GPA: 9.3 / 10</em></p>
+          <div id="education-list" class="education-list">
+            <!-- populated by certs.js from data/education.json -->
           </div>
         </section>
 
@@ -149,7 +147,16 @@
     </div>
   </main>
 
+  <dialog id="education-dialog" class="pdf-dialog" aria-labelledby="education-dialog-title">
+    <div class="pdf-dialog-header">
+      <h2 id="education-dialog-title">Academic document</h2>
+      <button type="button" id="education-dialog-close" class="pdf-dialog-close" aria-label="Close">×</button>
+    </div>
+    <iframe id="education-dialog-frame" class="pdf-dialog-frame" title="Academic document PDF"></iframe>
+    <a id="education-dialog-open" class="btn pdf-dialog-open" target="_blank" rel="noopener noreferrer">Open PDF</a>
+  </dialog>
+
   <script src="js/i18n.js?v=20260509-1"></script>
-  <script src="js/certs.js?v=20260509-1"></script>
+  <script src="js/certs.js?v=20260923-2"></script>
 </body>
 </html>
