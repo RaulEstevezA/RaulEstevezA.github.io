@@ -42,6 +42,12 @@
 
   "education": [
     {
+      "degree":      "Bachelor's Degree in Computer Engineering",
+      "institution": "Universitat Oberta de Catalunya (UOC)",
+      "period":      "2026 – Present",
+      "status":      "In progress"
+    },
+    {
       "degree":      "Higher Technician in Multiplatform Application Development (DAM)",
       "institution": "Jesuites Educacio - UOC",
       "period":      "2024 – 2026",

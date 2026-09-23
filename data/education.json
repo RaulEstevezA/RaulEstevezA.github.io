@@ -14,6 +14,16 @@
   ],
   "education": [
     {
+      "title_en": "Bachelor's Degree in Computer Engineering",
+      "title_es": "Grado en Ingeniería Informática",
+      "institution": "Universitat Oberta de Catalunya (UOC)",
+      "period_en": "2026 – Present",
+      "period_es": "2026 – Actualidad",
+      "grade_en": "In progress",
+      "grade_es": "En curso",
+      "documents": []
+    },
+    {
       "title_en": "Higher Technician in Multiplatform Application Development (DAM)",
       "title_es": "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)",
       "institution": "Jesuites Educacio - UOC",
