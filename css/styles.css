@@ -333,8 +333,8 @@ section + section {
   flex-wrap: wrap;
 }
 
-/* Recommendation letter dialog */
-#letter-dialog {
+/* PDF preview dialog */
+.pdf-dialog {
   width: min(960px, calc(100vw - 2rem));
   height: min(90vh, 900px);
   height: min(90dvh, 900px);
@@ -348,24 +348,24 @@ section + section {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
 }
 
-#letter-dialog[open] {
+.pdf-dialog[open] {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-#letter-dialog::backdrop { background: rgba(0, 0, 0, 0.85); }
+.pdf-dialog::backdrop { background: rgba(0, 0, 0, 0.85); }
 
-.letter-dialog-header {
+.pdf-dialog-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
 }
 
-.letter-dialog-header h2 { margin: 0; font-size: 1.1rem; }
+.pdf-dialog-header h2 { margin: 0; font-size: 1.1rem; }
 
-#letter-dialog-close {
+.pdf-dialog-close {
   border: 0;
   background: none;
   color: var(--muted);
@@ -374,9 +374,9 @@ section + section {
   cursor: pointer;
 }
 
-#letter-dialog-close:hover { color: var(--text); }
+.pdf-dialog-close:hover { color: var(--text); }
 
-#letter-dialog-frame {
+.pdf-dialog-frame {
   width: 100%;
   flex: 1;
   min-height: 0;
@@ -384,9 +384,10 @@ section + section {
   background: white;
 }
 
-#letter-dialog-open { align-self: flex-end; margin: 0; }
+.pdf-dialog-open { align-self: flex-end; margin: 0; }
 
-.letter-btn { cursor: pointer; font-family: inherit; }
+.letter-btn,
+.education-document-btn { cursor: pointer; font-family: inherit; }
 
 /* Project Modal */
 #proj-modal {
@@ -559,8 +560,34 @@ section + section {
   border: 1px solid var(--border);
 }
 
+.education-list {
+  display: grid;
+  gap: 1rem;
+}
+
 .edu-card p { margin: 0 0 0.3rem; }
 .edu-card p:last-child { margin-bottom: 0; }
+
+.edu-footer,
+.edu-documents {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.edu-footer {
+  gap: 0.75rem 1rem;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.edu-footer p { margin: 0; }
+
+.edu-documents {
+  gap: 0.65rem;
+  margin-left: auto;
+}
 
 /* =====================================================
    COURSE / LANGUAGE LISTS

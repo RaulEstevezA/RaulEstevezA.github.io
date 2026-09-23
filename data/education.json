@@ -1,0 +1,38 @@
+{
+  "_note": "Formal education shown on courses.html. Add new qualifications to the 'education' array — order here = display order.",
+  "_fields": {
+    "title_en/es": "Qualification title",
+    "institution": "School or institution",
+    "period_en/es": "Study period",
+    "grade_en/es": "Final grade",
+    "documents": "Optional public documents. Each needs label_en/es and url"
+  },
+  "_also_update": [
+    "llms.txt     → ## Education section",
+    "profile.json → education array",
+    "courses.html → <script type='application/ld+json'> alumniOf"
+  ],
+  "education": [
+    {
+      "title_en": "Higher Technician in Multiplatform Application Development (DAM)",
+      "title_es": "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)",
+      "institution": "Jesuites Educacio - UOC",
+      "period_en": "2024 – 2026",
+      "period_es": "2024 – 2026",
+      "grade_en": "GPA: 9.1 / 10",
+      "grade_es": "Nota media: 9,1 / 10",
+      "documents": [
+        {
+          "label_en": "Study certificate",
+          "label_es": "Certificado de estudios",
+          "url": "doc/expediente_academico_dam/certificado_estudios_raulestevez.pdf"
+        },
+        {
+          "label_en": "Academic transcript",
+          "label_es": "Expediente académico",
+          "url": "doc/expediente_academico_dam/expediente_raulestevez.pdf"
+        }
+      ]
+    }
+  ]
+}
