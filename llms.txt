@@ -89,6 +89,12 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
   Repository: https://github.com/RaulEstevezA/Cinema_App
   Demo: https://youtube.com/shorts/67coTqVxwA4?feature=share
 
+- **Flutter Shop Admin** — Cross-platform application for managing an online store catalog and stock.
+  Stack: Flutter, Dart, Riverpod, go_router, Dio, Formz, REST API, JWT, NestJS, Clean Architecture.
+  Includes persistent JWT authentication, login and registration, product CRUD, infinite pagination, validated product and stock forms, camera/gallery image selection and file uploads to a separate NestJS backend.
+  Repository: https://github.com/RaulEstevezA/Flutter_Shop_Admin
+  Demo: https://youtube.com/shorts/OQrZLijUDiA?feature=share
+
 - **CS50 AI** — Structured repository of 13 CS50 AI exercises across 7 course units.
   Stack: Python, Artificial Intelligence, Machine Learning, TensorFlow, scikit-learn, NLTK, Pygame.
   Covers graph search, Minimax, propositional inference, probabilistic reasoning, CSP optimization, k-NN, Q-learning, CNN image classification and NLP/attention exercises.
