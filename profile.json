@@ -84,6 +84,15 @@
       "featured":    true
     },
     {
+      "name":        "Flutter Shop Admin",
+      "type":        "Mobile Store Management Application",
+      "description": "Cross-platform Flutter application for managing an online store catalog and stock through a NestJS REST API. Includes persistent JWT authentication, product CRUD, infinite pagination, validated forms, camera/gallery image uploads and Clean Architecture with Riverpod.",
+      "stack":       ["Flutter", "Dart", "Riverpod", "go_router", "Dio", "Formz", "REST API", "JWT", "NestJS", "Clean Architecture"],
+      "repository":  "https://github.com/RaulEstevezA/Flutter_Shop_Admin",
+      "demo":        "https://youtube.com/shorts/OQrZLijUDiA?feature=share",
+      "featured":    true
+    },
+    {
       "name":        "CS50 AI",
       "type":        "Artificial Intelligence Project",
       "description": "Structured CS50 AI exercise repository with 13 Python implementations across search, logic, uncertainty, optimization, machine learning, neural networks and natural language processing.",

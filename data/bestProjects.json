@@ -138,6 +138,60 @@
       ]
     },
     {
+      "thumb":     "img/thumbs/flutter_shop_admin.webp",
+      "thumb_alt": "Flutter Shop Admin product catalog screenshot",
+
+      "title_en": "Flutter Shop Admin — Store Management App",
+      "title_es": "Flutter Shop Admin — App de Gestión de Tienda",
+
+      "card_desc_en": "Flutter application for managing an online store catalog and stock through an authenticated REST API, with product CRUD, infinite pagination, validated forms and image uploads.",
+      "card_desc_es": "Aplicación Flutter para gestionar el catálogo y el stock de una tienda online mediante una API REST autenticada, con CRUD de productos, paginación infinita, formularios validados y subida de imágenes.",
+
+      "card_tech": "Flutter, Dart, Riverpod, go_router, Dio, REST API",
+      "portrait": true,
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/Flutter_Shop_Admin" },
+        { "type": "demo",   "url": "https://youtube.com/shorts/OQrZLijUDiA?feature=share" }
+      ],
+
+      "modal_desc_en": "Cross-platform Flutter application for managing an online store's product catalog and stock. It follows Clean Architecture across domain, infrastructure and presentation layers, and connects to a NestJS REST backend through Dio. Authentication uses JWT tokens persisted locally and automatically attached to product requests.",
+      "modal_desc_es": "Aplicación multiplataforma en Flutter para gestionar el catálogo de productos y el stock de una tienda online. Sigue Clean Architecture mediante capas de dominio, infraestructura y presentación, y se conecta a un backend REST en NestJS a través de Dio. La autenticación utiliza tokens JWT persistidos localmente y enviados automáticamente en las peticiones de productos.",
+
+      "modal_features_en": [
+        "Login and user registration with validated forms",
+        "Persistent JWT session with startup verification and authentication-based redirects",
+        "Product catalog in a two-column masonry grid with infinite pagination",
+        "Create and update products through authenticated REST endpoints",
+        "Validated product fields for title, slug, price and non-negative stock",
+        "Size, gender, description and tag management",
+        "Camera and gallery image selection with upload before product saving",
+        "Clean Architecture with domain, infrastructure and presentation layers",
+        "Riverpod state management and declarative navigation with go_router",
+        "Separate NestJS REST backend for authentication, products and file uploads"
+      ],
+      "modal_features_es": [
+        "Inicio de sesión y registro de usuarios con formularios validados",
+        "Sesión JWT persistente con verificación al iniciar y redirecciones según el estado de autenticación",
+        "Catálogo de productos en cuadrícula masonry de dos columnas con paginación infinita",
+        "Creación y actualización de productos mediante endpoints REST autenticados",
+        "Validación de nombre, slug, precio y stock no negativo",
+        "Gestión de tallas, género, descripción y etiquetas",
+        "Selección de imágenes desde la cámara o la galería y subida previa al guardado del producto",
+        "Clean Architecture con capas de dominio, infraestructura y presentación",
+        "Gestión de estado con Riverpod y navegación declarativa mediante go_router",
+        "Backend REST independiente en NestJS para autenticación, productos y subida de archivos"
+      ],
+
+      "modal_tech":   "Flutter, Dart, Riverpod, go_router, Dio, Formz, image_picker, shared_preferences, REST API, JWT, NestJS, Clean Architecture",
+      "modal_images": [
+        "img/flutter_shop_admin/1_login.webp",
+        "img/flutter_shop_admin/2_main.webp",
+        "img/flutter_shop_admin/3_product_detail.webp",
+        "img/flutter_shop_admin/4_new_product.webp",
+        "img/flutter_shop_admin/5_new_product_added.webp"
+      ]
+    },
+    {
       "thumb":     "img/thumbs/cs50a1.webp",
       "thumb_alt": "CS50 AI project screenshot",
 
