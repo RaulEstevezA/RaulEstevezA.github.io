@@ -38,8 +38,8 @@
     },
     {
       "name": "Flutter Exercises",
-      "desc_en": "Hands-on Flutter and Dart exercises from an advanced mobile development course.",
-      "desc_es": "Ejercicios prácticos de Flutter y Dart de un curso avanzado de desarrollo móvil.",
+      "desc_en": "Collection of practical Flutter and Dart examples showcasing different framework features and mobile development concepts.",
+      "desc_es": "Colección de ejemplos prácticos en Flutter y Dart que muestra distintas funcionalidades del framework y conceptos de desarrollo móvil.",
       "links": [
         { "type": "github", "url": "https://github.com/RaulEstevezA/FlutterExercises" }
       ]
