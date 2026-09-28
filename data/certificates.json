@@ -4,7 +4,7 @@
     "name":     "Certificate or course name",
     "provider": "Issuing organization (HarvardX, IBM, UC3Mx, UAMx, UPValenciaX…)",
     "year":     "Year of completion (integer)",
-    "certs":    "Array of badge objects. Each needs 'label' (EDX | CS50 | Credly) and 'url' (direct certificate link)"
+    "certs":    "Array of badge objects. Each needs 'label' (EDX | CS50 | Credly | Udemy) and 'url' (direct certificate link)"
   },
   "_also_update": [
     "llms.txt          → ## Education / ## Professional Program Certificates section",
@@ -346,6 +346,14 @@
       "certs": [
         { "label": "EDX",    "url": "https://courses.edx.org/certificates/be3b0cd8e1d4468697959732035325d9" },
         { "label": "Credly", "url": "https://www.credly.com/badges/9674f6e7-e7f8-4faf-b20d-4cb383bafec2/public_url" }
+      ]
+    },
+    {
+      "name":     "Flutter - Móvil: De cero a experto",
+      "provider": "Udemy",
+      "year":     2026,
+      "certs": [
+        { "label": "Udemy",    "url": "http://ude.my/UC-c4c70031-d5a6-4bdb-b53b-1de74383bc89" }
       ]
     }
   ]
