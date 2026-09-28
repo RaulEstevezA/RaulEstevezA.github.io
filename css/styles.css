@@ -673,6 +673,7 @@ ul li {
 .cert-badge--edx    { background: #02262b; color: #ffffff; }
 .cert-badge--cs50   { background: #c00000; color: #ffffff; }
 .cert-badge--credly { background: #f47920; color: #ffffff; }
+.cert-badge--udemy  { background: #a435f0; color: #ffffff; }
 
 /* =====================================================
    INDIVIDUAL COURSES LIST (collapsible)
