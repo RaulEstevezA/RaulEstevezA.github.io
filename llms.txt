@@ -110,7 +110,7 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
   https://github.com/RaulEstevezA/tioar · https://github.com/RaulEstevezA/UOC_Gamers
 - **Android App (Kotlin)** — Mobile application academic coursework (Kotlin, Android SDK). https://github.com/RaulEstevezA/FP_JE_UOC
 - **Tetris in Python** — Classic Tetris game implemented from scratch using Pygame (Python, Pygame). https://github.com/RaulEstevezA/tetrisInPython
-- **Flutter Exercises** — Hands-on exercises from an advanced mobile development course (Flutter, Dart). https://github.com/RaulEstevezA/FlutterExercises
+- **Flutter Exercises** — Collection of practical examples showcasing different Flutter features and mobile development concepts (Flutter, Dart). https://github.com/RaulEstevezA/FlutterExercises
 - **Smart City — ThingsBoard IoT** — IoT monitoring dashboard on ThingsBoard Cloud simulating smart city sensor data (Python, MQTT, IoT). https://github.com/RaulEstevezA/smart-city-thingsboard
 - **UOC DevNet — .NET ERP** — Data persistence and ERP-oriented application development (C#, .NET, SQL). https://github.com/RaulEstevezA/uoc_devnet
 - **Bingo Simulator in C** — Automatic bingo simulator with random draws, card marking and winner detection (C). https://github.com/RaulEstevezA/bingo
