@@ -765,7 +765,22 @@ ul li {
   h1 { font-size: 1.75rem; }
   h2 { font-size: 1.1rem; }
 
-  .btn { margin-bottom: 0.5rem; }
+  .actions {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .actions .btn {
+    grid-column: span 2;
+    margin: 0;
+    padding-inline: 0.5rem;
+    text-align: center;
+  }
+
+  .actions .btn:nth-child(-n + 2) {
+    grid-column: span 3;
+  }
 
   .project-card { padding: 1.25rem 0; }
 }
