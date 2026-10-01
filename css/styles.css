@@ -518,6 +518,7 @@ section + section {
 .project-list a:hover { text-decoration: underline; }
 
 .project-list a.link-demo { color: #ff6b6b; }
+.project-list a.link-live_demo { color: #56d364; }
 .project-list a.link-web  { color: #56d364; }
 
 /* =====================================================

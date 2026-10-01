@@ -3,7 +3,7 @@
   "_fields": {
     "name":        "Project name shown in bold",
     "desc_en/es":  "Short description (1-2 sentences)",
-    "links":       "Array of link objects. Each needs 'type' (github | demo | web | repo1 | repo2) and 'url'"
+    "links":       "Array of link objects. Each needs 'type' (github | demo | live_demo | web | repo1 | repo2) and 'url'"
   },
   "_also_update": [
     "llms.txt     → ## Other Projects section",
@@ -34,7 +34,7 @@
       "desc_es": "Juego clásico de bloques que caen implementado desde cero en Python usando Pygame, jugable en el navegador.",
       "links": [
         { "type": "github", "url": "https://github.com/RaulEstevezA/BlockFall_Python" },
-        { "type": "demo", "url": "/demos/BlockFall_Python/" }
+        { "type": "live_demo", "url": "/demos/BlockFall_Python/" }
       ]
     },
     {
@@ -115,7 +115,7 @@
       "desc_es": "Ejercicio de tienda de plantas con React y Redux de un curso de IBM, con listado de productos, categorías de plantas, flujo de carrito y demo en GitHub Pages. Completado a partir de una base inicial proporcionada.",
       "links": [
         { "type": "github", "url": "https://github.com/RaulEstevezA/e-plantShopping" },
-        { "type": "web",    "url": "https://raulesteveza.github.io/demos/e-plantShopping/" }
+        { "type": "live_demo", "url": "/demos/e-plantShopping/" }
       ]
     },
     {
