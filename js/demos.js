@@ -22,11 +22,15 @@
 
     container.innerHTML = demos.map(function (demo) {
       var description = demo['description_' + currentLang] || demo.description_en;
+      var image = demo.image
+        ? '<img class="demo-card-image" src="' + encodeURI(demo.image) + '" alt="" loading="lazy">'
+        : '';
       var tags = demo.technologies.map(function (technology) {
         return '<span class="tag">' + escapeHtml(technology) + '</span>';
       }).join('');
 
       return '<article class="demo-card">' +
+        image +
         '<h3>' + escapeHtml(demo.name) + '</h3>' +
         '<p>' + escapeHtml(description) + '</p>' +
         '<div class="tech-tags">' + tags + '</div>' +
@@ -43,7 +47,7 @@
     render();
   });
 
-  fetch('data/demos.json')
+  fetch('../data/demos.json')
     .then(function (response) {
       if (!response.ok) throw new Error('Could not load data/demos.json');
       return response.json();

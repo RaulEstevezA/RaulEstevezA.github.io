@@ -1,11 +1,20 @@
 {
   "demos": [
     {
+      "name": "Cinema App",
+      "description_en": "Flutter app to discover movies: listings, search, genres, movie details with cast and favourites. Web build with local data (Wikidata and Wikimedia Commons).",
+      "description_es": "App Flutter para descubrir películas: cartelera, búsqueda, géneros, ficha con reparto y favoritos. Versión web con datos locales (Wikidata y Wikimedia Commons).",
+      "technologies": ["Flutter", "Dart", "Riverpod", "Clean Architecture", "go_router", "Drift · SQLite"],
+      "image": "/img/thumbs/cinema_app.webp",
+      "demo_url": "/demos/Cinema_App/",
+      "repository_url": "https://github.com/RaulEstevezA/Cinema_App"
+    },
+    {
       "name": "E-Plant",
       "description_en": "Interactive plant shop built with React and Redux, featuring product categories and a complete shopping-cart flow.",
       "description_es": "Tienda de plantas interactiva creada con React y Redux, con categorías de productos y un flujo completo de carrito de compra.",
       "technologies": ["React", "Redux", "Vite", "GitHub Pages"],
-      "demo_url": "https://raulesteveza.github.io/demos/e-plantShopping/",
+      "demo_url": "/demos/e-plantShopping/",
       "repository_url": "https://github.com/RaulEstevezA/e-plantShopping"
     }
   ]
