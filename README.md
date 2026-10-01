@@ -18,6 +18,7 @@ Secondary coursework projects remain listed for completeness. E-Plant is intenti
 ## Demo deployments
 
 - `demos/Cinema_App/` is managed by the `RaulEstevezA/Cinema_App_Demo` deployment workflow.
+- `demos/Flutter_Shop_Admin/` is managed by the `RaulEstevezA/Flutter_Shop_Admin_Demo` deployment workflow.
 - Future demos follow the same `demos/<Name>/` convention and are managed by their source repositories.
 - Demo deployments use `rsync --delete`; do not manually edit files inside a managed demo directory.
 - Run `git pull --rebase` before pushing because demo workflows commit generated files to `main` as `github-actions[bot]`.
