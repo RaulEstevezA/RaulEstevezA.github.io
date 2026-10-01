@@ -19,6 +19,15 @@
       "repository_url": "https://github.com/RaulEstevezA/Flutter_Shop_Admin"
     },
     {
+      "name": "BlockFall",
+      "description_en": "Classic falling blocks game built from scratch in Python with Pygame. The same Python code runs in the browser compiled to WebAssembly, with keyboard controls on desktop and touch buttons on mobile.",
+      "description_es": "Juego clásico de bloques que caen, hecho desde cero en Python con Pygame. El mismo código Python se ejecuta en el navegador compilado a WebAssembly, con teclado en el ordenador y botones táctiles en el móvil.",
+      "technologies": ["Python", "Pygame", "pygbag", "WebAssembly"],
+      "image": "/img/thumbs/blockfall.webp",
+      "demo_url": "/demos/BlockFall_Python/",
+      "repository_url": "https://github.com/RaulEstevezA/BlockFall_Python"
+    },
+    {
       "name": "E-Plant",
       "description_en": "Interactive plant shop built with React and Redux, featuring product categories and a complete shopping-cart flow.",
       "description_es": "Tienda de plantas interactiva creada con React y Redux, con categorías de productos y un flujo completo de carrito de compra.",
