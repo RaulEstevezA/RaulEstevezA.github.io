@@ -21,9 +21,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://raulesteveza.github.io/demos.html</loc>
+    <loc>https://raulesteveza.github.io/demos/</loc>
     <lastmod>2026-10-01</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://raulesteveza.github.io/demos/Cinema_App/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://raulesteveza.github.io/demos/e-plantShopping/</loc>

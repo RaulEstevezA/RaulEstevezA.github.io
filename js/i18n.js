@@ -63,7 +63,8 @@
 
   function setLang(lang) {
     var pageKey = document.body.dataset.page || 'home';
-    var base = 'locales/' + lang + '/';
+    var siteRoot = document.body.dataset.siteRoot || '';
+    var base = siteRoot + 'locales/' + lang + '/';
 
     localStorage.setItem('lang', lang);
     document.documentElement.setAttribute('lang', lang);
