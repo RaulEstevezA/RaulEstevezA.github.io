@@ -4,6 +4,7 @@
   var LINK_LABELS = {
     github: 'GitHub',
     demo: 'Demo',
+    live_demo: 'Demo',
     web: 'Web',
     repo1: 'Repo 1',
     repo2: 'Repo 2'
@@ -13,6 +14,7 @@
   var FEATURED_LINK_TYPES = {
     github: { label: { en: 'View on GitHub', es: 'Ver en GitHub' }, className: 'btn primary' },
     demo:   { label: { en: 'Watch demo',     es: 'Ver demo' },      className: 'btn btn-demo' },
+    live_demo: { label: { en: 'Open demo',   es: 'Abrir demo' },    className: 'btn btn-web' },
     web:    { label: { en: 'View website',   es: 'Ver web' },       className: 'btn btn-web' }
   };
   window.FEATURED_LINK_TYPES = FEATURED_LINK_TYPES;

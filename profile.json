@@ -80,7 +80,8 @@
       "description": "Flutter movie discovery app consuming 9 REST endpoints from The Movie Database (TMDB) API through a dedicated datasource and mapper layer (MovieMapper, ActorMapper, GenreMapper) that converts API DTOs into domain entities. Built with Clean Architecture, Riverpod state management and Drift (SQLite) for local persistence of favorite movies. Features an autoplay slideshow, infinite-scroll movie lists, debounced search, genre-based browsing with per-genre pagination, and a custom app icon.",
       "stack":       ["Flutter", "Dart", "Riverpod", "go_router", "Dio", "DTO/Entity Mapping", "Drift", "SQLite"],
       "repository":  "https://github.com/RaulEstevezA/Cinema_App",
-      "demo":        "https://youtube.com/shorts/67coTqVxwA4?feature=share",
+      "demo":        "https://raulesteveza.github.io/demos/Cinema_App/",
+      "video":       "https://youtube.com/shorts/67coTqVxwA4?feature=share",
       "featured":    true
     },
     {
@@ -89,7 +90,8 @@
       "description": "Cross-platform Flutter application for managing an online store catalog and stock through a NestJS REST API. Includes persistent JWT authentication, product CRUD, infinite pagination, validated forms, camera/gallery image uploads and Clean Architecture with Riverpod.",
       "stack":       ["Flutter", "Dart", "Riverpod", "go_router", "Dio", "Formz", "REST API", "JWT", "NestJS", "Clean Architecture"],
       "repository":  "https://github.com/RaulEstevezA/Flutter_Shop_Admin",
-      "demo":        "https://youtube.com/shorts/OQrZLijUDiA?feature=share",
+      "demo":        "https://raulesteveza.github.io/demos/Flutter_Shop_Admin/",
+      "video":       "https://youtube.com/shorts/OQrZLijUDiA?feature=share",
       "featured":    true
     },
     {

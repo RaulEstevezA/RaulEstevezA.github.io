@@ -10,7 +10,7 @@
     "modal_features_en/es": "Array of bullet points shown in the modal feature list",
     "modal_tech":         "Comma-separated tech tags shown in the modal (can be more detailed than card_tech)",
     "modal_images":       "Array of image paths for the modal carousel (first image shown on open)",
-    "links":              "Array of { type, url } shown as buttons on the card and in the modal, in this order. type is one of: github, demo, web. Each type has its own label and color (github = blue, demo = red/YouTube, web = green)"
+    "links":              "Array of { type, url } shown as buttons on the card and in the modal, in this order. type is one of: github, demo, live_demo, web. Each type has its own label and color (github = blue, demo = red/YouTube, live_demo and web = green)"
   },
   "_also_update": [
     "llms.txt          → ## Featured Projects section",
@@ -94,7 +94,8 @@
       "portrait": true,
       "links": [
         { "type": "github", "url": "https://github.com/RaulEstevezA/Cinema_App" },
-        { "type": "demo",   "url": "https://youtube.com/shorts/67coTqVxwA4?feature=share" }
+        { "type": "demo",   "url": "https://youtube.com/shorts/67coTqVxwA4?feature=share" },
+        { "type": "live_demo", "url": "/demos/Cinema_App/" }
       ],
 
       "modal_desc_en": "Movie discovery application built in Flutter, consuming 9 REST endpoints of The Movie Database (TMDB) API via Dio. Structured with Clean Architecture across domain, infrastructure and presentation layers: a dedicated datasource and mapper layer (MovieMapper, ActorMapper, GenreMapper) transforms the raw TMDB JSON responses (DTOs) into domain entities, keeping the rest of the app decoupled from the external API shape. Uses Riverpod for state management, go_router with a StatefulShellRoute for tabbed navigation, and Drift (SQLite) for local persistence of favorite movies.",
@@ -151,7 +152,8 @@
       "portrait": true,
       "links": [
         { "type": "github", "url": "https://github.com/RaulEstevezA/Flutter_Shop_Admin" },
-        { "type": "demo",   "url": "https://youtube.com/shorts/OQrZLijUDiA?feature=share" }
+        { "type": "demo",   "url": "https://youtube.com/shorts/OQrZLijUDiA?feature=share" },
+        { "type": "live_demo", "url": "/demos/Flutter_Shop_Admin/" }
       ],
 
       "modal_desc_en": "Cross-platform Flutter application for managing an online store's product catalog and stock. It follows Clean Architecture across domain, infrastructure and presentation layers, and connects to a NestJS REST backend through Dio. Authentication uses JWT tokens persisted locally and automatically attached to product requests.",

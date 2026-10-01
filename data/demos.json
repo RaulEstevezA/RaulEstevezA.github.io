@@ -1,15 +1,6 @@
 {
   "demos": [
     {
-      "name": "Cinema App",
-      "description_en": "Flutter app to discover movies: listings, search, genres, movie details with cast and favourites. Web build with local data (Wikidata and Wikimedia Commons).",
-      "description_es": "App Flutter para descubrir películas: cartelera, búsqueda, géneros, ficha con reparto y favoritos. Versión web con datos locales (Wikidata y Wikimedia Commons).",
-      "technologies": ["Flutter", "Dart", "Riverpod", "Clean Architecture", "go_router", "Drift · SQLite"],
-      "image": "/img/thumbs/cinema_app.webp",
-      "demo_url": "/demos/Cinema_App/",
-      "repository_url": "https://github.com/RaulEstevezA/Cinema_App"
-    },
-    {
       "name": "Flutter Shop Admin",
       "description_en": "Browser demo of a Flutter store-management app with authentication, product CRUD, validated forms and image uploads. It uses a local simulated backend, so every visitor's changes stay in their browser.",
       "description_es": "Demo para navegador de una aplicación Flutter de gestión de tienda con autenticación, CRUD de productos, formularios validados y subida de imágenes. Utiliza un backend local simulado, por lo que los cambios de cada visitante permanecen en su navegador.",
@@ -19,13 +10,13 @@
       "repository_url": "https://github.com/RaulEstevezA/Flutter_Shop_Admin"
     },
     {
-      "name": "BlockFall",
-      "description_en": "Classic falling blocks game built from scratch in Python with Pygame. The same Python code runs in the browser compiled to WebAssembly, with keyboard controls on desktop and touch buttons on mobile.",
-      "description_es": "Juego clásico de bloques que caen, hecho desde cero en Python con Pygame. El mismo código Python se ejecuta en el navegador compilado a WebAssembly, con teclado en el ordenador y botones táctiles en el móvil.",
-      "technologies": ["Python", "Pygame", "pygbag", "WebAssembly"],
-      "image": "/img/thumbs/blockfall.webp",
-      "demo_url": "/demos/BlockFall_Python/",
-      "repository_url": "https://github.com/RaulEstevezA/BlockFall_Python"
+      "name": "Cinema App",
+      "description_en": "Flutter app to discover movies: listings, search, genres, movie details with cast and favourites. Web build with local data (Wikidata and Wikimedia Commons).",
+      "description_es": "App Flutter para descubrir películas: cartelera, búsqueda, géneros, ficha con reparto y favoritos. Versión web con datos locales (Wikidata y Wikimedia Commons).",
+      "technologies": ["Flutter", "Dart", "Riverpod", "Clean Architecture", "go_router", "Drift · SQLite"],
+      "image": "/img/thumbs/cinema_app.webp",
+      "demo_url": "/demos/Cinema_App/",
+      "repository_url": "https://github.com/RaulEstevezA/Cinema_App"
     },
     {
       "name": "E-Plant",
@@ -35,6 +26,15 @@
       "image": "/img/eplant_shop/eplant_shop.webp",
       "demo_url": "/demos/e-plantShopping/",
       "repository_url": "https://github.com/RaulEstevezA/e-plantShopping"
+    },
+    {
+      "name": "BlockFall",
+      "description_en": "Classic falling blocks game built from scratch in Python with Pygame. The same Python code runs in the browser compiled to WebAssembly, with keyboard controls on desktop and touch buttons on mobile.",
+      "description_es": "Juego clásico de bloques que caen, hecho desde cero en Python con Pygame. El mismo código Python se ejecuta en el navegador compilado a WebAssembly, con teclado en el ordenador y botones táctiles en el móvil.",
+      "technologies": ["Python", "Pygame", "pygbag", "WebAssembly"],
+      "image": "/img/thumbs/blockfall.webp",
+      "demo_url": "/demos/BlockFall_Python/",
+      "repository_url": "https://github.com/RaulEstevezA/BlockFall_Python"
     }
   ]
 }
