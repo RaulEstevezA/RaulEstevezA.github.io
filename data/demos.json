@@ -1,0 +1,12 @@
+{
+  "demos": [
+    {
+      "name": "E-Plant",
+      "description_en": "Interactive plant shop built with React and Redux, featuring product categories and a complete shopping-cart flow.",
+      "description_es": "Tienda de plantas interactiva creada con React y Redux, con categorías de productos y un flujo completo de carrito de compra.",
+      "technologies": ["React", "Redux", "Vite", "GitHub Pages"],
+      "demo_url": "https://raulesteveza.github.io/demos/e-plantShopping/",
+      "repository_url": "https://github.com/RaulEstevezA/e-plantShopping"
+    }
+  ]
+}

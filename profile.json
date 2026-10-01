@@ -229,7 +229,7 @@
       "description": "React and Redux plant store exercise from IBM's Developing Front-End Applications with React course, with product listings, plant categories, cart flow and a GitHub Pages demo. Completed from a provided starter base.",
       "stack":       ["React", "Redux", "Vite", "JavaScript", "CSS", "GitHub Pages"],
       "repository":  "https://github.com/RaulEstevezA/e-plantShopping",
-      "demo":        "https://raulpracticareact.github.io/plantShopping/",
+      "demo":        "https://raulesteveza.github.io/demos/e-plantShopping/",
       "featured":    false
     }
   ],

@@ -4,7 +4,7 @@ Personal website and professional portfolio for Raúl Estévez, a software devel
 
 ## Public Profile Files
 
-- `index.html`, `experience.html`, `projects.html` and `courses.html` provide the public portfolio pages.
+- `index.html`, `experience.html`, `projects.html`, `courses.html` and `demos.html` provide the public portfolio pages.
 - `llms.txt` provides a concise AI-readable professional profile summary.
 - `profile.json` provides structured profile data for automated readers and profile parsers.
 - `sitemap.xml` and `robots.txt` expose the site map and point crawlers to the AI-readable profile files.

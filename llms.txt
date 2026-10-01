@@ -125,7 +125,7 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
 - **CS50 Final Project** — Final project for Harvard's CS50 Introduction to Computer Science. https://github.com/RaulEstevezA/final_project_cs50
 - **Django Exam Generator (IBM)** — Django web app for generating automated multiple-choice exams, built as IBM course final project (Python, Django, SQL). https://github.com/RaulEstevezA/final_project_Django_IBM
 - **AI & ML — IBM** — Applied AI and machine learning project from IBM's AI Engineering program (Python, Machine Learning, scikit-learn, TensorFlow). https://github.com/RaulEstevezA/final_project_python_AI_ibm
-- **E-Plant — IBM React course** — React/Redux plant store exercise from IBM's Developing Front-End Applications with React course, with product listings, plant categories, cart flow and a GitHub Pages demo. Completed from a provided starter base. Repository: https://github.com/RaulEstevezA/e-plantShopping Demo: https://raulpracticareact.github.io/plantShopping/
+- **E-Plant — IBM React course** — React/Redux plant store exercise from IBM's Developing Front-End Applications with React course, with product listings, plant categories, cart flow and a GitHub Pages demo. Completed from a provided starter base. Repository: https://github.com/RaulEstevezA/e-plantShopping Demo: https://raulesteveza.github.io/demos/e-plantShopping/
 - **Express Book Review — IBM** — Node.js/Express REST API for book lookup and review management, built from an IBM course starter base (Node.js, Express, JWT). https://github.com/RaulEstevezA/expressBookReviews
 
 ## Technical Skills
