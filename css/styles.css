@@ -805,6 +805,20 @@ ul li {
    RESPONSIVE — MOBILE
 ===================================================== */
 
+@media (max-width: 1100px) {
+  .site-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .site-actions .btn {
+    margin: 0;
+    padding-inline: 0.5rem;
+    text-align: center;
+  }
+}
+
 @media (max-width: 768px) {
   .container      { padding: 1rem; }
   .hero           { margin-top: 1rem; }
@@ -831,10 +845,20 @@ ul li {
     grid-column: span 3;
   }
 
+  .site-actions .btn,
+  .site-actions .btn:nth-child(-n + 2) {
+    grid-column: span 2;
+  }
+
   .project-card { padding: 1.25rem 0; }
 }
 
 @media (max-width: 480px) {
   h1 { font-size: 1.5rem; }
   .window-content { padding: 1.25rem 1rem; }
+
+  .site-actions .btn,
+  .site-actions .btn:nth-child(-n + 2) {
+    grid-column: span 3;
+  }
 }

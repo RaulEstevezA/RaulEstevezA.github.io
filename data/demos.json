@@ -10,6 +10,15 @@
       "repository_url": "https://github.com/RaulEstevezA/Cinema_App"
     },
     {
+      "name": "Flutter Shop Admin",
+      "description_en": "Browser demo of a Flutter store-management app with authentication, product CRUD, validated forms and image uploads. It uses a local simulated backend, so every visitor's changes stay in their browser.",
+      "description_es": "Demo para navegador de una aplicación Flutter de gestión de tienda con autenticación, CRUD de productos, formularios validados y subida de imágenes. Utiliza un backend local simulado, por lo que los cambios de cada visitante permanecen en su navegador.",
+      "technologies": ["Flutter", "Dart", "Riverpod", "Clean Architecture", "go_router", "Formz"],
+      "image": "/img/thumbs/flutter_shop_admin.webp",
+      "demo_url": "/demos/Flutter_Shop_Admin/",
+      "repository_url": "https://github.com/RaulEstevezA/Flutter_Shop_Admin"
+    },
+    {
       "name": "E-Plant",
       "description_en": "Interactive plant shop built with React and Redux, featuring product categories and a complete shopping-cart flow.",
       "description_es": "Tienda de plantas interactiva creada con React y Redux, con categorías de productos y un flujo completo de carrito de compra.",
