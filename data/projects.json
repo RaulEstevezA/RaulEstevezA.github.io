@@ -29,11 +29,12 @@
       ]
     },
     {
-      "name": "Tetris in Python",
-      "desc_en": "Classic Tetris game implemented from scratch in Python using Pygame.",
-      "desc_es": "Juego Tetris clásico implementado desde cero en Python usando Pygame.",
+      "name": "BlockFall (Python)",
+      "desc_en": "Classic falling blocks game implemented from scratch in Python using Pygame, playable in the browser.",
+      "desc_es": "Juego clásico de bloques que caen implementado desde cero en Python usando Pygame, jugable en el navegador.",
       "links": [
-        { "type": "github", "url": "https://github.com/RaulEstevezA/tetrisInPython" }
+        { "type": "github", "url": "https://github.com/RaulEstevezA/BlockFall_Python" },
+        { "type": "demo", "url": "/demos/BlockFall_Python/" }
       ]
     },
     {

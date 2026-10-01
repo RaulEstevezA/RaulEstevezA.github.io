@@ -136,11 +136,12 @@
       "featured":    false
     },
     {
-      "name":        "Tetris in Python",
+      "name":        "BlockFall (Python)",
       "type":        "Game",
-      "description": "Classic Tetris game implemented from scratch in Python using Pygame.",
-      "stack":       ["Python", "Pygame"],
-      "repository":  "https://github.com/RaulEstevezA/tetrisInPython",
+      "description": "Classic falling blocks game implemented from scratch in Python using Pygame. A web build compiled to WebAssembly with pygbag adds touch controls for mobile.",
+      "stack":       ["Python", "Pygame", "pygbag", "WebAssembly"],
+      "repository":  "https://github.com/RaulEstevezA/BlockFall_Python",
+      "demo":        "https://raulesteveza.github.io/demos/BlockFall_Python/",
       "featured":    false
     },
     {
