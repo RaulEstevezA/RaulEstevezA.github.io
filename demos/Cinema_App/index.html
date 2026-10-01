@@ -32,6 +32,8 @@
       --warn-text:  #e3b341;
       --phone-w:    390px;
       --phone-h:    844px;
+      --app-w:      390px;
+      --app-h:      844px;
     }
 
     :root { color-scheme: dark; }
@@ -63,10 +65,8 @@
 
     .nav { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
 
-    .breadcrumb { display: flex; gap: 0.4rem; align-items: center; font-size: 0.95rem; color: var(--muted); }
-    .breadcrumb a { color: inherit; text-decoration: none; transition: color 0.15s; }
-    .breadcrumb a:hover { color: var(--text); }
-    .breadcrumb .logo { color: var(--text); font-weight: 600; }
+    .logo { color: var(--text); font-weight: 600; text-decoration: none; transition: opacity 0.15s; }
+    .logo:hover { opacity: 0.75; }
 
     .lang { display: flex; gap: 0.5rem; }
     .lang button {
@@ -93,13 +93,13 @@
       border: 1px solid var(--border);
       border-radius: 14px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.04);
-      padding: 2.25rem 2.5rem;
+      padding: 1.75rem 2.25rem;
     }
 
-    h1 { font-size: 2.4rem; margin: 0 0 0.4rem; }
+    h1 { font-size: 2.2rem; margin: 0 0 0.3rem; }
     h2 { font-size: 1.2rem; font-weight: 400; color: var(--muted); margin: 0 0 1rem; }
 
-    .intro { margin: 1rem 0; line-height: 1.65; color: var(--muted); max-width: 560px; }
+    .intro { margin: 0.75rem 0; line-height: 1.65; color: var(--muted); max-width: 560px; }
 
     .tags { margin: 0.5rem 0 1.25rem; }
     .tag {
@@ -113,8 +113,8 @@
       border: 1px solid var(--warn-border);
       background: var(--warn-bg);
       border-radius: 10px;
-      padding: 0.9rem 1.1rem;
-      margin: 1.25rem 0;
+      padding: 0.8rem 1.1rem;
+      margin: 1rem 0;
       font-size: 0.92rem;
       line-height: 1.6;
     }
@@ -122,11 +122,11 @@
     .notice ul { margin: 0.5rem 0 0; padding-left: 1.2rem; color: var(--btn-text); }
     .notice li { margin-bottom: 0.25rem; }
 
-    .actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
 
     .btn {
       display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.5rem 1.15rem;
+      padding: 0.5rem 1rem;
       background: var(--btn-bg); color: var(--btn-text);
       border: 1px solid var(--border); border-radius: 8px;
       text-decoration: none; font: inherit; font-weight: 500; font-size: 0.9rem;
@@ -161,9 +161,18 @@
     .phone::before { left: -4px; top: 18%; height: 9%; box-shadow: 0 calc(100% + 18px) 0 #1c2128; }
     .phone::after  { right: -4px; top: 24%; height: 13%; }
 
-    .phone iframe {
-      display: block; width: 100%; height: 100%;
-      border: 0; border-radius: 42px; background: #f8f9ff;
+    /* La app se ejecuta siempre a tamaño de móvil real (--app-w × --app-h) y se
+       escala para caber en el marco: así se maqueta igual que en un teléfono en
+       vez de en una ventana más estrecha que cualquier móvil. */
+    .screen {
+      position: relative; width: 100%; height: 100%;
+      overflow: hidden; border-radius: 42px; background: #f8f9ff;
+    }
+    .screen iframe {
+      position: absolute; top: 0; left: 0;
+      width: var(--app-w); height: var(--app-h);
+      border: 0; background: #f8f9ff;
+      transform: scale(var(--k, 1)); transform-origin: 0 0;
     }
 
     .hint { text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 0.9rem; }
@@ -249,13 +258,7 @@
 
   <header class="container">
     <nav class="nav">
-      <div class="breadcrumb">
-        <a class="logo" href="/">Raúl Estévez</a>
-        <span aria-hidden="true">/</span>
-        <a href="/demos/" data-i18n="demos">Demos</a>
-        <span aria-hidden="true">/</span>
-        <span>Cinema App</span>
-      </div>
+      <a class="logo" href="/">Raúl Estévez</a>
       <div class="lang" role="group" aria-label="Idioma / Language">
         <button type="button" data-lang="en">EN</button>
         <button type="button" data-lang="es">ES</button>
@@ -271,7 +274,9 @@
 
     <div>
       <div class="phone">
-        <iframe id="desktop-app" title="Cinema App" loading="eager" allow="clipboard-write"></iframe>
+        <div class="screen">
+          <iframe id="desktop-app" title="Cinema App" loading="eager" allow="clipboard-write"></iframe>
+        </div>
       </div>
       <p class="hint" data-i18n="hint">Arrastra con el ratón para desplazarte por los carruseles.</p>
     </div>
@@ -323,9 +328,10 @@
     </div>
 
     <div class="actions">
-      <a class="btn primary" href="https://github.com/RaulEstevezA/Cinema_App" target="_blank" rel="noopener" data-i18n="code">Código y descarga ↗</a>
-      <a class="btn" href="app/" target="_blank" rel="noopener" data-i18n="fullscreen">Pantalla completa ↗</a>
-      <button type="button" class="btn" data-open-credits data-i18n="credits">Créditos de imágenes y textos</button>
+      <a class="btn primary" href="https://github.com/RaulEstevezA/Cinema_App" target="_blank" rel="noopener" data-i18n="code">Código y descarga</a>
+      <a class="btn" href="app/" target="_blank" rel="noopener" data-i18n="fullscreen">Pantalla completa</a>
+      <button type="button" class="btn" data-open-credits data-i18n="credits">Créditos</button>
+      <a class="btn" href="https://raulesteveza.github.io/demos/" data-i18n="demos">Demos</a>
     </div>
   </template>
 
@@ -346,7 +352,6 @@
 
       var texts = {
         es: {
-          demos: 'Demos',
           hint: 'Arrastra con el ratón para desplazarte por los carruseles.',
           subtitle: 'App Flutter para descubrir películas',
           intro: 'Cartelera por secciones, búsqueda, géneros, ficha de cada película con su reparto y favoritos guardados en local. Esta es la versión web de la app móvil, ejecutándose tal cual en el navegador.',
@@ -355,9 +360,10 @@
           notice_sources: 'Datos de Wikidata (CC0), imágenes de Wikimedia Commons y sinopsis de Wikipedia (CC BY-SA 4.0).',
           notice_rating: 'Las estrellas son un índice de relevancia (en cuántas Wikipedias aparece la película), no valoraciones de usuarios.',
           notice_favorites: 'Los favoritos se guardan solo en este navegador.',
-          code: 'Código y descarga ↗',
-          fullscreen: 'Pantalla completa ↗',
-          credits: 'Créditos de imágenes y textos',
+          code: 'Código y descarga',
+          fullscreen: 'Pantalla completa',
+          demos: 'Demos',
+          credits: 'Créditos',
           credits_title: 'Créditos',
           close: 'Cerrar',
           loading: 'Cargando…',
@@ -369,7 +375,6 @@
           error: 'No se pudieron cargar los créditos.'
         },
         en: {
-          demos: 'Demos',
           hint: 'Drag with the mouse to scroll the carousels.',
           subtitle: 'Flutter app to discover movies',
           intro: 'Movie listings by section, search, genres, movie details with cast and favourites stored locally. This is the web build of the mobile app, running as-is in the browser.',
@@ -378,9 +383,10 @@
           notice_sources: 'Data from Wikidata (CC0), images from Wikimedia Commons and plots from Spanish Wikipedia (CC BY-SA 4.0).',
           notice_rating: 'Stars are a relevance index (how many Wikipedias cover the movie), not user ratings.',
           notice_favorites: 'Favourites are only stored in this browser.',
-          code: 'Code & download ↗',
-          fullscreen: 'Full screen ↗',
-          credits: 'Image & text credits',
+          code: 'Code & download',
+          fullscreen: 'Full screen',
+          demos: 'Demos',
+          credits: 'Credits',
           credits_title: 'Credits',
           close: 'Close',
           loading: 'Loading…',
@@ -448,6 +454,17 @@
 
       mountApp();
       mobileQuery.addEventListener('change', mountApp);
+
+      // Escala de la app dentro del marco (ver .screen en el CSS).
+      var screenEl = desktopFrame.parentElement;
+      function fitApp() {
+        var k = Math.min(screenEl.clientWidth / 390, screenEl.clientHeight / 844);
+        screenEl.style.setProperty('--k', k || 1);
+        // La altura de la app se ajusta a la del marco para no dejar huecos por redondeo.
+        screenEl.style.setProperty('--app-h', (k ? screenEl.clientHeight / k : 844) + 'px');
+      }
+      if (window.ResizeObserver) new ResizeObserver(fitApp).observe(screenEl);
+      fitApp();
 
       // --- Hoja de información (móvil): se muestra una vez por sesión ---
 
