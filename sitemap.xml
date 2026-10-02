@@ -46,6 +46,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://raulesteveza.github.io/demos/Duckyware_Store/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://raulesteveza.github.io/llms.txt</loc>
     <lastmod>2026-06-04</lastmod>
     <priority>0.6</priority>

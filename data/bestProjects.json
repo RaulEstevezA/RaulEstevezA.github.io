@@ -282,7 +282,8 @@
         "img/duckstore/productDetail1.webp"
       ],
       "links": [
-        { "type": "github", "url": "https://github.com/RaulEstevezA/final_project_cs50w" }
+        { "type": "github", "url": "https://github.com/RaulEstevezA/final_project_cs50w" },
+        { "type": "live_demo", "url": "/demos/Duckyware_Store/" }
       ]
     },
     {

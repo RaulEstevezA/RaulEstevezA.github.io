@@ -104,6 +104,7 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
   Stack: Python, Django, SQL, HTML, CSS, JavaScript.
   Includes database-driven categories, stock-aware carts, discount logic, order processing, user profiles, dynamic search and PayPal payment integration.
   Repository: https://github.com/RaulEstevezA/final_project_cs50w
+  Demo: https://raulesteveza.github.io/demos/Duckyware_Store/
 
 - **OnlineStore** — Desktop store-management application with JavaFX and MVC architecture.
   Stack: Java, JavaFX, ORM, DAO, MVC.
