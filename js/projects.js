@@ -50,7 +50,16 @@
     if (!container) return;
 
     var isEs = lang === 'es';
-    var html = projects.map(function (project) {
+    var orderedProjects = projects.map(function (project, index) {
+      return { project: project, index: index };
+    }).sort(function (a, b) {
+      var orderA = Number.isFinite(a.project.display_order) ? a.project.display_order : 1000 + a.index;
+      var orderB = Number.isFinite(b.project.display_order) ? b.project.display_order : 1000 + b.index;
+      return orderA - orderB;
+    }).map(function (item) {
+      return item.project;
+    });
+    var html = orderedProjects.map(function (project) {
       var title = isEs ? project.title_es : project.title_en;
       var cardDesc = isEs ? project.card_desc_es : project.card_desc_en;
       var links = project.links || [];

@@ -1,5 +1,5 @@
 {
-  "_note": "Featured projects shown as cards on projects.html. Order here = display order.",
+  "_note": "Featured projects shown as cards on projects.html. Lower display_order values are shown first; entries without it follow in file order.",
   "_fields": {
     "thumb":              "Path to the card thumbnail image (img/...)",
     "thumb_alt":          "Alt text for the thumbnail",
@@ -10,6 +10,7 @@
     "modal_features_en/es": "Array of bullet points shown in the modal feature list",
     "modal_tech":         "Comma-separated tech tags shown in the modal (can be more detailed than card_tech)",
     "modal_images":       "Array of image paths for the modal carousel (first image shown on open)",
+    "display_order":      "Optional explicit card position; lower values are shown first",
     "links":              "Array of { type, url } shown as buttons on the card and in the modal, in this order. type is one of: github, demo, live_demo, web. Each type has its own label and color (github = blue, demo = red/YouTube, live_demo and web = green)"
   },
   "_also_update": [
@@ -20,8 +21,9 @@
 
   "projects": [
     {
-      "thumb":     "img/thumbs/erpApp.webp",
-      "thumb_alt": "Microvalencia ERP App screenshot",
+      "display_order": 3,
+      "thumb":     "img/erp_flutter/main.png",
+      "thumb_alt": "ERP Flutter demo home screen",
 
       "badge_en": "Professional · Internship",
       "badge_es": "Profesional · Prácticas",
@@ -36,7 +38,8 @@
 
       "portrait": true,
       "links": [
-        { "type": "demo", "url": "https://youtu.be/lrgRXaBEdI4" }
+        { "type": "demo", "url": "https://youtu.be/lrgRXaBEdI4" },
+        { "type": "live_demo", "url": "/demos/ERP_Flutter/" }
       ],
 
       "modal_desc_en": "Mobile application built in Flutter during my internship at Microvalencia Soluciones Informáticas. It acts as a mobile gateway for the company ERP, consuming data for users, permissions, clients, time tracking, work orders, visits, holidays, documents and internal messaging through REST APIs designed and implemented specifically for this project on a Laravel/PHP backend.",
@@ -81,6 +84,7 @@
       ]
     },
     {
+      "display_order": 2,
       "thumb":     "img/thumbs/cinema_app.webp",
       "thumb_alt": "Cinema App screenshot",
 
@@ -139,6 +143,7 @@
       ]
     },
     {
+      "display_order": 1,
       "thumb":     "img/thumbs/flutter_shop_admin.webp",
       "thumb_alt": "Flutter Shop Admin product catalog screenshot",
 

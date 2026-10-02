@@ -1,7 +1,21 @@
 {
   "demos": [
     {
+      "name": "ERP Flutter",
+      "display_order": 3,
+      "badge_en": "Professional practice · Reinterpreted demo",
+      "badge_es": "Práctica real · Demo reinterpretada",
+      "featured": true,
+      "description_en": "Interactive reinterpretation of the mobile ERP app developed during my internship at Microvalencia. It reproduces its main workflows with fictional data and a local static backend; it contains no proprietary code or company data.",
+      "description_es": "Reinterpretación interactiva de la app móvil ERP desarrollada durante mis prácticas en Microvalencia. Reproduce sus principales flujos con datos ficticios y un backend estático local; no contiene código propietario ni datos de la empresa.",
+      "technologies": ["Flutter", "Dart", "MVVM", "REST API", "Role-based access"],
+      "image": "/img/erp_flutter/main.png",
+      "demo_url": "/demos/ERP_Flutter/",
+      "repository_url": "https://github.com/RaulEstevezA/Erp_Flutter_Demo"
+    },
+    {
       "name": "Flutter Shop Admin",
+      "display_order": 1,
       "description_en": "Browser demo of a Flutter store-management app with authentication, product CRUD, validated forms and image uploads. It uses a local simulated backend, so every visitor's changes stay in their browser.",
       "description_es": "Demo para navegador de una aplicación Flutter de gestión de tienda con autenticación, CRUD de productos, formularios validados y subida de imágenes. Utiliza un backend local simulado, por lo que los cambios de cada visitante permanecen en su navegador.",
       "technologies": ["Flutter", "Dart", "Riverpod", "Clean Architecture", "go_router", "Formz"],
@@ -11,6 +25,7 @@
     },
     {
       "name": "Cinema App",
+      "display_order": 2,
       "description_en": "Flutter app to discover movies: listings, search, genres, movie details with cast and favourites. Web build with local data (Wikidata and Wikimedia Commons).",
       "description_es": "App Flutter para descubrir películas: cartelera, búsqueda, géneros, ficha con reparto y favoritos. Versión web con datos locales (Wikidata y Wikimedia Commons).",
       "technologies": ["Flutter", "Dart", "Riverpod", "Clean Architecture", "go_router", "Drift · SQLite"],
