@@ -1,0 +1,110 @@
+{
+ "success": true,
+ "data": [
+  {
+   "id": 1,
+   "ref": "MO-TEC",
+   "concept": "Mano de obra técnico (h)",
+   "price": 32.0,
+   "hourly": true
+  },
+  {
+   "id": 2,
+   "ref": "MO-OFI",
+   "concept": "Mano de obra oficial (h)",
+   "price": 28.0,
+   "hourly": true
+  },
+  {
+   "id": 3,
+   "ref": "DESP",
+   "concept": "Desplazamiento",
+   "price": 18.5,
+   "hourly": false
+  },
+  {
+   "id": 4,
+   "ref": "CAB-C6",
+   "concept": "Cable de red Cat6 (m)",
+   "price": 0.85,
+   "hourly": false
+  },
+  {
+   "id": 5,
+   "ref": "RJ45",
+   "concept": "Conector RJ45",
+   "price": 0.6,
+   "hourly": false
+  },
+  {
+   "id": 6,
+   "ref": "SW-24",
+   "concept": "Switch 24 puertos",
+   "price": 189.0,
+   "hourly": false
+  },
+  {
+   "id": 7,
+   "ref": "AP-WIFI",
+   "concept": "Punto de acceso Wi-Fi",
+   "price": 119.0,
+   "hourly": false
+  },
+  {
+   "id": 8,
+   "ref": "ROUT-PRO",
+   "concept": "Router empresarial",
+   "price": 189.0,
+   "hourly": false
+  },
+  {
+   "id": 9,
+   "ref": "LED-60",
+   "concept": "Panel LED 60x60",
+   "price": 34.9,
+   "hourly": false
+  },
+  {
+   "id": 10,
+   "ref": "MAG-16",
+   "concept": "Magnetotérmico 16 A",
+   "price": 9.5,
+   "hourly": false
+  },
+  {
+   "id": 11,
+   "ref": "DIF-40",
+   "concept": "Diferencial 40 A",
+   "price": 42.0,
+   "hourly": false
+  },
+  {
+   "id": 12,
+   "ref": "TUB-20",
+   "concept": "Tubo corrugado 20 mm (m)",
+   "price": 0.45,
+   "hourly": false
+  },
+  {
+   "id": 13,
+   "ref": "SAI-1K",
+   "concept": "SAI 1000 VA",
+   "price": 145.0,
+   "hourly": false
+  },
+  {
+   "id": 14,
+   "ref": "CAM-IP",
+   "concept": "Cámara IP exterior",
+   "price": 89.0,
+   "hourly": false
+  },
+  {
+   "id": 15,
+   "ref": "FONT-KIT",
+   "concept": "Kit de fontanería",
+   "price": 46.2,
+   "hourly": false
+  }
+ ]
+}

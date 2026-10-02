@@ -1,0 +1,1272 @@
+{
+ "success": true,
+ "data": [
+  {
+   "id": 1,
+   "client_id": 12,
+   "name": "Firma de contrato",
+   "workday_offset": 246,
+   "time": "11:15",
+   "duration_minutes": 90,
+   "worker_ids": [
+    2,
+    4
+   ],
+   "description": null,
+   "travel_distance_km": 33.0,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 2,
+   "client_id": 8,
+   "name": "Visita comercial",
+   "workday_offset": 246,
+   "time": "17:45",
+   "duration_minutes": 90,
+   "worker_ids": [
+    1,
+    8
+   ],
+   "description": null,
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 3,
+   "client_id": 26,
+   "name": "Formación al personal",
+   "workday_offset": 241,
+   "time": "11:30",
+   "duration_minutes": 60,
+   "worker_ids": [
+    6
+   ],
+   "description": "Formación de una hora al personal de recepción sobre el nuevo sistema.",
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 4,
+   "client_id": 17,
+   "name": "Formación al personal",
+   "workday_offset": 239,
+   "time": "11:15",
+   "duration_minutes": 90,
+   "worker_ids": [
+    8,
+    9
+   ],
+   "description": "Formación de una hora al personal de recepción sobre el nuevo sistema.",
+   "travel_distance_km": 38.3,
+   "travel_time_minutes": 45
+  },
+  {
+   "id": 5,
+   "client_id": 3,
+   "name": "Presentación de propuesta",
+   "workday_offset": 237,
+   "time": "09:15",
+   "duration_minutes": 30,
+   "worker_ids": [
+    2,
+    3
+   ],
+   "description": "Se presenta la propuesta económica. El cliente la revisará con dirección esta semana.",
+   "travel_distance_km": 40.8,
+   "travel_time_minutes": 20
+  },
+  {
+   "id": 6,
+   "client_id": 2,
+   "name": "Reunión de seguimiento",
+   "workday_offset": 237,
+   "time": "16:45",
+   "duration_minutes": 30,
+   "worker_ids": [
+    6
+   ],
+   "description": "Repasamos el estado de los trabajos pendientes y acordamos fechas para la próxima fase.",
+   "travel_distance_km": null,
+   "travel_time_minutes": 20
+  },
+  {
+   "id": 7,
+   "client_id": 26,
+   "name": "Reunión de seguimiento",
+   "workday_offset": 234,
+   "time": "15:15",
+   "duration_minutes": 45,
+   "worker_ids": [
+    6
+   ],
+   "description": "Repasamos el estado de los trabajos pendientes y acordamos fechas para la próxima fase.",
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 8,
+   "client_id": 6,
+   "name": "Demostración de producto",
+   "workday_offset": 231,
+   "time": "12:15",
+   "duration_minutes": 45,
+   "worker_ids": [
+    3,
+    6
+   ],
+   "description": null,
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 9,
+   "client_id": 3,
+   "name": "Auditoría de red",
+   "workday_offset": 229,
+   "time": "14:30",
+   "duration_minutes": 30,
+   "worker_ids": [
+    7
+   ],
+   "description": "Inventario de equipos y revisión de la seguridad de la red. Informe en una semana.",
+   "travel_distance_km": null,
+   "travel_time_minutes": 10
+  },
+  {
+   "id": 10,
+   "client_id": 27,
+   "name": "Auditoría de red",
+   "workday_offset": 229,
+   "time": "15:15",
+   "duration_minutes": 60,
+   "worker_ids": [
+    2
+   ],
+   "description": "Inventario de equipos y revisión de la seguridad de la red. Informe en una semana.",
+   "travel_distance_km": 30.1,
+   "travel_time_minutes": 20
+  },
+  {
+   "id": 11,
+   "client_id": 17,
+   "name": "Auditoría de red",
+   "workday_offset": 226,
+   "time": "17:15",
+   "duration_minutes": 60,
+   "worker_ids": [
+    1,
+    8
+   ],
+   "description": "Inventario de equipos y revisión de la seguridad de la red. Informe en una semana.",
+   "travel_distance_km": 14.8,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 12,
+   "client_id": 1,
+   "name": "Reunión de seguimiento",
+   "workday_offset": 224,
+   "time": "15:00",
+   "duration_minutes": 120,
+   "worker_ids": [
+    5,
+    9
+   ],
+   "description": "Repasamos el estado de los trabajos pendientes y acordamos fechas para la próxima fase.",
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 13,
+   "client_id": 20,
+   "name": "Reunión de seguimiento",
+   "workday_offset": 223,
+   "time": "09:30",
+   "duration_minutes": 90,
+   "worker_ids": [
+    2
+   ],
+   "description": "Repasamos el estado de los trabajos pendientes y acordamos fechas para la próxima fase.",
+   "travel_distance_km": 43.4,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 14,
+   "client_id": 26,
+   "name": "Revisión de la instalación",
+   "workday_offset": 220,
+   "time": "14:15",
+   "duration_minutes": 90,
+   "worker_ids": [
+    7,
+    8
+   ],
+   "description": "Revisión general de la instalación. Todo correcto salvo un punto de acceso con poca cobertura.",
+   "travel_distance_km": 39.6,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 15,
+   "client_id": 25,
+   "name": "Presentación de propuesta",
+   "workday_offset": 218,
+   "time": "11:15",
+   "duration_minutes": 30,
+   "worker_ids": [
+    2,
+    6
+   ],
+   "description": "Se presenta la propuesta económica. El cliente la revisará con dirección esta semana.",
+   "travel_distance_km": 33.7,
+   "travel_time_minutes": 15
+  },
+  {
+   "id": 16,
+   "client_id": 9,
+   "name": "Revisión de incidencias",
+   "workday_offset": 211,
+   "time": "14:30",
+   "duration_minutes": 60,
+   "worker_ids": [
+    9
+   ],
+   "description": "El cliente comenta cortes puntuales de conexión. Se deja registro para el técnico.",
+   "travel_distance_km": null,
+   "travel_time_minutes": 15
+  },
+  {
+   "id": 17,
+   "client_id": 10,
+   "name": "Visita comercial",
+   "workday_offset": 207,
+   "time": "10:00",
+   "duration_minutes": 45,
+   "worker_ids": [
+    6,
+    8
+   ],
+   "description": "Primera toma de contacto. Interesados en el mantenimiento anual y en ampliar la red.",
+   "travel_distance_km": 58.1,
+   "travel_time_minutes": 10
+  },
+  {
+   "id": 18,
+   "client_id": 8,
+   "name": "Toma de medidas",
+   "workday_offset": 207,
+   "time": "15:30",
+   "duration_minutes": 60,
+   "worker_ids": [
+    5,
+    6
+   ],
+   "description": "Tomamos medidas de la nave para el nuevo cableado. Pendiente enviar presupuesto.",
+   "travel_distance_km": 10.0,
+   "travel_time_minutes": 10
+  },
+  {
+   "id": 19,
+   "client_id": 11,
+   "name": "Firma de contrato",
+   "workday_offset": 207,
+   "time": "17:45",
+   "duration_minutes": 60,
+   "worker_ids": [
+    2
+   ],
+   "description": "Firmado el contrato de mantenimiento anual. Empieza el mes que viene.",
+   "travel_distance_km": 27.4,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 20,
+   "client_id": 13,
+   "name": "Auditoría de red",
+   "workday_offset": 205,
+   "time": "17:15",
+   "duration_minutes": 60,
+   "worker_ids": [
+    3,
+    9
+   ],
+   "description": "Inventario de equipos y revisión de la seguridad de la red. Informe en una semana.",
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 21,
+   "client_id": 9,
+   "name": "Visita comercial",
+   "workday_offset": 203,
+   "time": "09:45",
+   "duration_minutes": 60,
+   "worker_ids": [
+    9
+   ],
+   "description": "Primera toma de contacto. Interesados en el mantenimiento anual y en ampliar la red.",
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 22,
+   "client_id": 27,
+   "name": "Auditoría de red",
+   "workday_offset": 202,
+   "time": "16:30",
+   "duration_minutes": 120,
+   "worker_ids": [
+    9
+   ],
+   "description": "Inventario de equipos y revisión de la seguridad de la red. Informe en una semana.",
+   "travel_distance_km": null,
+   "travel_time_minutes": 15
+  },
+  {
+   "id": 23,
+   "client_id": 1,
+   "name": "Visita comercial",
+   "workday_offset": 199,
+   "time": "11:00",
+   "duration_minutes": 120,
+   "worker_ids": [
+    2,
+    4
+   ],
+   "description": "Primera toma de contacto. Interesados en el mantenimiento anual y en ampliar la red.",
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 24,
+   "client_id": 6,
+   "name": "Presentación de propuesta",
+   "workday_offset": 199,
+   "time": "11:00",
+   "duration_minutes": 30,
+   "worker_ids": [
+    6
+   ],
+   "description": "Se presenta la propuesta económica. El cliente la revisará con dirección esta semana.",
+   "travel_distance_km": null,
+   "travel_time_minutes": 20
+  },
+  {
+   "id": 25,
+   "client_id": 2,
+   "name": "Reunión de seguimiento",
+   "workday_offset": 197,
+   "time": "14:45",
+   "duration_minutes": 60,
+   "worker_ids": [
+    3,
+    7
+   ],
+   "description": null,
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 26,
+   "client_id": 2,
+   "name": "Demostración de producto",
+   "workday_offset": 184,
+   "time": "13:30",
+   "duration_minutes": 45,
+   "worker_ids": [
+    7,
+    8
+   ],
+   "description": "Demostración del nuevo sistema de copias en la nube. Piden una prueba de 30 días.",
+   "travel_distance_km": 53.8,
+   "travel_time_minutes": 30
+  },
+  {
+   "id": 27,
+   "client_id": 17,
+   "name": "Formación al personal",
+   "workday_offset": 182,
+   "time": "10:15",
+   "duration_minutes": 60,
+   "worker_ids": [
+    1,
+    4
+   ],
+   "description": "Formación de una hora al personal de recepción sobre el nuevo sistema.",
+   "travel_distance_km": 11.7,
+   "travel_time_minutes": 15
+  },
+  {
+   "id": 28,
+   "client_id": 1,
+   "name": "Demostración de producto",
+   "workday_offset": 177,
+   "time": "14:30",
+   "duration_minutes": 60,
+   "worker_ids": [
+    5,
+    7
+   ],
+   "description": "Demostración del nuevo sistema de copias en la nube. Piden una prueba de 30 días.",
+   "travel_distance_km": 50.1,
+   "travel_time_minutes": 30
+  },
+  {
+   "id": 29,
+   "client_id": 19,
+   "name": "Reunión de seguimiento",
+   "workday_offset": 173,
+   "time": "11:45",
+   "duration_minutes": 90,
+   "worker_ids": [
+    6,
+    7
+   ],
+   "description": "Repasamos el estado de los trabajos pendientes y acordamos fechas para la próxima fase.",
+   "travel_distance_km": 41.7,
+   "travel_time_minutes": 10
+  },
+  {
+   "id": 30,
+   "client_id": 1,
+   "name": "Formación al personal",
+   "workday_offset": 171,
+   "time": "09:15",
+   "duration_minutes": 30,
+   "worker_ids": [
+    7,
+    8
+   ],
+   "description": "Formación de una hora al personal de recepción sobre el nuevo sistema.",
+   "travel_distance_km": 10.0,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 31,
+   "client_id": 3,
+   "name": "Demostración de producto",
+   "workday_offset": 166,
+   "time": "15:30",
+   "duration_minutes": 30,
+   "worker_ids": [
+    3,
+    4
+   ],
+   "description": "Demostración del nuevo sistema de copias en la nube. Piden una prueba de 30 días.",
+   "travel_distance_km": 37.5,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 32,
+   "client_id": 16,
+   "name": "Reunión de seguimiento",
+   "workday_offset": 163,
+   "time": "13:30",
+   "duration_minutes": 60,
+   "worker_ids": [
+    5
+   ],
+   "description": "Repasamos el estado de los trabajos pendientes y acordamos fechas para la próxima fase.",
+   "travel_distance_km": null,
+   "travel_time_minutes": 10
+  },
+  {
+   "id": 33,
+   "client_id": 6,
+   "name": "Toma de medidas",
+   "workday_offset": 163,
+   "time": "17:45",
+   "duration_minutes": 60,
+   "worker_ids": [
+    2,
+    5
+   ],
+   "description": null,
+   "travel_distance_km": 51.0,
+   "travel_time_minutes": 10
+  },
+  {
+   "id": 34,
+   "client_id": 27,
+   "name": "Demostración de producto",
+   "workday_offset": 161,
+   "time": "10:00",
+   "duration_minutes": 30,
+   "worker_ids": [
+    4
+   ],
+   "description": "Demostración del nuevo sistema de copias en la nube. Piden una prueba de 30 días.",
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 35,
+   "client_id": 1,
+   "name": "Presentación de propuesta",
+   "workday_offset": 155,
+   "time": "15:15",
+   "duration_minutes": 45,
+   "worker_ids": [
+    5,
+    8
+   ],
+   "description": "Se presenta la propuesta económica. El cliente la revisará con dirección esta semana.",
+   "travel_distance_km": 43.3,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 36,
+   "client_id": 27,
+   "name": "Demostración de producto",
+   "workday_offset": 154,
+   "time": "14:45",
+   "duration_minutes": 90,
+   "worker_ids": [
+    6
+   ],
+   "description": "Demostración del nuevo sistema de copias en la nube. Piden una prueba de 30 días.",
+   "travel_distance_km": 27.0,
+   "travel_time_minutes": 20
+  },
+  {
+   "id": 37,
+   "client_id": 12,
+   "name": "Toma de medidas",
+   "workday_offset": 148,
+   "time": "13:30",
+   "duration_minutes": 60,
+   "worker_ids": [
+    1
+   ],
+   "description": "Tomamos medidas de la nave para el nuevo cableado. Pendiente enviar presupuesto.",
+   "travel_distance_km": null,
+   "travel_time_minutes": 15
+  },
+  {
+   "id": 38,
+   "client_id": 8,
+   "name": "Revisión de incidencias",
+   "workday_offset": 148,
+   "time": "17:00",
+   "duration_minutes": 60,
+   "worker_ids": [
+    4,
+    7
+   ],
+   "description": "El cliente comenta cortes puntuales de conexión. Se deja registro para el técnico.",
+   "travel_distance_km": null,
+   "travel_time_minutes": 20
+  },
+  {
+   "id": 39,
+   "client_id": 8,
+   "name": "Revisión de incidencias",
+   "workday_offset": 136,
+   "time": "10:00",
+   "duration_minutes": 120,
+   "worker_ids": [
+    2
+   ],
+   "description": "El cliente comenta cortes puntuales de conexión. Se deja registro para el técnico.",
+   "travel_distance_km": 9.3,
+   "travel_time_minutes": 30
+  },
+  {
+   "id": 40,
+   "client_id": 27,
+   "name": "Revisión de la instalación",
+   "workday_offset": 135,
+   "time": "15:30",
+   "duration_minutes": 30,
+   "worker_ids": [
+    4,
+    8
+   ],
+   "description": "Revisión general de la instalación. Todo correcto salvo un punto de acceso con poca cobertura.",
+   "travel_distance_km": null,
+   "travel_time_minutes": 30
+  },
+  {
+   "id": 41,
+   "client_id": 13,
+   "name": "Reunión de seguimiento",
+   "workday_offset": 130,
+   "time": "13:15",
+   "duration_minutes": 60,
+   "worker_ids": [
+    5,
+    9
+   ],
+   "description": "Repasamos el estado de los trabajos pendientes y acordamos fechas para la próxima fase.",
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 42,
+   "client_id": 15,
+   "name": "Revisión de la instalación",
+   "workday_offset": 120,
+   "time": "16:30",
+   "duration_minutes": 90,
+   "worker_ids": [
+    6,
+    7
+   ],
+   "description": "Revisión general de la instalación. Todo correcto salvo un punto de acceso con poca cobertura.",
+   "travel_distance_km": 38.1,
+   "travel_time_minutes": 15
+  },
+  {
+   "id": 43,
+   "client_id": 7,
+   "name": "Revisión de la instalación",
+   "workday_offset": 117,
+   "time": "14:30",
+   "duration_minutes": 60,
+   "worker_ids": [
+    8
+   ],
+   "description": null,
+   "travel_distance_km": 39.7,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 44,
+   "client_id": 26,
+   "name": "Revisión de la instalación",
+   "workday_offset": 117,
+   "time": "15:30",
+   "duration_minutes": 60,
+   "worker_ids": [
+    8
+   ],
+   "description": null,
+   "travel_distance_km": null,
+   "travel_time_minutes": 30
+  },
+  {
+   "id": 45,
+   "client_id": 20,
+   "name": "Auditoría de red",
+   "workday_offset": 107,
+   "time": "15:15",
+   "duration_minutes": 30,
+   "worker_ids": [
+    1,
+    8
+   ],
+   "description": "Inventario de equipos y revisión de la seguridad de la red. Informe en una semana.",
+   "travel_distance_km": null,
+   "travel_time_minutes": 20
+  },
+  {
+   "id": 46,
+   "client_id": 3,
+   "name": "Formación al personal",
+   "workday_offset": 104,
+   "time": "16:45",
+   "duration_minutes": 45,
+   "worker_ids": [
+    2,
+    9
+   ],
+   "description": null,
+   "travel_distance_km": null,
+   "travel_time_minutes": 30
+  },
+  {
+   "id": 47,
+   "client_id": 8,
+   "name": "Toma de medidas",
+   "workday_offset": 100,
+   "time": "16:00",
+   "duration_minutes": 30,
+   "worker_ids": [
+    2,
+    8
+   ],
+   "description": null,
+   "travel_distance_km": 12.8,
+   "travel_time_minutes": 15
+  },
+  {
+   "id": 48,
+   "client_id": 20,
+   "name": "Visita comercial",
+   "workday_offset": 100,
+   "time": "17:15",
+   "duration_minutes": 90,
+   "worker_ids": [
+    5
+   ],
+   "description": null,
+   "travel_distance_km": 23.4,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 49,
+   "client_id": 10,
+   "name": "Presentación de propuesta",
+   "workday_offset": 89,
+   "time": "09:45",
+   "duration_minutes": 45,
+   "worker_ids": [
+    6
+   ],
+   "description": "Se presenta la propuesta económica. El cliente la revisará con dirección esta semana.",
+   "travel_distance_km": 40.8,
+   "travel_time_minutes": 45
+  },
+  {
+   "id": 50,
+   "client_id": 19,
+   "name": "Presentación de propuesta",
+   "workday_offset": 86,
+   "time": "17:45",
+   "duration_minutes": 60,
+   "worker_ids": [
+    7,
+    8
+   ],
+   "description": "Se presenta la propuesta económica. El cliente la revisará con dirección esta semana.",
+   "travel_distance_km": null,
+   "travel_time_minutes": 45
+  },
+  {
+   "id": 51,
+   "client_id": 2,
+   "name": "Auditoría de red",
+   "workday_offset": 85,
+   "time": "09:30",
+   "duration_minutes": 120,
+   "worker_ids": [
+    2,
+    8
+   ],
+   "description": "Inventario de equipos y revisión de la seguridad de la red. Informe en una semana.",
+   "travel_distance_km": null,
+   "travel_time_minutes": 30
+  },
+  {
+   "id": 52,
+   "client_id": 14,
+   "name": "Auditoría de red",
+   "workday_offset": 78,
+   "time": "11:30",
+   "duration_minutes": 60,
+   "worker_ids": [
+    6
+   ],
+   "description": "Inventario de equipos y revisión de la seguridad de la red. Informe en una semana.",
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 53,
+   "client_id": 26,
+   "name": "Toma de medidas",
+   "workday_offset": 76,
+   "time": "11:15",
+   "duration_minutes": 90,
+   "worker_ids": [
+    8,
+    9
+   ],
+   "description": "Tomamos medidas de la nave para el nuevo cableado. Pendiente enviar presupuesto.",
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 54,
+   "client_id": 15,
+   "name": "Revisión de la instalación",
+   "workday_offset": 74,
+   "time": "11:30",
+   "duration_minutes": 45,
+   "worker_ids": [
+    1,
+    2
+   ],
+   "description": "Revisión general de la instalación. Todo correcto salvo un punto de acceso con poca cobertura.",
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 55,
+   "client_id": 3,
+   "name": "Toma de medidas",
+   "workday_offset": 71,
+   "time": "09:30",
+   "duration_minutes": 120,
+   "worker_ids": [
+    1,
+    6
+   ],
+   "description": "Tomamos medidas de la nave para el nuevo cableado. Pendiente enviar presupuesto.",
+   "travel_distance_km": 2.9,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 56,
+   "client_id": 7,
+   "name": "Firma de contrato",
+   "workday_offset": 67,
+   "time": "12:00",
+   "duration_minutes": 90,
+   "worker_ids": [
+    2
+   ],
+   "description": "Firmado el contrato de mantenimiento anual. Empieza el mes que viene.",
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 57,
+   "client_id": 1,
+   "name": "Revisión de incidencias",
+   "workday_offset": 58,
+   "time": "13:30",
+   "duration_minutes": 60,
+   "worker_ids": [
+    1,
+    6
+   ],
+   "description": null,
+   "travel_distance_km": null,
+   "travel_time_minutes": 15
+  },
+  {
+   "id": 58,
+   "client_id": 3,
+   "name": "Presentación de propuesta",
+   "workday_offset": 51,
+   "time": "11:00",
+   "duration_minutes": 60,
+   "worker_ids": [
+    4,
+    6
+   ],
+   "description": "Se presenta la propuesta económica. El cliente la revisará con dirección esta semana.",
+   "travel_distance_km": 42.5,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 59,
+   "client_id": 9,
+   "name": "Presentación de propuesta",
+   "workday_offset": 48,
+   "time": "17:45",
+   "duration_minutes": 45,
+   "worker_ids": [
+    5,
+    9
+   ],
+   "description": "Se presenta la propuesta económica. El cliente la revisará con dirección esta semana.",
+   "travel_distance_km": 42.9,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 60,
+   "client_id": 5,
+   "name": "Toma de medidas",
+   "workday_offset": 44,
+   "time": "13:15",
+   "duration_minutes": 60,
+   "worker_ids": [
+    4,
+    8
+   ],
+   "description": "Tomamos medidas de la nave para el nuevo cableado. Pendiente enviar presupuesto.",
+   "travel_distance_km": 51.1,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 61,
+   "client_id": 26,
+   "name": "Revisión de la instalación",
+   "workday_offset": 38,
+   "time": "13:15",
+   "duration_minutes": 60,
+   "worker_ids": [
+    6,
+    7
+   ],
+   "description": "Revisión general de la instalación. Todo correcto salvo un punto de acceso con poca cobertura.",
+   "travel_distance_km": null,
+   "travel_time_minutes": 10
+  },
+  {
+   "id": 62,
+   "client_id": 11,
+   "name": "Demostración de producto",
+   "workday_offset": 34,
+   "time": "16:00",
+   "duration_minutes": 60,
+   "worker_ids": [
+    4
+   ],
+   "description": "Demostración del nuevo sistema de copias en la nube. Piden una prueba de 30 días.",
+   "travel_distance_km": 35.2,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 63,
+   "client_id": 1,
+   "name": "Revisión de incidencias",
+   "workday_offset": 24,
+   "time": "13:30",
+   "duration_minutes": 90,
+   "worker_ids": [
+    3
+   ],
+   "description": "El cliente comenta cortes puntuales de conexión. Se deja registro para el técnico.",
+   "travel_distance_km": 56.8,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 64,
+   "client_id": 15,
+   "name": "Presentación de propuesta",
+   "workday_offset": 22,
+   "time": "10:45",
+   "duration_minutes": 90,
+   "worker_ids": [
+    8
+   ],
+   "description": "Se presenta la propuesta económica. El cliente la revisará con dirección esta semana.",
+   "travel_distance_km": 19.5,
+   "travel_time_minutes": 15
+  },
+  {
+   "id": 65,
+   "client_id": 19,
+   "name": "Demostración de producto",
+   "workday_offset": 20,
+   "time": "16:00",
+   "duration_minutes": 60,
+   "worker_ids": [
+    4
+   ],
+   "description": "Demostración del nuevo sistema de copias en la nube. Piden una prueba de 30 días.",
+   "travel_distance_km": 56.4,
+   "travel_time_minutes": 30
+  },
+  {
+   "id": 66,
+   "client_id": 1,
+   "name": "Auditoría de red",
+   "workday_offset": 19,
+   "time": "14:30",
+   "duration_minutes": 90,
+   "worker_ids": [
+    7,
+    8
+   ],
+   "description": "Inventario de equipos y revisión de la seguridad de la red. Informe en una semana.",
+   "travel_distance_km": 59.9,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 67,
+   "client_id": 27,
+   "name": "Demostración de producto",
+   "workday_offset": 19,
+   "time": "17:00",
+   "duration_minutes": 60,
+   "worker_ids": [
+    2,
+    7
+   ],
+   "description": "Demostración del nuevo sistema de copias en la nube. Piden una prueba de 30 días.",
+   "travel_distance_km": 26.9,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 68,
+   "client_id": 8,
+   "name": "Demostración de producto",
+   "workday_offset": 18,
+   "time": "11:30",
+   "duration_minutes": 60,
+   "worker_ids": [
+    2,
+    5
+   ],
+   "description": "Demostración del nuevo sistema de copias en la nube. Piden una prueba de 30 días.",
+   "travel_distance_km": null,
+   "travel_time_minutes": 15
+  },
+  {
+   "id": 69,
+   "client_id": 17,
+   "name": "Presentación de propuesta",
+   "workday_offset": 17,
+   "time": "11:00",
+   "duration_minutes": 30,
+   "worker_ids": [
+    3
+   ],
+   "description": "Se presenta la propuesta económica. El cliente la revisará con dirección esta semana.",
+   "travel_distance_km": 35.6,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 70,
+   "client_id": 7,
+   "name": "Firma de contrato",
+   "workday_offset": 17,
+   "time": "16:45",
+   "duration_minutes": 90,
+   "worker_ids": [
+    9
+   ],
+   "description": "Firmado el contrato de mantenimiento anual. Empieza el mes que viene.",
+   "travel_distance_km": 18.4,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 71,
+   "client_id": 6,
+   "name": "Firma de contrato",
+   "workday_offset": 15,
+   "time": "15:45",
+   "duration_minutes": 120,
+   "worker_ids": [
+    5,
+    8
+   ],
+   "description": "Firmado el contrato de mantenimiento anual. Empieza el mes que viene.",
+   "travel_distance_km": 11.6,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 72,
+   "client_id": 26,
+   "name": "Demostración de producto",
+   "workday_offset": 14,
+   "time": "12:45",
+   "duration_minutes": 60,
+   "worker_ids": [
+    8
+   ],
+   "description": "Demostración del nuevo sistema de copias en la nube. Piden una prueba de 30 días.",
+   "travel_distance_km": 32.6,
+   "travel_time_minutes": 15
+  },
+  {
+   "id": 73,
+   "client_id": 10,
+   "name": "Firma de contrato",
+   "workday_offset": 13,
+   "time": "10:45",
+   "duration_minutes": 45,
+   "worker_ids": [
+    8
+   ],
+   "description": "Firmado el contrato de mantenimiento anual. Empieza el mes que viene.",
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 74,
+   "client_id": 19,
+   "name": "Presentación de propuesta",
+   "workday_offset": 13,
+   "time": "11:15",
+   "duration_minutes": 120,
+   "worker_ids": [
+    1
+   ],
+   "description": "Se presenta la propuesta económica. El cliente la revisará con dirección esta semana.",
+   "travel_distance_km": 50.2,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 75,
+   "client_id": 10,
+   "name": "Demostración de producto",
+   "workday_offset": 13,
+   "time": "14:45",
+   "duration_minutes": 120,
+   "worker_ids": [
+    7,
+    8
+   ],
+   "description": "Demostración del nuevo sistema de copias en la nube. Piden una prueba de 30 días.",
+   "travel_distance_km": null,
+   "travel_time_minutes": 20
+  },
+  {
+   "id": 76,
+   "client_id": 15,
+   "name": "Revisión de incidencias",
+   "workday_offset": 12,
+   "time": "16:30",
+   "duration_minutes": 30,
+   "worker_ids": [
+    1
+   ],
+   "description": "El cliente comenta cortes puntuales de conexión. Se deja registro para el técnico.",
+   "travel_distance_km": 20.5,
+   "travel_time_minutes": 15
+  },
+  {
+   "id": 77,
+   "client_id": 28,
+   "name": "Revisión de incidencias",
+   "workday_offset": 12,
+   "time": "17:15",
+   "duration_minutes": 120,
+   "worker_ids": [
+    3
+   ],
+   "description": "El cliente comenta cortes puntuales de conexión. Se deja registro para el técnico.",
+   "travel_distance_km": null,
+   "travel_time_minutes": 15
+  },
+  {
+   "id": 78,
+   "client_id": 28,
+   "name": "Reunión de seguimiento",
+   "workday_offset": 10,
+   "time": "17:45",
+   "duration_minutes": 60,
+   "worker_ids": [
+    3
+   ],
+   "description": null,
+   "travel_distance_km": 25.2,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 79,
+   "client_id": 23,
+   "name": "Visita comercial",
+   "workday_offset": 8,
+   "time": "09:00",
+   "duration_minutes": 30,
+   "worker_ids": [
+    4,
+    6
+   ],
+   "description": "Primera toma de contacto. Interesados en el mantenimiento anual y en ampliar la red.",
+   "travel_distance_km": 58.7,
+   "travel_time_minutes": 10
+  },
+  {
+   "id": 80,
+   "client_id": 1,
+   "name": "Presentación de propuesta",
+   "workday_offset": 6,
+   "time": "14:15",
+   "duration_minutes": 90,
+   "worker_ids": [
+    2
+   ],
+   "description": "Se presenta la propuesta económica. El cliente la revisará con dirección esta semana.",
+   "travel_distance_km": null,
+   "travel_time_minutes": 30
+  },
+  {
+   "id": 81,
+   "client_id": 1,
+   "name": "Revisión de incidencias",
+   "workday_offset": 5,
+   "time": "13:30",
+   "duration_minutes": 45,
+   "worker_ids": [
+    4
+   ],
+   "description": "El cliente comenta cortes puntuales de conexión. Se deja registro para el técnico.",
+   "travel_distance_km": 10.6,
+   "travel_time_minutes": 15
+  },
+  {
+   "id": 82,
+   "client_id": 3,
+   "name": "Toma de medidas",
+   "workday_offset": 4,
+   "time": "14:15",
+   "duration_minutes": 45,
+   "worker_ids": [
+    5,
+    6
+   ],
+   "description": "Tomamos medidas de la nave para el nuevo cableado. Pendiente enviar presupuesto.",
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 83,
+   "client_id": 28,
+   "name": "Revisión de la instalación",
+   "workday_offset": 4,
+   "time": "16:30",
+   "duration_minutes": 60,
+   "worker_ids": [
+    2
+   ],
+   "description": "Revisión general de la instalación. Todo correcto salvo un punto de acceso con poca cobertura.",
+   "travel_distance_km": 10.4,
+   "travel_time_minutes": 10
+  },
+  {
+   "id": 84,
+   "client_id": 9,
+   "name": "Visita comercial",
+   "workday_offset": 2,
+   "time": "10:15",
+   "duration_minutes": 45,
+   "worker_ids": [
+    8,
+    9
+   ],
+   "description": "Primera toma de contacto. Interesados en el mantenimiento anual y en ampliar la red.",
+   "travel_distance_km": 56.8,
+   "travel_time_minutes": 45
+  },
+  {
+   "id": 85,
+   "client_id": 19,
+   "name": "Presentación de propuesta",
+   "workday_offset": 1,
+   "time": "10:30",
+   "duration_minutes": 60,
+   "worker_ids": [
+    2
+   ],
+   "description": "Se presenta la propuesta económica. El cliente la revisará con dirección esta semana.",
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  },
+  {
+   "id": 86,
+   "client_id": 14,
+   "name": "Toma de medidas",
+   "workday_offset": 1,
+   "time": "14:45",
+   "duration_minutes": 90,
+   "worker_ids": [
+    6,
+    7
+   ],
+   "description": "Tomamos medidas de la nave para el nuevo cableado. Pendiente enviar presupuesto.",
+   "travel_distance_km": 6.5,
+   "travel_time_minutes": 30
+  },
+  {
+   "id": 87,
+   "client_id": 19,
+   "name": "Firma de contrato",
+   "workday_offset": 0,
+   "time": "15:00",
+   "duration_minutes": 60,
+   "worker_ids": [
+    2,
+    9
+   ],
+   "description": "Firmado el contrato de mantenimiento anual. Empieza el mes que viene.",
+   "travel_distance_km": null,
+   "travel_time_minutes": null
+  }
+ ]
+}

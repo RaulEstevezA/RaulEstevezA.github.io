@@ -1,0 +1,10 @@
+{
+ "success": true,
+ "data": {
+  "id": 1,
+  "name": "ERP Flutter Demo",
+  "legal_name": "ERP Flutter Demo S.L.",
+  "vat": "B00000000",
+  "city": "Valencia"
+ }
+}

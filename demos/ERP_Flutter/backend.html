@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ERP Flutter API</title>
+  <style>
+    :root { --brand: #4F46E5; --text: #0F172A; --muted: #64748B; --bg: #F8FAFC; --card: #fff; --border: #E2E8F0; }
+    @media (prefers-color-scheme: dark) {
+      :root { --brand: #818CF8; --text: #F1F5F9; --muted: #94A3B8; --bg: #0B1020; --card: #161B2E; --border: #283048; }
+    }
+    body { margin: 0; font: 16px/1.5 system-ui, sans-serif; background: var(--bg); color: var(--text); }
+    main { max-width: 640px; margin: 0 auto; padding: 48px 16px; }
+    h1 { margin: 0 0 4px; } h1 span { color: #14B8A6; font-weight: 400; }
+    p { color: var(--muted); }
+    ul { list-style: none; padding: 0; }
+    li { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 16px; margin: 8px 0; }
+    a { color: var(--brand); font-family: ui-monospace, monospace; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>ERP <span>Flutter</span> · API</h1>
+  <p>Backend estático de demostración. Todos los datos son ficticios. En el campo «URL del servidor» de la app escribe la dirección de esta carpeta (sin <code>backend.html</code>); la app pide <code>&lt;url&gt;/api/&lt;recurso&gt;.json</code>.</p>
+  <ul>
+    <li><a href="api/users.json">api/users.json</a> — usuarios y roles</li>
+    <li><a href="api/company.json">api/company.json</a> — empresa</li>
+    <li><a href="api/clock_in_records.json">api/clock_in_records.json</a> — fichajes</li>
+    <li><a href="api/clock_in_incidents.json">api/clock_in_incidents.json</a> — incidencias</li>
+    <li><a href="api/holidays.json">api/holidays.json</a> — vacaciones, festivos y cupo anual</li>
+    <li><a href="api/messages.json">api/messages.json</a> — conversaciones y mensajes</li>
+    <li><a href="api/clients.json">api/clients.json</a> — clientes</li>
+    <li><a href="api/client_documents.json">api/client_documents.json</a> — presupuestos, pedidos, albaranes y facturas</li>
+    <li><a href="api/visit_reports.json">api/visit_reports.json</a> — partes de visita</li>
+    <li><a href="api/workers.json">api/workers.json</a> — técnicos</li>
+    <li><a href="api/products.json">api/products.json</a> — catálogo de productos</li>
+    <li><a href="api/work_reports.json">api/work_reports.json</a> — partes de trabajo</li>
+  </ul>
+</main>
+</body>
+</html>
