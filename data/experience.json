@@ -21,6 +21,10 @@
 
       "company": "Microvalencia Soluciones Informáticas S.L.",
 
+      "demo_url": "https://raulesteveza.github.io/demos/ERP_Flutter/",
+      "demo_note_en": "Explore an independent reinterpretation built with fictional data. It contains no proprietary code or company information.",
+      "demo_note_es": "Explora una reinterpretación independiente creada con datos ficticios. No contiene código propietario ni información de la empresa.",
+
       "paragraphs_en": [
         "Designed and developed a full-featured Flutter mobile application to extend Microvalencia's proprietary ERP system to smartphones, enabling field employees to access core business workflows in mobility. The project covered both sides of the stack: approximately 90% of the PHP/Laravel API controllers and routes consumed by the app were designed and implemented from scratch, including mobile-optimised response structures, role-based endpoint permissions, and data formats specifically tailored for Flutter.",
         "The application spans nine functional modules: authentication with a user-configurable server URL, remember-URL and remember-user options, and automatic session restore; clock-in/out with optional GPS location and an admin-facing grouped history view; clock-in incident tracking; internal messaging with real-time polling and unread badge count; work orders with line items, audio recording and image attachments, and digital client signature; visit reports linked to clients; a full client module with access to five document types and Maps integration; holiday management with a visual calendar and approval workflow; and role-based access control across six user profiles.",

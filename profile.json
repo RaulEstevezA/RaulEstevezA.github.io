@@ -25,6 +25,8 @@
       "hours":       383,
       "stack":       ["Flutter", "Dart", "PHP", "Laravel", "REST API", "MVVM", "SOLID", "Dio", "FlutterSecureStorage", "Geolocator", "Flutter Flavors"],
       "description": "Designed and developed a full-featured Flutter mobile app to extend the company ERP to smartphones. Implemented ~90% of the PHP/Laravel API layer from scratch. App covers authentication (configurable server URL, remember URL/user, auto session restore), clock-in/out with optional GPS, incident tracking, internal messaging with real-time polling, work orders with audio/image attachments and digital client signature, visit reports, client management (5 document types, Maps), holiday management, and role-based access control (6 profiles). Feature-based clean architecture with MVVM and SOLID, 3-layer error handling (15 error types), FlutterSecureStorage with Xiaomi/MIUI Keystore fallback, real-time server downtime detection, dark/light theme toggle, and two production variants via Flutter Flavors.",
+      "demo":        "https://raulesteveza.github.io/demos/ERP_Flutter/",
+      "demo_note":   "Independent reinterpretation with fictional data; contains no proprietary code or company information.",
       "recommendation": {
         "issued_by": "Pau Moraleda Martínez",
         "company":   "Microvalencia Soluciones Informáticas S.L.",
@@ -71,7 +73,9 @@
       "type":        "Mobile ERP Application",
       "description": "Mobile application built in Flutter during an internship at Microvalencia Soluciones Informáticas. Integrated with the company ERP via custom Laravel/PHP REST APIs. Covers authentication, time tracking with GPS, work orders with digital signature, internal messaging, client management, holidays and role-based access control. Internationalization in ES/VA/CA/EN. Clean MVVM architecture, Flutter Flavors for two app variants (full and lite). Planned for Google Play Store and App Store.",
       "stack":       ["Flutter", "Dart", "PHP", "Laravel", "REST API", "MVVM", "Dio", "Flutter Secure Storage", "Geolocator"],
-      "demo":        "https://youtu.be/lrgRXaBEdI4",
+      "demo":        "https://raulesteveza.github.io/demos/ERP_Flutter/",
+      "video":       "https://youtu.be/lrgRXaBEdI4",
+      "demo_note":   "Independent reinterpretation with fictional data; contains no proprietary code or company information.",
       "featured":    true
     },
     {

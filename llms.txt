@@ -81,7 +81,8 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
   (superAdmin, admin, user, worker, client, supplier). Internationalisation in Spanish, Valencian, Catalan and English.
   Dark/light theme toggle. 3-layer error handling (15 types). FlutterSecureStorage with Xiaomi/MIUI fallback.
   Real-time server downtime detection. Two production variants (full/lite) via Flutter Flavors. Planned for Google Play Store and App Store.
-  Demo: https://youtu.be/lrgRXaBEdI4
+  Interactive demo (independent reinterpretation with fictional data; no proprietary code or company information): https://raulesteveza.github.io/demos/ERP_Flutter/
+  Video: https://youtu.be/lrgRXaBEdI4
 
 - **Cinema App** — Flutter movie discovery app consuming 9 REST endpoints of The Movie Database (TMDB) API.
   Stack: Flutter, Dart, Riverpod, go_router, Dio, DTO/Entity Mapping, Drift (SQLite), Postman.
