@@ -261,7 +261,7 @@
           <iframe id="desktop-app" title="ERP Flutter" loading="eager" allow="clipboard-write"></iframe>
         </div>
       </div>
-      <p class="hint" data-i18n="hint">Usa el ratón como si fuera el dedo: arrastra desde el borde izquierdo para abrir el menú.</p>
+      <p class="hint" data-i18n="hint">Arrastra desde el borde izquierdo para abrir el menú.</p>
     </div>
   </main>
 
@@ -296,30 +296,24 @@
     </div>
 
     <p class="intro" data-i18n="intro">
-      Fichaje con ubicación, historial e incidencias, vacaciones con calendario y
-      aprobación, clientes con sus documentos, partes de visita, partes de trabajo
-      con líneas, fotos, notas de voz y firma del cliente, y un chat interno. Cada
-      rol ve solo lo que le corresponde. Esta es la versión web de la app móvil,
-      ejecutándose tal cual en el navegador.
-    </p>
-
-    <p class="intro" data-i18n="scope">
-      El alcance lo marcó la empresa: no se buscaba que el móvil tuviera autonomía
-      total sobre el ERP, sino que fuera un apoyo para el día a día de los trabajadores
-      que ya lo usan. Por eso algunas acciones se quedan, a propósito, en el ERP de escritorio.
+      Fichajes, vacaciones, clientes, partes de visita y partes de trabajo con fotos,
+      notas de voz y firma del cliente, y chat interno, con permisos por rol. Esta es
+      la versión web de la app móvil, ejecutándose tal cual en el navegador.
     </p>
 
     <div class="notice">
-      <strong data-i18n="notice_title">Demo con datos inventados</strong>
+      <strong data-i18n="notice_title">Demo de una app en producción</strong>
       <ul>
-        <li data-i18n="notice_api">Reimplementación de la app que desarrollé en prácticas. El backend PHP original se sustituye por un backend estático en JSON, publicado junto a la demo.</li>
-        <li><span data-i18n="notice_user">Cuentas de prueba (contraseña</span> <code>demo1234</code>): <code>superadmin@</code>, <code>admin@</code>, <code>usuario@</code>, <code>trabajador@</code>, <code>cliente@</code> <span data-i18n="notice_user_hint">y</span> <code>proveedor@erpflutter.dev</code>. <span data-i18n="notice_user_buttons">También puedes elegirlas en «Cuentas de demostración» al iniciar sesión.</span></li>
-        <li data-i18n="notice_storage">Lo que añadas (fichajes, partes, firmas, fotos, mensajes) se guarda solo en este navegador. Puedes volver al estado inicial con «Restablecer datos de la demo» en el menú lateral.</li>
+        <li data-i18n="notice_real">La app real la desarrollé en mis prácticas en Microvalencia y funciona con su ERP. Esta es una reimplementación con datos inventados y un backend estático en JSON.</li>
+        <li data-i18n="notice_scope">El alcance lo marcó la empresa: la app apoya el día a día de quienes usan el ERP, no lo sustituye, así que algunas acciones se quedan en el escritorio.</li>
+        <li><span data-i18n="notice_user">Entra con una cuenta de «Cuentas de demostración» (contraseña</span> <code>demo1234</code><span data-i18n="notice_user_end">): cada rol ve módulos distintos.</span></li>
+        <li data-i18n="notice_storage">Lo que añadas se guarda solo en este navegador. «Restablecer datos de la demo», en el menú lateral, lo deja como al principio.</li>
       </ul>
     </div>
 
     <div class="actions">
       <a class="btn primary" href="https://github.com/RaulEstevezA/Erp_Flutter_Demo" target="_blank" rel="noopener" data-i18n="code">Código</a>
+      <a class="btn" href="https://youtu.be/lrgRXaBEdI4" target="_blank" rel="noopener" data-i18n="video">Vídeo</a>
       <a class="btn" href="backend.html" target="_blank" rel="noopener" data-i18n="backend">Backend</a>
       <a class="btn" href="app/" target="_blank" rel="noopener" data-i18n="fullscreen">Pantalla completa</a>
       <a class="btn" href="https://raulesteveza.github.io/demos/" data-i18n="demos">Demos</a>
@@ -333,36 +327,36 @@
 
       var texts = {
         es: {
-          hint: 'Usa el ratón como si fuera el dedo: arrastra desde el borde izquierdo para abrir el menú.',
+          hint: 'Arrastra desde el borde izquierdo para abrir el menú.',
           subtitle: 'App móvil de un ERP para personal en movilidad',
-          intro: 'Fichaje con ubicación, historial e incidencias, vacaciones con calendario y aprobación, clientes con sus documentos, partes de visita, partes de trabajo con líneas, fotos, notas de voz y firma del cliente, y un chat interno. Cada rol ve solo lo que le corresponde. Esta es la versión web de la app móvil, ejecutándose tal cual en el navegador.',
           tag_roles: 'Roles y permisos',
-          scope: 'El alcance lo marcó la empresa: no se buscaba que el móvil tuviera autonomía total sobre el ERP, sino que fuera un apoyo para el día a día de los trabajadores que ya lo usan. Por eso algunas acciones se quedan, a propósito, en el ERP de escritorio.',
-          notice_title: 'Demo con datos inventados',
-          notice_api: 'Reimplementación de la app que desarrollé en prácticas. El backend PHP original se sustituye por un backend estático en JSON, publicado junto a la demo.',
-          notice_user: 'Cuentas de prueba (contraseña',
-          notice_user_hint: 'y',
-          notice_user_buttons: 'También puedes elegirlas en «Cuentas de demostración» al iniciar sesión.',
-          notice_storage: 'Lo que añadas (fichajes, partes, firmas, fotos, mensajes) se guarda solo en este navegador. Puedes volver al estado inicial con «Restablecer datos de la demo» en el menú lateral.',
+          intro: 'Fichajes, vacaciones, clientes, partes de visita y partes de trabajo con fotos, notas de voz y firma del cliente, y chat interno, con permisos por rol. Esta es la versión web de la app móvil, ejecutándose tal cual en el navegador.',
+          notice_title: 'Demo de una app en producción',
+          notice_real: 'La app real la desarrollé en mis prácticas en Microvalencia y funciona con su ERP. Esta es una reimplementación con datos inventados y un backend estático en JSON.',
+          notice_scope: 'El alcance lo marcó la empresa: la app apoya el día a día de quienes usan el ERP, no lo sustituye, así que algunas acciones se quedan en el escritorio.',
+          notice_user: 'Entra con una cuenta de «Cuentas de demostración» (contraseña',
+          notice_user_end: '): cada rol ve módulos distintos.',
+          notice_storage: 'Lo que añadas se guarda solo en este navegador. «Restablecer datos de la demo», en el menú lateral, lo deja como al principio.',
           code: 'Código',
+          video: 'Vídeo',
           backend: 'Backend',
           fullscreen: 'Pantalla completa',
           demos: 'Demos',
           view_demo: 'Ver la demo'
         },
         en: {
-          hint: 'Use the mouse like a finger: drag from the left edge to open the menu.',
+          hint: 'Drag from the left edge to open the menu.',
           subtitle: 'Mobile ERP app for field staff',
-          intro: 'Clock-in with location, history and incidents, holidays with calendar and approval, clients with their documents, visit reports, work reports with lines, photos, voice notes and client signature, and an internal chat. Each role only sees what it is allowed to. This is the web build of the mobile app, running as-is in the browser.',
           tag_roles: 'Role-based access',
-          scope: 'The scope was set by the company: rather than giving the phone full autonomy over the ERP, the app is day-to-day support for staff who already use it. That is why some actions deliberately stay in the desktop ERP.',
-          notice_title: 'Demo with made-up data',
-          notice_api: 'A rewrite of the app I built during my internship. The original PHP backend is replaced by a static JSON backend published alongside the demo.',
-          notice_user: 'Test accounts (password',
-          notice_user_hint: 'and',
-          notice_user_buttons: 'You can also pick them under “Cuentas de demostración” on the login screen.',
-          notice_storage: 'Anything you add (clock-ins, reports, signatures, photos, messages) is only stored in this browser. Go back to the initial state with “Reset demo data” in the side menu.',
+          intro: 'Clock-ins, holidays, clients, visit reports and work reports with photos, voice notes and client signature, and an internal chat, with role-based permissions. This is the web build of the mobile app, running as-is in the browser.',
+          notice_title: 'Demo of an app in production',
+          notice_real: 'I built the real app during my internship at Microvalencia, and it runs with their ERP. This is a rewrite with made-up data and a static JSON backend.',
+          notice_scope: 'The scope was set by the company: the app supports the day-to-day work of ERP users rather than replacing the ERP, so some actions stay on the desktop.',
+          notice_user: 'Sign in with an account from “Cuentas de demostración” (password',
+          notice_user_end: '): each role sees different modules.',
+          notice_storage: 'Anything you add is only stored in this browser. “Reset demo data” in the side menu takes it back to the start.',
           code: 'Code',
+          video: 'Video',
           backend: 'Backend',
           fullscreen: 'Full screen',
           demos: 'Demos',
