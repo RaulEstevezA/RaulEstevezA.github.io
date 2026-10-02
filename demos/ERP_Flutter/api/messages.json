@@ -1,0 +1,304 @@
+{
+ "success": true,
+ "data": {
+  "conversations": [
+   {
+    "id": 1,
+    "participants": [
+     1,
+     2
+    ]
+   },
+   {
+    "id": 2,
+    "participants": [
+     2,
+     3
+    ]
+   },
+   {
+    "id": 3,
+    "participants": [
+     1,
+     3
+    ]
+   },
+   {
+    "id": 4,
+    "participants": [
+     2,
+     6
+    ]
+   },
+   {
+    "id": 5,
+    "participants": [
+     3,
+     6
+    ]
+   },
+   {
+    "id": 6,
+    "participants": [
+     2,
+     7
+    ]
+   },
+   {
+    "id": 7,
+    "participants": [
+     2,
+     4
+    ]
+   },
+   {
+    "id": 8,
+    "participants": [
+     4,
+     5
+    ]
+   },
+   {
+    "id": 9,
+    "participants": [
+     1,
+     7
+    ]
+   }
+  ],
+  "messages": [
+   {
+    "id": 1,
+    "conversation_id": 1,
+    "sender_id": 1,
+    "minutes_ago": 4320,
+    "body": "Carlos, ¿me pasas el resumen de horas del equipo de este mes?",
+    "read": true
+   },
+   {
+    "id": 2,
+    "conversation_id": 1,
+    "sender_id": 2,
+    "minutes_ago": 4300,
+    "body": "Claro, te lo preparo esta tarde.",
+    "read": true
+   },
+   {
+    "id": 3,
+    "conversation_id": 1,
+    "sender_id": 2,
+    "minutes_ago": 2900,
+    "body": "Te lo acabo de dejar en la carpeta compartida.",
+    "read": true
+   },
+   {
+    "id": 4,
+    "conversation_id": 1,
+    "sender_id": 1,
+    "minutes_ago": 2880,
+    "body": "Perfecto, gracias.",
+    "read": true
+   },
+   {
+    "id": 5,
+    "conversation_id": 1,
+    "sender_id": 2,
+    "minutes_ago": 95,
+    "body": "Laura, hay dos solicitudes de vacaciones pendientes de revisar.",
+    "read": false
+   },
+   {
+    "id": 6,
+    "conversation_id": 2,
+    "sender_id": 3,
+    "minutes_ago": 1500,
+    "body": "Hola Carlos, ayer olvidé fichar la salida. Ya he abierto una incidencia.",
+    "read": true
+   },
+   {
+    "id": 7,
+    "conversation_id": 2,
+    "sender_id": 2,
+    "minutes_ago": 1480,
+    "body": "Vale Ana, la reviso hoy.",
+    "read": true
+   },
+   {
+    "id": 8,
+    "conversation_id": 2,
+    "sender_id": 2,
+    "minutes_ago": 40,
+    "body": "Revisada y aprobada. Recuerda fichar al salir 😉",
+    "read": false
+   },
+   {
+    "id": 9,
+    "conversation_id": 3,
+    "sender_id": 1,
+    "minutes_ago": 10100,
+    "body": "Bienvenida al equipo, Ana. Cualquier duda me dices.",
+    "read": true
+   },
+   {
+    "id": 10,
+    "conversation_id": 3,
+    "sender_id": 3,
+    "minutes_ago": 10080,
+    "body": "¡Muchas gracias, Laura!",
+    "read": true
+   },
+   {
+    "id": 11,
+    "conversation_id": 4,
+    "sender_id": 6,
+    "minutes_ago": 2200,
+    "body": "Buenos días, ¿podríais confirmar la visita técnica del jueves?",
+    "read": true
+   },
+   {
+    "id": 12,
+    "conversation_id": 4,
+    "sender_id": 2,
+    "minutes_ago": 2150,
+    "body": "Buenos días. Confirmada para el jueves a las 10:00.",
+    "read": true
+   },
+   {
+    "id": 13,
+    "conversation_id": 4,
+    "sender_id": 6,
+    "minutes_ago": 300,
+    "body": "Perfecto. ¿Nos enviaréis el presupuesto actualizado?",
+    "read": false
+   },
+   {
+    "id": 14,
+    "conversation_id": 4,
+    "sender_id": 6,
+    "minutes_ago": 290,
+    "body": "Lo necesitamos para cerrar el pedido esta semana.",
+    "read": false
+   },
+   {
+    "id": 15,
+    "conversation_id": 5,
+    "sender_id": 3,
+    "minutes_ago": 5000,
+    "body": "Le adjunto la documentación que nos pidió por correo.",
+    "read": true
+   },
+   {
+    "id": 16,
+    "conversation_id": 5,
+    "sender_id": 6,
+    "minutes_ago": 4900,
+    "body": "Recibida, gracias.",
+    "read": true
+   },
+   {
+    "id": 17,
+    "conversation_id": 6,
+    "sender_id": 7,
+    "minutes_ago": 1800,
+    "body": "Os confirmamos que el material sale mañana del almacén.",
+    "read": true
+   },
+   {
+    "id": 18,
+    "conversation_id": 6,
+    "sender_id": 2,
+    "minutes_ago": 1790,
+    "body": "Genial, ¿con qué agencia de transporte?",
+    "read": true
+   },
+   {
+    "id": 19,
+    "conversation_id": 6,
+    "sender_id": 7,
+    "minutes_ago": 120,
+    "body": "Con la de siempre. Llegará en 48-72 h.",
+    "read": false
+   },
+   {
+    "id": 20,
+    "conversation_id": 7,
+    "sender_id": 2,
+    "minutes_ago": 3000,
+    "body": "Javier, mañana necesito que pases por la obra de la calle Colón.",
+    "read": true
+   },
+   {
+    "id": 21,
+    "conversation_id": 7,
+    "sender_id": 4,
+    "minutes_ago": 2950,
+    "body": "Sin problema, voy a primera hora.",
+    "read": true
+   },
+   {
+    "id": 22,
+    "conversation_id": 7,
+    "sender_id": 4,
+    "minutes_ago": 60,
+    "body": "Ya estoy aquí. Falta material para terminar hoy.",
+    "read": true
+   },
+   {
+    "id": 23,
+    "conversation_id": 7,
+    "sender_id": 2,
+    "minutes_ago": 50,
+    "body": "Vale, te lo mando con Marta esta tarde.",
+    "read": false
+   },
+   {
+    "id": 24,
+    "conversation_id": 8,
+    "sender_id": 5,
+    "minutes_ago": 700,
+    "body": "¿Te recojo mañana para ir al cliente?",
+    "read": true
+   },
+   {
+    "id": 25,
+    "conversation_id": 8,
+    "sender_id": 4,
+    "minutes_ago": 680,
+    "body": "Sí, a las 7:45 en la oficina.",
+    "read": true
+   },
+   {
+    "id": 26,
+    "conversation_id": 8,
+    "sender_id": 5,
+    "minutes_ago": 30,
+    "body": "Perfecto, allí estaré.",
+    "read": false
+   },
+   {
+    "id": 27,
+    "conversation_id": 9,
+    "sender_id": 1,
+    "minutes_ago": 8000,
+    "body": "Necesitamos revisar las condiciones del contrato de suministro.",
+    "read": true
+   },
+   {
+    "id": 28,
+    "conversation_id": 9,
+    "sender_id": 7,
+    "minutes_ago": 7900,
+    "body": "Sin problema, ¿os va bien una reunión la semana que viene?",
+    "read": false
+   }
+  ],
+  "auto_replies": [
+   "Recibido, gracias.",
+   "Perfecto, lo reviso y te digo algo.",
+   "De acuerdo 👍",
+   "Ahora mismo estoy reunido, te respondo en un rato.",
+   "Gracias por avisar.",
+   "¡Genial!"
+  ]
+ }
+}

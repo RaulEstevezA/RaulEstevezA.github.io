@@ -1,0 +1,89 @@
+{
+ "success": true,
+ "data": [
+  {
+   "id": 1,
+   "name": "Laura Martín",
+   "email": "superadmin@erpflutter.dev",
+   "password": "demo1234",
+   "roles": [
+    {
+     "name": "superadmin"
+    }
+   ],
+   "worker_id": 1
+  },
+  {
+   "id": 2,
+   "name": "Carlos Ruiz",
+   "email": "admin@erpflutter.dev",
+   "password": "demo1234",
+   "roles": [
+    {
+     "name": "admin"
+    }
+   ],
+   "worker_id": 2
+  },
+  {
+   "id": 3,
+   "name": "Ana López",
+   "email": "usuario@erpflutter.dev",
+   "password": "demo1234",
+   "roles": [
+    {
+     "name": "user"
+    }
+   ],
+   "worker_id": 3
+  },
+  {
+   "id": 4,
+   "name": "Javier Torres",
+   "email": "trabajador@erpflutter.dev",
+   "password": "demo1234",
+   "roles": [
+    {
+     "name": "worker"
+    }
+   ],
+   "worker_id": 4
+  },
+  {
+   "id": 5,
+   "name": "Marta Sánchez",
+   "email": "marta@erpflutter.dev",
+   "password": "demo1234",
+   "roles": [
+    {
+     "name": "worker"
+    }
+   ],
+   "worker_id": 5
+  },
+  {
+   "id": 6,
+   "name": "Cliente Demo S.L.",
+   "email": "cliente@erpflutter.dev",
+   "password": "demo1234",
+   "roles": [
+    {
+     "name": "customer"
+    }
+   ],
+   "worker_id": null
+  },
+  {
+   "id": 7,
+   "name": "Proveedor Demo S.A.",
+   "email": "proveedor@erpflutter.dev",
+   "password": "demo1234",
+   "roles": [
+    {
+     "name": "supplier"
+    }
+   ],
+   "worker_id": null
+  }
+ ]
+}

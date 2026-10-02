@@ -1,0 +1,1074 @@
+{
+ "success": true,
+ "data": [
+  {
+   "id": 1,
+   "code": 430001,
+   "name": "Cliente Demo S.L.",
+   "vat": "X50021307",
+   "active": true,
+   "remarks": null,
+   "discount": 0,
+   "responsible": null,
+   "payment_condition": "30-60 días",
+   "payment_method": "Tarjeta",
+   "phone": "961082763",
+   "email": "info@clientedemosl.example",
+   "city": "Valencia",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "Pol. Ind. Fuente del Jarro, calle 4, 118",
+     "city": "Valencia",
+     "postcode": "46001",
+     "phone": "961082763",
+     "email": "info@clientedemosl.example",
+     "billing": true,
+     "delivering": true
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Lucía Navarro",
+     "phone": "661970079",
+     "email": "lucía@clientedemosl.example"
+    },
+    {
+     "name": "Cristina Llorens",
+     "phone": "679269894",
+     "email": "cristina@clientedemosl.example"
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "code": 430002,
+   "name": "Talleres Albufera S.L.",
+   "vat": "X14806245",
+   "active": true,
+   "remarks": null,
+   "discount": 0,
+   "responsible": "Carlos Ruiz",
+   "payment_condition": "60 días",
+   "payment_method": "Transferencia",
+   "phone": "963132228",
+   "email": "info@talleresalbufe.example",
+   "city": "Valencia",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "Camino Real, 66",
+     "city": "Valencia",
+     "postcode": "46004",
+     "phone": "963132228",
+     "email": "info@talleresalbufe.example",
+     "billing": true,
+     "delivering": true
+    },
+    {
+     "alias": "Tienda",
+     "address": "Av. Blasco Ibáñez, 39",
+     "city": "Silla",
+     "postcode": "46460",
+     "phone": null,
+     "email": null,
+     "billing": false,
+     "delivering": true
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Diego Bosch",
+     "phone": "654674588",
+     "email": "diego@talleresalbufe.example"
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "code": 430003,
+   "name": "Construcciones Turia S.A.",
+   "vat": "X38838132",
+   "active": true,
+   "remarks": "Cliente preferente: revisar presupuestos en 24 h.",
+   "discount": 5,
+   "responsible": null,
+   "payment_condition": "30 días",
+   "payment_method": "Confirming",
+   "phone": "962432894",
+   "email": "info@construcciones.example",
+   "city": "Paterna",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "C/ San Vicente, 106",
+     "city": "Paterna",
+     "postcode": "46980",
+     "phone": "962432894",
+     "email": "info@construcciones.example",
+     "billing": true,
+     "delivering": true
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Pablo Ortega",
+     "phone": "671585600",
+     "email": "pablo@construcciones.example"
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "code": 430004,
+   "name": "Hostelería Malvarrosa S.L.",
+   "vat": "X51306920",
+   "active": true,
+   "remarks": null,
+   "discount": 0,
+   "responsible": "Laura Martín",
+   "payment_condition": "Contado",
+   "payment_method": "Tarjeta",
+   "phone": "964322173",
+   "email": "info@hosteleríamalv.example",
+   "city": "Xàtiva",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "C/ Colón, 32",
+     "city": "Xàtiva",
+     "postcode": "46800",
+     "phone": "964322173",
+     "email": "info@hosteleríamalv.example",
+     "billing": true,
+     "delivering": true
+    },
+    {
+     "alias": "Almacén",
+     "address": "C/ Cuba, 11",
+     "city": "Xàtiva",
+     "postcode": "46800",
+     "phone": null,
+     "email": null,
+     "billing": false,
+     "delivering": true
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Sara Pons",
+     "phone": "666933549",
+     "email": "sara@hosteleríamalv.example"
+    },
+    {
+     "name": "Sergio Moreno",
+     "phone": "611134673",
+     "email": "sergio@hosteleríamalv.example"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "code": 430005,
+   "name": "Clínica Dental Ruzafa",
+   "vat": "X81037749",
+   "active": true,
+   "remarks": "Pedir siempre número de pedido antes de facturar.",
+   "discount": 0,
+   "responsible": null,
+   "payment_condition": "Contado",
+   "payment_method": "Recibo domiciliado",
+   "phone": "967911100",
+   "email": "info@clínicadentalr.example",
+   "city": "Valencia",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "Av. Pérez Galdós, 65",
+     "city": "Valencia",
+     "postcode": "46001",
+     "phone": "967911100",
+     "email": "info@clínicadentalr.example",
+     "billing": true,
+     "delivering": true
+    }
+   ],
+   "contacts": []
+  },
+  {
+   "id": 6,
+   "code": 430006,
+   "name": "Frutas Huerta Norte S.L.",
+   "vat": "X12208311",
+   "active": true,
+   "remarks": null,
+   "discount": 0,
+   "responsible": null,
+   "payment_condition": "30 días",
+   "payment_method": "Transferencia",
+   "phone": "966460305",
+   "email": "info@frutashuertano.example",
+   "city": "Valencia",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "C/ Mayor, 81",
+     "city": "Valencia",
+     "postcode": "46001",
+     "phone": "966460305",
+     "email": "info@frutashuertano.example",
+     "billing": true,
+     "delivering": true
+    },
+    {
+     "alias": "Tienda",
+     "address": "Av. Pérez Galdós, 112",
+     "city": "Paterna",
+     "postcode": "46980",
+     "phone": null,
+     "email": null,
+     "billing": false,
+     "delivering": true
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Lucía Navarro",
+     "phone": "645035669",
+     "email": "lucía@frutashuertano.example"
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "code": 430007,
+   "name": "Instalaciones Levante Sur",
+   "vat": "X41947938",
+   "active": true,
+   "remarks": null,
+   "discount": 0,
+   "responsible": "Carlos Ruiz",
+   "payment_condition": "30 días",
+   "payment_method": "Confirming",
+   "phone": "967583645",
+   "email": "info@instalacionesl.example",
+   "city": "Xàtiva",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "Av. Pérez Galdós, 26",
+     "city": "Xàtiva",
+     "postcode": "46800",
+     "phone": "967583645",
+     "email": "info@instalacionesl.example",
+     "billing": true,
+     "delivering": false
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Diego Bosch",
+     "phone": "698189931",
+     "email": "diego@instalacionesl.example"
+    },
+    {
+     "name": "Irene Vidal",
+     "phone": "657211778",
+     "email": "irene@instalacionesl.example"
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "code": 430008,
+   "name": "Panadería El Carmen",
+   "vat": "X40818143",
+   "active": false,
+   "remarks": null,
+   "discount": 0,
+   "responsible": "Laura Martín",
+   "payment_condition": "30 días",
+   "payment_method": "Transferencia",
+   "phone": "962571834",
+   "email": "info@panaderíaelcar.example",
+   "city": "Valencia",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "Av. Pérez Galdós, 4",
+     "city": "Valencia",
+     "postcode": "46021",
+     "phone": "962571834",
+     "email": "info@panaderíaelcar.example",
+     "billing": true,
+     "delivering": true
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Irene Vidal",
+     "phone": "638383374",
+     "email": "irene@panaderíaelcar.example"
+    },
+    {
+     "name": "Pedro Gil",
+     "phone": "672593948",
+     "email": "pedro@panaderíaelcar.example"
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "code": 430009,
+   "name": "Gestoría Benimaclet",
+   "vat": "X11261557",
+   "active": true,
+   "remarks": "Pedir siempre número de pedido antes de facturar.",
+   "discount": 0,
+   "responsible": null,
+   "payment_condition": "30-60 días",
+   "payment_method": "Tarjeta",
+   "phone": "967404960",
+   "email": "info@gestoríabenima.example",
+   "city": "Valencia",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "Av. Pérez Galdós, 113",
+     "city": "Valencia",
+     "postcode": "46001",
+     "phone": "967404960",
+     "email": "info@gestoríabenima.example",
+     "billing": true,
+     "delivering": true
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Nuria Soler",
+     "phone": "684687057",
+     "email": "nuria@gestoríabenima.example"
+    },
+    {
+     "name": "Elena Castillo",
+     "phone": "660312091",
+     "email": "elena@gestoríabenima.example"
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "code": 430010,
+   "name": "Hotel Mar Azul",
+   "vat": "X91060115",
+   "active": true,
+   "remarks": "Aparcamiento en zona azul; usar el parking del polígono.",
+   "discount": 5,
+   "responsible": null,
+   "payment_condition": "Contado",
+   "payment_method": "Transferencia",
+   "phone": "963833114",
+   "email": "info@hotelmarazul.example",
+   "city": "Manises",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "C/ Sueca, 48",
+     "city": "Manises",
+     "postcode": "46940",
+     "phone": "963833114",
+     "email": "info@hotelmarazul.example",
+     "billing": true,
+     "delivering": false
+    },
+    {
+     "alias": "Delegación",
+     "address": "C/ Sueca, 40",
+     "city": "Burjassot",
+     "postcode": "46100",
+     "phone": null,
+     "email": null,
+     "billing": false,
+     "delivering": true
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Sergio Moreno",
+     "phone": "660668226",
+     "email": "sergio@hotelmarazul.example"
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "code": 430011,
+   "name": "Logística Puerto Valencia S.L.",
+   "vat": "X40096125",
+   "active": false,
+   "remarks": null,
+   "discount": 10,
+   "responsible": null,
+   "payment_condition": "30-60 días",
+   "payment_method": "Transferencia",
+   "phone": "967660924",
+   "email": "info@logísticapuert.example",
+   "city": "Valencia",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "Camino Real, 70",
+     "city": "Valencia",
+     "postcode": "46001",
+     "phone": "967660924",
+     "email": "info@logísticapuert.example",
+     "billing": true,
+     "delivering": true
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Lucía Navarro",
+     "phone": "639520249",
+     "email": "lucía@logísticapuert.example"
+    },
+    {
+     "name": "Diego Bosch",
+     "phone": "678931755",
+     "email": "diego@logísticapuert.example"
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "code": 430012,
+   "name": "Farmacia Plaza Redonda",
+   "vat": "X47339005",
+   "active": true,
+   "remarks": null,
+   "discount": 0,
+   "responsible": "Laura Martín",
+   "payment_condition": "60 días",
+   "payment_method": "Recibo domiciliado",
+   "phone": "966537345",
+   "email": "info@farmaciaplazar.example",
+   "city": "Xàtiva",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "C/ Colón, 99",
+     "city": "Xàtiva",
+     "postcode": "46800",
+     "phone": "966537345",
+     "email": "info@farmaciaplazar.example",
+     "billing": true,
+     "delivering": false
+    }
+   ],
+   "contacts": []
+  },
+  {
+   "id": 13,
+   "code": 430013,
+   "name": "Colegio Sant Vicent",
+   "vat": "X46366495",
+   "active": true,
+   "remarks": null,
+   "discount": 10,
+   "responsible": "Laura Martín",
+   "payment_condition": "30-60 días",
+   "payment_method": "Confirming",
+   "phone": "965530786",
+   "email": "info@colegiosantvic.example",
+   "city": "Requena",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "Camino Real, 18",
+     "city": "Requena",
+     "postcode": "46340",
+     "phone": "965530786",
+     "email": "info@colegiosantvic.example",
+     "billing": true,
+     "delivering": true
+    }
+   ],
+   "contacts": []
+  },
+  {
+   "id": 14,
+   "code": 430014,
+   "name": "Inmobiliaria Cabanyal",
+   "vat": "X98894622",
+   "active": true,
+   "remarks": null,
+   "discount": 0,
+   "responsible": "Laura Martín",
+   "payment_condition": "Contado",
+   "payment_method": "Recibo domiciliado",
+   "phone": "964498512",
+   "email": "info@inmobiliariaca.example",
+   "city": "Burjassot",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "Camino Real, 37",
+     "city": "Burjassot",
+     "postcode": "46100",
+     "phone": "964498512",
+     "email": "info@inmobiliariaca.example",
+     "billing": true,
+     "delivering": true
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Sergio Moreno",
+     "phone": "634912172",
+     "email": "sergio@inmobiliariaca.example"
+    },
+    {
+     "name": "Irene Vidal",
+     "phone": "656798925",
+     "email": "irene@inmobiliariaca.example"
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "code": 430015,
+   "name": "Restaurante La Barraca",
+   "vat": "X46993788",
+   "active": false,
+   "remarks": null,
+   "discount": 10,
+   "responsible": "Carlos Ruiz",
+   "payment_condition": "60 días",
+   "payment_method": "Transferencia",
+   "phone": "961188930",
+   "email": "info@restaurantelab.example",
+   "city": "Burjassot",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "C/ San Vicente, 47",
+     "city": "Burjassot",
+     "postcode": "46100",
+     "phone": "961188930",
+     "email": "info@restaurantelab.example",
+     "billing": true,
+     "delivering": false
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Pablo Ortega",
+     "phone": "653832133",
+     "email": "pablo@restaurantelab.example"
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "code": 430016,
+   "name": "Óptica Visión Clara",
+   "vat": "X25731036",
+   "active": true,
+   "remarks": null,
+   "discount": 0,
+   "responsible": "Laura Martín",
+   "payment_condition": "30 días",
+   "payment_method": "Transferencia",
+   "phone": "961785124",
+   "email": "info@ópticavisióncl.example",
+   "city": "Burjassot",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "Av. del Puerto, 54",
+     "city": "Burjassot",
+     "postcode": "46100",
+     "phone": "961785124",
+     "email": "info@ópticavisióncl.example",
+     "billing": true,
+     "delivering": false
+    },
+    {
+     "alias": "Delegación",
+     "address": "Av. Blasco Ibáñez, 109",
+     "city": "Requena",
+     "postcode": "46340",
+     "phone": null,
+     "email": null,
+     "billing": false,
+     "delivering": true
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Elena Castillo",
+     "phone": "625579931",
+     "email": "elena@ópticavisióncl.example"
+    },
+    {
+     "name": "Andrés Ferrer",
+     "phone": "632028427",
+     "email": "andrés@ópticavisióncl.example"
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "code": 430017,
+   "name": "Autoescuela Patraix",
+   "vat": "X87392447",
+   "active": true,
+   "remarks": "Aparcamiento en zona azul; usar el parking del polígono.",
+   "discount": 10,
+   "responsible": "Laura Martín",
+   "payment_condition": "30-60 días",
+   "payment_method": "Tarjeta",
+   "phone": "963267282",
+   "email": "info@autoescuelapat.example",
+   "city": "Burjassot",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "C/ de la Paz, 28",
+     "city": "Burjassot",
+     "postcode": "46100",
+     "phone": "963267282",
+     "email": "info@autoescuelapat.example",
+     "billing": true,
+     "delivering": true
+    }
+   ],
+   "contacts": []
+  },
+  {
+   "id": 18,
+   "code": 430018,
+   "name": "Muebles Alfafar S.L.",
+   "vat": "X99230192",
+   "active": true,
+   "remarks": null,
+   "discount": 10,
+   "responsible": null,
+   "payment_condition": "60 días",
+   "payment_method": "Tarjeta",
+   "phone": "968652180",
+   "email": "info@mueblesalfafar.example",
+   "city": "Manises",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "Pol. Ind. Fuente del Jarro, calle 4, 76",
+     "city": "Manises",
+     "postcode": "46940",
+     "phone": "968652180",
+     "email": "info@mueblesalfafar.example",
+     "billing": true,
+     "delivering": false
+    },
+    {
+     "alias": "Tienda",
+     "address": "Pol. Ind. Fuente del Jarro, calle 4, 83",
+     "city": "Valencia",
+     "postcode": "46021",
+     "phone": null,
+     "email": null,
+     "billing": false,
+     "delivering": true
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Raúl Peris",
+     "phone": "663638725",
+     "email": "raúl@mueblesalfafar.example"
+    },
+    {
+     "name": "Pablo Ortega",
+     "phone": "673819847",
+     "email": "pablo@mueblesalfafar.example"
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "code": 430019,
+   "name": "Cerámicas Manises S.A.",
+   "vat": "X62817218",
+   "active": true,
+   "remarks": "Cliente preferente: revisar presupuestos en 24 h.",
+   "discount": 0,
+   "responsible": null,
+   "payment_condition": "30 días",
+   "payment_method": "Tarjeta",
+   "phone": "965611783",
+   "email": "info@cerámicasmanis.example",
+   "city": "Valencia",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "Camino Real, 46",
+     "city": "Valencia",
+     "postcode": "46004",
+     "phone": "965611783",
+     "email": "info@cerámicasmanis.example",
+     "billing": true,
+     "delivering": false
+    },
+    {
+     "alias": "Almacén",
+     "address": "C/ de la Paz, 80",
+     "city": "Burjassot",
+     "postcode": "46100",
+     "phone": null,
+     "email": null,
+     "billing": false,
+     "delivering": true
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Pedro Gil",
+     "phone": "661439289",
+     "email": "pedro@cerámicasmanis.example"
+    },
+    {
+     "name": "Pablo Ortega",
+     "phone": "677503854",
+     "email": "pablo@cerámicasmanis.example"
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "code": 430020,
+   "name": "Bodegas Requena Alta",
+   "vat": "X63649124",
+   "active": true,
+   "remarks": "Llamar antes de ir, el acceso es por la puerta trasera.",
+   "discount": 0,
+   "responsible": "Carlos Ruiz",
+   "payment_condition": "Contado",
+   "payment_method": "Transferencia",
+   "phone": "966436874",
+   "email": "info@bodegasrequena.example",
+   "city": "Torrent",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "C/ Sueca, 82",
+     "city": "Torrent",
+     "postcode": "46900",
+     "phone": "966436874",
+     "email": "info@bodegasrequena.example",
+     "billing": true,
+     "delivering": true
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Sergio Moreno",
+     "phone": "696585192",
+     "email": "sergio@bodegasrequena.example"
+    },
+    {
+     "name": "Irene Vidal",
+     "phone": "629352060",
+     "email": "irene@bodegasrequena.example"
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "code": 430021,
+   "name": "Gimnasio Campanar Fit",
+   "vat": "X27721378",
+   "active": true,
+   "remarks": "Llamar antes de ir, el acceso es por la puerta trasera.",
+   "discount": 0,
+   "responsible": "Carlos Ruiz",
+   "payment_condition": "Contado",
+   "payment_method": "Recibo domiciliado",
+   "phone": "966454463",
+   "email": "info@gimnasiocampan.example",
+   "city": "Alfafar",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "C/ San Vicente, 36",
+     "city": "Alfafar",
+     "postcode": "46910",
+     "phone": "966454463",
+     "email": "info@gimnasiocampan.example",
+     "billing": true,
+     "delivering": true
+    },
+    {
+     "alias": "Delegación",
+     "address": "Av. del Puerto, 98",
+     "city": "Silla",
+     "postcode": "46460",
+     "phone": null,
+     "email": null,
+     "billing": false,
+     "delivering": true
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Pablo Ortega",
+     "phone": "656786733",
+     "email": "pablo@gimnasiocampan.example"
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "code": 430022,
+   "name": "Academia Idiomas Russafa",
+   "vat": "X90737936",
+   "active": true,
+   "remarks": "Cliente preferente: revisar presupuestos en 24 h.",
+   "discount": 0,
+   "responsible": "Carlos Ruiz",
+   "payment_condition": "30-60 días",
+   "payment_method": "Tarjeta",
+   "phone": "961068431",
+   "email": "info@academiaidioma.example",
+   "city": "Xàtiva",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "C/ Sueca, 18",
+     "city": "Xàtiva",
+     "postcode": "46800",
+     "phone": "961068431",
+     "email": "info@academiaidioma.example",
+     "billing": true,
+     "delivering": false
+    },
+    {
+     "alias": "Nave 2",
+     "address": "Av. Pérez Galdós, 44",
+     "city": "Burjassot",
+     "postcode": "46100",
+     "phone": null,
+     "email": null,
+     "billing": false,
+     "delivering": true
+    }
+   ],
+   "contacts": []
+  },
+  {
+   "id": 23,
+   "code": 430023,
+   "name": "Papelería Xàtiva",
+   "vat": "X23805961",
+   "active": true,
+   "remarks": "Pedir siempre número de pedido antes de facturar.",
+   "discount": 10,
+   "responsible": "Laura Martín",
+   "payment_condition": "60 días",
+   "payment_method": "Confirming",
+   "phone": "962275810",
+   "email": "info@papeleríaxàtiv.example",
+   "city": "Mislata",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "Av. del Puerto, 61",
+     "city": "Mislata",
+     "postcode": "46920",
+     "phone": "962275810",
+     "email": "info@papeleríaxàtiv.example",
+     "billing": true,
+     "delivering": true
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Sara Pons",
+     "phone": "639999750",
+     "email": "sara@papeleríaxàtiv.example"
+    },
+    {
+     "name": "Irene Vidal",
+     "phone": "696622573",
+     "email": "irene@papeleríaxàtiv.example"
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "code": 430024,
+   "name": "Floristería Jardí",
+   "vat": "X96180663",
+   "active": true,
+   "remarks": "Pedir siempre número de pedido antes de facturar.",
+   "discount": 0,
+   "responsible": "Laura Martín",
+   "payment_condition": "Contado",
+   "payment_method": "Recibo domiciliado",
+   "phone": "967745583",
+   "email": "info@floristeríajar.example",
+   "city": "Valencia",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "Av. del Puerto, 12",
+     "city": "Valencia",
+     "postcode": "46021",
+     "phone": "967745583",
+     "email": "info@floristeríajar.example",
+     "billing": true,
+     "delivering": true
+    },
+    {
+     "alias": "Almacén",
+     "address": "Camino Real, 115",
+     "city": "Mislata",
+     "postcode": "46920",
+     "phone": null,
+     "email": null,
+     "billing": false,
+     "delivering": true
+    }
+   ],
+   "contacts": []
+  },
+  {
+   "id": 25,
+   "code": 430025,
+   "name": "Imprenta Gráficas Silla",
+   "vat": "X41725635",
+   "active": true,
+   "remarks": "Aparcamiento en zona azul; usar el parking del polígono.",
+   "discount": 0,
+   "responsible": "Laura Martín",
+   "payment_condition": "30-60 días",
+   "payment_method": null,
+   "phone": "963061427",
+   "email": "info@imprentagráfic.example",
+   "city": "Paterna",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "Pol. Ind. Fuente del Jarro, calle 4, 39",
+     "city": "Paterna",
+     "postcode": "46980",
+     "phone": "963061427",
+     "email": "info@imprentagráfic.example",
+     "billing": true,
+     "delivering": true
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Pablo Ortega",
+     "phone": "653032682",
+     "email": "pablo@imprentagráfic.example"
+    },
+    {
+     "name": "Sergio Moreno",
+     "phone": "691329395",
+     "email": "sergio@imprentagráfic.example"
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "code": 430026,
+   "name": "Veterinaria Paterna",
+   "vat": "X37764669",
+   "active": true,
+   "remarks": "Aparcamiento en zona azul; usar el parking del polígono.",
+   "discount": 10,
+   "responsible": null,
+   "payment_condition": "30-60 días",
+   "payment_method": "Transferencia",
+   "phone": "967882733",
+   "email": "info@veterinariapat.example",
+   "city": "Valencia",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "C/ Cuba, 19",
+     "city": "Valencia",
+     "postcode": "46001",
+     "phone": "967882733",
+     "email": "info@veterinariapat.example",
+     "billing": true,
+     "delivering": false
+    }
+   ],
+   "contacts": [
+    {
+     "name": "Elena Castillo",
+     "phone": "616240844",
+     "email": "elena@veterinariapat.example"
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "code": 430027,
+   "name": "Peluquería Estilo 10",
+   "vat": "X84801309",
+   "active": true,
+   "remarks": "Llamar antes de ir, el acceso es por la puerta trasera.",
+   "discount": 0,
+   "responsible": "Carlos Ruiz",
+   "payment_condition": "60 días",
+   "payment_method": "Tarjeta",
+   "phone": "964998005",
+   "email": "info@peluqueríaesti.example",
+   "city": "Valencia",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "Camino Real, 116",
+     "city": "Valencia",
+     "postcode": "46001",
+     "phone": "964998005",
+     "email": "info@peluqueríaesti.example",
+     "billing": true,
+     "delivering": true
+    }
+   ],
+   "contacts": []
+  },
+  {
+   "id": 28,
+   "code": 430028,
+   "name": "Electrodomésticos Torrent",
+   "vat": "X99123023",
+   "active": true,
+   "remarks": null,
+   "discount": 10,
+   "responsible": "Laura Martín",
+   "payment_condition": "60 días",
+   "payment_method": null,
+   "phone": "968097891",
+   "email": "info@electrodomésti.example",
+   "city": "Requena",
+   "addresses": [
+    {
+     "alias": "Sede principal",
+     "address": "C/ Cuba, 81",
+     "city": "Requena",
+     "postcode": "46340",
+     "phone": "968097891",
+     "email": "info@electrodomésti.example",
+     "billing": true,
+     "delivering": true
+    }
+   ],
+   "contacts": []
+  }
+ ]
+}

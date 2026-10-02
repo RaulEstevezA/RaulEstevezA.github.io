@@ -1,0 +1,313 @@
+{
+ "success": true,
+ "data": {
+  "annual_allowance": 23,
+  "national_holidays": [
+   "01-01",
+   "01-06",
+   "03-19",
+   "05-01",
+   "08-15",
+   "10-09",
+   "10-12",
+   "11-01",
+   "12-06",
+   "12-08",
+   "12-25"
+  ],
+  "company_holidays": [
+   "12-24",
+   "12-31"
+  ],
+  "periods": [
+   {
+    "id": 1,
+    "worker_id": 1,
+    "start_offset": -63,
+    "end_offset": -57,
+    "status": "approved",
+    "created_by": "company",
+    "reason": "Cierre de verano"
+   },
+   {
+    "id": 2,
+    "worker_id": 1,
+    "start_offset": -116,
+    "end_offset": -109,
+    "status": "approved",
+    "created_by": "worker",
+    "reason": "Vacaciones de verano"
+   },
+   {
+    "id": 3,
+    "worker_id": 1,
+    "start_offset": -28,
+    "end_offset": -28,
+    "status": "approved",
+    "created_by": "worker",
+    "reason": null
+   },
+   {
+    "id": 4,
+    "worker_id": 1,
+    "start_offset": -43,
+    "end_offset": -41,
+    "status": "rejected",
+    "created_by": "worker",
+    "reason": null
+   },
+   {
+    "id": 5,
+    "worker_id": 1,
+    "start_offset": 39,
+    "end_offset": 43,
+    "status": "approved",
+    "created_by": "worker",
+    "reason": null
+   },
+   {
+    "id": 6,
+    "worker_id": 1,
+    "start_offset": 19,
+    "end_offset": 22,
+    "status": "pending",
+    "created_by": "worker",
+    "reason": "Boda de un familiar"
+   },
+   {
+    "id": 7,
+    "worker_id": 2,
+    "start_offset": -54,
+    "end_offset": -48,
+    "status": "approved",
+    "created_by": "company",
+    "reason": "Cierre de verano"
+   },
+   {
+    "id": 8,
+    "worker_id": 2,
+    "start_offset": -98,
+    "end_offset": -91,
+    "status": "approved",
+    "created_by": "worker",
+    "reason": "Vacaciones de verano"
+   },
+   {
+    "id": 9,
+    "worker_id": 2,
+    "start_offset": -19,
+    "end_offset": -18,
+    "status": "approved",
+    "created_by": "worker",
+    "reason": null
+   },
+   {
+    "id": 10,
+    "worker_id": 2,
+    "start_offset": 57,
+    "end_offset": 61,
+    "status": "approved",
+    "created_by": "worker",
+    "reason": "Boda de un familiar"
+   },
+   {
+    "id": 11,
+    "worker_id": 2,
+    "start_offset": 19,
+    "end_offset": 21,
+    "status": "pending",
+    "created_by": "worker",
+    "reason": "Viaje familiar"
+   },
+   {
+    "id": 12,
+    "worker_id": 2,
+    "start_offset": 84,
+    "end_offset": 91,
+    "status": "pending",
+    "created_by": "worker",
+    "reason": "Vacaciones de verano"
+   },
+   {
+    "id": 13,
+    "worker_id": 3,
+    "start_offset": -55,
+    "end_offset": -49,
+    "status": "approved",
+    "created_by": "company",
+    "reason": "Cierre de verano"
+   },
+   {
+    "id": 14,
+    "worker_id": 3,
+    "start_offset": -100,
+    "end_offset": -93,
+    "status": "approved",
+    "created_by": "worker",
+    "reason": "Vacaciones de verano"
+   },
+   {
+    "id": 15,
+    "worker_id": 3,
+    "start_offset": -20,
+    "end_offset": -20,
+    "status": "approved",
+    "created_by": "worker",
+    "reason": null
+   },
+   {
+    "id": 16,
+    "worker_id": 3,
+    "start_offset": -35,
+    "end_offset": -33,
+    "status": "rejected",
+    "created_by": "worker",
+    "reason": "Boda de un familiar"
+   },
+   {
+    "id": 17,
+    "worker_id": 3,
+    "start_offset": 55,
+    "end_offset": 59,
+    "status": "approved",
+    "created_by": "worker",
+    "reason": "Vacaciones de verano"
+   },
+   {
+    "id": 18,
+    "worker_id": 3,
+    "start_offset": 12,
+    "end_offset": 15,
+    "status": "pending",
+    "created_by": "worker",
+    "reason": "Vacaciones de verano"
+   },
+   {
+    "id": 19,
+    "worker_id": 3,
+    "start_offset": 76,
+    "end_offset": 79,
+    "status": "pending",
+    "created_by": "worker",
+    "reason": "Vacaciones de verano"
+   },
+   {
+    "id": 20,
+    "worker_id": 4,
+    "start_offset": -63,
+    "end_offset": -57,
+    "status": "approved",
+    "created_by": "company",
+    "reason": "Cierre de verano"
+   },
+   {
+    "id": 21,
+    "worker_id": 4,
+    "start_offset": -116,
+    "end_offset": -109,
+    "status": "approved",
+    "created_by": "worker",
+    "reason": "Vacaciones de verano"
+   },
+   {
+    "id": 22,
+    "worker_id": 4,
+    "start_offset": -28,
+    "end_offset": -28,
+    "status": "approved",
+    "created_by": "worker",
+    "reason": "Vacaciones de verano"
+   },
+   {
+    "id": 23,
+    "worker_id": 4,
+    "start_offset": -43,
+    "end_offset": -41,
+    "status": "rejected",
+    "created_by": "worker",
+    "reason": "Viaje familiar"
+   },
+   {
+    "id": 24,
+    "worker_id": 4,
+    "start_offset": 39,
+    "end_offset": 43,
+    "status": "approved",
+    "created_by": "worker",
+    "reason": null
+   },
+   {
+    "id": 25,
+    "worker_id": 4,
+    "start_offset": 21,
+    "end_offset": 22,
+    "status": "pending",
+    "created_by": "worker",
+    "reason": "Viaje familiar"
+   },
+   {
+    "id": 26,
+    "worker_id": 4,
+    "start_offset": 78,
+    "end_offset": 85,
+    "status": "pending",
+    "created_by": "worker",
+    "reason": null
+   },
+   {
+    "id": 27,
+    "worker_id": 5,
+    "start_offset": -57,
+    "end_offset": -51,
+    "status": "approved",
+    "created_by": "company",
+    "reason": "Cierre de verano"
+   },
+   {
+    "id": 28,
+    "worker_id": 5,
+    "start_offset": -104,
+    "end_offset": -97,
+    "status": "approved",
+    "created_by": "worker",
+    "reason": "Vacaciones de verano"
+   },
+   {
+    "id": 29,
+    "worker_id": 5,
+    "start_offset": -22,
+    "end_offset": -21,
+    "status": "approved",
+    "created_by": "worker",
+    "reason": "Asuntos personales"
+   },
+   {
+    "id": 30,
+    "worker_id": 5,
+    "start_offset": -37,
+    "end_offset": -35,
+    "status": "rejected",
+    "created_by": "worker",
+    "reason": null
+   },
+   {
+    "id": 31,
+    "worker_id": 5,
+    "start_offset": 51,
+    "end_offset": 55,
+    "status": "approved",
+    "created_by": "worker",
+    "reason": "Vacaciones de verano"
+   },
+   {
+    "id": 32,
+    "worker_id": 5,
+    "start_offset": 21,
+    "end_offset": 25,
+    "status": "pending",
+    "created_by": "worker",
+    "reason": "Viaje familiar"
+   }
+  ]
+ }
+}
