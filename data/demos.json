@@ -9,7 +9,7 @@
       "description_en": "Interactive reinterpretation of the mobile ERP app developed during my internship at Microvalencia. It reproduces its main workflows with fictional data and a local static backend; it contains no proprietary code or company data.",
       "description_es": "Reinterpretación interactiva de la app móvil ERP desarrollada durante mis prácticas en Microvalencia. Reproduce sus principales flujos con datos ficticios y un backend estático local; no contiene código propietario ni datos de la empresa.",
       "technologies": ["Flutter", "Dart", "MVVM", "REST API", "Role-based access"],
-      "image": "/img/erp_flutter/main.png",
+      "image": "/img/erp_flutter/demo-card.png",
       "demo_url": "/demos/ERP_Flutter/",
       "repository_url": "https://github.com/RaulEstevezA/Erp_Flutter_Demo"
     },
