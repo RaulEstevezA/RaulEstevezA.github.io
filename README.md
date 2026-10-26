@@ -4,7 +4,7 @@ Personal website and professional portfolio for Raúl Estévez, a software devel
 
 ## Public Profile Files
 
-- `index.html`, `experience.html`, `projects.html`, `courses.html` and `demos/index.html` provide the public portfolio pages.
+- `index.html`, `experience.html`, `projects.html`, `courses.html`, `demos/index.html` and `tools/index.html` provide the public portfolio pages.
 - `llms.txt` provides a concise AI-readable professional profile summary.
 - `profile.json` provides structured profile data for automated readers and profile parsers.
 - `sitemap.xml` and `robots.txt` expose the site map and point crawlers to the AI-readable profile files.
@@ -23,3 +23,10 @@ Secondary coursework projects remain listed for completeness. E-Plant is intenti
 - Demo deployments use `rsync --delete`; do not manually edit files inside a managed demo directory.
 - Run `git pull --rebase` before pushing because demo workflows commit generated files to `main` as `github-actions[bot]`.
 - Keep shared card images outside managed demo directories, under `img/demos/` or the existing `img/thumbs/` directory.
+
+## Tool deployments
+
+- Tools follow the `tools/<Name>/` convention and can be managed by their source repositories in the same way as demos.
+- Add each public tool to `data/tools.json` using the same card fields as `data/demos.json`, replacing `demo_url` with `tool_url`.
+- Tool deployments may use `rsync --delete`; do not manually edit files inside a managed tool directory.
+- Keep shared tool card images outside managed tool directories, under `img/tools/` or `img/thumbs/`.
