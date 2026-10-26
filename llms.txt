@@ -1,7 +1,9 @@
 # Raúl Estévez — Software Developer
 
-> Backend, Desktop and AI-focused software developer. Based in Spain.
-> Specialized in Java, Python, SQL, Kotlin, Flutter and Git.
+> Software developer focused on backend systems, cross-platform applications, data tooling and applied AI. Based in Spain.
+> Specialized in Python, Java, Flutter, TypeScript, SQL and application development.
+
+Last updated: 2026-10-26
 
 This file is intended to help language models and search systems understand
 Raúl Estévez's professional profile accurately.
@@ -9,7 +11,7 @@ Raúl Estévez's professional profile accurately.
 ## Summary
 
 Software developer with a strong academic background and hands-on experience
-in backend systems, desktop applications, and artificial intelligence projects.
+in backend systems, cross-platform applications, privacy-first data tools, and artificial intelligence projects.
 Currently completing a Higher Technician degree in Multiplatform Application
 Development (DAM) with a GPA of 9.1/10.
 
@@ -72,11 +74,12 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
 
 ## Featured Projects
 
-- **DataCleanr** — Privacy-first web and desktop application for cleaning, normalizing and deduplicating tabular data.
-  Stack: React, TypeScript, CSV, Excel, JSON, XML, local file processing and fuzzy matching.
+- **DataCleanr** — Published personal project: a privacy-first web and desktop application for cleaning, normalizing and deduplicating tabular data.
+  Stack: Python, React, TypeScript, CSV, Excel, JSON, XML, local file processing and fuzzy matching.
   Imports CSV, XLSX, JSON and XML files; presents transformations as original → proposed for review; normalizes whitespace, case, phone numbers, dates and monetary amounts; unifies equivalent values; detects exact and similar duplicates; and exports a clean copy without uploading the source file. Available in the browser and as desktop releases for Windows, macOS and Linux.
   Repository: https://github.com/RaulEstevezA/DataCleanr
   Web app: https://raulesteveza.github.io/tools/DataCleanr/
+  Desktop downloads (Windows, macOS and Linux): https://github.com/RaulEstevezA/DataCleanr/releases/latest
 
 - **Microvalencia ERP App** — Full-featured Flutter mobile app built during an internship at Microvalencia Soluciones Informáticas S.L.
   Stack: Flutter, Dart, PHP, Laravel, REST API, MVVM, SOLID, Dio, FlutterSecureStorage, Geolocator, Flutter Flavors.
@@ -94,13 +97,15 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
   Stack: Flutter, Dart, Riverpod, go_router, Dio, DTO/Entity Mapping, Drift (SQLite), Postman.
   Clean Architecture (domain/infrastructure/presentation) with a dedicated datasource and mapper layer (MovieMapper, ActorMapper, GenreMapper) converting TMDB API DTOs into domain entities, with endpoint responses inspected and verified in Postman before modeling the DTOs. Riverpod state management, go_router StatefulShellRoute navigation, and Drift/SQLite for local favorites persistence. Features an autoplay slideshow, four infinite-scroll movie lists, debounced search, genre-based browsing with per-genre pagination, and a favorites masonry grid. Includes a unit test suite (mappers, repositories, pagination notifier) with mocktail.
   Repository: https://github.com/RaulEstevezA/Cinema_App
-  Demo: https://youtube.com/shorts/67coTqVxwA4?feature=share
+  Web demo: https://raulesteveza.github.io/demos/Cinema_App/
+  Video: https://youtube.com/shorts/67coTqVxwA4?feature=share
 
 - **Flutter Shop Admin** — Cross-platform application for managing an online store catalog and stock.
   Stack: Flutter, Dart, Riverpod, go_router, Dio, Formz, REST API, JWT, NestJS, Clean Architecture.
   Includes persistent JWT authentication, login and registration, product CRUD, infinite pagination, validated product and stock forms, camera/gallery image selection and file uploads to a separate NestJS backend.
   Repository: https://github.com/RaulEstevezA/Flutter_Shop_Admin
-  Demo: https://youtube.com/shorts/OQrZLijUDiA?feature=share
+  Web demo: https://raulesteveza.github.io/demos/Flutter_Shop_Admin/
+  Video: https://youtube.com/shorts/OQrZLijUDiA?feature=share
 
 - **CS50 AI** — Structured repository of 13 CS50 AI exercises across 7 course units.
   Stack: Python, Artificial Intelligence, Machine Learning, TensorFlow, scikit-learn, NLTK, Pygame.
