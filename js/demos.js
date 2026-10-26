@@ -43,15 +43,17 @@
         ? '<a class="btn" href="' + encodeURI(demo.repository_url) + '" target="_blank" rel="noopener">' + labels.code + '</a>'
         : '';
 
-      return '<article class="demo-card' + (demo.featured ? ' demo-card-featured' : '') + '">' +
+      return '<article class="demo-card demo-card-row' + (demo.featured ? ' demo-card-featured' : '') + '">' +
         image +
-        (badge ? '<span class="project-badge">' + escapeHtml(badge) + '</span>' : '') +
-        '<h3>' + escapeHtml(demo.name) + '</h3>' +
-        '<p>' + escapeHtml(description) + '</p>' +
-        '<div class="tech-tags">' + tags + '</div>' +
-        '<div class="demo-card-actions">' +
-          '<a class="btn btn-web" href="' + encodeURI(demo.demo_url) + '" target="_blank" rel="noopener">' + labels.open + '</a>' +
-          codeLink +
+        '<div class="demo-card-content">' +
+          (badge ? '<span class="project-badge">' + escapeHtml(badge) + '</span>' : '') +
+          '<h3>' + escapeHtml(demo.name) + '</h3>' +
+          '<p>' + escapeHtml(description) + '</p>' +
+          '<div class="tech-tags">' + tags + '</div>' +
+          '<div class="demo-card-actions">' +
+            '<a class="btn btn-web" href="' + encodeURI(demo.demo_url) + '" target="_blank" rel="noopener">' + labels.open + '</a>' +
+            codeLink +
+          '</div>' +
         '</div>' +
       '</article>';
     }).join('');
