@@ -577,6 +577,18 @@ section + section {
 
 .demo-card-actions .btn { margin: 0; }
 
+.empty-state {
+  margin: 0;
+  padding: 1.25rem;
+  color: var(--muted);
+  text-align: center;
+  background: var(--page-bg);
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+}
+
+.empty-state[hidden] { display: none; }
+
 .certs-details .project-list {
   padding: 0.75rem 1.5rem 1rem;
   border-top: 1px solid var(--border);
