@@ -6,6 +6,7 @@
     demo: 'Demo',
     live_demo: 'Demo',
     web: 'Web',
+    download: 'Download',
     repo1: 'Repo 1',
     repo2: 'Repo 2'
   };
@@ -15,9 +16,39 @@
     github: { label: { en: 'View on GitHub', es: 'Ver en GitHub' }, className: 'btn primary' },
     demo:   { label: { en: 'Watch demo',     es: 'Ver demo' },      className: 'btn btn-demo' },
     live_demo: { label: { en: 'Open demo',   es: 'Abrir demo' },    className: 'btn btn-web' },
-    web:    { label: { en: 'View website',   es: 'Ver web' },       className: 'btn btn-web' }
+    web:    { label: { en: 'View website',   es: 'Ver web' },       className: 'btn btn-web' },
+    download: { label: { en: 'Download app', es: 'Descargar aplicación' }, className: 'btn btn-download' }
   };
   window.FEATURED_LINK_TYPES = FEATURED_LINK_TYPES;
+
+  function detectDesktopPlatform() {
+    var platform = navigator.platform || '';
+    var userAgent = navigator.userAgent || '';
+    var device = platform + ' ' + userAgent;
+
+    if (/android|iphone|ipad|ipod|mobile/i.test(device)) return null;
+    if (/mac/i.test(device)) return navigator.maxTouchPoints > 1 ? null : 'macOS';
+    if (/win/i.test(device)) return 'Windows';
+    if (/linux|x11/i.test(device) && !/cros/i.test(device)) return 'Linux';
+    return null;
+  }
+
+  function resolveFeaturedLink(link, lang) {
+    var type = FEATURED_LINK_TYPES[link.type] || FEATURED_LINK_TYPES.github;
+    var platform = link.type === 'download' ? detectDesktopPlatform() : null;
+    var asset = platform && link.assets && link.assets[platform];
+
+    return {
+      className: type.className,
+      label: asset
+        ? (lang === 'es' ? 'Descargar para ' : 'Download for ') + platform
+        : type.label[lang] || type.label.en,
+      url: asset
+        ? link.url.replace(/\/$/, '') + '/download/' + encodeURIComponent(asset)
+        : link.url
+    };
+  }
+  window.resolveFeaturedLink = resolveFeaturedLink;
 
   var bestProjects = null;
   var otherProjects = null;
@@ -65,10 +96,9 @@
       var links = project.links || [];
 
       var buttons = links.map(function (link) {
-        var type = FEATURED_LINK_TYPES[link.type] || FEATURED_LINK_TYPES.github;
-        var label = type.label[lang] || type.label.en;
-        return '<a href="' + escapeAttr(link.url) + '" class="' + type.className + '" target="_blank" rel="noopener">' +
-          escapeHtml(label) +
+        var resolved = resolveFeaturedLink(link, lang);
+        return '<a href="' + escapeAttr(resolved.url) + '" class="' + resolved.className + '" target="_blank" rel="noopener">' +
+          escapeHtml(resolved.label) +
         '</a>';
       }).join('');
 

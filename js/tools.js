@@ -12,8 +12,34 @@
 
   function getLabels(lang) {
     return lang === 'es'
-      ? { open: 'Abrir herramienta', code: 'Ver código' }
-      : { open: 'Open tool', code: 'View code' };
+      ? { open: 'Abrir herramienta', code: 'Ver código', download: 'Descargar', downloadFor: 'Descargar para ' }
+      : { open: 'Open tool', code: 'View code', download: 'Download', downloadFor: 'Download for ' };
+  }
+
+  function detectDesktopPlatform() {
+    var platform = navigator.platform || '';
+    var userAgent = navigator.userAgent || '';
+    var device = platform + ' ' + userAgent;
+
+    if (/android|iphone|ipad|ipod|mobile/i.test(device)) return null;
+    if (/mac/i.test(device)) return navigator.maxTouchPoints > 1 ? null : 'macOS';
+    if (/win/i.test(device)) return 'Windows';
+    if (/linux|x11/i.test(device) && !/cros/i.test(device)) return 'Linux';
+    return null;
+  }
+
+  function renderDownloadLink(tool, labels) {
+    var download = tool.download;
+    if (!download || !download.releases_url) return '';
+
+    var platform = detectDesktopPlatform();
+    var asset = platform && download.assets && download.assets[platform];
+    var url = asset
+      ? download.releases_url.replace(/\/$/, '') + '/download/' + encodeURIComponent(asset)
+      : download.releases_url;
+    var label = asset ? labels.downloadFor + platform : labels.download;
+
+    return '<a class="btn" href="' + encodeURI(url) + '" target="_blank" rel="noopener">' + label + '</a>';
   }
 
   function render() {
@@ -37,22 +63,20 @@
       var image = tool.image
         ? '<img class="demo-card-image" src="' + encodeURI(tool.image) + '" alt="" loading="lazy">'
         : '';
-      var tags = (tool.technologies || []).map(function (technology) {
-        return '<span class="tag">' + escapeHtml(technology) + '</span>';
-      }).join('');
       var badge = tool['badge_' + currentLang] || tool.badge_en;
       var codeLink = tool.repository_url
         ? '<a class="btn" href="' + encodeURI(tool.repository_url) + '" target="_blank" rel="noopener">' + labels.code + '</a>'
         : '';
+      var downloadLink = renderDownloadLink(tool, labels);
 
       return '<article class="demo-card' + (tool.featured ? ' demo-card-featured' : '') + '">' +
         image +
         (badge ? '<span class="project-badge">' + escapeHtml(badge) + '</span>' : '') +
         '<h3>' + escapeHtml(tool.name) + '</h3>' +
         '<p>' + escapeHtml(description) + '</p>' +
-        '<div class="tech-tags">' + tags + '</div>' +
         '<div class="demo-card-actions">' +
           '<a class="btn btn-web" href="' + encodeURI(tool.tool_url) + '" target="_blank" rel="noopener">' + labels.open + '</a>' +
+          downloadLink +
           codeLink +
         '</div>' +
       '</article>';

@@ -11,7 +11,7 @@
     "modal_tech":         "Comma-separated tech tags shown in the modal (can be more detailed than card_tech)",
     "modal_images":       "Array of image paths for the modal carousel (first image shown on open)",
     "display_order":      "Optional explicit card position; lower values are shown first",
-    "links":              "Array of { type, url } shown as buttons on the card and in the modal, in this order. type is one of: github, demo, live_demo, web. Each type has its own label and color (github = blue, demo = red/YouTube, live_demo and web = green)"
+    "links":              "Array of { type, url } shown as buttons on the card and in the modal, in this order. type is one of: github, demo, live_demo, web, download. Each type has its own label and color (github = blue, demo = red/YouTube, live_demo and web = green, download = purple)"
   },
   "_also_update": [
     "llms.txt          → ## Featured Projects section",
@@ -20,6 +20,68 @@
   ],
 
   "projects": [
+    {
+      "display_order": 4,
+      "thumb":     "img/datacleanr/project-overview.png",
+      "thumb_alt": "DataCleanr file import and privacy-first interface",
+
+      "badge_en": "Finished product · Privacy first",
+      "badge_es": "Producto terminado · Privacidad",
+
+      "title_en": "DataCleanr — Privacy-First Data Cleaning Tool",
+      "title_es": "DataCleanr — Herramienta Privada de Limpieza de Datos",
+
+      "card_desc_en": "Web and desktop application for cleaning, normalizing and deduplicating CSV, Excel, JSON and XML files. Processing runs locally, with every proposed change reviewable before export.",
+      "card_desc_es": "Aplicación web y de escritorio para limpiar, normalizar y eliminar duplicados en archivos CSV, Excel, JSON y XML. El procesamiento se ejecuta en local y cada cambio propuesto puede revisarse antes de exportar.",
+
+      "card_tech": "React, TypeScript, CSV, Excel, JSON, XML",
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/DataCleanr" },
+        { "type": "web", "url": "/tools/DataCleanr/" },
+        {
+          "type": "download",
+          "url": "https://github.com/RaulEstevezA/DataCleanr/releases/latest",
+          "assets": {
+            "macOS": "DataCleanr-macOS.dmg",
+            "Windows": "DataCleanr-Windows.zip",
+            "Linux": "DataCleanr-Linux.tar.gz"
+          }
+        }
+      ],
+
+      "modal_desc_en": "Privacy-first data cleaning application available in the browser and as a desktop download for Windows, macOS and Linux. It imports tabular data, proposes transformations without altering the original file, lets the user accept or reject changes, and exports a clean copy entirely on the device.",
+      "modal_desc_es": "Aplicación de limpieza de datos centrada en la privacidad, disponible en el navegador y como descarga de escritorio para Windows, macOS y Linux. Importa datos tabulares, propone transformaciones sin modificar el archivo original, permite aceptar o rechazar los cambios y exporta una copia limpia íntegramente en el dispositivo.",
+
+      "modal_features_en": [
+        "Local processing: files are read and transformed on the user's device without being uploaded to a server",
+        "Imports CSV, Excel (.xlsx), JSON and XML files with detected columns and spreadsheet selection",
+        "Side-by-side original → proposed review before applying each transformation",
+        "Whitespace and letter-case cleanup plus normalization of phone numbers, dates and monetary amounts",
+        "Detection and unification of differently written equivalent values",
+        "Exact and similarity-based duplicate detection with configurable comparison columns and optional row merging",
+        "Undo support and reusable cleaning profiles for repeatable workflows",
+        "Exports cleaned data to CSV, Excel, JSON or XML, including optional separation of complete and incomplete rows",
+        "Responsive bilingual interface in English and Spanish",
+        "Desktop releases for Windows, macOS and Linux in addition to the web application"
+      ],
+      "modal_features_es": [
+        "Procesamiento local: los archivos se leen y transforman en el dispositivo del usuario sin subirse a ningún servidor",
+        "Importación de archivos CSV, Excel (.xlsx), JSON y XML con detección de columnas y selección de hojas",
+        "Revisión lado a lado original → propuesto antes de aplicar cada transformación",
+        "Limpieza de espacios y mayúsculas/minúsculas, además de normalización de teléfonos, fechas e importes",
+        "Detección y unificación de valores equivalentes escritos de formas diferentes",
+        "Detección de duplicados exactos y por similitud, con columnas de comparación configurables y combinación opcional de filas",
+        "Función de deshacer y perfiles de limpieza reutilizables para procesos repetibles",
+        "Exportación de datos limpios a CSV, Excel, JSON o XML, con separación opcional de filas completas e incompletas",
+        "Interfaz responsive bilingüe en español e inglés",
+        "Versiones de escritorio para Windows, macOS y Linux además de la aplicación web"
+      ],
+
+      "modal_tech":   "React, TypeScript, Local File Processing, CSV, XLSX, JSON, XML, Data Normalization, Fuzzy Matching",
+      "modal_images": [
+        "img/datacleanr/project-overview.png"
+      ]
+    },
     {
       "display_order": 3,
       "thumb":     "img/erp_flutter/main.png",

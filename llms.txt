@@ -72,6 +72,12 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
 
 ## Featured Projects
 
+- **DataCleanr** — Privacy-first web and desktop application for cleaning, normalizing and deduplicating tabular data.
+  Stack: React, TypeScript, CSV, Excel, JSON, XML, local file processing and fuzzy matching.
+  Imports CSV, XLSX, JSON and XML files; presents transformations as original → proposed for review; normalizes whitespace, case, phone numbers, dates and monetary amounts; unifies equivalent values; detects exact and similar duplicates; and exports a clean copy without uploading the source file. Available in the browser and as desktop releases for Windows, macOS and Linux.
+  Repository: https://github.com/RaulEstevezA/DataCleanr
+  Web app: https://raulesteveza.github.io/tools/DataCleanr/
+
 - **Microvalencia ERP App** — Full-featured Flutter mobile app built during an internship at Microvalencia Soluciones Informáticas S.L.
   Stack: Flutter, Dart, PHP, Laravel, REST API, MVVM, SOLID, Dio, FlutterSecureStorage, Geolocator, Flutter Flavors.
   Acts as a mobile gateway to the company ERP. ~90% of the PHP/Laravel API layer was designed and implemented from scratch.

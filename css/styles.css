@@ -207,6 +207,17 @@ h3 { font-size: 1.1rem; margin: 0 0 0.75rem; }
   border-color: #56d364;
 }
 
+.btn.btn-download {
+  background: rgba(163, 113, 247, 0.12);
+  color: #d2a8ff;
+  border-color: #a371f7;
+}
+
+.btn.btn-download:hover {
+  background: rgba(163, 113, 247, 0.22);
+  border-color: #d2a8ff;
+}
+
 /* =====================================================
    WINDOW (macOS style)
 ===================================================== */

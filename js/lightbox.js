@@ -100,12 +100,15 @@
         modalLinks.innerHTML = '';
         projectLinks.forEach(function (link) {
           var type = linkTypes[link.type] || linkTypes.github;
+          var resolved = window.resolveFeaturedLink
+            ? window.resolveFeaturedLink(link, isEs ? 'es' : 'en')
+            : { url: link.url, className: type.className, label: type.label[isEs ? 'es' : 'en'] || type.label.en };
           var a = document.createElement('a');
-          a.href = link.url;
-          a.className = type.className;
+          a.href = resolved.url;
+          a.className = resolved.className;
           a.target = '_blank';
           a.rel = 'noopener';
-          a.textContent = type.label[isEs ? 'es' : 'en'] || type.label.en;
+          a.textContent = resolved.label;
           modalLinks.appendChild(a);
         });
       }

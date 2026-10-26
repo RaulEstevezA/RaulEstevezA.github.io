@@ -69,6 +69,15 @@
 
   "projects": [
     {
+      "name":        "DataCleanr",
+      "type":        "Web and Desktop Data Cleaning Application",
+      "description": "Privacy-first application for cleaning, normalizing and deduplicating CSV, Excel, JSON and XML files. Processing stays on the user's device, proposed changes can be reviewed before applying them, and cleaned data can be exported without modifying or uploading the original file. Available on the web and as desktop releases for Windows, macOS and Linux.",
+      "stack":       ["React", "TypeScript", "CSV", "XLSX", "JSON", "XML", "Data Normalization", "Fuzzy Matching"],
+      "repository":  "https://github.com/RaulEstevezA/DataCleanr",
+      "demo":        "https://raulesteveza.github.io/tools/DataCleanr/",
+      "featured":    true
+    },
+    {
       "name":        "Microvalencia ERP App",
       "type":        "Mobile ERP Application",
       "description": "Mobile application built in Flutter during an internship at Microvalencia Soluciones Informáticas. Integrated with the company ERP via custom Laravel/PHP REST APIs. Covers authentication, time tracking with GPS, work orders with digital signature, internal messaging, client management, holidays and role-based access control. Internationalization in ES/VA/CA/EN. Clean MVVM architecture, Flutter Flavors for two app variants (full and lite). Planned for Google Play Store and App Store.",
