@@ -1,14 +1,15 @@
 {
   "name": "Raúl Estévez",
   "title": "Software Developer",
-  "focus": ["Backend", "Desktop Applications", "Artificial Intelligence"],
+  "focus": ["Backend", "Cross-platform Applications", "Data Tools", "Artificial Intelligence"],
   "location": "Spain",
   "website": "https://raulesteveza.github.io",
   "email": "contact.raulesteveza@gmail.com",
   "github": "https://github.com/RaulEstevezA",
   "linkedin": "https://www.linkedin.com/in/raulesteveza/",
+  "last_updated": "2026-10-26",
 
-  "summary": "Software developer with a strong academic background and hands-on experience in backend systems, desktop applications, and artificial intelligence projects.",
+  "summary": "Software developer with a strong academic background and hands-on experience in backend systems, cross-platform applications, privacy-first data tools, and artificial intelligence projects.",
 
   "skills": {
     "languages":   ["Java", "Python", "SQL", "Kotlin", "Dart", "JavaScript", "PHP", "C"],
@@ -71,10 +72,13 @@
     {
       "name":        "DataCleanr",
       "type":        "Web and Desktop Data Cleaning Application",
+      "context":     "Personal project",
+      "status":      "Published and functional",
       "description": "Privacy-first application for cleaning, normalizing and deduplicating CSV, Excel, JSON and XML files. Processing stays on the user's device, proposed changes can be reviewed before applying them, and cleaned data can be exported without modifying or uploading the original file. Available on the web and as desktop releases for Windows, macOS and Linux.",
-      "stack":       ["React", "TypeScript", "CSV", "XLSX", "JSON", "XML", "Data Normalization", "Fuzzy Matching"],
+      "stack":       ["Python", "React", "TypeScript", "CSV", "XLSX", "JSON", "XML", "Data Normalization", "Fuzzy Matching"],
       "repository":  "https://github.com/RaulEstevezA/DataCleanr",
       "demo":        "https://raulesteveza.github.io/tools/DataCleanr/",
+      "downloads":   "https://github.com/RaulEstevezA/DataCleanr/releases/latest",
       "featured":    true
     },
     {

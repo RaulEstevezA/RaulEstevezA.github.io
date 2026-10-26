@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://raulesteveza.github.io/</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -12,7 +12,7 @@
   </url>
   <url>
     <loc>https://raulesteveza.github.io/projects.html</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://raulesteveza.github.io/demos/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -37,42 +37,42 @@
   </url>
   <url>
     <loc>https://raulesteveza.github.io/demos/ERP_Flutter/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://raulesteveza.github.io/demos/Cinema_App/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://raulesteveza.github.io/demos/Flutter_Shop_Admin/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://raulesteveza.github.io/demos/BlockFall_Python/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://raulesteveza.github.io/demos/e-plantShopping/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://raulesteveza.github.io/demos/Duckyware_Store/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://raulesteveza.github.io/llms.txt</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://raulesteveza.github.io/profile.json</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>

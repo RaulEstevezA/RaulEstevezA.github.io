@@ -25,8 +25,9 @@
       "thumb":     "img/datacleanr/project-overview.png",
       "thumb_alt": "DataCleanr file import and privacy-first interface",
 
-      "badge_en": "Finished product · Privacy first",
-      "badge_es": "Producto terminado · Privacidad",
+      "badge_en": "Personal project · Published tool",
+      "badge_es": "Proyecto personal · Herramienta publicada",
+      "badge_variant": "personal",
 
       "title_en": "DataCleanr — Privacy-First Data Cleaning Tool",
       "title_es": "DataCleanr — Herramienta Privada de Limpieza de Datos",
@@ -34,7 +35,7 @@
       "card_desc_en": "Web and desktop application for cleaning, normalizing and deduplicating CSV, Excel, JSON and XML files. Processing runs locally, with every proposed change reviewable before export.",
       "card_desc_es": "Aplicación web y de escritorio para limpiar, normalizar y eliminar duplicados en archivos CSV, Excel, JSON y XML. El procesamiento se ejecuta en local y cada cambio propuesto puede revisarse antes de exportar.",
 
-      "card_tech": "React, TypeScript, CSV, Excel, JSON, XML",
+      "card_tech": "Python, React, TypeScript, CSV, Excel, JSON, XML",
       "links": [
         { "type": "github", "url": "https://github.com/RaulEstevezA/DataCleanr" },
         { "type": "web", "url": "/tools/DataCleanr/" },
@@ -77,7 +78,7 @@
         "Versiones de escritorio para Windows, macOS y Linux además de la aplicación web"
       ],
 
-      "modal_tech":   "React, TypeScript, Local File Processing, CSV, XLSX, JSON, XML, Data Normalization, Fuzzy Matching",
+      "modal_tech":   "Python, React, TypeScript, Local File Processing, CSV, XLSX, JSON, XML, Data Normalization, Fuzzy Matching",
       "modal_images": [
         "img/datacleanr/project-overview.png"
       ]

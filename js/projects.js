@@ -94,6 +94,9 @@
       var title = isEs ? project.title_es : project.title_en;
       var cardDesc = isEs ? project.card_desc_es : project.card_desc_en;
       var links = project.links || [];
+      var badgeClass = project.badge_variant === 'personal'
+        ? 'project-badge project-badge-personal'
+        : 'project-badge';
 
       var buttons = links.map(function (link) {
         var resolved = resolveFeaturedLink(link, lang);
@@ -121,7 +124,7 @@
                ' onerror="this.parentElement.style.display=\'none\'">' +
         '</div>' +
         '<div class="project-card-body">' +
-          (project.badge_en ? '<span class="project-badge">' + escapeHtml(isEs ? project.badge_es : project.badge_en) + '</span>' : '') +
+          (project.badge_en ? '<span class="' + badgeClass + '">' + escapeHtml(isEs ? project.badge_es : project.badge_en) + '</span>' : '') +
           '<h3>' + escapeHtml(title) + '</h3>' +
           '<p>' + escapeHtml(cardDesc) + '</p>' +
         '</div>' +

@@ -277,6 +277,12 @@ section + section {
   text-transform: uppercase;
 }
 
+.project-badge-personal {
+  background: rgba(163, 113, 247, 0.15);
+  color: #d2a8ff;
+  border-color: rgba(163, 113, 247, 0.5);
+}
+
 /* =====================================================
    PROJECT CARDS
 ===================================================== */
