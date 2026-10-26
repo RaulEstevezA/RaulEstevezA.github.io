@@ -1,3 +1,17 @@
 {
-  "tools": []
+  "tools": [
+    {
+      "name": "DataCleanr",
+      "display_order": 1,
+      "badge_en": "Runs locally · Privacy first",
+      "badge_es": "Ejecución local · Privacidad",
+      "featured": true,
+      "description_en": "Clean, normalize and deduplicate CSV, Excel, JSON and XML files directly in your browser. Your data stays on your device.",
+      "description_es": "Limpia, normaliza y elimina duplicados de archivos CSV, Excel, JSON y XML directamente en el navegador. Tus datos permanecen en tu dispositivo.",
+      "technologies": ["React", "TypeScript", "CSV", "Excel", "JSON", "XML"],
+      "image": "/tools/DataCleanr/favicon.svg",
+      "tool_url": "/tools/DataCleanr/",
+      "repository_url": "https://github.com/RaulEstevezA/DataCleanr"
+    }
+  ]
 }
