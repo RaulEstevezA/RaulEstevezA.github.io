@@ -17,6 +17,11 @@
       : { open: 'Open tool', code: 'View code', download: 'Download', downloadFor: 'Download for ' };
   }
 
+  var icons = {
+    download: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5v8M4.5 7 8 10.5 11.5 7M3 13.5h10"/></svg>',
+    code: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 4.5 2 8l3.5 3.5M10.5 4.5 14 8l-3.5 3.5"/></svg>'
+  };
+
   function detectDesktopPlatform() {
     var platform = navigator.platform || '';
     var userAgent = navigator.userAgent || '';
@@ -77,7 +82,7 @@
       : platform;
     var label = asset ? labels.downloadFor + platformLabel : labels.download;
 
-    return '<a class="btn" href="' + encodeURI(url) + '" target="_blank" rel="noopener">' + label + '</a>';
+    return '<a class="btn btn-download" href="' + encodeURI(url) + '" target="_blank" rel="noopener">' + icons.download + label + '</a>';
   }
 
   function render() {
@@ -103,7 +108,7 @@
         : '';
       var badge = tool['badge_' + currentLang] || tool.badge_en;
       var codeLink = tool.repository_url
-        ? '<a class="btn" href="' + encodeURI(tool.repository_url) + '" target="_blank" rel="noopener">' + labels.code + '</a>'
+        ? '<a class="btn btn-code" href="' + encodeURI(tool.repository_url) + '" target="_blank" rel="noopener">' + icons.code + labels.code + '</a>'
         : '';
       var downloadLink = renderDownloadLink(tool, labels);
 
@@ -112,7 +117,7 @@
         (badge ? '<span class="project-badge">' + escapeHtml(badge) + '</span>' : '') +
         '<h3>' + escapeHtml(tool.name) + '</h3>' +
         '<p>' + escapeHtml(description) + '</p>' +
-        '<div class="demo-card-actions">' +
+        '<div class="demo-card-actions tool-card-actions">' +
           '<a class="btn btn-web" href="' + encodeURI(tool.tool_url) + '" target="_blank" rel="noopener">' + labels.open + '</a>' +
           downloadLink +
           codeLink +
