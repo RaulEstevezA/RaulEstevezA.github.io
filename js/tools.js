@@ -3,6 +3,7 @@
 
   var tools = [];
   var currentLang = document.documentElement.lang || 'en';
+  var desktopArchitecture = 'x64';
 
   function escapeHtml(value) {
     var element = document.createElement('span');
@@ -28,16 +29,53 @@
     return null;
   }
 
+  function detectDesktopArchitecture() {
+    var device = (navigator.platform || '') + ' ' + (navigator.userAgent || '');
+    if (/aarch64|arm64/i.test(device)) return Promise.resolve('arm64');
+
+    if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
+      return navigator.userAgentData.getHighEntropyValues(['architecture'])
+        .then(function (values) {
+          if (values.architecture === 'arm') return 'arm64';
+          if (values.architecture === 'x86') return 'x64';
+          return null;
+        })
+        .catch(function () { return null; });
+    }
+
+    return Promise.resolve(null);
+  }
+
+  function resolveAsset(assets, platform) {
+    var platformAssets = assets && assets[platform];
+    if (!platformAssets) return null;
+    if (typeof platformAssets === 'string') {
+      return { file: platformAssets, architecture: null, hasArchitectures: false };
+    }
+
+    var architecture = platformAssets[desktopArchitecture]
+      ? desktopArchitecture
+      : Object.keys(platformAssets)[0];
+    return {
+      file: platformAssets[architecture],
+      architecture: architecture,
+      hasArchitectures: Object.keys(platformAssets).length > 1
+    };
+  }
+
   function renderDownloadLink(tool, labels) {
     var download = tool.download;
     if (!download || !download.releases_url) return '';
 
     var platform = detectDesktopPlatform();
-    var asset = platform && download.assets && download.assets[platform];
+    var asset = platform && resolveAsset(download.assets, platform);
     var url = asset
-      ? download.releases_url.replace(/\/$/, '') + '/download/' + encodeURIComponent(asset)
+      ? download.releases_url.replace(/\/$/, '') + '/download/' + encodeURIComponent(asset.file)
       : download.releases_url;
-    var label = asset ? labels.downloadFor + platform : labels.download;
+    var platformLabel = asset && asset.architecture === 'arm64' && asset.hasArchitectures
+      ? platform + ' ARM64'
+      : platform;
+    var label = asset ? labels.downloadFor + platformLabel : labels.download;
 
     return '<a class="btn" href="' + encodeURI(url) + '" target="_blank" rel="noopener">' + label + '</a>';
   }
@@ -96,6 +134,13 @@
     .then(function (data) {
       tools = Array.isArray(data.tools) ? data.tools : [];
       render();
+      return detectDesktopArchitecture();
+    })
+    .then(function (architecture) {
+      if (architecture && architecture !== desktopArchitecture) {
+        desktopArchitecture = architecture;
+        render();
+      }
     })
     .catch(function (error) {
       console.error(error);

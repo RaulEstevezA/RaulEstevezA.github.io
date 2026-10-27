@@ -20,6 +20,7 @@
     download: { label: { en: 'Download app', es: 'Descargar aplicación' }, className: 'btn btn-download' }
   };
   window.FEATURED_LINK_TYPES = FEATURED_LINK_TYPES;
+  var desktopArchitecture = 'x64';
 
   function detectDesktopPlatform() {
     var platform = navigator.platform || '';
@@ -33,18 +34,55 @@
     return null;
   }
 
+  function detectDesktopArchitecture() {
+    var device = (navigator.platform || '') + ' ' + (navigator.userAgent || '');
+    if (/aarch64|arm64/i.test(device)) return Promise.resolve('arm64');
+
+    if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
+      return navigator.userAgentData.getHighEntropyValues(['architecture'])
+        .then(function (values) {
+          if (values.architecture === 'arm') return 'arm64';
+          if (values.architecture === 'x86') return 'x64';
+          return null;
+        })
+        .catch(function () { return null; });
+    }
+
+    return Promise.resolve(null);
+  }
+
+  function resolveAsset(assets, platform) {
+    var platformAssets = assets && assets[platform];
+    if (!platformAssets) return null;
+    if (typeof platformAssets === 'string') {
+      return { file: platformAssets, architecture: null, hasArchitectures: false };
+    }
+
+    var architecture = platformAssets[desktopArchitecture]
+      ? desktopArchitecture
+      : Object.keys(platformAssets)[0];
+    return {
+      file: platformAssets[architecture],
+      architecture: architecture,
+      hasArchitectures: Object.keys(platformAssets).length > 1
+    };
+  }
+
   function resolveFeaturedLink(link, lang) {
     var type = FEATURED_LINK_TYPES[link.type] || FEATURED_LINK_TYPES.github;
     var platform = link.type === 'download' ? detectDesktopPlatform() : null;
-    var asset = platform && link.assets && link.assets[platform];
+    var asset = platform && resolveAsset(link.assets, platform);
+    var platformLabel = asset && asset.architecture === 'arm64' && asset.hasArchitectures
+      ? platform + ' ARM64'
+      : platform;
 
     return {
       className: type.className,
       label: asset
-        ? (lang === 'es' ? 'Descargar para ' : 'Download for ') + platform
+        ? (lang === 'es' ? 'Descargar para ' : 'Download for ') + platformLabel
         : type.label[lang] || type.label.en,
       url: asset
-        ? link.url.replace(/\/$/, '') + '/download/' + encodeURIComponent(asset)
+        ? link.url.replace(/\/$/, '') + '/download/' + encodeURIComponent(asset.file)
         : link.url
     };
   }
@@ -177,6 +215,12 @@
       bestProjects = results[0].projects;
       otherProjects = results[1].other;
       renderAll(currentLang());
+      return detectDesktopArchitecture();
+    }).then(function (architecture) {
+      if (architecture && architecture !== desktopArchitecture) {
+        desktopArchitecture = architecture;
+        renderAll(currentLang());
+      }
     }).catch(function (error) {
       console.error(error);
     });

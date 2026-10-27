@@ -11,7 +11,7 @@
     "modal_tech":         "Comma-separated tech tags shown in the modal (can be more detailed than card_tech)",
     "modal_images":       "Array of image paths for the modal carousel (first image shown on open)",
     "display_order":      "Optional explicit card position; lower values are shown first",
-    "links":              "Array of { type, url } shown as buttons on the card and in the modal, in this order. type is one of: github, demo, live_demo, web, download. Each type has its own label and color (github = blue, demo = red/YouTube, live_demo and web = green, download = purple)"
+    "links":              "Array of { type, url } shown as buttons on the card and in the modal, in this order. type is one of: github, demo, live_demo, web, download. Download links may include assets grouped by platform and architecture (x64 or arm64). Each type has its own label and color (github = blue, demo = red/YouTube, live_demo and web = green, download = purple)"
   },
   "_also_update": [
     "llms.txt          → ## Featured Projects section",
@@ -43,9 +43,15 @@
           "type": "download",
           "url": "https://github.com/RaulEstevezA/DataCleanr/releases/latest",
           "assets": {
-            "macOS": "DataCleanr-macOS.dmg",
-            "Windows": "DataCleanr-Windows.zip",
-            "Linux": "DataCleanr-Linux.tar.gz"
+            "macOS": { "arm64": "DataCleanr-macOS.dmg" },
+            "Windows": {
+              "x64": "DataCleanr-Windows.zip",
+              "arm64": "DataCleanr-Windows-ARM64.zip"
+            },
+            "Linux": {
+              "x64": "DataCleanr-Linux.tar.gz",
+              "arm64": "DataCleanr-Linux-ARM64.tar.gz"
+            }
           }
         }
       ],
