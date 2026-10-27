@@ -3,7 +3,7 @@
 > Software developer focused on backend systems, cross-platform applications, data tooling and applied AI. Based in Spain.
 > Specialized in Python, Java, Flutter, TypeScript, SQL and application development.
 
-Last updated: 2026-10-26
+Last updated: 2026-10-27
 
 This file is intended to help language models and search systems understand
 Raúl Estévez's professional profile accurately.
@@ -80,6 +80,13 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
   Repository: https://github.com/RaulEstevezA/DataCleanr
   Web app: https://raulesteveza.github.io/tools/DataCleanr/
   Desktop downloads (Windows, macOS and Linux): https://github.com/RaulEstevezA/DataCleanr/releases/latest
+
+- **Api2Class** — Published personal project: a privacy-first web and desktop tool that turns JSON API responses into classes and typed models.
+  Stack: React, TypeScript, Vite (web); Python, PySide6 (desktop); shared language-neutral test cases.
+  Paste a JSON response (from Postman, the browser or a log), review and edit the detected model (optional fields, nullable values, doubtful types; rename, retype or exclude anything), then copy or download code for Python, Java, TypeScript, C#, Kotlin, Dart, Swift, Go, PHP, Rust or Scala, or a JSON Schema or Smithy definition. The JSON is never sent to a server. The web and desktop versions produce exactly the same generated code. MIT licensed.
+  Repository: https://github.com/RaulEstevezA/Api2Class
+  Web app: https://raulesteveza.github.io/tools/Api2Class/
+  Desktop downloads (Windows, macOS and Linux): https://github.com/RaulEstevezA/Api2Class/releases/latest
 
 - **Microvalencia ERP App** — Full-featured Flutter mobile app built during an internship at Microvalencia Soluciones Informáticas S.L.
   Stack: Flutter, Dart, PHP, Laravel, REST API, MVVM, SOLID, Dio, FlutterSecureStorage, Geolocator, Flutter Flavors.

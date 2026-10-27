@@ -7,7 +7,7 @@
   "email": "contact.raulesteveza@gmail.com",
   "github": "https://github.com/RaulEstevezA",
   "linkedin": "https://www.linkedin.com/in/raulesteveza/",
-  "last_updated": "2026-10-26",
+  "last_updated": "2026-10-27",
 
   "summary": "Software developer with a strong academic background and hands-on experience in backend systems, cross-platform applications, privacy-first data tools, and artificial intelligence projects.",
 
@@ -79,6 +79,18 @@
       "repository":  "https://github.com/RaulEstevezA/DataCleanr",
       "demo":        "https://raulesteveza.github.io/tools/DataCleanr/",
       "downloads":   "https://github.com/RaulEstevezA/DataCleanr/releases/latest",
+      "featured":    true
+    },
+    {
+      "name":        "Api2Class",
+      "type":        "Web and Desktop Code Generation Tool",
+      "context":     "Personal project",
+      "status":      "Published and functional",
+      "description": "Privacy-first tool that turns JSON API responses into classes and typed models for Python, Java, TypeScript, C#, Kotlin, Dart, Swift, Go, PHP, Rust and Scala, plus JSON Schema and Smithy. An editable intermediate model shows optional, nullable and doubtful fields and lets users rename, retype or exclude them before generating. The JSON never leaves the user's device. Available on the web and as desktop releases for Windows, macOS and Linux, both producing the same code.",
+      "stack":       ["React", "TypeScript", "Vite", "Python", "PySide6", "JSON", "JSON Schema", "Code Generation"],
+      "repository":  "https://github.com/RaulEstevezA/Api2Class",
+      "demo":        "https://raulesteveza.github.io/tools/Api2Class/",
+      "downloads":   "https://github.com/RaulEstevezA/Api2Class/releases/latest",
       "featured":    true
     },
     {

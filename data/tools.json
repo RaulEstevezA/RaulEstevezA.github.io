@@ -25,6 +25,32 @@
           }
         }
       }
+    },
+    {
+      "name": "Api2Class",
+      "display_order": 2,
+      "badge_en": "Runs in your browser · Privacy first",
+      "badge_es": "Se ejecuta en el navegador · Privacidad",
+      "featured": false,
+      "description_en": "Turn a JSON API response into typed models for Python, Java, TypeScript, C#, Kotlin, Dart, Swift, Go, PHP, Rust, Scala, JSON Schema and Smithy. Review and edit the detected structure before generating the code.",
+      "description_es": "Convierte una respuesta JSON de una API en modelos tipados para Python, Java, TypeScript, C#, Kotlin, Dart, Swift, Go, PHP, Rust, Scala, JSON Schema y Smithy. Revisa y edita la estructura detectada antes de generar el código.",
+      "image": "/tools/Api2Class/favicon.svg",
+      "tool_url": "/tools/Api2Class/",
+      "repository_url": "https://github.com/RaulEstevezA/Api2Class",
+      "download": {
+        "releases_url": "https://github.com/RaulEstevezA/Api2Class/releases/latest",
+        "assets": {
+          "macOS": { "arm64": "Api2Class-macOS.dmg" },
+          "Windows": {
+            "x64": "Api2Class-Windows.zip",
+            "arm64": "Api2Class-Windows-ARM64.zip"
+          },
+          "Linux": {
+            "x64": "Api2Class-Linux.tar.gz",
+            "arm64": "Api2Class-Linux-ARM64.tar.gz"
+          }
+        }
+      }
     }
   ]
 }

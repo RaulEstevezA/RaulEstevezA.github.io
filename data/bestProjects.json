@@ -90,6 +90,75 @@
       ]
     },
     {
+      "display_order": 5,
+      "thumb":     "img/api2class/project-overview.png",
+      "thumb_alt": "Api2Class interface with JSON input, editable detected structure and generated Kotlin code",
+
+      "badge_en": "Personal project · Published tool",
+      "badge_es": "Proyecto personal · Herramienta publicada",
+      "badge_variant": "personal",
+
+      "title_en": "Api2Class — JSON to Typed Models Generator",
+      "title_es": "Api2Class — Generador de Modelos Tipados desde JSON",
+
+      "card_desc_en": "Web and desktop tool that turns JSON API responses into typed models for 11 languages, JSON Schema and Smithy. The detected structure can be reviewed and edited before generating, and the JSON never leaves the device.",
+      "card_desc_es": "Herramienta web y de escritorio que convierte respuestas JSON de APIs en modelos tipados para 11 lenguajes, JSON Schema y Smithy. La estructura detectada puede revisarse y editarse antes de generar, y el JSON nunca sale del dispositivo.",
+
+      "card_tech": "TypeScript, React, Python, PySide6, JSON, Code Generation",
+      "links": [
+        { "type": "github", "url": "https://github.com/RaulEstevezA/Api2Class" },
+        { "type": "web", "url": "/tools/Api2Class/" },
+        {
+          "type": "download",
+          "url": "https://github.com/RaulEstevezA/Api2Class/releases/latest",
+          "assets": {
+            "macOS": { "arm64": "Api2Class-macOS.dmg" },
+            "Windows": {
+              "x64": "Api2Class-Windows.zip",
+              "arm64": "Api2Class-Windows-ARM64.zip"
+            },
+            "Linux": {
+              "x64": "Api2Class-Linux.tar.gz",
+              "arm64": "Api2Class-Linux-ARM64.tar.gz"
+            }
+          }
+        }
+      ],
+
+      "modal_desc_en": "Client-side tool that generates classes and typed models from a real API response, available in the browser and as a desktop download for Windows, macOS and Linux. Between the JSON and the code there is an editable model that shows what was detected, so the generated code reflects the developer's decisions. The web (TypeScript) and desktop (Python) versions are written separately but share the same test cases and produce identical code.",
+      "modal_desc_es": "Herramienta que se ejecuta en el cliente y genera clases y modelos tipados a partir de una respuesta real de una API, disponible en el navegador y como descarga de escritorio para Windows, macOS y Linux. Entre el JSON y el código hay un modelo editable que muestra lo detectado, de modo que el código generado refleja las decisiones del desarrollador. Las versiones web (TypeScript) y de escritorio (Python) están escritas por separado, pero comparten los mismos casos de prueba y generan exactamente el mismo código.",
+
+      "modal_features_en": [
+        "Local processing: the JSON is analyzed and the code generated on the user's device, with no server and nothing stored",
+        "Strict JSON validation with line and column errors and hints for common copy mistakes",
+        "Detects types, dates, date-times, UUIDs, nested objects, arrays of objects, optional and nullable fields",
+        "Doubtful types are not guessed: mixed, null-only and empty values are flagged for review with per-type counts",
+        "Reuses one class for objects with the same fields and resolves repeated class names",
+        "Editable structure tree: include or exclude fields, rename properties and classes, change types, optional and nullable",
+        "Naming conventions per language with automatic key mapping and fixes for reserved words and invalid names",
+        "Generates Python, Java, TypeScript, C#, Kotlin, Dart, Swift, Go, PHP, Rust and Scala, plus JSON Schema and Smithy, with several styles and libraries per language",
+        "Copy, download as a file or as a .zip with one file per class, with a usage example for every language",
+        "Shared language-neutral test cases keep the web and desktop versions identical; generated code is checked with the real tools"
+      ],
+      "modal_features_es": [
+        "Procesamiento local: el JSON se analiza y el código se genera en el dispositivo del usuario, sin servidor y sin guardar nada",
+        "Validación estricta del JSON con errores por línea y columna y pistas para los fallos habituales al copiar",
+        "Detección de tipos, fechas, fechas con hora, UUID, objetos anidados, arrays de objetos y campos opcionales y nulables",
+        "Los tipos dudosos no se adivinan: valores mixtos, solo nulos o vacíos se marcan para revisar, con recuento por tipo",
+        "Reutiliza una misma clase para objetos con los mismos campos y resuelve nombres de clase repetidos",
+        "Árbol de estructura editable: incluir o excluir campos, renombrar propiedades y clases, cambiar tipos, opcionales y nulables",
+        "Convenciones de nombres por lenguaje con mapeo automático de claves y corrección de palabras reservadas y nombres no válidos",
+        "Genera Python, Java, TypeScript, C#, Kotlin, Dart, Swift, Go, PHP, Rust y Scala, además de JSON Schema y Smithy, con varios estilos y librerías por lenguaje",
+        "Copiar, descargar como archivo o como .zip con un archivo por clase, con ejemplo de uso para cada lenguaje",
+        "Casos de prueba compartidos mantienen idénticas las versiones web y de escritorio; el código generado se comprueba con las herramientas reales"
+      ],
+
+      "modal_tech":   "TypeScript, React, Vite, Python, PySide6, JSON, JSON Schema, Smithy, Code Generation, Static Analysis",
+      "modal_images": [
+        "img/api2class/project-overview.png"
+      ]
+    },
+    {
       "display_order": 3,
       "thumb":     "img/erp_flutter/main.png",
       "thumb_alt": "ERP Flutter demo home screen",

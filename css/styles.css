@@ -602,6 +602,28 @@ section + section {
 
 .demo-card-actions .btn { margin: 0; }
 
+/* Tools: open button on its own row, download and code below */
+.tool-card-actions { margin-top: auto; }
+
+.tool-card-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+}
+
+.tool-card-actions .btn svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.tool-card-actions .btn-web { flex: 1 1 100%; }
+.tool-card-actions .btn-download { flex: 3 1 auto; }
+.tool-card-actions .btn-code { flex: 1 1 auto; background: transparent; }
+.tool-card-actions .btn-code:hover { background: var(--btn-bg); }
+
 .demo-card-row {
   display: grid;
   grid-template-columns: minmax(240px, 36%) 1fr;
