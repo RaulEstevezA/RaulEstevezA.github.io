@@ -14,9 +14,15 @@
       "download": {
         "releases_url": "https://github.com/RaulEstevezA/DataCleanr/releases/latest",
         "assets": {
-          "macOS": "DataCleanr-macOS.dmg",
-          "Windows": "DataCleanr-Windows.zip",
-          "Linux": "DataCleanr-Linux.tar.gz"
+          "macOS": { "arm64": "DataCleanr-macOS.dmg" },
+          "Windows": {
+            "x64": "DataCleanr-Windows.zip",
+            "arm64": "DataCleanr-Windows-ARM64.zip"
+          },
+          "Linux": {
+            "x64": "DataCleanr-Linux.tar.gz",
+            "arm64": "DataCleanr-Linux-ARM64.tar.gz"
+          }
         }
       }
     }
