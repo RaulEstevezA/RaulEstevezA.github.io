@@ -3,6 +3,7 @@
 
   var carouselDelay = 2000;
   var modalTimer = null;
+  var focusBeforeModal = null;
 
   function getProjectImages(wrap, thumb) {
     var images = (wrap.dataset.images || '').split('|').filter(Boolean);
@@ -22,8 +23,12 @@
   }
 
   function closeModal(modal) {
+    if (!modal.classList.contains('active')) return;
     stopModalCarousel();
     modal.classList.remove('active');
+    // Return focus to whatever opened the modal, if it is still on the page
+    if (focusBeforeModal && document.contains(focusBeforeModal)) focusBeforeModal.focus();
+    focusBeforeModal = null;
   }
 
   function startModalCarousel(images, initialIndex) {
@@ -120,7 +125,9 @@
         modalImg.classList.remove('portrait');
       }
 
+      focusBeforeModal = document.activeElement;
       modal.classList.add('active');
+      if (closeButton) closeButton.focus();
       startModalCarousel(images, 0);
     });
 
