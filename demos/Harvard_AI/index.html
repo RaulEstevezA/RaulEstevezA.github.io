@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demos interactivas basadas en proyectos de Harvard CS50's Introduction to Artificial Intelligence with Python.">
+  <title>Artificial Intelligence · Raúl Estévez</title>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/hub.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-header__brand" href="https://raulesteveza.github.io">Raúl Estévez</a>
+    <div class="language-switcher" role="group" aria-label="Idioma">
+      <button class="language-switcher__button" type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button class="language-switcher__button" type="button" data-lang="es" aria-pressed="true">ES</button>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="window hub-intro" aria-labelledby="page-title">
+      <p class="eyebrow" data-i18n="eyebrow">Harvard CS50 AI · Demos interactivas</p>
+      <h1 id="page-title">Artificial Intelligence</h1>
+      <p class="hub-intro__lead" data-i18n="lead">Una colección de juegos, puzles y demostraciones que permite ver algoritmos de inteligencia artificial mientras trabajan.</p>
+      <p class="hub-intro__copy" data-i18n="intro">Adaptaciones interactivas de proyectos realizados durante Harvard CS50's Introduction to Artificial Intelligence with Python. Cada demo conserva el concepto del ejercicio original y añade una explicación visual de sus decisiones.</p>
+      <aside class="hub-scope-note" aria-labelledby="scope-title">
+        <strong id="scope-title" data-i18n="scopeTitle">Alcance de las demos</strong>
+        <p data-i18n="scopeCopy">Estas demos son reinterpretaciones educativas para navegador, no réplicas completas de los ejercicios. Para funcionar sin backend y mantener una carga rápida, algunas utilizan conjuntos de datos, vocabularios o modelos reducidos. El código original enlazado conserva el alcance del proyecto del curso.</p>
+      </aside>
+      <div class="hub-intro__actions">
+        <a class="button" href="https://github.com/RaulEstevezA/harvard_ai" data-i18n="originalCode">Código original</a>
+        <a class="button" href="https://raulesteveza.github.io/demos" data-i18n="allDemos">Todas las demos</a>
+      </div>
+    </section>
+
+    <section class="catalog" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="collectionLabel">Colección</p>
+          <h2 id="catalog-title" data-i18n="catalogTitle">Juegos, puzles y demostraciones</h2>
+        </div>
+        <p class="section-heading__copy" data-i18n="catalogCopy">Doce formas de explorar búsqueda, conocimiento, optimización y aprendizaje.</p>
+      </div>
+
+      <div class="category" aria-labelledby="search-title">
+        <div class="category__heading">
+          <span class="category__number">01</span>
+          <div>
+            <h3 id="search-title" data-i18n="search">Búsqueda</h3>
+            <p data-i18n="searchDescription">Explorar estados, grafos y caminos para encontrar la mejor solución.</p>
+          </div>
+        </div>
+        <div class="demo-grid demo-grid--three">
+          <article class="demo-card">
+            <div class="demo-card__body">
+              <div class="demo-card__meta"><span class="demo-type demo-type--game" data-i18n="gameLabel">Juego</span><span>Minimax</span></div>
+              <h4>Tic-Tac-Toe</h4>
+              <p data-i18n="tictactoeDescription">Juega contra un agente óptimo y observa cómo valora cada movimiento posible.</p>
+              <ul class="tag-list" aria-label="Conceptos">
+                <li>Minimax</li><li data-i18n="gameTrees">Árboles de juego</li><li data-i18n="adversarialSearch">Búsqueda adversarial</li>
+              </ul>
+              <a class="button button--primary" href="demos/tictactoe/" data-i18n="openDemo">Abrir demo</a>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-card__body">
+              <div class="demo-card__meta"><span class="demo-type demo-type--demonstration" data-i18n="demonstrationLabel">Demostración</span><span>BFS</span></div>
+              <h4>Degrees</h4>
+              <p data-i18n="degreesDescription">Conecta dos actores y observa cómo BFS encuentra el camino más corto entre ellos.</p>
+              <ul class="tag-list" aria-label="Conceptos">
+                <li data-i18n="breadthFirstSearch">Búsqueda en anchura</li><li data-i18n="graphSearch">Búsqueda en grafos</li>
+              </ul>
+              <a class="button button--primary" href="demos/degrees/" data-i18n="openDemo">Abrir demo</a>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-card__body">
+              <div class="demo-card__meta"><span class="demo-type demo-type--demonstration" data-i18n="demonstrationLabel">Demostración</span><span>PageRank</span></div>
+              <h4>PageRank</h4>
+              <p data-i18n="pagerankDescription">Compara el navegante aleatorio con la iteración y observa cómo los enlaces reparten importancia.</p>
+              <ul class="tag-list" aria-label="Conceptos">
+                <li data-i18n="randomSurfer">Navegante aleatorio</li><li data-i18n="probability">Probabilidad</li>
+              </ul>
+              <a class="button button--primary" href="demos/pagerank/" data-i18n="openDemo">Abrir demo</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="category" aria-labelledby="knowledge-title">
+        <div class="category__heading">
+          <span class="category__number">02</span>
+          <div>
+            <h3 id="knowledge-title" data-i18n="knowledge">Conocimiento</h3>
+            <p data-i18n="knowledgeDescription">Deducir hechos nuevos a partir de reglas e información parcial.</p>
+          </div>
+        </div>
+        <div class="demo-grid">
+          <article class="demo-card">
+            <div class="demo-card__body">
+              <div class="demo-card__meta"><span class="demo-type demo-type--game" data-i18n="gameLabel">Juego</span><span data-i18n="logicalInference">Inferencia lógica</span></div>
+              <h4>Minesweeper AI</h4>
+              <p data-i18n="minesweeperDescription">Sigue la base de conocimiento de un agente mientras identifica casillas seguras y minas.</p>
+              <ul class="tag-list"><li data-i18n="knowledgeBases">Bases de conocimiento</li><li data-i18n="inference">Inferencia</li></ul>
+              <a class="button button--primary" href="demos/minesweeper/" data-i18n="openDemo">Abrir demo</a>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-card__body">
+              <div class="demo-card__meta"><span class="demo-type demo-type--puzzle" data-i18n="puzzleLabel">Puzle</span><span data-i18n="propositionalLogic">Lógica proposicional</span></div>
+              <h4>Knights and Knaves</h4>
+              <p data-i18n="knightsDescription">Resuelve acertijos de caballeros y mentirosos descartando modelos contradictorios.</p>
+              <ul class="tag-list"><li data-i18n="modelChecking">Comprobación de modelos</li><li data-i18n="symbolicAI">IA simbólica</li></ul>
+              <a class="button button--primary" href="demos/knights/" data-i18n="openDemo">Abrir demo</a>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-card__body">
+              <div class="demo-card__meta"><span class="demo-type demo-type--demonstration" data-i18n="demonstrationLabel">Demostración</span><span data-i18n="probabilisticInference">Inferencia probabilística</span></div>
+              <h4>Heredity</h4>
+              <p data-i18n="heredityDescription">Modifica la evidencia familiar y observa cómo cambian las probabilidades de genes y rasgos.</p>
+              <ul class="tag-list"><li data-i18n="jointProbability">Probabilidad conjunta</li><li data-i18n="bayesianInference">Inferencia bayesiana</li></ul>
+              <a class="button button--primary" href="demos/heredity/" data-i18n="openDemo">Abrir demo</a>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-card__body">
+              <div class="demo-card__meta"><span class="demo-type demo-type--demonstration" data-i18n="demonstrationLabel">Demostración</span><span>CFG</span></div>
+              <h4>Parser</h4>
+              <p data-i18n="parserDescription">Analiza frases en castellano e inglés y compara sus posibles árboles sintácticos.</p>
+              <ul class="tag-list"><li data-i18n="syntaxAnalysis">Análisis sintáctico</li><li data-i18n="formalGrammar">Gramática formal</li></ul>
+              <a class="button button--primary" href="demos/parser/" data-i18n="openDemo">Abrir demo</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="category" aria-labelledby="optimization-title">
+        <div class="category__heading">
+          <span class="category__number">03</span>
+          <div>
+            <h3 id="optimization-title" data-i18n="optimization">Optimización</h3>
+            <p data-i18n="optimizationDescription">Reducir un espacio de búsqueda mediante restricciones y heurísticas.</p>
+          </div>
+        </div>
+        <article class="demo-card">
+          <div class="demo-card__body">
+            <div class="demo-card__meta"><span class="demo-type demo-type--puzzle" data-i18n="puzzleLabel">Puzle</span><span>CSP</span></div>
+            <h4>Crossword Solver</h4>
+            <p data-i18n="crosswordDescription">Observa cómo AC-3, MRV, LCV y backtracking construyen un crucigrama válido.</p>
+            <ul class="tag-list"><li>AC-3</li><li>Backtracking</li><li data-i18n="heuristics">Heurísticas</li></ul>
+            <a class="button button--primary" href="demos/crossword/" data-i18n="openDemo">Abrir demo</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="category" aria-labelledby="learning-title">
+        <div class="category__heading">
+          <span class="category__number">04</span>
+          <div>
+            <h3 id="learning-title" data-i18n="learning">Aprendizaje</h3>
+            <p data-i18n="learningDescription">Mejorar una estrategia a partir de experiencia y recompensas.</p>
+          </div>
+        </div>
+        <div class="demo-grid">
+          <article class="demo-card">
+            <div class="demo-card__body">
+              <div class="demo-card__meta"><span class="demo-type demo-type--game" data-i18n="gameLabel">Juego</span><span>Q-learning</span></div>
+              <h4>Nim</h4>
+              <p data-i18n="nimDescription">Entrena un agente por refuerzo y compara cómo cambian los valores de sus acciones.</p>
+              <ul class="tag-list"><li>Q-learning</li><li data-i18n="reinforcementLearning">Aprendizaje por refuerzo</li></ul>
+              <a class="button button--primary" href="demos/nim/" data-i18n="openDemo">Abrir demo</a>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-card__body">
+              <div class="demo-card__meta"><span class="demo-type demo-type--demonstration" data-i18n="demonstrationLabel">Demostración</span><span>k-NN</span></div>
+              <h4>Shopping</h4>
+              <p data-i18n="shoppingDescription">Estima si una visita a una tienda online terminará en compra comparándola con visitas similares.</p>
+              <ul class="tag-list"><li data-i18n="supervisedLearning">Aprendizaje supervisado</li><li data-i18n="sensitivitySpecificity">Sensibilidad y especificidad</li></ul>
+              <a class="button button--primary" href="demos/shopping/" data-i18n="openDemo">Abrir demo</a>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-card__body">
+              <div class="demo-card__meta"><span class="demo-type demo-type--demonstration" data-i18n="demonstrationLabel">Demostración</span><span>CNN</span></div>
+              <h4>Traffic</h4>
+              <p data-i18n="trafficDescription">Altera señales de tráfico y observa cómo las convoluciones extraen bordes antes de clasificarlas.</p>
+              <ul class="tag-list"><li data-i18n="convolutionalNetworks">Redes convolucionales</li><li data-i18n="computerVision">Visión por computador</li></ul>
+              <a class="button button--primary" href="demos/traffic/" data-i18n="openDemo">Abrir demo</a>
+            </div>
+          </article>
+          <article class="demo-card">
+            <div class="demo-card__body">
+              <div class="demo-card__meta"><span class="demo-type demo-type--demonstration" data-i18n="demonstrationLabel">Demostración</span><span>Transformer</span></div>
+              <h4>Attention</h4>
+              <p data-i18n="attentionDescription">Observa qué palabras considera más importantes un modelo para predecir la palabra que falta en una frase.</p>
+              <ul class="tag-list"><li>Self-attention</li><li data-i18n="transformers">Transformers</li></ul>
+              <a class="button button--primary" href="demos/attention/" data-i18n="openDemo">Abrir demo</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/hub.js"></script>
+</body>
+</html>

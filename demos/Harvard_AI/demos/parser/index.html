@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Analizador sintáctico bilingüe basado en gramáticas libres de contexto.">
+  <title>Parser · Context-Free Grammar</title>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/demo.css">
+  <link rel="stylesheet" href="parser.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-header__brand" href="https://raulesteveza.github.io">Raúl Estévez</a>
+    <div class="language-switcher" role="group" aria-label="Idioma">
+      <button class="language-switcher__button" type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button class="language-switcher__button" type="button" data-lang="es" aria-pressed="true">ES</button>
+    </div>
+  </header>
+
+  <main class="page-shell demo-page">
+    <nav class="breadcrumb" aria-label="Navegación secundaria"><a href="../../" data-i18n="backHub">AI Demos</a><span aria-hidden="true">/</span><span>Parser</span></nav>
+
+    <section class="window demo-window" aria-labelledby="page-title">
+      <header class="demo-header"><div><p class="eyebrow" data-i18n="eyebrow">Lenguaje · Gramáticas</p><h1 id="page-title">Parser</h1><p data-i18n="subtitle">Analiza frases en castellano o inglés y observa cómo una gramática libre de contexto construye su estructura.</p></div></header>
+
+      <div class="parser-layout">
+        <section class="sentence-panel" aria-labelledby="sentence-title">
+          <div class="panel-heading"><div><p class="panel-label" data-i18n="inputLabel">Entrada</p><h2 id="sentence-title" data-i18n="sentenceTitle">Frase para analizar</h2></div><button class="button" id="clear-sentence" type="button" data-i18n="clear">Limpiar</button></div>
+          <div class="parser-language" role="group" aria-label="Idioma de la frase">
+            <span data-i18n="sentenceLanguage">Idioma de la frase</span>
+            <button type="button" data-parser-lang="es" aria-pressed="true">Castellano</button>
+            <button type="button" data-parser-lang="en" aria-pressed="false">English</button>
+          </div>
+          <label class="sentence-input"><span class="sr-only" data-i18n="sentenceTitle">Frase para analizar</span><textarea id="sentence" rows="4">Holmes se sentó y encendió su pipa.</textarea></label>
+          <div class="example-block"><span data-i18n="examples">Ejemplos</span><div id="example-list"></div></div>
+          <button class="button button--primary parse-button" id="parse-sentence" type="button" data-i18n="analyze">Analizar frase</button>
+          <div class="parser-status" id="parser-status" role="status" aria-live="polite"></div>
+
+          <section class="token-block" aria-labelledby="tokens-title"><div class="state-heading"><h3 id="tokens-title" data-i18n="tokensTitle">Tokens y categorías</h3><span id="token-count">0</span></div><div class="token-list" id="token-list"></div></section>
+          <div class="algorithm-note" role="note"><strong data-i18n="scopeTitle">Alcance de la gramática</strong><p data-i18n="scopeCopy">El analizador acepta frases nuevas formadas con el vocabulario disponible. No es un modelo de lenguaje general: si una palabra queda fuera del léxico, la señala para explicar por qué no puede analizarla.</p></div>
+        </section>
+
+        <aside class="tree-panel" aria-labelledby="tree-title">
+          <div class="panel-heading"><div><p class="panel-label" data-i18n="resultLabel">Resultado</p><h2 id="tree-title" data-i18n="treeTitle">Árbol sintáctico</h2></div><span class="analysis-state" id="parse-state">Listo</span></div>
+          <dl class="parser-metrics">
+            <div><dt data-i18n="tokens">Tokens</dt><dd id="metric-tokens">0</dd></div>
+            <div><dt data-i18n="parses">Análisis</dt><dd id="metric-parses">0</dd></div>
+            <div><dt data-i18n="nounPhrases">Grupos nominales</dt><dd id="metric-chunks">0</dd></div>
+            <div><dt data-i18n="chartItems">Elementos</dt><dd id="metric-items">0</dd></div>
+          </dl>
+          <div class="tree-navigation"><button class="button" id="previous-tree" type="button" data-i18n="previous">Anterior</button><span id="tree-position">—</span><button class="button" id="next-tree" type="button" data-i18n="next">Siguiente</button></div>
+          <div class="syntax-tree" id="syntax-tree"></div>
+          <section class="chunks-block" aria-labelledby="chunks-title"><h3 id="chunks-title" data-i18n="chunksTitle">Grupos nominales mínimos</h3><div class="chunk-list" id="chunk-list"></div></section>
+        </aside>
+      </div>
+
+      <section class="grammar-panel" aria-labelledby="grammar-title">
+        <div class="panel-heading"><div><p class="panel-label" data-i18n="grammarLabel">Reglas activas</p><h2 id="grammar-title" data-i18n="grammarTitle">Gramática y vocabulario</h2></div><span class="analysis-state" id="grammar-size">—</span></div>
+        <div class="grammar-content"><div><h3 data-i18n="productionRules">Reglas de producción</h3><div class="rule-list" id="rule-list"></div></div><div><h3 data-i18n="availableWords">Palabras disponibles</h3><div class="vocabulary-list" id="vocabulary-list"></div></div></div>
+      </section>
+    </section>
+
+    <section class="project-note" aria-labelledby="origin-title">
+      <div><p class="eyebrow" data-i18n="originLabel">Origen</p><h2 id="origin-title" data-i18n="originTitle">Proyecto de Harvard CS50 AI</h2><p data-i18n="originCopy">Adaptación bilingüe del ejercicio Parser de la unidad Language. Conserva el análisis mediante gramática libre de contexto y la extracción de grupos nominales del proyecto original.</p></div>
+      <div class="project-note__actions"><a class="button button--primary" href="https://github.com/RaulEstevezA/harvard_ai/tree/main/6-language/parser" data-i18n="viewCode">Ver código original</a><a class="button" href="../../" data-i18n="backToHub">Volver a AI Demos</a></div>
+    </section>
+  </main>
+  <script src="parser.js"></script>
+</body>
+</html>

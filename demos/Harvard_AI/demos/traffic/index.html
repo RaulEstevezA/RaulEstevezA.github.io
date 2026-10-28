@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Laboratorio visual de clasificación de señales mediante convoluciones.">
+  <title>Traffic · Clasificación visual</title>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/demo.css">
+  <link rel="stylesheet" href="traffic.css">
+</head>
+<body>
+  <header class="site-header"><a class="site-header__brand" href="https://raulesteveza.github.io">Raúl Estévez</a><div class="language-switcher" role="group" aria-label="Idioma"><button class="language-switcher__button" type="button" data-lang="en" aria-pressed="false">EN</button><button class="language-switcher__button" type="button" data-lang="es" aria-pressed="true">ES</button></div></header>
+  <main class="page-shell demo-page">
+    <nav class="breadcrumb" aria-label="Navegación secundaria"><a href="../../" data-i18n="backHub">AI Demos</a><span aria-hidden="true">/</span><span>Traffic</span></nav>
+    <section class="window demo-window" aria-labelledby="page-title">
+      <header class="demo-header"><div><p class="eyebrow" data-i18n="eyebrow">Redes neuronales · Visión</p><h1 id="page-title">Traffic</h1><p data-i18n="subtitle">Altera una señal y observa qué rasgos visuales conserva un clasificador convolucional reducido.</p></div></header>
+      <div class="traffic-layout">
+        <section class="signal-panel" aria-labelledby="signal-title">
+          <div class="panel-heading"><div><p class="panel-label" data-i18n="inputLabel">Imagen de entrada</p><h2 id="signal-title" data-i18n="signalTitle">Señal de tráfico</h2></div><span class="analysis-state">30 × 30 px</span></div>
+          <div class="signal-gallery" id="signal-gallery" role="list"></div>
+          <div class="signal-workbench"><canvas id="signal-canvas" width="30" height="30" aria-label="Processed traffic sign / Señal procesada"></canvas><div class="signal-controls"><label><span id="rotation-label" data-i18n="rotation">Rotación</span><output id="rotation-value">0°</output><input id="rotation" type="range" min="-18" max="18" value="0" aria-labelledby="rotation-label"></label><label><span id="brightness-label" data-i18n="brightness">Brillo</span><output id="brightness-value">100%</output><input id="brightness" type="range" min="55" max="125" value="100" aria-labelledby="brightness-label"></label><label><span id="noise-label" data-i18n="noise">Ruido</span><output id="noise-value">0%</output><input id="noise" type="range" min="0" max="30" value="0" aria-labelledby="noise-label"></label><button class="button" id="reset-image" type="button" data-i18n="reset">Reiniciar imagen</button></div></div>
+          <div class="pipeline-note" role="note"><strong data-i18n="pipelineTitle">Adaptación para navegador</strong><p data-i18n="pipelineCopy">El ejercicio original entrena una CNN con 43 categorías. Esta muestra utiliza ocho señales sintéticas y clasifica sus rasgos convolucionales por similitud, sin descargar el dataset ni un modelo pesado.</p></div>
+        </section>
+        <aside class="classification-panel" aria-labelledby="prediction-title">
+          <div class="panel-heading"><div><p class="panel-label" data-i18n="predictionLabel">Resultado</p><h2 id="prediction-title" data-i18n="predictionTitle">Predicción visual</h2></div><span class="analysis-state" id="confidence-state">—</span></div>
+          <div class="prediction-card" id="prediction-card" aria-live="polite"></div>
+          <div class="ranking" id="ranking"></div>
+          <section class="feature-section" aria-labelledby="features-title"><div class="feature-heading"><div><h3 id="features-title" data-i18n="featuresTitle">Mapas de características</h3><p data-i18n="featuresCopy">Cada filtro 3×3 resalta un patrón distinto antes de agrupar la información.</p></div><span id="feature-count">4 filtros</span></div><div class="feature-maps" id="feature-maps"></div></section>
+        </aside>
+      </div>
+      <section class="architecture-panel" aria-labelledby="architecture-title"><div class="panel-heading"><div><p class="panel-label" data-i18n="processLabel">Proceso</p><h2 id="architecture-title" data-i18n="architectureTitle">Del píxel a la categoría</h2></div></div><div class="architecture" id="architecture"></div></section>
+    </section>
+    <section class="project-note" aria-labelledby="origin-title"><div><p class="eyebrow" data-i18n="originLabel">Origen</p><h2 id="origin-title" data-i18n="originTitle">Proyecto de Harvard CS50 AI</h2><p data-i18n="originCopy">Reinterpretación del ejercicio Traffic de la unidad Neural Networks. Conserva la entrada de 30×30 píxeles y hace visibles las convoluciones, pero sustituye la CNN entrenada y sus 43 clases por un clasificador reducido ejecutable en el navegador.</p></div><div class="project-note__actions"><a class="button button--primary" href="https://github.com/RaulEstevezA/harvard_ai/tree/main/5-neural_networks/traffic" data-i18n="viewCode">Ver código original</a><a class="button" href="../../" data-i18n="backToHub">Volver a AI Demos</a></div></section>
+  </main>
+  <script src="traffic.js"></script>
+</body>
+</html>

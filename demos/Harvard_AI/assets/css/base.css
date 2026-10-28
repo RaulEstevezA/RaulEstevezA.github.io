@@ -1,0 +1,121 @@
+* { box-sizing: border-box; }
+
+html { color-scheme: dark; }
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--text);
+  font: 16px/1.5 var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input, select { font: inherit; }
+a { color: var(--accent); }
+a:hover { color: var(--accent-text); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.site-header,
+.page-shell {
+  width: min(1100px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.site-header {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.site-header__brand {
+  color: var(--text);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.language-switcher {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.language-switcher__button {
+  padding: 2px 6px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.language-switcher__button[aria-pressed="true"] {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.language-switcher__button:hover { color: var(--text); }
+
+.window {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-window);
+  box-shadow: var(--window-shadow);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent-text);
+  font: 600 0.75rem/1.5 var(--font-mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+h1, h2, h3, h4, p { margin-top: 0; }
+
+.button {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-button);
+  background: var(--surface-raised);
+  color: var(--btn-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.button:hover {
+  border-color: var(--muted);
+  color: var(--text);
+}
+
+.button--primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.button--primary:hover {
+  background: var(--accent-text);
+  border-color: var(--accent-text);
+  color: var(--on-accent);
+}
+
+@media (max-width: 768px) {
+  .site-header, .page-shell { width: min(100% - 32px, 1100px); }
+  .site-header { min-height: 64px; }
+}
