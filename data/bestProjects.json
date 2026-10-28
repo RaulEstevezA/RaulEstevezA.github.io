@@ -379,7 +379,8 @@
         "img/hardvard_ia/minesweeper.webp"
       ],
       "links": [
-        { "type": "github", "url": "https://github.com/RaulEstevezA/harvard_ai" }
+        { "type": "github", "url": "https://github.com/RaulEstevezA/harvard_ai" },
+        { "type": "live_demo", "url": "/demos/Harvard_AI/" }
       ]
     },
     {
