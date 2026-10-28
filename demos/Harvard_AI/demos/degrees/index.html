@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demo interactiva de búsqueda en anchura aplicada a conexiones entre actores.">
+  <title>Degrees · Breadth-First Search</title>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/demo.css">
+  <link rel="stylesheet" href="degrees.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-header__brand" href="https://raulesteveza.github.io">Raúl Estévez</a>
+    <div class="language-switcher" role="group" aria-label="Idioma">
+      <button class="language-switcher__button" type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button class="language-switcher__button" type="button" data-lang="es" aria-pressed="true">ES</button>
+    </div>
+  </header>
+
+  <main class="page-shell demo-page">
+    <nav class="breadcrumb" aria-label="Navegación secundaria">
+      <a href="../../" data-i18n="backHub">AI Demos</a><span aria-hidden="true">/</span><span>Degrees</span>
+    </nav>
+
+    <section class="window demo-window" aria-labelledby="page-title">
+      <header class="demo-header">
+        <div>
+          <p class="eyebrow" data-i18n="eyebrow">Búsqueda · Grafos</p>
+          <h1 id="page-title">Degrees</h1>
+          <p data-i18n="subtitle">Encuentra la cadena más corta entre dos actores y observa cómo la búsqueda en anchura explora el grafo.</p>
+        </div>
+      </header>
+
+      <div class="degrees-layout">
+        <section class="search-panel" aria-labelledby="search-title">
+          <div class="panel-heading">
+            <div><p class="panel-label" data-i18n="queryLabel">Consulta</p><h2 id="search-title" data-i18n="queryTitle">Conectar actores</h2></div>
+            <button class="button" id="swap-people" type="button" data-i18n="swap">Intercambiar</button>
+          </div>
+
+          <div class="person-selectors">
+            <label><span data-i18n="source">Origen</span><select id="source-person"></select></label>
+            <label><span data-i18n="target">Destino</span><select id="target-person"></select></label>
+          </div>
+
+          <div class="preset-block">
+            <span data-i18n="examples">Ejemplos</span>
+            <div id="preset-list"></div>
+          </div>
+
+          <div class="degrees-status" id="degrees-status" role="status" aria-live="polite"></div>
+
+          <div class="search-actions">
+            <button class="button button--primary" id="search-step" type="button" data-i18n="nextStep">Siguiente paso</button>
+            <button class="button" id="search-run" type="button" data-i18n="findPath">Buscar camino</button>
+            <button class="button" id="search-reset" type="button" data-i18n="reset">Reiniciar</button>
+          </div>
+
+          <dl class="degrees-metrics">
+            <div><dt data-i18n="frontier">Frontera</dt><dd id="metric-frontier">1</dd></div>
+            <div><dt data-i18n="explored">Explorados</dt><dd id="metric-explored">0</dd></div>
+            <div><dt data-i18n="steps">Pasos</dt><dd id="metric-steps">0</dd></div>
+            <div><dt data-i18n="depth">Profundidad</dt><dd id="metric-depth">0</dd></div>
+          </dl>
+
+          <div class="algorithm-note" role="note">
+            <strong data-i18n="howTitle">Cómo busca</strong>
+            <p data-i18n="howCopy">BFS utiliza una cola FIFO: explora primero todas las conexiones a una película de distancia, después las de dos y así sucesivamente. Por eso el primer camino encontrado es el más corto.</p>
+          </div>
+        </section>
+
+        <aside class="search-state" aria-labelledby="state-title">
+          <div class="panel-heading">
+            <div><p class="panel-label" data-i18n="stateLabel">Ejecución</p><h2 id="state-title" data-i18n="stateTitle">Estado de la búsqueda</h2></div>
+            <span class="analysis-state" id="search-state-badge">BFS</span>
+          </div>
+
+          <section class="state-block" aria-labelledby="frontier-title">
+            <div class="state-heading"><h3 id="frontier-title" data-i18n="frontierQueue">Cola de frontera</h3><span id="frontier-count">1</span></div>
+            <div class="chip-list" id="frontier-list"></div>
+          </section>
+
+          <section class="state-block" aria-labelledby="explored-title">
+            <div class="state-heading"><h3 id="explored-title" data-i18n="exploredPeople">Personas exploradas</h3><span id="explored-count">0</span></div>
+            <div class="chip-list" id="explored-list"></div>
+          </section>
+
+          <section class="state-block" aria-labelledby="log-title">
+            <div class="state-heading"><h3 id="log-title" data-i18n="searchLog">Registro de búsqueda</h3></div>
+            <div class="search-log" id="search-log"></div>
+          </section>
+        </aside>
+      </div>
+
+      <section class="path-panel" aria-labelledby="path-title">
+        <div class="panel-heading"><div><p class="panel-label" data-i18n="resultLabel">Resultado</p><h2 id="path-title" data-i18n="pathTitle">Camino más corto</h2></div><span class="analysis-state" id="degrees-result">—</span></div>
+        <div class="path-result" id="path-result"></div>
+      </section>
+
+      <section class="corpus-panel" aria-labelledby="corpus-title">
+        <div class="panel-heading"><div><p class="panel-label" data-i18n="datasetLabel">Grafo seleccionado</p><h2 id="corpus-title" data-i18n="datasetTitle">Películas y reparto</h2></div><span class="analysis-state" data-i18n="datasetSize">101 actores · 120 películas</span></div>
+        <p class="corpus-copy" data-i18n="datasetCopy">Selección ligera creada a partir del conjunto grande del curso. Aquí se muestra una muestra de las películas con más actores seleccionados.</p>
+        <div class="movie-grid" id="movie-grid"></div>
+      </section>
+    </section>
+
+    <section class="project-note" aria-labelledby="origin-title">
+      <div><p class="eyebrow" data-i18n="originLabel">Origen</p><h2 id="origin-title" data-i18n="originTitle">Proyecto de Harvard CS50 AI</h2><p data-i18n="originCopy">Adaptación del ejercicio Degrees de la unidad Search. Usa una selección optimizada del conjunto grande original y reproduce con una cola FIFO la búsqueda en anchura implementada en Python.</p></div>
+      <div class="project-note__actions"><a class="button button--primary" href="https://github.com/RaulEstevezA/harvard_ai/tree/main/0-search/degrees" data-i18n="viewCode">Ver código original</a><a class="button" href="../../" data-i18n="backToHub">Volver a AI Demos</a></div>
+    </section>
+  </main>
+  <script src="degrees-data.js"></script>
+  <script src="degrees.js"></script>
+</body>
+</html>

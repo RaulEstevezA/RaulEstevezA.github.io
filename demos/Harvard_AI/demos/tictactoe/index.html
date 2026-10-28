@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demo interactiva de Minimax aplicada al tres en raya.">
+  <title>Tic-Tac-Toe · Minimax</title>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/demo.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-header__brand" href="https://raulesteveza.github.io">Raúl Estévez</a>
+    <div class="language-switcher" role="group" aria-label="Idioma">
+      <button class="language-switcher__button" type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button class="language-switcher__button" type="button" data-lang="es" aria-pressed="true">ES</button>
+    </div>
+  </header>
+
+  <main class="page-shell demo-page">
+    <nav class="breadcrumb" aria-label="Navegación secundaria">
+      <a href="../../" data-i18n="backHub">AI Demos</a><span aria-hidden="true">/</span><span>Tic-Tac-Toe</span>
+    </nav>
+
+    <section class="window demo-window" aria-labelledby="page-title">
+      <header class="demo-header">
+        <div>
+          <p class="eyebrow" data-i18n="eyebrow">Búsqueda adversarial · Minimax</p>
+          <h1 id="page-title">Tic-Tac-Toe</h1>
+          <p data-i18n="subtitle">Juega contra un agente óptimo y observa cómo evalúa todos los futuros posibles antes de mover.</p>
+        </div>
+      </header>
+
+      <div class="demo-layout">
+        <section class="game-panel" aria-labelledby="game-title">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-label" data-i18n="gameLabel">Partida</p>
+              <h2 id="game-title" data-i18n="chooseSide">Elige tu lado</h2>
+            </div>
+            <button class="button" id="new-game" type="button" data-i18n="newGame">Nueva partida</button>
+          </div>
+
+          <div class="side-selector" role="group" aria-label="Elige tu ficha">
+            <button type="button" data-side="X" aria-pressed="true"><span>X</span><small data-i18n="playFirst">Juegas primero</small></button>
+            <button type="button" data-side="O" aria-pressed="false"><span>O</span><small data-i18n="aiFirst">La IA juega primero</small></button>
+          </div>
+
+          <div class="game-status" id="game-status" role="status" aria-live="polite"></div>
+
+          <div class="board" id="board" role="group" aria-label="Tablero de tres en raya">
+            <button type="button" data-cell="0" aria-label="Fila 1, columna 1"></button>
+            <button type="button" data-cell="1" aria-label="Fila 1, columna 2"></button>
+            <button type="button" data-cell="2" aria-label="Fila 1, columna 3"></button>
+            <button type="button" data-cell="3" aria-label="Fila 2, columna 1"></button>
+            <button type="button" data-cell="4" aria-label="Fila 2, columna 2"></button>
+            <button type="button" data-cell="5" aria-label="Fila 2, columna 3"></button>
+            <button type="button" data-cell="6" aria-label="Fila 3, columna 1"></button>
+            <button type="button" data-cell="7" aria-label="Fila 3, columna 2"></button>
+            <button type="button" data-cell="8" aria-label="Fila 3, columna 3"></button>
+          </div>
+
+          <p class="game-note" data-i18n="gameNote">Minimax juega de forma óptima. Si tú también lo haces, la partida terminará en empate.</p>
+        </section>
+
+        <aside class="analysis-panel" aria-labelledby="analysis-title">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-label" data-i18n="analysisLabel">Última decisión</p>
+              <h2 id="analysis-title" data-i18n="analysisTitle">Análisis de Minimax</h2>
+            </div>
+            <span class="analysis-state" id="analysis-state" data-i18n="waiting">Esperando</span>
+          </div>
+
+          <dl class="metrics">
+            <div><dt data-i18n="availableMoves">Movimientos disponibles</dt><dd id="metric-moves">9</dd></div>
+            <div><dt data-i18n="positions">Posiciones evaluadas</dt><dd id="metric-positions">0</dd></div>
+            <div><dt data-i18n="depth">Profundidad máxima</dt><dd id="metric-depth">0</dd></div>
+            <div><dt data-i18n="time">Tiempo de cálculo</dt><dd id="metric-time">—</dd></div>
+            <div><dt data-i18n="selectedMove">Movimiento elegido</dt><dd id="metric-selected">—</dd></div>
+            <div><dt data-i18n="evaluation">Evaluación</dt><dd id="metric-evaluation">—</dd></div>
+          </dl>
+
+          <div class="candidate-section">
+            <div class="candidate-section__heading">
+              <h3 data-i18n="candidateMoves">Movimientos candidatos</h3>
+              <span data-i18n="aiPerspective">desde la perspectiva de la IA</span>
+            </div>
+            <div class="candidate-list" id="candidate-list">
+              <p class="empty-state" data-i18n="emptyAnalysis">Los movimientos aparecerán aquí después de que juegue la IA.</p>
+            </div>
+          </div>
+
+          <div class="algorithm-note" role="note">
+            <strong data-i18n="howTitle">Cómo decide</strong>
+            <p data-i18n="howCopy">Minimax recorre el árbol de juego hasta estados terminales. La IA elige el movimiento que maximiza su resultado suponiendo que su rival también juega de forma óptima.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="project-note" aria-labelledby="origin-title">
+      <div>
+        <p class="eyebrow" data-i18n="originLabel">Origen</p>
+        <h2 id="origin-title" data-i18n="originTitle">Proyecto de Harvard CS50 AI</h2>
+        <p data-i18n="originCopy">Adaptación interactiva del ejercicio Tic-Tac-Toe realizado durante Harvard CS50's Introduction to Artificial Intelligence with Python. La lógica original se implementó en Python; esta demo la reproduce en JavaScript para ejecutarla en el navegador.</p>
+      </div>
+      <div class="project-note__actions">
+        <a class="button button--primary" href="https://github.com/RaulEstevezA/harvard_ai/tree/main/0-search/tictactoe" data-i18n="viewCode">Ver código original</a>
+        <a class="button" href="../../" data-i18n="backToHub">Volver a AI Demos</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="tictactoe.js"></script>
+</body>
+</html>

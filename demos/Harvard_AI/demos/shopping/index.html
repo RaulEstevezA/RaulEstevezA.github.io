@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demo interactiva de clasificación de sesiones de compra mediante k-NN.">
+  <title>Shopping · k-Nearest Neighbors</title>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/demo.css">
+  <link rel="stylesheet" href="shopping.css">
+</head>
+<body>
+  <header class="site-header"><a class="site-header__brand" href="https://raulesteveza.github.io">Raúl Estévez</a><div class="language-switcher" role="group" aria-label="Idioma"><button class="language-switcher__button" type="button" data-lang="en" aria-pressed="false">EN</button><button class="language-switcher__button" type="button" data-lang="es" aria-pressed="true">ES</button></div></header>
+  <main class="page-shell demo-page">
+    <nav class="breadcrumb" aria-label="Navegación secundaria"><a href="../../" data-i18n="backHub">AI Demos</a><span aria-hidden="true">/</span><span>Shopping</span></nav>
+    <section class="window demo-window" aria-labelledby="page-title">
+      <header class="demo-header"><div><p class="eyebrow" data-i18n="eyebrow">Aprendizaje · Clasificación</p><h1 id="page-title">Shopping</h1><p data-i18n="subtitle">Configura una sesión de comercio electrónico y observa cómo sus vecinos más cercanos determinan si terminará en compra.</p></div></header>
+      <div class="shopping-layout">
+        <section class="session-panel" aria-labelledby="session-title">
+          <div class="panel-heading"><div><p class="panel-label" data-i18n="sessionLabel">Datos de entrada</p><h2 id="session-title" data-i18n="sessionTitle">Sesión de navegación</h2></div><button class="button" id="reset-session" type="button" data-i18n="reset">Reiniciar</button></div>
+          <div class="preset-block"><span data-i18n="examples">Ejemplos</span><div id="preset-list"></div></div>
+          <div class="feature-groups" id="feature-groups"></div>
+          <div class="algorithm-note" role="note"><strong data-i18n="distanceTitle">Distancia entre sesiones</strong><p data-i18n="distanceCopy">Como en el ejercicio original, k-NN compara directamente las 17 variables sin normalizarlas. Las duraciones y los recuentos altos pueden influir más en la distancia euclídea.</p></div>
+        </section>
+        <aside class="prediction-panel" aria-labelledby="prediction-title">
+          <div class="panel-heading"><div><p class="panel-label" data-i18n="predictionLabel">Clasificación</p><h2 id="prediction-title" data-i18n="predictionTitle">Predicción del modelo</h2></div><span class="analysis-state" id="prediction-state">k = 1</span></div>
+          <div class="k-control"><span data-i18n="neighbors">Número de vecinos</span><div><button type="button" data-k="1" aria-pressed="true">1</button><button type="button" data-k="3" aria-pressed="false">3</button><button type="button" data-k="5" aria-pressed="false">5</button></div><small data-i18n="originalK">El proyecto original utiliza k = 1.</small></div>
+          <div class="purchase-result" id="purchase-result" role="status" aria-live="polite"></div>
+          <p class="session-feedback" id="session-feedback" aria-live="polite"></p>
+          <dl class="prediction-metrics"><div><dt data-i18n="votes">Votos de compra</dt><dd id="metric-votes">—</dd></div><div><dt data-i18n="nearestDistance">Distancia mínima</dt><dd id="metric-distance">—</dd></div><div><dt data-i18n="modifiedFields">Campos modificados</dt><dd id="metric-modified">—</dd></div><div><dt data-i18n="trainingRows">Entrenamiento</dt><dd id="metric-training">—</dd></div></dl>
+          <section class="neighbor-block" aria-labelledby="neighbor-title"><h3 id="neighbor-title" data-i18n="neighborTitle">Vecinos más cercanos</h3><div class="neighbor-list" id="neighbor-list"></div></section>
+          <section class="contribution-block" aria-labelledby="contribution-title"><h3 id="contribution-title" data-i18n="contributionTitle">Variables que más separan al vecino</h3><div class="contribution-list" id="contribution-list"></div></section>
+        </aside>
+      </div>
+      <section class="evaluation-panel" aria-labelledby="evaluation-title">
+        <div class="panel-heading"><div><p class="panel-label" data-i18n="evaluationLabel">Conjunto de prueba</p><h2 id="evaluation-title" data-i18n="evaluationTitle">Evaluación del clasificador</h2></div><span class="analysis-state" id="evaluation-size">—</span></div>
+        <p class="evaluation-copy" data-i18n="evaluationCopy">Estas métricas evalúan el modelo completo: cambian al elegir otro valor de k, no al editar una sesión.</p>
+        <div class="evaluation-grid"><dl class="score-list"><div><dt data-i18n="accuracy">Acierto</dt><dd id="score-accuracy">—</dd></div><div><dt data-i18n="sensitivity">Sensibilidad</dt><dd id="score-sensitivity">—</dd></div><div><dt data-i18n="specificity">Especificidad</dt><dd id="score-specificity">—</dd></div></dl><div class="confusion-matrix" id="confusion-matrix"></div><div class="dataset-summary" id="dataset-summary"></div></div>
+      </section>
+    </section>
+    <section class="project-note" aria-labelledby="origin-title"><div><p class="eyebrow" data-i18n="originLabel">Origen</p><h2 id="origin-title" data-i18n="originTitle">Proyecto de Harvard CS50 AI</h2><p data-i18n="originCopy">Adaptación del ejercicio Shopping de la unidad Learning. Mantiene las 17 variables, el clasificador k-NN y las métricas de sensibilidad y especificidad de la implementación original.</p></div><div class="project-note__actions"><a class="button button--primary" href="https://github.com/RaulEstevezA/harvard_ai/tree/main/4-learning/shopping" data-i18n="viewCode">Ver código original</a><a class="button" href="../../" data-i18n="backToHub">Volver a AI Demos</a></div></section>
+  </main>
+  <script src="shopping-data.js"></script><script src="shopping.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demo interactiva de inferencia genética mediante probabilidad conjunta.">
+  <title>Heredity · Probabilistic Inference</title>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/demo.css">
+  <link rel="stylesheet" href="heredity.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-header__brand" href="https://raulesteveza.github.io">Raúl Estévez</a>
+    <div class="language-switcher" role="group" aria-label="Idioma">
+      <button class="language-switcher__button" type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button class="language-switcher__button" type="button" data-lang="es" aria-pressed="true">ES</button>
+    </div>
+  </header>
+
+  <main class="page-shell demo-page">
+    <nav class="breadcrumb" aria-label="Navegación secundaria"><a href="../../" data-i18n="backHub">AI Demos</a><span aria-hidden="true">/</span><span>Heredity</span></nav>
+
+    <section class="window demo-window" aria-labelledby="page-title">
+      <header class="demo-header">
+        <div><p class="eyebrow" data-i18n="eyebrow">Probabilidad · Inferencia</p><h1 id="page-title">Heredity</h1><p data-i18n="subtitle">Observa cómo la evidencia familiar modifica la probabilidad de heredar un gen y manifestar un rasgo.</p></div>
+      </header>
+
+      <div class="heredity-layout">
+        <section class="family-panel" aria-labelledby="family-title">
+          <div class="panel-heading"><div><p class="panel-label" data-i18n="familyLabel">Datos familiares</p><h2 id="family-title" data-i18n="familyTitle">Familia y evidencia</h2></div><button class="button" id="reset-evidence" type="button" data-i18n="reset">Reiniciar</button></div>
+          <div class="family-tabs" id="family-tabs" role="tablist" aria-label="Familias"></div>
+          <p class="family-copy" data-i18n="familyCopy">Cambia la evidencia conocida de cualquier persona. Las probabilidades se recalculan usando todas las combinaciones compatibles.</p>
+          <div class="family-tree" id="family-tree"></div>
+
+          <div class="heredity-actions">
+            <button class="button button--primary" id="calculate" type="button" data-i18n="calculate">Calcular probabilidades</button>
+          </div>
+
+          <div class="algorithm-note" role="note"><strong data-i18n="howTitle">Cómo se calcula</strong><p data-i18n="howCopy">El algoritmo enumera las posibles copias del gen y la presencia del rasgo, descarta los mundos incompatibles con la evidencia y normaliza la probabilidad conjunta restante.</p></div>
+        </section>
+
+        <aside class="inference-panel" aria-labelledby="inference-title">
+          <div class="panel-heading"><div><p class="panel-label" data-i18n="inferenceLabel">Distribución posterior</p><h2 id="inference-title" data-i18n="inferenceTitle">Resultados</h2></div><span class="analysis-state" id="inference-state">Calculado</span></div>
+          <div class="inference-status" id="inference-status" role="status" aria-live="polite"></div>
+          <dl class="inference-metrics">
+            <div><dt data-i18n="people">Personas</dt><dd id="metric-people">0</dd></div>
+            <div><dt data-i18n="evidence">Evidencias</dt><dd id="metric-evidence">0</dd></div>
+            <div><dt data-i18n="worlds">Mundos válidos</dt><dd id="metric-worlds">0</dd></div>
+            <div><dt data-i18n="mutation">Mutación</dt><dd>1%</dd></div>
+          </dl>
+          <div class="probability-grid" id="probability-grid"></div>
+        </aside>
+      </div>
+
+      <section class="worlds-panel" aria-labelledby="worlds-title">
+        <div class="panel-heading"><div><p class="panel-label" data-i18n="worldsLabel">Hipótesis</p><h2 id="worlds-title" data-i18n="worldsTitle">Mundos más probables</h2></div><span class="analysis-state" data-i18n="posteriorProbability">Probabilidad posterior</span></div>
+        <p class="worlds-copy" data-i18n="worldsCopy">Cada mundo asigna a toda la familia una cantidad de copias del gen y un estado del rasgo.</p>
+        <div class="world-list" id="world-list"></div>
+      </section>
+    </section>
+
+    <section class="project-note" aria-labelledby="origin-title">
+      <div><p class="eyebrow" data-i18n="originLabel">Origen</p><h2 id="origin-title" data-i18n="originTitle">Proyecto de Harvard CS50 AI</h2><p data-i18n="originCopy">Adaptación del ejercicio Heredity de la unidad Uncertainty. Conserva las probabilidades, la tasa de mutación y la enumeración exhaustiva de la implementación original en Python.</p></div>
+      <div class="project-note__actions"><a class="button button--primary" href="https://github.com/RaulEstevezA/harvard_ai/tree/main/2-uncertainty/heredity" data-i18n="viewCode">Ver código original</a><a class="button" href="../../" data-i18n="backToHub">Volver a AI Demos</a></div>
+    </section>
+  </main>
+  <script src="heredity.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demo interactiva de inferencia lógica aplicada al Buscaminas.">
+  <title>Minesweeper AI · Knowledge</title>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/demo.css">
+  <link rel="stylesheet" href="minesweeper.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-header__brand" href="https://raulesteveza.github.io">Raúl Estévez</a>
+    <div class="language-switcher" role="group" aria-label="Idioma">
+      <button class="language-switcher__button" type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button class="language-switcher__button" type="button" data-lang="es" aria-pressed="true">ES</button>
+    </div>
+  </header>
+
+  <main class="page-shell demo-page">
+    <nav class="breadcrumb" aria-label="Navegación secundaria">
+      <a href="../../" data-i18n="backHub">AI Demos</a><span aria-hidden="true">/</span><span>Minesweeper AI</span>
+    </nav>
+
+    <section class="window demo-window" aria-labelledby="page-title">
+      <header class="demo-header">
+        <div>
+          <p class="eyebrow" data-i18n="eyebrow">Conocimiento · Inferencia lógica</p>
+          <h1 id="page-title">Minesweeper AI</h1>
+          <p data-i18n="subtitle">Observa cómo un agente transforma pistas locales en una base de conocimiento y deduce movimientos seguros.</p>
+        </div>
+      </header>
+
+      <div class="mine-layout">
+        <section class="mine-game" aria-labelledby="board-title">
+          <div class="panel-heading">
+            <div><p class="panel-label" data-i18n="boardLabel">Tablero</p><h2 id="board-title" data-i18n="boardTitle">8 × 8 · 8 minas</h2></div>
+            <div class="board-actions"><span class="analysis-state" id="board-number">—</span><button class="button" id="new-board" type="button" data-i18n="newBoard">Nuevo tablero</button></div>
+          </div>
+          <div class="mine-status" id="mine-status" role="status" aria-live="polite"></div>
+          <div class="mine-board" id="mine-board" role="group" aria-label="Tablero de Buscaminas"></div>
+          <div class="mine-actions">
+            <button class="button button--primary" id="ai-step" type="button" data-i18n="aiStep">Siguiente movimiento de la IA</button>
+            <button class="button" id="ai-run" type="button" data-i18n="aiRun">Resolver automáticamente</button>
+          </div>
+          <div class="mine-legend" aria-label="Leyenda">
+            <span><i class="legend-safe"></i><span data-i18n="safe">Segura</span></span>
+            <span><i class="legend-mine"></i><span data-i18n="mine">Mina deducida</span></span>
+            <span><i class="legend-unknown"></i><span data-i18n="unknown">Desconocida</span></span>
+          </div>
+        </section>
+
+        <aside class="knowledge-panel" aria-labelledby="knowledge-title">
+          <div class="panel-heading">
+            <div><p class="panel-label" data-i18n="reasoningLabel">Razonamiento</p><h2 id="knowledge-title" data-i18n="knowledgeTitle">Base de conocimiento</h2></div>
+            <span class="analysis-state" id="move-type">—</span>
+          </div>
+          <dl class="mine-metrics">
+            <div><dt data-i18n="moves">Movimientos</dt><dd id="metric-moves">0</dd></div>
+            <div><dt data-i18n="knownSafes">Seguras conocidas</dt><dd id="metric-safes">0</dd></div>
+            <div><dt data-i18n="knownMines">Minas deducidas</dt><dd id="metric-mines">0</dd></div>
+            <div><dt data-i18n="sentences">Frases activas</dt><dd id="metric-sentences">0</dd></div>
+          </dl>
+          <section class="knowledge-block" aria-labelledby="sentences-title">
+            <h3 id="sentences-title" data-i18n="sentencesTitle">Frases lógicas</h3>
+            <div class="sentence-list" id="sentence-list"></div>
+          </section>
+          <section class="knowledge-block" aria-labelledby="log-title">
+            <h3 id="log-title" data-i18n="logTitle">Última inferencia</h3>
+            <div class="inference-log" id="inference-log"></div>
+          </section>
+          <div class="algorithm-note" role="note">
+            <strong data-i18n="howTitle">Cómo razona</strong>
+            <p data-i18n="howCopy">Cada pista crea una frase del tipo «estas celdas contienen N minas». Si una frase es subconjunto de otra, la IA resta ambas para obtener conocimiento nuevo.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="project-note" aria-labelledby="origin-title">
+      <div><p class="eyebrow" data-i18n="originLabel">Origen</p><h2 id="origin-title" data-i18n="originTitle">Proyecto de Harvard CS50 AI</h2><p data-i18n="originCopy">Adaptación interactiva del ejercicio Minesweeper de la unidad Knowledge. Reproduce en JavaScript la representación de frases, celdas seguras, minas y deducción por subconjuntos de la implementación original en Python.</p></div>
+      <div class="project-note__actions"><a class="button button--primary" href="https://github.com/RaulEstevezA/harvard_ai/tree/main/1-knowledge/minesweeper" data-i18n="viewCode">Ver código original</a><a class="button" href="../../" data-i18n="backToHub">Volver a AI Demos</a></div>
+    </section>
+  </main>
+  <script src="minesweeper.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demo interactiva de PageRank mediante muestreo e iteración.">
+  <title>PageRank · Probability</title>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/demo.css">
+  <link rel="stylesheet" href="pagerank.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-header__brand" href="https://raulesteveza.github.io">Raúl Estévez</a>
+    <div class="language-switcher" role="group" aria-label="Idioma">
+      <button class="language-switcher__button" type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button class="language-switcher__button" type="button" data-lang="es" aria-pressed="true">ES</button>
+    </div>
+  </header>
+
+  <main class="page-shell demo-page">
+    <nav class="breadcrumb" aria-label="Navegación secundaria"><a href="../../" data-i18n="backHub">AI Demos</a><span aria-hidden="true">/</span><span>PageRank</span></nav>
+
+    <section class="window demo-window" aria-labelledby="page-title">
+      <header class="demo-header">
+        <div><p class="eyebrow" data-i18n="eyebrow">Probabilidad · Grafos</p><h1 id="page-title">PageRank</h1><p data-i18n="subtitle">Compara un navegante aleatorio con el cálculo iterativo y observa cómo la estructura de enlaces determina la importancia de cada página.</p></div>
+      </header>
+
+      <div class="pagerank-layout">
+        <section class="corpus-panel" aria-labelledby="corpus-title">
+          <div class="panel-heading"><div><p class="panel-label" data-i18n="corpusLabel">Red de páginas</p><h2 id="corpus-title" data-i18n="corpusTitle">Corpus</h2></div><button class="button" id="reset" type="button" data-i18n="reset">Reiniciar</button></div>
+          <div class="corpus-tabs" id="corpus-tabs" role="tablist" aria-label="Corpus"></div>
+          <div class="page-graph" id="page-graph"></div>
+
+          <div class="rank-controls">
+            <label><span><span data-i18n="damping">Factor de amortiguación</span><strong id="damping-value">0.85</strong></span><input id="damping" type="range" min="0.50" max="0.95" step="0.05" value="0.85"></label>
+            <label><span data-i18n="samples">Muestras</span><select id="sample-count"><option value="1000">1.000</option><option value="5000">5.000</option><option value="10000" selected>10.000</option><option value="25000">25.000</option></select></label>
+          </div>
+
+          <div class="pagerank-actions">
+            <button class="button button--primary" id="run-sampling" type="button" data-i18n="runSampling">Ejecutar muestreo</button>
+            <button class="button" id="iteration-step" type="button" data-i18n="nextIteration">Siguiente iteración</button>
+            <button class="button" id="iteration-run" type="button" data-i18n="runIteration">Iterar hasta converger</button>
+          </div>
+
+          <div class="algorithm-note" role="note"><strong data-i18n="howTitle">Cómo funciona</strong><p data-i18n="howCopy">El muestreo simula visitas siguiendo enlaces con probabilidad d y saltos aleatorios con probabilidad 1−d. La iteración redistribuye PageRank hasta que ninguna página cambia más de 0.001.</p></div>
+        </section>
+
+        <aside class="results-panel" aria-labelledby="results-title">
+          <div class="panel-heading"><div><p class="panel-label" data-i18n="resultsLabel">Comparación</p><h2 id="results-title" data-i18n="resultsTitle">Resultados de PageRank</h2></div><span class="analysis-state" id="rank-state">Listo</span></div>
+          <div class="pagerank-status" id="pagerank-status" role="status" aria-live="polite"></div>
+          <dl class="rank-metrics">
+            <div><dt data-i18n="iteration">Iteración</dt><dd id="metric-iteration">0</dd></div>
+            <div><dt data-i18n="maxChange">Cambio máximo</dt><dd id="metric-diff">—</dd></div>
+            <div><dt data-i18n="visitedSamples">Muestras</dt><dd id="metric-samples">0</dd></div>
+            <div><dt data-i18n="rankSum">Suma</dt><dd id="metric-sum">1.000</dd></div>
+          </dl>
+
+          <section class="ranking-block" aria-labelledby="ranking-title">
+            <div class="ranking-heading"><h3 id="ranking-title" data-i18n="ranking">Ranking de páginas</h3><div><span class="legend-sample" data-i18n="sampling">Muestreo</span><span class="legend-iteration" data-i18n="iterative">Iterativo</span></div></div>
+            <div class="rank-list" id="rank-list"></div>
+          </section>
+
+          <section class="transition-block" aria-labelledby="transition-title">
+            <div class="ranking-heading"><h3 id="transition-title" data-i18n="transitionTitle">Modelo de transición</h3><span id="transition-page">—</span></div>
+            <p data-i18n="transitionCopy">Selecciona una página del grafo para ver la probabilidad de la próxima visita.</p>
+            <div class="transition-list" id="transition-list"></div>
+          </section>
+
+          <section class="history-block" aria-labelledby="history-title"><h3 id="history-title" data-i18n="historyTitle">Convergencia iterativa</h3><div class="iteration-history" id="iteration-history"></div></section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="project-note" aria-labelledby="origin-title">
+      <div><p class="eyebrow" data-i18n="originLabel">Origen</p><h2 id="origin-title" data-i18n="originTitle">Proyecto de Harvard CS50 AI</h2><p data-i18n="originCopy">Adaptación del ejercicio PageRank de la unidad Uncertainty. Reproduce el modelo de transición, el muestreo y la convergencia iterativa de la implementación original en Python.</p></div>
+      <div class="project-note__actions"><a class="button button--primary" href="https://github.com/RaulEstevezA/harvard_ai/tree/main/2-uncertainty/pagerank" data-i18n="viewCode">Ver código original</a><a class="button" href="../../" data-i18n="backToHub">Volver a AI Demos</a></div>
+    </section>
+  </main>
+  <script src="pagerank.js"></script>
+</body>
+</html>

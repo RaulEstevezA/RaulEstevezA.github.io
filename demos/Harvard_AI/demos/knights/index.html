@@ -1,0 +1,31 @@
+<!doctype html><html lang="es"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demo interactiva de lógica proposicional y comprobación de modelos."><title>Knights and Knaves · Logic</title>
+  <link rel="stylesheet" href="../../assets/css/tokens.css"><link rel="stylesheet" href="../../assets/css/base.css"><link rel="stylesheet" href="../../assets/css/demo.css"><link rel="stylesheet" href="knights.css">
+</head><body>
+  <header class="site-header"><a class="site-header__brand" href="https://raulesteveza.github.io">Raúl Estévez</a><div class="language-switcher" role="group" aria-label="Idioma"><button class="language-switcher__button" type="button" data-lang="en" aria-pressed="false">EN</button><button class="language-switcher__button" type="button" data-lang="es" aria-pressed="true">ES</button></div></header>
+  <main class="page-shell demo-page">
+    <nav class="breadcrumb" aria-label="Navegación secundaria"><a href="../../">AI Demos</a><span>/</span><span>Knights and Knaves</span></nav>
+    <section class="window demo-window" aria-labelledby="page-title">
+      <header class="demo-header"><div><p class="eyebrow" data-i18n="eyebrow">Conocimiento · Lógica proposicional</p><h1 id="page-title">Knights and Knaves</h1><p data-i18n="subtitle">Aplica restricciones lógicas y observa cómo desaparecen los mundos incompatibles con las declaraciones.</p></div></header>
+      <div class="knight-layout">
+        <section class="puzzle-panel" aria-labelledby="puzzle-title">
+          <div class="panel-heading"><div><p class="panel-label" data-i18n="puzzleLabel">Acertijo</p><h2 id="puzzle-title" data-i18n="puzzleTitle">Declaraciones</h2></div><div class="panel-actions"><button class="button" id="reset-puzzle" type="button" data-i18n="reset">Reiniciar</button><button class="button" id="next-puzzle" type="button" data-i18n="nextPuzzle">Siguiente acertijo</button></div></div>
+          <div class="puzzle-tabs" id="puzzle-tabs" role="tablist" aria-label="Acertijos"></div>
+          <div class="statements" id="statements"></div>
+          <div class="logic-formula"><span data-i18n="knowledgeBase">Base de conocimiento</span><code id="formula">—</code></div>
+          <div class="constraint-progress"><div><span data-i18n="constraintsApplied">Restricciones aplicadas</span><strong id="constraint-count">0 / 0</strong></div><div class="progress-track"><span id="constraint-progress"></span></div></div>
+          <div class="constraint-current" id="constraint-current" role="status"></div>
+          <div class="puzzle-actions"><button class="button button--primary" id="next-constraint" type="button" data-i18n="nextConstraint">Aplicar siguiente restricción</button><button class="button" id="solve-puzzle" type="button" data-i18n="solve">Resolver completo</button></div>
+        </section>
+        <aside class="models-panel" aria-labelledby="models-title">
+          <div class="panel-heading"><div><p class="panel-label" data-i18n="modelsLabel">Model checking</p><h2 id="models-title" data-i18n="modelsTitle">Mundos posibles</h2></div><span class="analysis-state" id="models-remaining">—</span></div>
+          <div class="models-table-wrap"><table class="models-table"><thead id="models-head"></thead><tbody id="models-body"></tbody></table></div>
+          <div class="solution" id="solution"></div>
+          <div class="algorithm-note" role="note"><strong data-i18n="howTitle">Cómo deduce</strong><p data-i18n="howCopy">Un modelo asigna a cada personaje el papel de caballero o mentiroso. La comprobación conserva únicamente los modelos donde los caballeros dicen la verdad y los mentirosos mienten.</p></div>
+        </aside>
+      </div>
+    </section>
+    <section class="project-note"><div><p class="eyebrow" data-i18n="originLabel">Origen</p><h2 data-i18n="originTitle">Proyecto de Harvard CS50 AI</h2><p data-i18n="originCopy">Incluye los cuatro acertijos originales del ejercicio Knights y cuatro casos adicionales construidos con el mismo modelo lógico.</p></div><div class="project-note__actions"><a class="button button--primary" href="https://github.com/RaulEstevezA/harvard_ai/tree/main/1-knowledge/knights" data-i18n="viewCode">Ver código original</a><a class="button" href="../../" data-i18n="backHub">Volver a AI Demos</a></div></section>
+  </main><script src="knights.js"></script>
+</body></html>

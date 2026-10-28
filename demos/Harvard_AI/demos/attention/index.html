@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Visualizador interactivo del mecanismo de self-attention en transformadores.">
+  <title>Attention · Self-attention</title>
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/demo.css">
+  <link rel="stylesheet" href="attention.css">
+</head>
+<body>
+  <header class="site-header"><a class="site-header__brand" href="https://raulesteveza.github.io">Raúl Estévez</a><div class="language-switcher" role="group" aria-label="Idioma"><button class="language-switcher__button" type="button" data-lang="en" aria-pressed="false">EN</button><button class="language-switcher__button" type="button" data-lang="es" aria-pressed="true">ES</button></div></header>
+  <main class="page-shell demo-page">
+    <nav class="breadcrumb" aria-label="Navegación secundaria"><a href="../../" data-i18n="backHub">AI Demos</a><span aria-hidden="true">/</span><span>Attention</span></nav>
+    <section class="window demo-window" aria-labelledby="page-title">
+      <header class="demo-header"><div><p class="eyebrow" data-i18n="eyebrow">Lenguaje · Transformers</p><h1 id="page-title">Attention</h1><p data-i18n="subtitle">Explora cómo cada token reparte su atención entre las palabras de una frase para recuperar una palabra oculta.</p></div></header>
+      <div class="attention-layout">
+        <section class="sentence-panel" aria-labelledby="sentence-title">
+          <div class="panel-heading"><div><p class="panel-label" data-i18n="inputLabel">Entrada enmascarada</p><h2 id="sentence-title" data-i18n="sentenceTitle">Frase y predicciones</h2></div><span class="analysis-state">[MASK]</span></div>
+          <div class="example-list" id="example-list"></div>
+          <div class="masked-sentence" id="masked-sentence"></div>
+          <div class="prediction-list" id="prediction-list"></div>
+          <div class="token-section"><h3 data-i18n="queryTitle">Token que consulta</h3><p data-i18n="queryCopy">Selecciona un token para ver a cuáles presta más atención.</p><div class="token-list" id="token-list"></div></div>
+          <div class="scope-note" role="note"><strong data-i18n="scopeTitle">Visualización precalculada</strong><p data-i18n="scopeCopy">Los patrones son una reinterpretación educativa de self-attention. No son pesos extraídos en directo de BERT: se reducen a cuatro capas y cuatro cabezas para funcionar sin descargar el modelo.</p></div>
+        </section>
+        <section class="matrix-panel" aria-labelledby="matrix-title">
+          <div class="panel-heading"><div><p class="panel-label" data-i18n="attentionLabel">Matriz de atención</p><h2 id="matrix-title" data-i18n="matrixTitle">Qué observa cada token</h2></div><span class="analysis-state" id="matrix-state">—</span></div>
+          <div class="selector-row"><div><span data-i18n="layer">Capa</span><div class="selector-group" id="layer-selector"></div></div><div><span data-i18n="head">Cabeza</span><div class="selector-group" id="head-selector"></div></div></div>
+          <div class="head-summary" id="head-summary"></div>
+          <div class="heatmap-wrap"><div class="heatmap" id="heatmap" role="grid"></div></div>
+          <div class="focus-panel"><div><p class="panel-label" data-i18n="focusLabel">Lectura de la fila seleccionada</p><h3 id="focus-title">—</h3></div><div class="focus-bars" id="focus-bars"></div></div>
+        </section>
+      </div>
+      <section class="transformer-panel" aria-labelledby="transformer-title"><div class="panel-heading"><div><p class="panel-label" data-i18n="processLabel">Proceso reducido</p><h2 id="transformer-title" data-i18n="transformerTitle">De la frase a la predicción</h2></div></div><div class="transformer-flow" id="transformer-flow"></div></section>
+    </section>
+    <section class="project-note" aria-labelledby="origin-title"><div><p class="eyebrow" data-i18n="originLabel">Origen</p><h2 id="origin-title" data-i18n="originTitle">Proyecto de Harvard CS50 AI</h2><p data-i18n="originCopy">Adaptación del ejercicio Attention de la unidad Language. El original ejecuta BERT para predecir el token enmascarado y genera una matriz por cada capa y cabeza; esta versión conserva la interacción mediante ejemplos educativos precalculados.</p></div><div class="project-note__actions"><a class="button button--primary" href="https://github.com/RaulEstevezA/harvard_ai/tree/main/6-language/attention" data-i18n="viewCode">Ver código original</a><a class="button" href="../../" data-i18n="backToHub">Volver a AI Demos</a></div></section>
+  </main>
+  <script src="attention.js"></script>
+</body>
+</html>
