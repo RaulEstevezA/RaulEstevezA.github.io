@@ -34,6 +34,16 @@
       "repository_url": "https://github.com/RaulEstevezA/Cinema_App"
     },
     {
+      "name": "Harvard AI Demos",
+      "display_order": 4,
+      "description_en": "Twelve interactive games, puzzles and visual demonstrations based on Harvard CS50 AI projects, with step-by-step explanations of search, knowledge, optimization and learning algorithms.",
+      "description_es": "Doce juegos, puzles y demostraciones visuales basados en proyectos de Harvard CS50 AI, con explicaciones paso a paso de algoritmos de búsqueda, conocimiento, optimización y aprendizaje.",
+      "technologies": ["Artificial Intelligence", "JavaScript", "HTML", "CSS", "Canvas"],
+      "image": "/img/thumbs/harvard_ai_demos.webp",
+      "demo_url": "/demos/Harvard_AI/",
+      "repository_url": "https://github.com/RaulEstevezA/harvard_ai_demo"
+    },
+    {
       "name": "E-Plant",
       "description_en": "Interactive plant shop built with React and Redux, featuring product categories and a complete shopping-cart flow.",
       "description_es": "Tienda de plantas interactiva creada con React y Redux, con categorías de productos y un flujo completo de carrito de compra.",
