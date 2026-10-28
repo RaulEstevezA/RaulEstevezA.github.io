@@ -118,6 +118,7 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
   Stack: Python, Artificial Intelligence, Machine Learning, TensorFlow, scikit-learn, NLTK, Pygame.
   Covers graph search, Minimax, propositional inference, probabilistic reasoning, CSP optimization, k-NN, Q-learning, CNN image classification and NLP/attention exercises.
   Repository: https://github.com/RaulEstevezA/harvard_ai
+  Interactive demos: https://raulesteveza.github.io/demos/Harvard_AI/
 
 - **DuckyWare** — Hardware e-commerce backend web application.
   Stack: Python, Django, SQL, HTML, CSS, JavaScript.
