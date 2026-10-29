@@ -1,0 +1,14 @@
+{
+  "games": [
+    {
+      "name": "BlockFall",
+      "description_en": "Classic falling blocks game built from scratch in Python with Pygame. The same Python code runs in the browser compiled to WebAssembly, with keyboard controls on desktop and touch buttons on mobile.",
+      "description_es": "Juego clásico de bloques que caen, hecho desde cero en Python con Pygame. El mismo código Python se ejecuta en el navegador compilado a WebAssembly, con teclado en el ordenador y botones táctiles en el móvil.",
+      "technologies": ["Python", "Pygame", "pygbag", "WebAssembly"],
+      "image": "/img/thumbs/blockfall.webp",
+      "game_url": "/games/BlockFall_Python/",
+      "repository_url": "https://github.com/RaulEstevezA/BlockFall_Python",
+      "display_order": 1
+    }
+  ]
+}
