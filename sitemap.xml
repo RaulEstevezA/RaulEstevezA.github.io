@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://raulesteveza.github.io/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -12,12 +12,12 @@
   </url>
   <url>
     <loc>https://raulesteveza.github.io/projects.html</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://raulesteveza.github.io/courses.html</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -27,8 +27,13 @@
   </url>
   <url>
     <loc>https://raulesteveza.github.io/tools/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://raulesteveza.github.io/tools/Mapper/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://raulesteveza.github.io/games/</loc>
@@ -66,8 +71,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://raulesteveza.github.io/demos/BlockFall_Python/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <loc>https://raulesteveza.github.io/games/BlockFall_Python/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://raulesteveza.github.io/games/SQL_Detective/</loc>
+    <lastmod>2026-10-29</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -82,12 +92,12 @@
   </url>
   <url>
     <loc>https://raulesteveza.github.io/llms.txt</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://raulesteveza.github.io/profile.json</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>

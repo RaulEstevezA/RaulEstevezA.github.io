@@ -8,6 +8,7 @@
       "logo": "/games/BlockFall_Python/app/favicon.png",
       "pixel_art_logo": true,
       "game_url": "/games/BlockFall_Python/",
+      "repository_url": "https://github.com/RaulEstevezA/BlockFall_Python",
       "display_order": 1
     },
     {
@@ -17,6 +18,7 @@
       "technologies": ["JavaScript", "SQL", "SQLite", "WebAssembly"],
       "logo": "/games/SQL_Detective/sql-detective-logo.png",
       "game_url": "/games/SQL_Detective/",
+      "repository_url": "https://github.com/RaulEstevezA/SQL_Detective",
       "display_order": 2
     }
   ]

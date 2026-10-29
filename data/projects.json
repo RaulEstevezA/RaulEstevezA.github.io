@@ -34,7 +34,7 @@
       "desc_es": "Juego clásico de bloques que caen implementado desde cero en Python usando Pygame, jugable en el navegador.",
       "links": [
         { "type": "github", "url": "https://github.com/RaulEstevezA/BlockFall_Python" },
-        { "type": "live_demo", "url": "/demos/BlockFall_Python/" }
+        { "type": "live_demo", "url": "/games/BlockFall_Python/" }
       ]
     },
     {

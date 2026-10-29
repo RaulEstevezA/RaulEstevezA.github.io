@@ -7,9 +7,19 @@
   "email": "contact.raulesteveza@gmail.com",
   "github": "https://github.com/RaulEstevezA",
   "linkedin": "https://www.linkedin.com/in/raulesteveza/",
-  "last_updated": "2026-10-27",
+  "last_updated": "2026-10-29",
 
   "summary": "Software developer with a strong academic background and hands-on experience in backend systems, cross-platform applications, privacy-first data tools, and artificial intelligence projects.",
+
+  "portfolio_sections": {
+    "featured_projects": 8,
+    "other_projects": 14,
+    "interactive_demos": 6,
+    "browser_tools": 3,
+    "browser_games": 2,
+    "professional_certificates": 8,
+    "individual_course_certificates": 32
+  },
 
   "skills": {
     "languages":   ["Java", "Python", "SQL", "Kotlin", "Dart", "JavaScript", "PHP", "C"],
@@ -68,7 +78,46 @@
     { "name": "Introduction to Java Programming",                              "provider": "UC3Mx"    }
   ],
 
+  "professional_certificates": [
+    { "name": "Introducción a la programación en C", "provider": "UAMx", "year": 2023 },
+    { "name": "CS50's AP Computer Science Principles", "provider": "HarvardX", "year": 2023 },
+    { "name": "Computer Science for Python Programming", "provider": "HarvardX", "year": 2023 },
+    { "name": "Learning Python for Data Science", "provider": "HarvardX", "year": 2024 },
+    { "name": "Computer Science for Web Programming", "provider": "HarvardX", "year": 2024 },
+    { "name": "Introducción a la programación en Java", "provider": "UC3Mx", "year": 2025 },
+    { "name": "Computer Science for Artificial Intelligence", "provider": "HarvardX", "year": 2026 },
+    { "name": "Full Stack Application Development", "provider": "IBM", "year": 2026 }
+  ],
+
+  "certificate_catalog": {
+    "individual_course_certificates": 32,
+    "providers": ["HarvardX", "IBM", "UC3Mx", "UAMx", "UPValenciaX", "Udemy"],
+    "url": "https://raulesteveza.github.io/courses.html"
+  },
+
+  "tools": [
+    { "name": "Mapper", "url": "https://raulesteveza.github.io/tools/Mapper/", "repository": "https://github.com/RaulEstevezA/Mapper" },
+    { "name": "DataCleanr", "url": "https://raulesteveza.github.io/tools/DataCleanr/", "repository": "https://github.com/RaulEstevezA/DataCleanr" },
+    { "name": "Api2Class", "url": "https://raulesteveza.github.io/tools/Api2Class/", "repository": "https://github.com/RaulEstevezA/Api2Class" }
+  ],
+
+  "games": [
+    { "name": "BlockFall", "url": "https://raulesteveza.github.io/games/BlockFall_Python/", "repository": "https://github.com/RaulEstevezA/BlockFall_Python" },
+    { "name": "SQL Detective", "url": "https://raulesteveza.github.io/games/SQL_Detective/", "repository": "https://github.com/RaulEstevezA/SQL_Detective" }
+  ],
+
   "projects": [
+    {
+      "name":        "Mapper",
+      "type":        "Web Data Mapping and Code Generation Tool",
+      "context":     "Personal project",
+      "status":      "Published and functional",
+      "description": "Privacy-first browser tool for relating two data models such as classes, DTOs, JSON or schemas field by field. It suggests mappings that users can review and edit, then generates the code that converts one model into the other. Processing stays in the browser.",
+      "stack":       ["React", "TypeScript", "Vite", "CodeMirror", "YAML", "Code Generation"],
+      "repository":  "https://github.com/RaulEstevezA/Mapper",
+      "demo":        "https://raulesteveza.github.io/tools/Mapper/",
+      "featured":    true
+    },
     {
       "name":        "DataCleanr",
       "type":        "Web and Desktop Data Cleaning Application",
@@ -173,7 +222,16 @@
       "description": "Classic falling blocks game implemented from scratch in Python using Pygame. A web build compiled to WebAssembly with pygbag adds touch controls for mobile.",
       "stack":       ["Python", "Pygame", "pygbag", "WebAssembly"],
       "repository":  "https://github.com/RaulEstevezA/BlockFall_Python",
-      "demo":        "https://raulesteveza.github.io/demos/BlockFall_Python/",
+      "demo":        "https://raulesteveza.github.io/games/BlockFall_Python/",
+      "featured":    false
+    },
+    {
+      "name":        "SQL Detective",
+      "type":        "Educational Browser Game",
+      "description": "Educational game for learning SQL by solving database mysteries with interactive queries and progressively challenging cases. Everything runs locally in the browser.",
+      "stack":       ["JavaScript", "SQL", "SQLite", "WebAssembly"],
+      "repository":  "https://github.com/RaulEstevezA/SQL_Detective",
+      "demo":        "https://raulesteveza.github.io/games/SQL_Detective/",
       "featured":    false
     },
     {
