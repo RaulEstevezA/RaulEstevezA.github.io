@@ -23,26 +23,25 @@
     emptyState.hidden = orderedGames.length > 0;
     container.innerHTML = orderedGames.map(function (game) {
       var description = game['description_' + currentLang] || game.description_en || '';
-      var image = game.image
-        ? '<img class="demo-card-image" src="' + encodeURI(game.image) + '" alt="" loading="lazy">'
+      var logoClass = game.pixel_art_logo ? ' pixel-art-logo' : '';
+      var logo = game.logo
+        ? '<img class="demo-card-image' + logoClass + '" src="' + encodeURI(game.logo) + '" alt="' + escapeHtml(game.name) + ' logo" loading="lazy">'
         : '';
       var tags = (game.technologies || []).map(function (technology) {
         return '<span class="tag">' + escapeHtml(technology) + '</span>';
       }).join('');
       var codeLink = game.repository_url
-        ? '<a class="btn" href="' + encodeURI(game.repository_url) + '" target="_blank" rel="noopener">' + codeLabel + '</a>'
+        ? '<a class="btn btn-code" href="' + encodeURI(game.repository_url) + '" target="_blank" rel="noopener">' + codeLabel + '</a>'
         : '';
 
-      return '<article class="demo-card demo-card-row">' +
-        image +
-        '<div class="demo-card-content">' +
-          '<h3>' + escapeHtml(game.name) + '</h3>' +
-          '<p>' + escapeHtml(description) + '</p>' +
-          '<div class="tech-tags">' + tags + '</div>' +
-          '<div class="demo-card-actions">' +
-            '<a class="btn btn-web" href="' + encodeURI(game.game_url) + '" target="_blank" rel="noopener">' + playLabel + '</a>' +
-            codeLink +
-          '</div>' +
+      return '<article class="demo-card">' +
+        logo +
+        '<h3>' + escapeHtml(game.name) + '</h3>' +
+        '<p>' + escapeHtml(description) + '</p>' +
+        '<div class="tech-tags">' + tags + '</div>' +
+        '<div class="demo-card-actions tool-card-actions">' +
+          '<a class="btn btn-web" href="' + encodeURI(game.game_url) + '" target="_blank" rel="noopener">' + playLabel + '</a>' +
+          codeLink +
         '</div>' +
       '</article>';
     }).join('');

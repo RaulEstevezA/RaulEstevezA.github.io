@@ -705,11 +705,14 @@ section + section {
 
 .demo-card-content .tech-tags { margin-top: auto; }
 
-#tools-list .demo-card-image {
+#tools-list .demo-card-image,
+#games-list .demo-card-image {
   object-fit: contain;
   padding: 3rem;
   background: linear-gradient(135deg, #111820, #1a2740);
 }
+
+#games-list .pixel-art-logo { image-rendering: pixelated; }
 
 .empty-state {
   margin: 0;
@@ -1044,6 +1047,7 @@ ul li {
     border-right: 0;
     border-bottom: 1px solid var(--border);
   }
+
 }
 
 @media (max-width: 480px) {
