@@ -5,10 +5,19 @@
       "description_en": "Classic falling blocks game built from scratch in Python with Pygame. The same Python code runs in the browser compiled to WebAssembly, with keyboard controls on desktop and touch buttons on mobile.",
       "description_es": "Juego clásico de bloques que caen, hecho desde cero en Python con Pygame. El mismo código Python se ejecuta en el navegador compilado a WebAssembly, con teclado en el ordenador y botones táctiles en el móvil.",
       "technologies": ["Python", "Pygame", "pygbag", "WebAssembly"],
-      "image": "/img/thumbs/blockfall.webp",
+      "logo": "/games/BlockFall_Python/app/favicon.png",
+      "pixel_art_logo": true,
       "game_url": "/games/BlockFall_Python/",
-      "repository_url": "https://github.com/RaulEstevezA/BlockFall_Python",
       "display_order": 1
+    },
+    {
+      "name": "SQL Detective",
+      "description_en": "Learn SQL by solving database mysteries with interactive queries and progressively challenging cases. Everything runs locally in the browser, so you can investigate and practise without an account.",
+      "description_es": "Aprende SQL resolviendo misterios de bases de datos con consultas interactivas y casos cada vez más desafiantes. Todo se ejecuta localmente en el navegador, para que puedas investigar y practicar sin necesidad de una cuenta.",
+      "technologies": ["JavaScript", "SQL", "SQLite", "WebAssembly"],
+      "logo": "/games/SQL_Detective/sql-detective-logo.png",
+      "game_url": "/games/SQL_Detective/",
+      "display_order": 2
     }
   ]
 }
