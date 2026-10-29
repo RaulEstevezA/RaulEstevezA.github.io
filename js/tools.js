@@ -118,7 +118,7 @@
         '<h3>' + escapeHtml(tool.name) + '</h3>' +
         '<p>' + escapeHtml(description) + '</p>' +
         '<div class="demo-card-actions tool-card-actions">' +
-          '<a class="btn btn-web" href="' + encodeURI(tool.tool_url) + '" target="_blank" rel="noopener">' + labels.open + '</a>' +
+          '<a class="btn btn-web" href="' + encodeURI(tool.tool_url) + '">' + labels.open + '</a>' +
           downloadLink +
           codeLink +
         '</div>' +

@@ -40,7 +40,7 @@
         '<p>' + escapeHtml(description) + '</p>' +
         '<div class="tech-tags">' + tags + '</div>' +
         '<div class="demo-card-actions tool-card-actions">' +
-          '<a class="btn btn-web" href="' + encodeURI(game.game_url) + '" target="_blank" rel="noopener">' + playLabel + '</a>' +
+          '<a class="btn btn-web" href="' + encodeURI(game.game_url) + '">' + playLabel + '</a>' +
           codeLink +
         '</div>' +
       '</article>';

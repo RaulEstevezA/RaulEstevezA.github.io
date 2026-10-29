@@ -111,8 +111,10 @@
           var a = document.createElement('a');
           a.href = resolved.url;
           a.className = resolved.className;
-          a.target = '_blank';
-          a.rel = 'noopener';
+          if (!['demo', 'live_demo', 'web'].includes(link.type)) {
+            a.target = '_blank';
+            a.rel = 'noopener';
+          }
           a.textContent = resolved.label;
           modalLinks.appendChild(a);
         });
