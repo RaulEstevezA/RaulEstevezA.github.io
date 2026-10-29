@@ -51,7 +51,7 @@
           '<p>' + escapeHtml(description) + '</p>' +
           '<div class="tech-tags">' + tags + '</div>' +
           '<div class="demo-card-actions">' +
-            '<a class="btn btn-web" href="' + encodeURI(demo.demo_url) + '" target="_blank" rel="noopener">' + labels.open + '</a>' +
+            '<a class="btn btn-web" href="' + encodeURI(demo.demo_url) + '">' + labels.open + '</a>' +
             codeLink +
           '</div>' +
         '</div>' +

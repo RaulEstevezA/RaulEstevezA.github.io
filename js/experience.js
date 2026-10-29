@@ -79,7 +79,7 @@
         demoLink = '<div class="job-demo-callout">' +
           '<div><strong>' + escapeHtml(LABELS.liveDemo[lang] || LABELS.liveDemo.en) + '</strong>' +
           (demoNote ? '<p>' + escapeHtml(demoNote) + '</p>' : '') + '</div>' +
-          '<a class="btn btn-web" href="' + escapeHtml(job.demo_url) + '" target="_blank" rel="noopener">' +
+          '<a class="btn btn-web" href="' + escapeHtml(job.demo_url) + '">' +
             escapeHtml(LABELS.liveDemo[lang] || LABELS.liveDemo.en) +
           '</a>' +
         '</div>';

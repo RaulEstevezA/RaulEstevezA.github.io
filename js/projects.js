@@ -88,6 +88,12 @@
   }
   window.resolveFeaturedLink = resolveFeaturedLink;
 
+  function linkAttributes(type) {
+    return ['demo', 'live_demo', 'web'].indexOf(type) !== -1
+      ? ''
+      : ' target="_blank" rel="noopener"';
+  }
+
   var bestProjects = null;
   var otherProjects = null;
 
@@ -138,7 +144,7 @@
 
       var buttons = links.map(function (link) {
         var resolved = resolveFeaturedLink(link, lang);
-        return '<a href="' + escapeAttr(resolved.url) + '" class="' + resolved.className + '" target="_blank" rel="noopener">' +
+        return '<a href="' + escapeAttr(resolved.url) + '" class="' + resolved.className + '"' + linkAttributes(link.type) + '>' +
           escapeHtml(resolved.label) +
         '</a>';
       }).join('');
@@ -184,7 +190,7 @@
     var html = projects.map(function (project) {
       var desc = lang === 'es' ? project.desc_es : project.desc_en;
       var links = (project.links || []).map(function (link) {
-        return '<a href="' + escapeAttr(link.url) + '" class="link-' + escapeAttr(link.type) + '" target="_blank" rel="noopener">' +
+        return '<a href="' + escapeAttr(link.url) + '" class="link-' + escapeAttr(link.type) + '"' + linkAttributes(link.type) + '>' +
           escapeHtml(LINK_LABELS[link.type] || link.type) + '</a>';
       }).join(', ');
 
