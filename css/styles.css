@@ -199,6 +199,39 @@ h3 { font-size: 1.1rem; margin: 0 0 0.75rem; }
   outline-offset: 2px;
 }
 
+/* =====================================================
+   CONTACT FOOTER
+===================================================== */
+
+.contact-footer {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.65rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.contact-footer p { margin: 0; }
+
+.contact-footer a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.contact-footer a:hover { text-decoration: underline; }
+
+.contact-footer a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 .btn.btn-demo {
   background: rgba(255, 68, 68, 0.1);
   color: #ff6b6b;
