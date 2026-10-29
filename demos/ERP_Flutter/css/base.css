@@ -1,0 +1,41 @@
+:root {
+  color-scheme: dark;
+  --page-bg: #0d1117;
+  --window-bg: #161b22;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --accent: #58a6ff;
+  --btn-bg: #21262d;
+  --btn-text: #c9d1d9;
+  --btn-hover: #30363d;
+  --border: #30363d;
+  --tag-bg: #1a2740;
+  --tag-text: #79c0ff;
+  --warn-bg: rgba(210, 153, 34, 0.1);
+  --warn-border: #9e6a03;
+  --warn-text: #e3b341;
+  --phone-h: 844px;
+  --app-w: 390px;
+  --app-h: 844px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--page-bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+::selection { background: rgba(88, 166, 255, 0.25); color: var(--text); }
+a { color: var(--accent); }
+
