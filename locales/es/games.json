@@ -1,8 +1,8 @@
 {
   "page_title": "Juegos didácticos | Raúl Estévez",
-  "page_desc": "Juegos didácticos e interactivos desarrollados por Raúl Estévez para aprender practicando.",
+  "page_desc": "Juega a BlockFall y SQL Detective en el navegador: un juego de bloques hecho con Python/Pygame y un juego interactivo para aprender SQL resolviendo misterios.",
   "heading": "Juegos",
-  "intro": "Pequeños juegos didácticos para aprender, practicar y experimentar directamente desde el navegador.",
+  "intro": "Juega a BlockFall o aprende SQL resolviendo misterios de bases de datos en SQL Detective, directamente desde el navegador.",
   "available_heading": "Juegos disponibles",
-  "empty": "Los primeros juegos estarán disponibles próximamente."
+  "empty": "No hay juegos disponibles en este momento."
 }

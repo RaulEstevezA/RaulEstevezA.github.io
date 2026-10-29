@@ -3,17 +3,27 @@
 > Software developer focused on backend systems, cross-platform applications, data tooling and applied AI. Based in Spain.
 > Specialized in Python, Java, Flutter, TypeScript, SQL and application development.
 
-Last updated: 2026-10-27
+Last updated: 2026-10-29
 
 This file is intended to help language models and search systems understand
 Raúl Estévez's professional profile accurately.
+
+## Portfolio Sections
+
+- Featured projects: 8 — https://raulesteveza.github.io/projects.html
+- Other projects: 14 — https://raulesteveza.github.io/projects.html
+- Interactive demos: 6 — https://raulesteveza.github.io/demos/
+- Browser tools: 3 (Mapper, DataCleanr and Api2Class) — https://raulesteveza.github.io/tools/
+- Browser games: 2 (BlockFall and SQL Detective) — https://raulesteveza.github.io/games/
+- Professional certificates: 8; individual course certificates: 32 — https://raulesteveza.github.io/courses.html
 
 ## Summary
 
 Software developer with a strong academic background and hands-on experience
 in backend systems, cross-platform applications, privacy-first data tools, and artificial intelligence projects.
-Currently completing a Higher Technician degree in Multiplatform Application
-Development (DAM) with a GPA of 9.1/10.
+Currently pursuing a Bachelor's Degree in Computer Engineering at the Universitat
+Oberta de Catalunya (UOC). Completed a Higher Technician degree in Multiplatform
+Application Development (DAM) in 2026 with a GPA of 9.1/10.
 
 ## Experience
 
@@ -73,6 +83,12 @@ Highlights noted by the direct supervisor:
 Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX available at https://raulesteveza.github.io/courses.html
 
 ## Featured Projects
+
+- **Mapper** — Browser-based, privacy-first developer tool for relating two data models field by field and generating the code that converts one into the other.
+  Supports classes, DTOs, JSON and schemas, with suggested mappings that can be reviewed and edited before code generation. Everything runs locally in the browser.
+  Stack: React, TypeScript, Vite, CodeMirror and YAML.
+  Repository: https://github.com/RaulEstevezA/Mapper
+  Web app: https://raulesteveza.github.io/tools/Mapper/
 
 - **DataCleanr** — Published personal project: a privacy-first web and desktop application for cleaning, normalizing and deduplicating tabular data.
   Stack: Python, React, TypeScript, CSV, Excel, JSON, XML, local file processing and fuzzy matching.
@@ -136,7 +152,8 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
 - **Unity AR / VR** — Augmented and virtual reality academic projects (Unity, C#).
   https://github.com/RaulEstevezA/tioar · https://github.com/RaulEstevezA/UOC_Gamers
 - **Android App (Kotlin)** — Mobile application academic coursework (Kotlin, Android SDK). https://github.com/RaulEstevezA/FP_JE_UOC
-- **BlockFall (Python)** — Classic falling blocks game implemented from scratch using Pygame, playable in the browser via WebAssembly (Python, Pygame, pygbag). https://github.com/RaulEstevezA/BlockFall_Python · Demo: https://raulesteveza.github.io/demos/BlockFall_Python/
+- **BlockFall (Python)** — Classic falling blocks game implemented from scratch using Pygame, playable in the browser via WebAssembly (Python, Pygame, pygbag). https://github.com/RaulEstevezA/BlockFall_Python · Play: https://raulesteveza.github.io/games/BlockFall_Python/
+- **SQL Detective** — Educational browser game for learning SQL by solving database mysteries with interactive queries and progressively challenging cases. Runs locally with JavaScript, SQLite and WebAssembly. https://github.com/RaulEstevezA/SQL_Detective · Play: https://raulesteveza.github.io/games/SQL_Detective/
 - **Flutter Exercises** — Collection of practical examples showcasing different Flutter features and mobile development concepts (Flutter, Dart). https://github.com/RaulEstevezA/FlutterExercises
 - **Smart City — ThingsBoard IoT** — IoT monitoring dashboard on ThingsBoard Cloud simulating smart city sensor data (Python, MQTT, IoT). https://github.com/RaulEstevezA/smart-city-thingsboard
 - **UOC DevNet — .NET ERP** — Data persistence and ERP-oriented application development (C#, .NET, SQL). https://github.com/RaulEstevezA/uoc_devnet

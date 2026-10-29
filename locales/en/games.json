@@ -1,8 +1,8 @@
 {
   "page_title": "Educational games | Raúl Estévez",
-  "page_desc": "Educational and interactive browser games developed by Raúl Estévez for learning through play.",
+  "page_desc": "Play BlockFall and SQL Detective in the browser: a Python/Pygame falling-block game and an interactive game for learning SQL through database mysteries.",
   "heading": "Games",
-  "intro": "Small educational games for learning, practising and experimenting directly in your browser.",
+  "intro": "Play BlockFall or learn SQL by solving database mysteries in SQL Detective, directly in your browser.",
   "available_heading": "Available games",
-  "empty": "The first games are coming soon."
+  "empty": "No games are available right now."
 }

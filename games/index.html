@@ -4,15 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Educational games | Raúl Estévez</title>
-  <meta name="description" content="Educational and interactive browser games developed by Raúl Estévez for learning through play." />
+  <meta name="description" content="Play BlockFall and SQL Detective in the browser: a Python/Pygame falling-block game and an interactive game for learning SQL through database mysteries." />
   <meta name="author" content="Raúl Estévez" />
   <link rel="canonical" href="https://raulesteveza.github.io/games/" />
+  <link rel="alternate" type="text/plain" title="LLM profile summary" href="https://raulesteveza.github.io/llms.txt" />
+  <link rel="alternate" type="application/json" title="Structured profile data" href="https://raulesteveza.github.io/profile.json" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Educational games | Raúl Estévez" />
-  <meta property="og:description" content="Small educational games for learning, practising and experimenting directly in your browser." />
+  <meta property="og:description" content="Play BlockFall and learn SQL by solving database mysteries in SQL Detective, directly in your browser." />
   <meta property="og:url" content="https://raulesteveza.github.io/games/" />
   <meta property="og:image" content="https://raulesteveza.github.io/img/raulestevezio.jpg" />
   <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Educational games | Raúl Estévez" />
+  <meta name="twitter:description" content="Play BlockFall and learn SQL by solving database mysteries in SQL Detective, directly in your browser." />
   <link rel="stylesheet" href="../css/styles.css?v=20261029-10" />
   <link rel="icon" href="../favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="../img/icons/favicon-32x32.png" />
@@ -25,7 +29,7 @@
     "@type": "CollectionPage",
     "name": "Educational games by Raúl Estévez",
     "url": "https://raulesteveza.github.io/games/",
-    "description": "Educational browser games for learning through play.",
+    "description": "BlockFall, a Python and Pygame falling-block game compiled to WebAssembly, and SQL Detective, an interactive game for learning SQL through database mysteries.",
     "author": { "@type": "Person", "name": "Raúl Estévez", "url": "https://raulesteveza.github.io/" },
     "mainEntity": {
       "@type": "ItemList",
@@ -37,6 +41,7 @@
           "name": "BlockFall",
           "url": "https://raulesteveza.github.io/games/BlockFall_Python/",
           "operatingSystem": "Web",
+          "description": "Classic falling-block game built in Python with Pygame and compiled to WebAssembly for browser play.",
           "playMode": "SinglePlayer",
           "codeRepository": "https://github.com/RaulEstevezA/BlockFall_Python"
         },
@@ -45,8 +50,10 @@
           "position": 2,
           "name": "SQL Detective",
           "url": "https://raulesteveza.github.io/games/SQL_Detective/",
+          "description": "Educational game for learning SQL through interactive queries and progressively challenging database mysteries.",
           "operatingSystem": "Web",
-          "playMode": "SinglePlayer"
+          "playMode": "SinglePlayer",
+          "codeRepository": "https://github.com/RaulEstevezA/SQL_Detective"
         }
       ]
     }
@@ -69,12 +76,12 @@
     <div class="window">
       <div class="window-content">
         <h1 data-i18n="games.heading">Games</h1>
-        <p class="intro" data-i18n="games.intro">Small educational games for learning, practising and experimenting directly in your browser.</p>
+        <p class="intro" data-i18n="games.intro">Play BlockFall or learn SQL by solving database mysteries in SQL Detective, directly in your browser.</p>
 
         <section aria-labelledby="games-heading">
           <h2 id="games-heading" data-i18n="games.available_heading">Available games</h2>
           <div id="games-list" class="demo-grid"></div>
-          <p id="games-empty" class="empty-state" data-i18n="games.empty">The first games are coming soon.</p>
+          <p id="games-empty" class="empty-state" data-i18n="games.empty" hidden>No games are available right now.</p>
         </section>
 
         <div class="actions site-actions">

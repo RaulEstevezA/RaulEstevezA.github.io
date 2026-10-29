@@ -4,20 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tools | Raúl Estévez</title>
-  <meta name="description" content="Privacy-first software tools by Raúl Estévez: DataCleanr for cleaning, normalizing and deduplicating CSV, Excel, JSON and XML files, and Api2Class for turning JSON API responses into typed models for 11 languages. Everything runs locally." />
+  <meta name="description" content="Privacy-first software tools by Raúl Estévez: Mapper for mapping data models, DataCleanr for cleaning and deduplicating files, and Api2Class for turning JSON API responses into typed models. Everything runs locally." />
   <meta name="author" content="Raúl Estévez" />
   <link rel="canonical" href="https://raulesteveza.github.io/tools/" />
   <link rel="alternate" type="text/plain" title="LLM profile summary" href="https://raulesteveza.github.io/llms.txt" />
   <link rel="alternate" type="application/json" title="Structured profile data" href="https://raulesteveza.github.io/profile.json" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Tools | Raúl Estévez" />
-  <meta property="og:description" content="Privacy-first software tools: DataCleanr cleans and deduplicates tabular files, and Api2Class turns JSON API responses into typed models. Everything runs locally." />
+  <meta property="og:description" content="Privacy-first software tools: Mapper maps data models, DataCleanr cleans tabular files, and Api2Class turns JSON into typed models. Everything runs locally." />
   <meta property="og:url" content="https://raulesteveza.github.io/tools/" />
   <meta property="og:image" content="https://raulesteveza.github.io/img/datacleanr/project-overview.png" />
   <meta property="og:image:alt" content="DataCleanr privacy-first file cleaning interface" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Tools | Raúl Estévez" />
-  <meta name="twitter:description" content="Privacy-first software tools: DataCleanr cleans and deduplicates tabular files, and Api2Class turns JSON API responses into typed models. Everything runs locally." />
+  <meta name="twitter:description" content="Privacy-first software tools: Mapper maps data models, DataCleanr cleans tabular files, and Api2Class turns JSON into typed models. Everything runs locally." />
   <meta name="twitter:image" content="https://raulesteveza.github.io/img/datacleanr/project-overview.png" />
   <meta name="twitter:image:alt" content="DataCleanr privacy-first file cleaning interface" />
   <link rel="stylesheet" href="../css/styles.css?v=20261029-8" />
@@ -43,17 +43,23 @@
     },
     "mainEntity": {
       "@type": "ItemList",
-      "numberOfItems": 2,
+      "numberOfItems": 3,
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
+          "url": "https://raulesteveza.github.io/tools/Mapper/",
+          "name": "Mapper"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
           "url": "https://raulesteveza.github.io/tools/DataCleanr/",
           "name": "DataCleanr"
         },
         {
           "@type": "ListItem",
-          "position": 2,
+          "position": 3,
           "url": "https://raulesteveza.github.io/tools/Api2Class/",
           "name": "Api2Class"
         }
@@ -85,7 +91,7 @@
         <section aria-labelledby="tools-heading">
           <h2 id="tools-heading" data-i18n="tools.available_heading">Available tools</h2>
           <div id="tools-list" class="demo-grid"></div>
-          <p id="tools-empty" class="empty-state" data-i18n="tools.empty">New tools are coming soon.</p>
+          <p id="tools-empty" class="empty-state" data-i18n="tools.empty" hidden>No tools are available right now.</p>
         </section>
 
         <div class="actions site-actions">
