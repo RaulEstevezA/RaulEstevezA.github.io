@@ -595,6 +595,10 @@ section + section {
   gap: 1rem;
 }
 
+#tools-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .demo-list {
   display: grid;
   gap: 1rem;
@@ -999,6 +1003,8 @@ ul li {
 }
 
 @media (max-width: 768px) {
+  #tools-list { grid-template-columns: 1fr; }
+
   .container      { padding: 1rem; }
   .hero           { margin-top: 1rem; }
   .home .hero     { margin-top: 2rem; }

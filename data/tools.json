@@ -1,20 +1,8 @@
 {
   "tools": [
     {
-      "name": "Mapper",
-      "display_order": 1,
-      "badge_en": "Runs in your browser · Privacy first",
-      "badge_es": "Se ejecuta en el navegador · Privacidad",
-      "featured": true,
-      "description_en": "Relate two data models field by field, review the suggested mapping and generate the code that converts one into the other. Everything runs locally in your browser.",
-      "description_es": "Relaciona dos modelos de datos campo a campo, revisa el mapeo sugerido y genera el código que transforma uno en el otro. Todo se ejecuta localmente en tu navegador.",
-      "image": "/tools/Mapper/favicon.svg",
-      "tool_url": "/tools/Mapper/",
-      "repository_url": "https://github.com/RaulEstevezA/Mapper"
-    },
-    {
       "name": "DataCleanr",
-      "display_order": 2,
+      "display_order": 1,
       "badge_en": "Runs locally · Privacy first",
       "badge_es": "Ejecución local · Privacidad",
       "featured": false,
@@ -40,7 +28,7 @@
     },
     {
       "name": "Api2Class",
-      "display_order": 3,
+      "display_order": 2,
       "badge_en": "Runs in your browser · Privacy first",
       "badge_es": "Se ejecuta en el navegador · Privacidad",
       "featured": false,
