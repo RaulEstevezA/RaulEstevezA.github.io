@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d1117">
+  <meta name="description" content="Learn SQL by solving database mysteries through interactive queries and progressively challenging cases.">
+  <title>SQL Detective | Raul Estevez</title>
+  <link rel="icon" href="./favicon.png" type="image/png" sizes="64x64">
+  <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#game">Skip to the game</a>
+  <header class="site-header">
+    <a href="https://raulesteveza.github.io/">Raúl Estévez</a>
+    <div class="language" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+  </header>
+  <main id="game" class="app" tabindex="-1">
+    <section class="window intro" aria-labelledby="game-title">
+      <div class="intro__heading"><div class="intro__brand"><img class="game-logo" src="./sql-detective-logo.png" alt="" width="72" height="72"><div><h1 id="game-title">SQL Detective</h1><p class="subtitle" data-i18n="subtitle"></p></div></div><span class="badge badge--success" data-i18n="local"></span></div>
+      <p class="description" data-i18n="description"></p>
+      <div class="progress-row"><span id="progressText"></span><button id="referenceButton" class="button" type="button" data-i18n="reference"></button><button id="tutorialButton" class="button" type="button" data-i18n="tutorial"></button><button id="resetButton" class="button" type="button" data-i18n="reset"></button><a class="button" href="../">Juegos</a></div>
+    </section>
+
+    <nav class="case-nav panel" aria-label="Cases">
+      <section class="case-group" aria-labelledby="tutorialCasesTitle">
+        <div class="case-group__heading"><button class="case-group__toggle" type="button" aria-expanded="true" aria-controls="tutorialTabs" data-collapse-target="tutorialTabs"><span id="tutorialCasesTitle" class="case-group__title" role="heading" aria-level="2" data-i18n="tutorialCases"></span><span class="case-group__chevron" aria-hidden="true">▾</span></button><span data-i18n="tutorialCasesHint"></span></div>
+        <div id="tutorialTabs" class="case-tabs" role="tablist" aria-labelledby="tutorialCasesTitle"></div>
+      </section>
+      <section class="case-group" aria-labelledby="investigationCasesTitle">
+        <div class="case-group__heading"><button id="investigationToggle" class="case-group__toggle" type="button" aria-expanded="true" aria-controls="investigationTabs" data-collapse-target="investigationTabs"><span id="investigationCasesTitle" class="case-group__title" role="heading" aria-level="2" data-i18n="investigationCases"></span><span id="investigationLock" class="case-group__lock" aria-hidden="true"></span><span class="case-group__chevron" aria-hidden="true">▾</span></button><span id="investigationStatus"></span></div>
+        <div id="investigationTabs" class="case-tabs" role="tablist" aria-labelledby="investigationCasesTitle"></div>
+      </section>
+    </nav>
+
+    <section class="workspace">
+      <article class="pane brief-pane">
+        <div class="pane__header"><div><span id="caseNumber" class="eyebrow"></span><h2 id="caseTitle"></h2></div><div class="case-meta"><span id="caseDifficulty" class="badge"></span><button id="loreButton" class="button button--compact" type="button" data-i18n="fullStory"></button></div></div>
+        <div class="pane__body brief">
+          <p id="caseStory"></p>
+          <div class="objective"><strong data-i18n="objective"></strong><p id="caseObjective"></p></div>
+          <section id="dossierPanel" class="dossier" aria-labelledby="dossierStageTitle" hidden>
+            <div class="dossier__stage"><span id="dossierStageProgress" class="eyebrow"></span><h3 id="dossierStageTitle"></h3><p id="dossierStageBriefing"></p></div>
+            <div class="dossier__notebook"><strong data-i18n="notebook"></strong><ol id="dossierClues"></ol><p id="dossierEmpty" class="muted" data-i18n="noClues"></p></div>
+            <div id="accusationPanel" class="dossier__accusation" hidden><h3 data-i18n="accusation"></h3><p data-i18n="accusationIntro"></p><form id="accusationForm"><div id="accusationFields"></div><button class="button button--primary" type="submit" data-i18n="accuse"></button></form><p id="accusationStatus" class="status" role="status"></p></div>
+          </section>
+          <section id="schemaPanel" aria-labelledby="databaseTitle"><h3 id="databaseTitle" data-i18n="database"></h3><div id="schema" class="schema"></div></section>
+          <details id="hintsDetails"><summary data-i18n="clues"></summary><ol id="hints"></ol></details>
+        </div>
+      </article>
+
+      <article class="pane query-pane">
+        <div class="pane__header"><h2 data-i18n="query"></h2><button id="exampleButton" class="button" type="button" data-i18n="example"></button></div>
+        <div class="pane__body editor-wrap">
+          <label class="sr-only" for="queryInput" data-i18n="queryLabel"></label>
+          <textarea id="queryInput" class="query-input" spellcheck="false" autocapitalize="off"></textarea>
+          <div class="query-help"><span data-i18n="shortcut"></span><button id="runButton" class="button button--primary" type="button" data-i18n="run"></button></div>
+          <div id="queryStatus" class="status" role="status"></div>
+        </div>
+      </article>
+
+      <article class="pane result-pane">
+        <div class="pane__header"><h2 data-i18n="results"></h2><span id="rowCount" class="muted"></span></div>
+        <div class="pane__body result-body"><div id="resultEmpty" class="empty-state" data-i18n="empty"></div><div id="resultTable" class="table-wrap" hidden></div><div id="solution" class="solution" hidden></div></div>
+      </article>
+    </section>
+  </main>
+
+  <dialog id="tutorialDialog" aria-labelledby="tutorialTitle"><div class="dialog__header"><h2 id="tutorialTitle" data-i18n="tutorialTitle"></h2><button class="dialog__close" type="button" aria-label="Close" data-i18n-aria-label="close">×</button></div><div id="tutorialContent" class="dialog__body"></div><div class="dialog__actions"><button class="button button--primary dialog__close" type="button" data-i18n="start"></button></div></dialog>
+  <dialog id="loreDialog" aria-labelledby="loreDialogTitle"><div class="dialog__header"><h2 id="loreDialogTitle" data-i18n="fullStory"></h2><button class="dialog__close" type="button" aria-label="Close" data-i18n-aria-label="close">×</button></div><div id="loreContent" class="dialog__body lore"></div><div class="dialog__actions"><button class="button button--primary dialog__close" type="button" data-i18n="close"></button></div></dialog>
+  <dialog id="referenceDialog" aria-labelledby="referenceTitle"><div class="dialog__header"><h2 id="referenceTitle" data-i18n="referenceTitle"></h2><button class="dialog__close" type="button" aria-label="Close" data-i18n-aria-label="close">×</button></div><div id="referenceContent" class="dialog__body reference"></div><div class="dialog__actions"><button class="button button--primary dialog__close" type="button" data-i18n="close"></button></div></dialog>
+  <dialog id="resetDialog" aria-labelledby="resetTitle"><div class="dialog__header"><h2 id="resetTitle" data-i18n="resetTitle"></h2><button class="dialog__close" type="button" aria-label="Close" data-i18n-aria-label="close">×</button></div><div class="dialog__body"><p data-i18n="resetBody"></p></div><div class="dialog__actions"><button class="button dialog__close" type="button" data-i18n="cancel"></button><button id="confirmReset" class="button button--primary" type="button" data-i18n="confirmReset"></button></div></dialog>
+  <script src="./src/lib/sql-loader.js"></script>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
