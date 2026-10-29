@@ -1,5 +1,29 @@
-.DS_Store
-# General
+# Editor settings and temporary files
+.vscode/
+.idea/
+.fleet/
+.history/
+*.swp
+*.swo
+*~
+
+# Local environment and logs
+.env
+.env.*
+!.env.example
+*.log
+
+# Dependency and tool caches
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+coverage/
+.coverage
+
+# macOS
 .DS_Store
 .AppleDouble
 .LSOverride
