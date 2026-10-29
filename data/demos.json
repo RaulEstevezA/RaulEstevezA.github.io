@@ -53,15 +53,6 @@
       "repository_url": "https://github.com/RaulEstevezA/e-plantShopping"
     },
     {
-      "name": "BlockFall",
-      "description_en": "Classic falling blocks game built from scratch in Python with Pygame. The same Python code runs in the browser compiled to WebAssembly, with keyboard controls on desktop and touch buttons on mobile.",
-      "description_es": "Juego clásico de bloques que caen, hecho desde cero en Python con Pygame. El mismo código Python se ejecuta en el navegador compilado a WebAssembly, con teclado en el ordenador y botones táctiles en el móvil.",
-      "technologies": ["Python", "Pygame", "pygbag", "WebAssembly"],
-      "image": "/img/thumbs/blockfall.webp",
-      "demo_url": "/demos/BlockFall_Python/",
-      "repository_url": "https://github.com/RaulEstevezA/BlockFall_Python"
-    },
-    {
       "name": "DuckyWare",
       "description_en": "Browser demo of a Django hardware e-commerce store with category catalog, live search, stock-aware cart, discounts, checkout and user profiles. The Django backend is simulated in the browser, so every visitor's changes stay local.",
       "description_es": "Demo para navegador de una tienda e-commerce de hardware en Django con catálogo por categorías, búsqueda dinámica, carrito con control de stock, descuentos, checkout y perfiles de usuario. El backend Django se simula en el navegador, por lo que los cambios de cada visitante permanecen en local.",
