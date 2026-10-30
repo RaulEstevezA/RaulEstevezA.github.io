@@ -1,6 +1,6 @@
 export function detectLanguage(storage=globalThis.localStorage,navigatorLanguage=globalThis.navigator?.language){
   try{
-    const stored=storage?.getItem('sqldetective.language')||storage?.getItem('lang');
+    const stored=storage?.getItem('lang')||storage?.getItem('sqldetective.language');
     if(stored)return stored;
   }catch{}
   return (navigatorLanguage||'en').startsWith('es')?'es':'en';

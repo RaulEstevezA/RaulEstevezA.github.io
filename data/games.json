@@ -20,6 +20,16 @@
       "game_url": "/games/SQL_Detective/",
       "repository_url": "https://github.com/RaulEstevezA/SQL_Detective",
       "display_order": 2
+    },
+    {
+      "name": "API Quest",
+      "description_en": "Learn and practise REST APIs through 56 bilingual missions. Build, send, and debug realistic HTTP requests in a persistent browser-based sandbox, with progressive hints, XP, and achievements.",
+      "description_es": "Aprende y practica APIs REST a través de 56 misiones bilingües. Construye, envía y depura peticiones HTTP realistas en un sandbox persistente en el navegador, con pistas progresivas, XP y logros.",
+      "technologies": ["React", "TypeScript", "REST APIs", "Vite"],
+      "logo": "/games/API_Quest/api-quest-logo.png",
+      "game_url": "/games/API_Quest/",
+      "repository_url": "https://github.com/RaulEstevezA/API_Quest",
+      "display_order": 3
     }
   ]
 }

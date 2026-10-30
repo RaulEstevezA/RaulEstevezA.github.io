@@ -595,7 +595,8 @@ section + section {
   gap: 1rem;
 }
 
-#tools-list {
+#tools-list,
+#games-list {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -1003,7 +1004,8 @@ ul li {
 }
 
 @media (max-width: 768px) {
-  #tools-list { grid-template-columns: 1fr; }
+  #tools-list,
+  #games-list { grid-template-columns: 1fr; }
 
   .container      { padding: 1rem; }
   .hero           { margin-top: 1rem; }

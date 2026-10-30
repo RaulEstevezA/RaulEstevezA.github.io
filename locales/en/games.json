@@ -1,8 +1,8 @@
 {
   "page_title": "Educational games | Raúl Estévez",
-  "page_desc": "Play BlockFall and SQL Detective in the browser: a Python/Pygame falling-block game and an interactive game for learning SQL through database mysteries.",
+  "page_desc": "Play BlockFall and learn SQL or REST APIs with SQL Detective and API Quest, directly in your browser.",
   "heading": "Games",
-  "intro": "Play BlockFall or learn SQL by solving database mysteries in SQL Detective, directly in your browser.",
+  "intro": "Play BlockFall, solve database mysteries in SQL Detective, or master REST APIs through the missions of API Quest, directly in your browser.",
   "available_heading": "Available games",
   "empty": "No games are available right now."
 }

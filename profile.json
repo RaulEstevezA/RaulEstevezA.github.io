@@ -16,7 +16,7 @@
     "other_projects": 14,
     "interactive_demos": 6,
     "browser_tools": 3,
-    "browser_games": 2,
+    "browser_games": 3,
     "professional_certificates": 8,
     "individual_course_certificates": 32
   },
@@ -103,7 +103,8 @@
 
   "games": [
     { "name": "BlockFall", "url": "https://raulesteveza.github.io/games/BlockFall_Python/", "repository": "https://github.com/RaulEstevezA/BlockFall_Python" },
-    { "name": "SQL Detective", "url": "https://raulesteveza.github.io/games/SQL_Detective/", "repository": "https://github.com/RaulEstevezA/SQL_Detective" }
+    { "name": "SQL Detective", "url": "https://raulesteveza.github.io/games/SQL_Detective/", "repository": "https://github.com/RaulEstevezA/SQL_Detective" },
+    { "name": "API Quest", "url": "https://raulesteveza.github.io/games/API_Quest/", "repository": "https://github.com/RaulEstevezA/API_Quest" }
   ],
 
   "projects": [
