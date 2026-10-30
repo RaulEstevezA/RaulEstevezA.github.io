@@ -14,7 +14,6 @@
     var container = document.getElementById('games-list');
     var emptyState = document.getElementById('games-empty');
     var playLabel = currentLang === 'es' ? 'Jugar' : 'Play';
-    var codeLabel = currentLang === 'es' ? 'Ver código' : 'View code';
 
     var orderedGames = games.slice().sort(function (a, b) {
       return (a.display_order || 1000) - (b.display_order || 1000);
@@ -30,10 +29,6 @@
       var tags = (game.technologies || []).map(function (technology) {
         return '<span class="tag">' + escapeHtml(technology) + '</span>';
       }).join('');
-      var codeLink = game.repository_url
-        ? '<a class="btn btn-code" href="' + encodeURI(game.repository_url) + '" target="_blank" rel="noopener">' + codeLabel + '</a>'
-        : '';
-
       return '<article class="demo-card">' +
         logo +
         '<h3>' + escapeHtml(game.name) + '</h3>' +
@@ -41,7 +36,6 @@
         '<div class="tech-tags">' + tags + '</div>' +
         '<div class="demo-card-actions tool-card-actions">' +
           '<a class="btn btn-web" href="' + encodeURI(game.game_url) + '">' + playLabel + '</a>' +
-          codeLink +
         '</div>' +
       '</article>';
     }).join('');
