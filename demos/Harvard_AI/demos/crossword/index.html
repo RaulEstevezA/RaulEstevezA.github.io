@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Visualización interactiva de un solucionador de crucigramas CSP."><title>Crossword Solver · CSP</title><link rel="canonical" href="https://raulesteveza.github.io/demos/Harvard_AI/demos/crossword/"><meta property="og:title" content="Crossword Solver · Interactive CSP demo"><meta property="og:description" content="Watch constraint propagation and backtracking solve a crossword."><meta property="og:url" content="https://raulesteveza.github.io/demos/Harvard_AI/demos/crossword/"><meta property="og:image" content="https://raulesteveza.github.io/img/thumbs/harvard_ai_demos.webp"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Crossword Solver · Interactive CSP demo"><meta name="twitter:description" content="Watch constraint propagation and backtracking solve a crossword."><link rel="stylesheet" href="../../assets/css/tokens.css"><link rel="stylesheet" href="../../assets/css/base.css"><link rel="stylesheet" href="../../assets/css/demo.css"><link rel="stylesheet" href="crossword.css"></head><body>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Visualización interactiva de un solucionador de crucigramas CSP."><title>Crossword Solver · CSP</title><link rel="stylesheet" href="../../assets/css/tokens.css"><link rel="stylesheet" href="../../assets/css/base.css"><link rel="stylesheet" href="../../assets/css/demo.css"><link rel="stylesheet" href="crossword.css"></head><body>
 <header class="site-header"><a class="site-header__brand" href="https://raulesteveza.github.io">Raúl Estévez</a><div class="language-switcher" role="group" aria-label="Idioma"><button class="language-switcher__button" type="button" data-lang="en" aria-pressed="false">EN</button><button class="language-switcher__button" type="button" data-lang="es" aria-pressed="true">ES</button></div></header>
 <main class="page-shell demo-page"><nav class="breadcrumb"><a href="../../">AI Demos</a><span>/</span><span>Crossword Solver</span></nav>
 <section class="window demo-window"><header class="demo-header"><div><p class="eyebrow" data-i18n="eyebrow">Optimización · Satisfacción de restricciones</p><h1>Crossword Solver</h1><p data-i18n="subtitle">Sigue cómo un CSP reduce dominios y combina heurísticas con backtracking hasta completar la cuadrícula.</p></div></header>
@@ -10,5 +10,13 @@
 <section class="assignment-block"><h3 data-i18n="assignments">Asignaciones actuales</h3><div id="assignment-list"></div></section>
 <div class="algorithm-note"><strong data-i18n="howTitle">Cómo resuelve</strong><p data-i18n="howCopy">Primero elimina palabras de longitud incorrecta y aplica AC-3. Después selecciona variables con MRV y grado, ordena palabras con LCV y retrocede cuando una asignación viola una intersección.</p></div></aside></div></section>
 <section class="project-note"><div><p class="eyebrow" data-i18n="originLabel">Origen</p><h2 data-i18n="originTitle">Proyecto de Harvard CS50 AI</h2><p data-i18n="originCopy">Adaptación del ejercicio Crossword de la unidad Optimization. Utiliza la estructura y el vocabulario originales e instrumenta el mismo proceso CSP para mostrar sus decisiones.</p></div><div class="project-note__actions"><a class="button button--primary" href="https://github.com/RaulEstevezA/harvard_ai/tree/main/3-optimization/crossword" data-i18n="viewCode">Ver código original</a><a class="button" href="../../" data-i18n="backHub">Volver a AI Demos</a></div></section>
-</main><script src="crossword.js"></script><!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e39c213b71d04ecea667fe1a7c72f355"}'></script><!-- End Cloudflare Web Analytics -->
-</body></html>
+</main><script src="crossword.js"></script>
+  <!-- Cloudflare Web Analytics -->
+  <script
+    type="module"
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token":"e39c213b71d04ecea667fe1a7c72f355"}'>
+  </script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>

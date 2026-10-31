@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Demo interactiva de Q-learning aplicada al juego de Nim."><title>Nim · Q-learning</title><link rel="canonical" href="https://raulesteveza.github.io/demos/Harvard_AI/demos/nim/"><meta property="og:title" content="Nim · Interactive Q-learning demo"><meta property="og:description" content="Train a Q-learning agent through self-play and challenge its policy."><meta property="og:url" content="https://raulesteveza.github.io/demos/Harvard_AI/demos/nim/"><meta property="og:image" content="https://raulesteveza.github.io/img/thumbs/harvard_ai_demos.webp"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Nim · Interactive Q-learning demo"><meta name="twitter:description" content="Train a Q-learning agent through self-play and challenge its policy."><link rel="stylesheet" href="../../assets/css/tokens.css"><link rel="stylesheet" href="../../assets/css/base.css"><link rel="stylesheet" href="../../assets/css/demo.css"><link rel="stylesheet" href="nim.css"></head><body>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Demo interactiva de Q-learning aplicada al juego de Nim."><title>Nim · Q-learning</title><link rel="stylesheet" href="../../assets/css/tokens.css"><link rel="stylesheet" href="../../assets/css/base.css"><link rel="stylesheet" href="../../assets/css/demo.css"><link rel="stylesheet" href="nim.css"></head><body>
 <header class="site-header"><a class="site-header__brand" href="https://raulesteveza.github.io">Raúl Estévez</a><div class="language-switcher" role="group" aria-label="Idioma"><button class="language-switcher__button" type="button" data-lang="en" aria-pressed="false">EN</button><button class="language-switcher__button" type="button" data-lang="es" aria-pressed="true">ES</button></div></header>
 <main class="page-shell demo-page"><nav class="breadcrumb"><a href="../../">AI Demos</a><span>/</span><span>Nim</span></nav>
 <section class="window demo-window"><header class="demo-header"><div><p class="eyebrow" data-i18n="eyebrow">Aprendizaje · Q-learning</p><h1>Nim</h1><p data-i18n="subtitle">Entrena un agente mediante autoaprendizaje y juega contra la política que emerge de sus valores Q.</p></div></header>
@@ -14,5 +14,13 @@
 <div class="move-picker"><div><span data-i18n="selectedPile">Montón seleccionado</span><strong id="selected-pile">—</strong></div><div><span data-i18n="removeCount">Fichas que retirar</span><div class="count-options" id="count-options"></div></div><button class="button button--primary" id="make-move" type="button" data-i18n="makeMove">Retirar fichas</button></div>
 <p class="nim-rule" data-i18n="rule">Regla misère: quien retira la última ficha pierde.</p></section></div></section>
 <section class="project-note"><div><p class="eyebrow" data-i18n="originLabel">Origen</p><h2 data-i18n="originTitle">Proyecto de Harvard CS50 AI</h2><p data-i18n="originCopy">Adaptación del ejercicio Nim de la unidad Learning. La demo reproduce el entrenamiento de 10.000 partidas, la política epsilon-greedy y la actualización de valores Q del código original.</p></div><div class="project-note__actions"><a class="button button--primary" href="https://github.com/RaulEstevezA/harvard_ai/tree/main/4-learning/nim" data-i18n="viewCode">Ver código original</a><a class="button" href="../../" data-i18n="backHub">Volver a AI Demos</a></div></section>
-</main><script src="nim.js"></script><!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e39c213b71d04ecea667fe1a7c72f355"}'></script><!-- End Cloudflare Web Analytics -->
-</body></html>
+</main><script src="nim.js"></script>
+  <!-- Cloudflare Web Analytics -->
+  <script
+    type="module"
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token":"e39c213b71d04ecea667fe1a7c72f355"}'>
+  </script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>
