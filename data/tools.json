@@ -1,6 +1,32 @@
 {
   "tools": [
     {
+      "name": "Mapper",
+      "display_order": 3,
+      "badge_en": "Runs in your browser · Privacy first",
+      "badge_es": "Se ejecuta en el navegador · Privacidad",
+      "featured": false,
+      "description_en": "Relate two data models such as classes, DTOs, JSON or schemas field by field, review the suggested mappings and generate the code that converts one into the other.",
+      "description_es": "Relaciona dos modelos de datos como clases, DTOs, JSON o esquemas campo a campo, revisa las correspondencias sugeridas y genera el código que convierte uno en otro.",
+      "image": "/tools/Mapper/favicon.svg",
+      "tool_url": "/tools/Mapper/",
+      "repository_url": "https://github.com/RaulEstevezA/Mapper",
+      "download": {
+        "releases_url": "https://github.com/RaulEstevezA/Mapper/releases/latest",
+        "assets": {
+          "macOS": { "arm64": "Mapper-macOS.dmg" },
+          "Windows": {
+            "x64": "Mapper-Windows.zip",
+            "arm64": "Mapper-Windows-ARM64.zip"
+          },
+          "Linux": {
+            "x64": "Mapper-Linux.tar.gz",
+            "arm64": "Mapper-Linux-ARM64.tar.gz"
+          }
+        }
+      }
+    },
+    {
       "name": "DataCleanr",
       "display_order": 1,
       "badge_en": "Runs locally · Privacy first",
