@@ -33,14 +33,14 @@
 @media(max-width:600px){.case-group__heading{align-items:flex-start;flex-direction:column;gap:var(--space-2)}.case-group__heading>span{text-align:left}}
 
 /* Shared personal-site header. */
-.site-header{max-width:1000px;padding:2rem}
+.site-header{padding:var(--space-24) var(--space-24) var(--space-8)}
 .site-logo{color:inherit;transition:opacity .15s}
 .site-logo:hover{opacity:.75;text-decoration:none}
 .language{gap:var(--space-8);padding:0;background:transparent;border:0;border-radius:0}
 .language button{padding:2px 6px;font-size:.9rem;font-weight:var(--weight-medium);transition:color var(--transition-fast)}
 .language button[aria-pressed=true]{background:transparent}
 .language button:hover{color:var(--text)}
-@media(max-width:768px){.site-header{padding:1rem}}
+@media(max-width:600px){.site-header{padding:var(--space-16) var(--space-16) var(--space-4)}}
 #referenceDialog{width:min(920px,calc(100vw - var(--space-32)));max-height:min(820px,calc(100vh - var(--space-32)))}
 #referenceDialog .dialog__body{overflow:auto}
 .reference{display:grid;gap:var(--space-24)}
