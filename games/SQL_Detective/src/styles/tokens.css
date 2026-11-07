@@ -1,1 +1,78 @@
-:root{color-scheme:dark;--page-bg:#0d1117;--surface:#161b22;--surface-raised:#21262d;--border:#30363d;--text:#e6edf3;--btn-text:#c9d1d9;--muted:#8b949e;--accent:#58a6ff;--accent-text:#79c0ff;--accent-soft:#1a2740;--on-accent:#0d1117;--success:#3fb950;--success-soft:#12261e;--warning:#d29922;--warning-soft:#2b2111;--danger:#f85149;--backdrop:rgba(0,0,0,.85);--text-selection:rgba(88,166,255,.25);--sans:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;--mono:'SF Mono','Fira Code','Cascadia Code',ui-monospace,monospace;--font-h1:2.4rem;--font-h1-md:1.75rem;--font-subtitle:1.15rem;--font-title-sm:1.125rem;--font-h3:1.1rem;--font-body:1rem;--font-control:.9rem;--font-label:.8125rem;--font-caption:.75rem;--font-code:13px;--weight-medium:500;--weight-semibold:600;--weight-bold:700;--leading-tight:1.15;--leading-base:1.5;--leading-code:1.6;--leading-prose:1.65;--tracking-uppercase:.04em;--space-2:2px;--space-4:4px;--space-6:6px;--space-8:8px;--space-12:12px;--space-16:16px;--space-20:20px;--space-24:24px;--space-32:32px;--space-36:36px;--space-40:40px;--window-padding:var(--space-36) var(--space-40);--window-padding-mobile:var(--space-20) var(--space-16);--pane-header-padding:var(--space-12) var(--space-16);--content-width-wide:1440px;--prose-width:620px;--border-line:1px solid var(--border);--radius-xs:4px;--radius-sm:6px;--radius:8px;--radius-md:10px;--radius-lg:14px;--radius-pill:999px;--window-shadow:0 20px 60px rgba(0,0,0,.5),0 1px 0 rgba(255,255,255,.04);--modal-shadow:0 20px 60px rgba(0,0,0,.7);--transition-fast:.15s ease}
+/*
+ * Design tokens of the game. Games have artistic freedom in personal_web_style, so this
+ * palette comes from the logo: midnight blue, data cells in cyan and one amber highlight
+ * that always marks what matters (evidence, the main action). The case file adds warm
+ * paper, the other half of the noir setting. Use these variables, not literal values.
+ */
+
+:root {
+  color-scheme: dark;
+
+  /* Surfaces, from the back of the page to the front. */
+  --page-bg: #050b16;
+  --surface: #0b1626;
+  --surface-raised: #12233a;
+  --surface-sunken: #030711;
+  --border: #29466a;
+
+  /* Text. All of these meet AA contrast on every surface above. */
+  --text: #eaf3ff;
+  --btn-text: #cfe0f5;
+  --muted: #9ab2cf;
+
+  /* Identity: the cells and the highlighted block of the logo. */
+  --accent: #2cb7ff;
+  --accent-text: #8ad9ff;
+  --amber: #ffb020;
+  --on-amber: #1c1204;
+
+  /* The paper of the case file, with its own ink. */
+  --paper: #efe6d2;
+  --paper-raised: #f7f0e0;
+  --paper-edge: #cdbd99;
+  --ink: #1b2433;
+  --ink-muted: #545c68;
+  --stamp: #a3261f;
+  --on-stamp: #fff6ee;
+
+  /* The screen of the ATLAS terminal. */
+  --phosphor: #a9e6ff;
+
+  /* States. Each one is always paired with text, never shown through colour alone. */
+  --success: #6ee7a8;
+  --warning: #ffc861;
+  --danger: #ff8f85;
+  --warning-soft: #2b2210;
+
+  --backdrop: rgba(1, 4, 10, 0.88);
+  --selection: rgba(44, 183, 255, 0.35);
+
+  /* Current chapter. The themes below override it for their subtree. */
+  --chapter-accent: var(--accent);
+
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --serif: Georgia, 'Times New Roman', Times, serif;
+  --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+
+  --shadow-window: 0 20px 60px rgba(0, 0, 0, 0.6);
+  --transition-fast: 0.15s ease;
+}
+
+/* Each chapter has its own light over the same city. */
+.chapter-theme--1 { --chapter-accent: #2cb7ff; }
+.chapter-theme--2 { --chapter-accent: #48d6c4; }
+.chapter-theme--3 { --chapter-accent: #c9adff; }
+.chapter-theme--4 { --chapter-accent: #ff8f85; }
+.chapter-theme--5 { --chapter-accent: #ffb020; }

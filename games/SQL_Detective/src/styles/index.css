@@ -1,0 +1,14 @@
+/*
+ * Entry point of the styles, loaded by index.html. There is one file per screen or
+ * component; to add one, create it and import it here.
+ */
+
+@import './tokens.css';
+@import './base.css';
+@import './header.css';
+@import './art.css';
+@import './title-screen.css';
+@import './missions.css';
+@import './case.css';
+@import './modal.css';
+@import './ending.css';

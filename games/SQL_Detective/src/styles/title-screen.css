@@ -1,0 +1,114 @@
+/*
+ * Main menu (ui/screens/menu-screen.js): the logo over the city in the rain, the title and
+ * the buttons, in that order. The city starts below the header, so that nothing crosses
+ * the header and it keeps its contrast.
+ */
+
+.title-screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-12);
+  min-height: calc(100vh - 90px);
+  padding: var(--space-16) var(--space-24) var(--space-48);
+  overflow: hidden;
+  text-align: center;
+}
+
+.title-screen > * {
+  position: relative;
+}
+
+.title-screen__city {
+  position: absolute;
+  z-index: 0;
+  inset: auto 0 0;
+  height: 62%;
+  opacity: 0.75;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to top, #000 45%, transparent);
+  mask-image: linear-gradient(to top, #000 45%, transparent);
+}
+
+/* Rain: two layers of thin diagonal lines, falling at different speeds. */
+.title-screen::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(103deg, transparent 0 46px, rgba(138, 217, 255, 0.07) 46px 47px),
+    repeating-linear-gradient(103deg, transparent 0 83px, rgba(138, 217, 255, 0.05) 83px 84px);
+  background-size: 100% 240px;
+  animation: rain 0.9s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rain {
+  to {
+    background-position: -56px 240px;
+  }
+}
+
+.title-screen__logo {
+  width: clamp(120px, 18vw, 188px);
+  height: auto;
+  filter: drop-shadow(0 0 30px rgba(44, 183, 255, 0.35));
+}
+
+.title-screen__name {
+  font-size: clamp(2.6rem, 8.4vw, 5.8rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  text-shadow:
+    3px 3px 0 #07274a,
+    0 0 36px rgba(44, 183, 255, 0.3);
+  text-transform: uppercase;
+}
+
+.title-screen__name span {
+  color: var(--accent);
+}
+
+.title-screen__tagline {
+  color: var(--amber);
+  font-family: var(--mono);
+  font-size: clamp(0.875rem, 1.6vw, 1.05rem);
+  font-weight: 600;
+}
+
+.title-screen__description {
+  max-width: 560px;
+  color: var(--btn-text);
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.main-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  width: min(100%, 440px);
+  margin-top: var(--space-12);
+}
+
+.main-menu__wide {
+  grid-column: 1 / -1;
+  min-height: 50px;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .title-screen {
+    min-height: calc(100vh - 58px);
+  }
+}
+
+@media (max-width: 600px) {
+  .title-screen {
+    padding: var(--space-8) var(--space-16) var(--space-32);
+  }
+}

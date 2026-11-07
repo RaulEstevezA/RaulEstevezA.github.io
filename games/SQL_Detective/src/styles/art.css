@@ -1,0 +1,38 @@
+/*
+ * The skyline drawn by ui/art/skyline.js. Each window is a data cell, like the blocks of
+ * the logo: most of them dark, some lit in the light of the chapter, a few in amber.
+ */
+
+.skyline {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.skyline__cell {
+  fill: #0d1c31;
+}
+
+.skyline__cell--mid {
+  fill: #143459;
+}
+
+.skyline__cell--bright {
+  fill: var(--chapter-accent);
+  opacity: 0.55;
+}
+
+.skyline__cell--amber {
+  fill: var(--amber);
+  animation: window-flicker 7s steps(2, jump-none) infinite;
+}
+
+@keyframes window-flicker {
+  0%,
+  88% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 0.35;
+  }
+}
