@@ -77,6 +77,32 @@
           }
         }
       }
+    },
+    {
+      "name": "Model2DB",
+      "display_order": 4,
+      "badge_en": "Runs in your browser · Privacy first",
+      "badge_es": "Se ejecuta en el navegador · Privacidad",
+      "featured": false,
+      "description_en": "Turn a data model such as classes, DTOs, JSON or schemas into a database design you review step by step, then get the SQL schema, the scripts for MongoDB, Couchbase, Redis, Cassandra or ScyllaDB, or the models of your ORM.",
+      "description_es": "Convierte un modelo de datos como clases, DTOs, JSON o esquemas en un diseño de base de datos que revisas paso a paso, y obtén el esquema SQL, los scripts para MongoDB, Couchbase, Redis, Cassandra o ScyllaDB, o los modelos de tu ORM.",
+      "image": "/tools/Model2DB/favicon.svg",
+      "tool_url": "/tools/Model2DB/",
+      "repository_url": "https://github.com/RaulEstevezA/Model2DB",
+      "download": {
+        "releases_url": "https://github.com/RaulEstevezA/Model2DB/releases/latest",
+        "assets": {
+          "macOS": { "arm64": "Model2DB-macOS.dmg" },
+          "Windows": {
+            "x64": "Model2DB-Windows.zip",
+            "arm64": "Model2DB-Windows-ARM64.zip"
+          },
+          "Linux": {
+            "x64": "Model2DB-Linux.tar.gz",
+            "arm64": "Model2DB-Linux-ARM64.tar.gz"
+          }
+        }
+      }
     }
   ]
 }
