@@ -293,6 +293,156 @@ section + section {
 }
 
 /* =====================================================
+   LAB CATEGORIES
+===================================================== */
+
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.lab-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+  padding: 1.5rem;
+  color: inherit;
+  background: var(--btn-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.lab-card:hover {
+  transform: translateY(-2px);
+  background: var(--btn-hover);
+  border-color: var(--accent);
+}
+
+.lab-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.lab-card-kicker {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lab-card h2 {
+  margin: 0.75rem 0 0.5rem;
+  color: var(--text);
+  font-size: 1.4rem;
+  font-weight: 650;
+}
+
+.lab-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.lab-card-link {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-primary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  color: inherit;
+  background: rgba(88, 166, 255, 0.08);
+  border: 1px solid rgba(88, 166, 255, 0.45);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.contact-primary:hover {
+  background: rgba(88, 166, 255, 0.14);
+  border-color: var(--accent);
+}
+
+.contact-primary:focus-visible,
+.contact-profile:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.contact-primary-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.contact-primary-address {
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.contact-arrow {
+  color: var(--accent);
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.contact-profiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contact-profile {
+  padding: 1.25rem;
+  color: inherit;
+  background: var(--btn-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.contact-profile:hover {
+  transform: translateY(-2px);
+  background: var(--btn-hover);
+  border-color: var(--accent);
+}
+
+.contact-profile h3 {
+  margin: 0 0 0.35rem;
+  color: var(--text);
+  font-size: 1.15rem;
+  font-weight: 650;
+}
+
+.contact-profile p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* =====================================================
    TECH TAGS
 ===================================================== */
 
@@ -1004,6 +1154,8 @@ ul li {
 }
 
 @media (max-width: 768px) {
+  .contact-profiles,
+  .lab-grid,
   #tools-list,
   #games-list { grid-template-columns: 1fr; }
 

@@ -1,0 +1,16 @@
+{
+  "page_title": "Lab | Raúl Estévez",
+  "page_desc": "Explore interactive software demos and browser games built by Raúl Estévez.",
+  "heading": "Lab",
+  "intro": "A space for interactive builds, technical experiments and projects you can explore directly in your browser.",
+  "demos_kicker_one": "{count} interactive project",
+  "demos_kicker_other": "{count} interactive projects",
+  "demos_heading": "Technical demos",
+  "demos_description": "Try browser adaptations of Flutter, artificial intelligence, React and Django projects.",
+  "demos_link": "Explore demos →",
+  "games_kicker_one": "{count} browser game",
+  "games_kicker_other": "{count} browser games",
+  "games_heading": "Games",
+  "games_description": "Play a classic arcade project or learn SQL and REST APIs through interactive challenges.",
+  "games_link": "Explore games →"
+}
