@@ -30,3 +30,7 @@ Secondary coursework projects remain listed for completeness. E-Plant is intenti
 - Add each public tool to `data/tools.json` using the same card fields as `data/demos.json`, replacing `demo_url` with `tool_url`.
 - Tool deployments may use `rsync --delete`; do not manually edit files inside a managed tool directory.
 - Keep shared tool card images outside managed tool directories, under `img/tools/` or `img/thumbs/`.
+
+## Content validation
+
+Run `python3 scripts/validate_content.py` before publishing changes to the portfolio catalog. The check keeps counts, public tool entries, `profile.json`, `llms.txt`, JSON-LD and `sitemap.xml` synchronized. The same validation runs automatically in GitHub Actions on pushes to `main` and pull requests.

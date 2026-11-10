@@ -103,6 +103,18 @@
           }
         }
       }
+    },
+    {
+      "name": "Api2Data",
+      "display_order": 5,
+      "badge_en": "Runs in your browser · Direct requests",
+      "badge_es": "Se ejecuta en el navegador · Peticiones directas",
+      "featured": false,
+      "description_en": "Send HTTP requests to an API from your browser and inspect the response status, time, size, headers and formatted JSON or XML. Requests go directly from your browser to the API.",
+      "description_es": "Envía peticiones HTTP a una API desde el navegador e inspecciona el estado, tiempo, tamaño, cabeceras y respuestas JSON o XML formateadas. Las peticiones van directamente desde tu navegador a la API.",
+      "image": "/tools/Api2Data/favicon.svg",
+      "tool_url": "/tools/Api2Data/",
+      "repository_url": "https://github.com/RaulEstevezA/Api2Data"
     }
   ]
 }

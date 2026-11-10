@@ -3,7 +3,7 @@
 > Software developer focused on backend systems, cross-platform applications, data tooling and applied AI. Based in Spain.
 > Specialized in Python, Java, Flutter, TypeScript, SQL and application development.
 
-Last updated: 2026-10-30
+Last updated: 2026-11-10
 
 This file is intended to help language models and search systems understand
 Raúl Estévez's professional profile accurately.
@@ -13,8 +13,10 @@ Raúl Estévez's professional profile accurately.
 - Featured projects: 8 — https://raulesteveza.github.io/projects.html
 - Other projects: 14 — https://raulesteveza.github.io/projects.html
 - Interactive demos: 6 — https://raulesteveza.github.io/demos/
-- Browser tools: 3 (Mapper, DataCleanr and Api2Class) — https://raulesteveza.github.io/tools/
+- Browser tools: 5 (Mapper, DataCleanr, Api2Class, Model2DB and Api2Data) — https://raulesteveza.github.io/tools/
 - Browser games: 3 (BlockFall, SQL Detective and API Quest) — https://raulesteveza.github.io/games/
+- Lab: technical demos and browser games — https://raulesteveza.github.io/lab/
+- Contact: email, GitHub and LinkedIn — https://raulesteveza.github.io/contact/
 - Professional certificates: 8; individual course certificates: 32 — https://raulesteveza.github.io/courses.html
 
 ## Summary
@@ -103,6 +105,17 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
   Repository: https://github.com/RaulEstevezA/Api2Class
   Web app: https://raulesteveza.github.io/tools/Api2Class/
   Desktop downloads (Windows, macOS and Linux): https://github.com/RaulEstevezA/Api2Class/releases/latest
+
+- **Model2DB** — Published personal project: a privacy-first browser and desktop tool that turns classes, DTOs, JSON or schemas into a database design that can be reviewed step by step.
+  Generates SQL schemas, scripts for MongoDB, Couchbase, Redis, Cassandra or ScyllaDB, and ORM models. Processing stays on the user's device.
+  Repository: https://github.com/RaulEstevezA/Model2DB
+  Web app: https://raulesteveza.github.io/tools/Model2DB/
+  Desktop downloads (Windows, macOS and Linux): https://github.com/RaulEstevezA/Model2DB/releases/latest
+
+- **Api2Data** — Published browser API client for sending HTTP requests directly from the browser and inspecting response status, time, size, headers and formatted JSON or XML.
+  Requests go straight from the user's browser to the target API without an intermediary server.
+  Repository: https://github.com/RaulEstevezA/Api2Data
+  Web app: https://raulesteveza.github.io/tools/Api2Data/
 
 - **Microvalencia ERP App** — Full-featured Flutter mobile app built during an internship at Microvalencia Soluciones Informáticas S.L.
   Stack: Flutter, Dart, PHP, Laravel, REST API, MVVM, SOLID, Dio, FlutterSecureStorage, Geolocator, Flutter Flavors.

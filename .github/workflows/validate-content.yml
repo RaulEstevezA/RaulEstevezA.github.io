@@ -1,0 +1,19 @@
+name: Validate portfolio content
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate SEO and structured content
+        run: python3 scripts/validate_content.py
