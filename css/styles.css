@@ -384,6 +384,26 @@ section + section {
   outline-offset: 3px;
 }
 
+.contact-primary-content {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.contact-primary-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  flex-shrink: 0;
+  color: var(--accent);
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-primary-text { min-width: 0; }
+
 .contact-primary-label {
   display: block;
   margin-bottom: 0.25rem;
@@ -431,10 +451,27 @@ section + section {
 }
 
 .contact-profile h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   margin: 0 0 0.35rem;
   color: var(--text);
   font-size: 1.15rem;
   font-weight: 650;
+}
+
+.contact-profile-icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+.contact-profile-external {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .contact-profile p {
