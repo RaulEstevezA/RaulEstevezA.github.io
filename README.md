@@ -45,7 +45,7 @@ The `data/*.json` files are the single source of truth. The pages that list them
 The tags every page needs (canonical, Open Graph, Twitter, icons, `llms.txt`/`profile.json` alternates, theme colour and the language script) live in one file: `scripts/templates/head.html`. On deploy, `scripts/build_content.py` fills each page's `<!-- generated:start head -->` block from it.
 
 - Each page keeps only what is its own: `<title>`, `<meta name="description">` and the stylesheet. Open Graph and Twitter reuse the title and description; the canonical URL and relative paths come from the page location.
-- Do not add `preload`/`prefetch` links to the pages. The data files a page's script needs are preloaded from the `PRELOADS` map in `build_content.py`, and the template's Speculation Rules prefetch any internal page when a link is hovered (Chrome and Edge).
+- Do not add `preload`/`prefetch` links to the pages. The data JSON is not preloaded on purpose (the content is already in the HTML, and Safari downloads preloaded `fetch()` files twice); the template's Speculation Rules prefetch any internal page when a link is hovered (Chrome and Edge).
 - To override a template tag on one page, declare it in that page, e.g. `<meta property="og:type" content="profile" />` on the home page or a custom `og:image` on `tools/index.html` (which also switches Twitter to a large image card).
 
 ## Structured data (JSON-LD)

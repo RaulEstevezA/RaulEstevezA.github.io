@@ -501,8 +501,8 @@ def fill_block(html: str, name: str, content: list[str] | str, page: str) -> str
 #
 # Each page keeps in its own <head> only what is specific to it: <title>,
 # <meta name="description"> and the stylesheet (so local previews are
-# styled). The template provides everything else, plus the preloads listed
-# in PRELOADS; the JSON-LD comes from jsonld.py.
+# styled). The template provides everything else; the JSON-LD comes from
+# jsonld.py.
 #
 # A page can override a template tag by declaring it itself, e.g.
 # <meta property="og:type" content="profile" /> or a custom og:image; the
@@ -511,18 +511,10 @@ def fill_block(html: str, name: str, content: list[str] | str, page: str) -> str
 
 HEAD_TEMPLATE = ROOT / "scripts" / "templates" / "head.html"
 
-# Data files each page's script fetches on every visit (language switch,
-# download buttons, Spanish reveal): preloaded so the download starts while
-# the HTML is still being parsed.
-PRELOADS = {
-    "experience.html": ["data/experience.json"],
-    "projects.html": ["data/bestProjects.json", "data/projects.json"],
-    "courses.html": ["data/education.json", "data/certificates.json"],
-    "lab/index.html": ["data/demos.json", "data/games.json"],
-    "demos/index.html": ["data/demos.json"],
-    "games/index.html": ["data/games.json"],
-    "tools/index.html": ["data/tools.json"],
-}
+# No <link rel="preload"> for the data JSON: the content is already in the
+# HTML, the page scripts request the JSON right away anyway, and Safari does
+# not match fetch() calls to preloaded files (it downloads them twice and
+# warns that the preload was unused).
 DEFAULT_IMAGE = BASE_URL + "/img/raulestevezio.jpg"
 META_TAG = re.compile(r'<meta\s+(?:name|property)="(?P<key>[^"]+)"\s+content="(?P<value>[^"]*)"')
 
@@ -560,15 +552,7 @@ def render_head(html: str, page: str) -> list[str]:
         match = META_TAG.search(line)
         return bool(match) and match.group("key") in own_meta
 
-    preloads = []
-    for data_file in PRELOADS.get(page, []):
-        if not (ROOT / data_file).is_file():
-            raise SystemExit(f"{page}: preloaded file does not exist: {data_file}")
-        preloads.append(
-            f'<link rel="preload" href="{values["root"]}{data_file}" as="fetch" crossorigin="anonymous" />'
-        )
-
-    return [line for line in lines if line.strip() and not declared_by_page(line)] + preloads
+    return [line for line in lines if line.strip() and not declared_by_page(line)]
 
 
 # ---------------------------------------------------------------------------
