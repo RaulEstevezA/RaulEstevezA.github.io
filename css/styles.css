@@ -1287,32 +1287,46 @@ html.i18n-pending main {
 
 @keyframes i18n-reveal { to { opacity: 1; } }
 
-/* Collapsible lists open and close smoothly (Chrome 131+). */
-.certs-details { interpolate-size: allow-keywords; }
+/* Collapsible lists open and close smoothly.
+   Native CSS where interpolate-size exists (Chrome, Edge); elsewhere
+   js/motion.js animates the height and sets data-motion-target, so the
+   arrow turns back as soon as closing starts. */
+@supports (interpolate-size: allow-keywords) {
+  .certs-details { interpolate-size: allow-keywords; }
 
-.certs-details::details-content {
-  block-size: 0;
-  overflow: clip;
-  transition: block-size 0.3s ease, content-visibility 0.3s allow-discrete;
+  .certs-details::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition: block-size 0.26s cubic-bezier(0.2, 0, 0, 1),
+                content-visibility 0.26s allow-discrete;
+  }
+
+  .certs-details[open]::details-content { block-size: auto; }
 }
 
-.certs-details[open]::details-content { block-size: auto; }
+.certs-details[data-motion-target="closed"] summary::before { transform: none; }
 
-/* PDF dialogs fade and scale in and out. */
-.pdf-dialog,
-.pdf-dialog::backdrop {
-  transition: opacity 0.2s ease, transform 0.2s ease,
-              overlay 0.2s allow-discrete, display 0.2s allow-discrete;
+/* PDF dialogs fade and scale in everywhere. Closing is animated natively
+   where the overlay property exists (Chrome, Edge); elsewhere by js/motion.js. */
+.pdf-dialog[open],
+.pdf-dialog[open]::backdrop {
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
-
-.pdf-dialog { opacity: 0; transform: scale(0.97); }
-.pdf-dialog[open] { opacity: 1; transform: none; }
-.pdf-dialog::backdrop { opacity: 0; }
-.pdf-dialog[open]::backdrop { opacity: 1; }
 
 @starting-style {
   .pdf-dialog[open] { opacity: 0; transform: scale(0.97); }
   .pdf-dialog[open]::backdrop { opacity: 0; }
+}
+
+@supports (overlay: auto) {
+  .pdf-dialog,
+  .pdf-dialog::backdrop {
+    transition: opacity 0.18s ease-in, transform 0.18s ease-in,
+                overlay 0.18s allow-discrete, display 0.18s allow-discrete;
+  }
+
+  .pdf-dialog:not([open]) { opacity: 0; transform: scale(0.97); }
+  .pdf-dialog:not([open])::backdrop { opacity: 0; }
 }
 
 /* Project modal fades in, its panel rises slightly. */
