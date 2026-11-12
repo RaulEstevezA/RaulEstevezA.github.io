@@ -4,8 +4,16 @@
   var SUPPORTED = ['en', 'es'];
   var DEFAULT = 'en';
 
+  // Page scripts push the promise of their first render here, so a page shown
+  // in another language is only revealed once texts and data are translated.
+  window.siteReady = window.siteReady || [];
+
+  function readStoredLang() {
+    try { return localStorage.getItem('lang'); } catch (error) { return null; }
+  }
+
   function detectLang() {
-    var stored = localStorage.getItem('lang');
+    var stored = readStoredLang();
     if (stored && SUPPORTED.indexOf(stored) !== -1) return stored;
 
     var browser = (navigator.language || navigator.userLanguage || '').slice(0, 2).toLowerCase();
@@ -66,7 +74,7 @@
     var siteRoot = document.body.dataset.siteRoot || '';
     var base = siteRoot + 'locales/' + lang + '/';
 
-    localStorage.setItem('lang', lang);
+    try { localStorage.setItem('lang', lang); } catch (error) { /* storage blocked */ }
     document.documentElement.setAttribute('lang', lang);
 
     document.querySelectorAll('.lang a[data-lang]').forEach(function (link) {
@@ -89,14 +97,30 @@
     });
   }
 
+  // Cross-fade the language switch where View Transitions are supported.
+  function switchLang(lang) {
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!document.startViewTransition || reduceMotion) return setLang(lang);
+    return document.startViewTransition(function () { return setLang(lang); }).finished;
+  }
+
+  function reveal() {
+    document.documentElement.classList.remove('i18n-pending');
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.lang a[data-lang]').forEach(function (link) {
       link.addEventListener('click', function (event) {
         event.preventDefault();
-        setLang(link.dataset.lang);
+        if (link.classList.contains('active')) return;
+        switchLang(link.dataset.lang);
       });
     });
 
-    setLang(detectLang());
+    setLang(detectLang()).then(function () {
+      return Promise.all(window.siteReady.map(function (promise) {
+        return Promise.resolve(promise).catch(function () {});
+      }));
+    }).then(reveal, reveal);
   });
 }());

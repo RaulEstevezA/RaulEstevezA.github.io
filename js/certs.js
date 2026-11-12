@@ -133,7 +133,7 @@
     });
     updateEducationDialog(currentLang());
 
-    Promise.all([
+    (window.siteReady = window.siteReady || []).push(Promise.all([
       getJson('data/education.json'),
       getJson('data/certificates.json')
     ]).then(function (results) {
@@ -143,7 +143,7 @@
       if (results[1].courses) renderCourses(results[1].courses);
     }).catch(function (error) {
       console.error(error);
-    });
+    }));
   });
 
   document.addEventListener('languagechange:site', function (event) {

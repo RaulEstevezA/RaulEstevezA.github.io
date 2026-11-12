@@ -131,7 +131,7 @@
     render();
   });
 
-  fetch('../data/tools.json')
+  (window.siteReady = window.siteReady || []).push(fetch('../data/tools.json')
     .then(function (response) {
       if (!response.ok) throw new Error('Could not load data/tools.json');
       return response.json();
@@ -149,5 +149,5 @@
     })
     .catch(function (error) {
       console.error(error);
-    });
+    }));
 }());

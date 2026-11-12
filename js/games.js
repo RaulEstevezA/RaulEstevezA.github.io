@@ -46,7 +46,7 @@
     render();
   });
 
-  fetch('../data/games.json')
+  (window.siteReady = window.siteReady || []).push(fetch('../data/games.json')
     .then(function (response) {
       if (!response.ok) throw new Error('Could not load data/games.json');
       return response.json();
@@ -57,5 +57,5 @@
     })
     .catch(function (error) {
       console.error(error);
-    });
+    }));
 }());

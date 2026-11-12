@@ -1256,3 +1256,93 @@ ul li {
     grid-column: span 3;
   }
 }
+
+/* =====================================================
+   TRANSITIONS
+   Progressive enhancement: browsers without support
+   simply show the change instantly.
+===================================================== */
+
+/* Page-to-page cross-fade (Chrome, Edge, Safari 18.2+).
+   The header is its own layer, so it stays still between pages. */
+@view-transition { navigation: auto; }
+
+body > header { view-transition-name: site-header; }
+
+::view-transition-old(root) { animation: vt-fade-out 0.16s ease-in both; }
+::view-transition-new(root) { animation: vt-fade-in 0.28s ease-out both; }
+
+@keyframes vt-fade-out { to { opacity: 0; } }
+@keyframes vt-fade-in  { from { opacity: 0; } }
+
+/* While a non-English page is being translated, keep the content hidden
+   instead of flashing the English version. Revealed by js/i18n.js; the
+   delayed animation is a safety net if the translations never arrive. */
+main { transition: opacity 0.25s ease; }
+
+html.i18n-pending main {
+  opacity: 0;
+  animation: i18n-reveal 0s 1.5s forwards;
+}
+
+@keyframes i18n-reveal { to { opacity: 1; } }
+
+/* Collapsible lists open and close smoothly (Chrome 131+). */
+.certs-details { interpolate-size: allow-keywords; }
+
+.certs-details::details-content {
+  block-size: 0;
+  overflow: clip;
+  transition: block-size 0.3s ease, content-visibility 0.3s allow-discrete;
+}
+
+.certs-details[open]::details-content { block-size: auto; }
+
+/* PDF dialogs fade and scale in and out. */
+.pdf-dialog,
+.pdf-dialog::backdrop {
+  transition: opacity 0.2s ease, transform 0.2s ease,
+              overlay 0.2s allow-discrete, display 0.2s allow-discrete;
+}
+
+.pdf-dialog { opacity: 0; transform: scale(0.97); }
+.pdf-dialog[open] { opacity: 1; transform: none; }
+.pdf-dialog::backdrop { opacity: 0; }
+.pdf-dialog[open]::backdrop { opacity: 1; }
+
+@starting-style {
+  .pdf-dialog[open] { opacity: 0; transform: scale(0.97); }
+  .pdf-dialog[open]::backdrop { opacity: 0; }
+}
+
+/* Project modal fades in, its panel rises slightly. */
+#proj-modal {
+  opacity: 0;
+  transition: opacity 0.2s ease, display 0.2s allow-discrete;
+}
+
+#proj-modal.active { opacity: 1; }
+
+#proj-modal-inner {
+  transform: translateY(8px) scale(0.98);
+  transition: transform 0.2s ease;
+}
+
+#proj-modal.active #proj-modal-inner { transform: none; }
+
+@starting-style {
+  #proj-modal.active { opacity: 0; }
+  #proj-modal.active #proj-modal-inner { transform: translateY(8px) scale(0.98); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+
+  *, *::before, *::after,
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -141,12 +141,12 @@
     });
     updateDialogLabels(currentLang());
 
-    getJson('data/experience.json').then(function (data) {
+    (window.siteReady = window.siteReady || []).push(getJson('data/experience.json').then(function (data) {
       jobs = data.jobs;
       renderJobs(currentLang());
     }).catch(function (error) {
       console.error(error);
-    });
+    }));
   });
 
   document.addEventListener('languagechange:site', function (event) {

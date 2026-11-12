@@ -64,7 +64,7 @@
     render();
   });
 
-  fetch('../data/demos.json')
+  (window.siteReady = window.siteReady || []).push(fetch('../data/demos.json')
     .then(function (response) {
       if (!response.ok) throw new Error('Could not load data/demos.json');
       return response.json();
@@ -75,5 +75,5 @@
     })
     .catch(function (error) {
       console.error(error);
-    });
+    }));
 }());

@@ -18,14 +18,15 @@
   <meta name="twitter:title" content="Courses & Education | Raúl Estévez" />
   <meta name="twitter:description" content="Formal education, professional certificates and individual courses by Raúl Estévez, focused on software development and computer science." />
   <meta name="twitter:image" content="https://raulesteveza.github.io/img/raulestevezio.jpg" />
-  <link rel="stylesheet" href="css/styles.css?v=20261029-8" />
+  <script>/* Hide content until translated when the page will not be shown in English (see js/i18n.js). */try{var l=localStorage.getItem('lang');if(l!=='en'&&l!=='es')l=(navigator.language||'').slice(0,2).toLowerCase();if(l==='es')document.documentElement.classList.add('i18n-pending')}catch(e){}</script>
+  <link rel="stylesheet" href="css/styles.css?v=20261112-1" />
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png" />
   <link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png" />
   <meta name="theme-color" content="#0d1117" />
-  <link rel="prefetch" href="data/education.json" as="fetch" crossorigin="anonymous" />
-  <link rel="prefetch" href="data/certificates.json" as="fetch" crossorigin="anonymous" />
+  <link rel="preload" href="data/education.json" as="fetch" crossorigin="anonymous" />
+  <link rel="preload" href="data/certificates.json" as="fetch" crossorigin="anonymous" />
   <link rel="prefetch" href="locales/en/common.json" as="fetch" crossorigin="anonymous" />
   <link rel="prefetch" href="locales/en/courses.json" as="fetch" crossorigin="anonymous" />
   <link rel="prefetch" href="locales/es/common.json" as="fetch" crossorigin="anonymous" />
@@ -102,9 +103,9 @@
         <section>
           <h2 data-i18n="courses.formal_heading">Formal Education</h2>
           <div id="education-list" class="education-list">
-            <!-- populated by certs.js from data/education.json -->
+            <!-- generated:start education-list -->
+            <!-- generated:end education-list -->
           </div>
-          <noscript><p>Bachelor's Degree in Computer Engineering (UOC, in progress) and Higher Technician in Multiplatform Application Development (DAM, GPA 9.1/10).</p></noscript>
         </section>
 
         <!-- Professional Certificates -->
@@ -114,9 +115,9 @@
             Program-level certificates awarded upon completing a full series of courses.
           </p>
           <div class="cert-grid" id="certs-programs">
-            <!-- populated by certs.js -->
+            <!-- generated:start certs-programs -->
+            <!-- generated:end certs-programs -->
           </div>
-          <noscript><p>Eight professional certificates from HarvardX, IBM, UC3Mx and UAMx, plus 32 individual course certificates.</p></noscript>
         </section>
 
         <!-- Individual Course Certificates -->
@@ -125,10 +126,11 @@
           <details class="certs-details">
             <summary>
               <span data-i18n="courses.all_certs_toggle">Show all individual course certificates</span>
-              <span class="cert-count">(<span id="certs-all-count">…</span>)</span>
+              <span class="cert-count">(<span id="certs-all-count"><!-- generated:start certs-all-count --><!-- generated:end certs-all-count --></span>)</span>
             </summary>
             <ul class="cert-list" id="certs-all-list">
-              <!-- populated by certs.js -->
+              <!-- generated:start certs-all-list -->
+              <!-- generated:end certs-all-list -->
             </ul>
           </details>
         </section>
@@ -169,8 +171,8 @@
     <a id="education-dialog-open" class="btn pdf-dialog-open" target="_blank" rel="noopener noreferrer">Open PDF</a>
   </dialog>
 
-  <script src="js/i18n.js?v=20260509-1"></script>
-  <script src="js/certs.js?v=20260923-2"></script>
+  <script src="js/i18n.js?v=20261112-1"></script>
+  <script src="js/certs.js?v=20261112-1"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e39c213b71d04ecea667fe1a7c72f355"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

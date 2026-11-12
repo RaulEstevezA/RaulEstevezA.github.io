@@ -214,13 +214,17 @@
   document.addEventListener('DOMContentLoaded', function () {
     if (!document.getElementById('projects-featured')) return;
 
-    Promise.all([
+    var loaded = Promise.all([
       getJson('data/bestProjects.json'),
       getJson('data/projects.json')
     ]).then(function (results) {
       bestProjects = results[0].projects;
       otherProjects = results[1].other;
       renderAll(currentLang());
+    });
+    (window.siteReady = window.siteReady || []).push(loaded.catch(function () {}));
+
+    loaded.then(function () {
       return detectDesktopArchitecture();
     }).then(function (architecture) {
       if (architecture && architecture !== desktopArchitecture) {

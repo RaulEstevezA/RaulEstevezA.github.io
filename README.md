@@ -31,6 +31,16 @@ Secondary coursework projects remain listed for completeness. E-Plant is intenti
 - Tool deployments may use `rsync --delete`; do not manually edit files inside a managed tool directory.
 - Keep shared tool card images outside managed tool directories, under `img/tools/` or `img/thumbs/`.
 
+## Pre-rendered content
+
+The `data/*.json` files are the single source of truth. The pages that list them (`projects.html`, `experience.html`, `courses.html`, `lab/`, `demos/`, `games/` and `tools/`) contain empty `<!-- generated:start NAME -->` / `<!-- generated:end NAME -->` blocks.
+
+- On every push to `main`, `.github/workflows/deploy-pages.yml` runs `python3 scripts/build_content.py`, which fills those blocks from the JSON, and publishes the result to GitHub Pages. The filled pages are never committed: just edit the JSON and push.
+- GitHub Pages must use **Settings → Pages → Source: GitHub Actions**.
+- The published pages are complete on first paint and readable by crawlers and agents. The scripts in `js/` still load the JSON, re-render the blocks when the language changes and resolve platform-specific download buttons. Local previews therefore keep working with the empty blocks.
+- To preview the pre-rendered pages locally, run `python3 scripts/build_content.py`, and `python3 scripts/build_content.py --clean` before committing.
+- The generated markup mirrors what `js/*.js` renders in English. If you change how a card is rendered in a script, change `scripts/build_content.py` the same way.
+
 ## Content validation
 
 Run `python3 scripts/validate_content.py` before publishing changes to the portfolio catalog. The check keeps counts, public tool entries, `profile.json`, `llms.txt`, JSON-LD and `sitemap.xml` synchronized. The same validation runs automatically in GitHub Actions on pushes to `main` and pull requests.

@@ -41,6 +41,6 @@
   }
 
   document.addEventListener('languagechange:site', function (event) {
-    renderCounts(event.detail.lang);
+    (window.siteReady = window.siteReady || []).push(renderCounts(event.detail.lang));
   });
 }());

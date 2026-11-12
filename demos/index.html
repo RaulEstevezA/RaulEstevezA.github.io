@@ -18,13 +18,14 @@
   <meta name="twitter:title" content="Demos | Raúl Estévez" />
   <meta name="twitter:description" content="Explore six interactive Flutter, artificial intelligence, React and Django project demos directly in the browser." />
   <meta name="twitter:image" content="https://raulesteveza.github.io/img/raulestevezio.jpg" />
-  <link rel="stylesheet" href="../css/styles.css?v=20261029-8" />
+  <script>/* Hide content until translated when the page will not be shown in English (see js/i18n.js). */try{var l=localStorage.getItem('lang');if(l!=='en'&&l!=='es')l=(navigator.language||'').slice(0,2).toLowerCase();if(l==='es')document.documentElement.classList.add('i18n-pending')}catch(e){}</script>
+  <link rel="stylesheet" href="../css/styles.css?v=20261112-1" />
   <link rel="icon" href="../favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="../img/icons/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="../img/icons/favicon-16x16.png" />
   <link rel="apple-touch-icon" href="../img/icons/apple-touch-icon.png" />
   <meta name="theme-color" content="#0d1117" />
-  <link rel="prefetch" href="../data/demos.json" as="fetch" crossorigin="anonymous" />
+  <link rel="preload" href="../data/demos.json" as="fetch" crossorigin="anonymous" />
   <link rel="prefetch" href="../locales/en/demos.json" as="fetch" crossorigin="anonymous" />
   <link rel="prefetch" href="../locales/es/demos.json" as="fetch" crossorigin="anonymous" />
   <script type="application/ld+json">
@@ -124,8 +125,10 @@
 
         <section aria-labelledby="demos-heading">
           <h2 id="demos-heading" data-i18n="demos.available_heading">Available demos</h2>
-          <div id="demos-list" class="demo-list"></div>
-          <noscript><p><a href="Flutter_Shop_Admin/">Flutter Shop Admin</a>, <a href="Cinema_App/">Cinema App</a>, <a href="ERP_Flutter/">ERP Flutter</a>, <a href="Harvard_AI/">Harvard AI Demos</a>, <a href="e-plantShopping/">E-Plant</a> and <a href="Duckyware_Store/">DuckyWare</a>.</p></noscript>
+          <div id="demos-list" class="demo-list">
+            <!-- generated:start demos-list -->
+            <!-- generated:end demos-list -->
+          </div>
         </section>
 
         <div class="actions site-actions">
@@ -144,8 +147,8 @@
     </footer>
   </main>
 
-  <script src="../js/i18n.js?v=20261001-2"></script>
-  <script src="../js/demos.js?v=20261026-2"></script>
+  <script src="../js/i18n.js?v=20261112-1"></script>
+  <script src="../js/demos.js?v=20261112-1"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e39c213b71d04ecea667fe1a7c72f355"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
