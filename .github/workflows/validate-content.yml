@@ -1,8 +1,7 @@
 name: Validate portfolio content
 
+# Pushes to main are validated by deploy-pages.yml before publishing.
 on:
-  push:
-    branches: [main]
   pull_request:
 
 permissions:
