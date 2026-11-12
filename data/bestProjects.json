@@ -14,11 +14,7 @@
     "schema":             "Optional schema.org properties added to this project's JSON-LD (e.g. applicationCategory, operatingSystem, license)",
     "links":              "Array of { type, url } shown as buttons on the card and in the modal, in this order. type is one of: github, demo, live_demo, web, download. Download links may include assets grouped by platform and architecture (x64 or arm64). Each type has its own label and color (github = blue, demo = red/YouTube, live_demo and web = green, download = purple)"
   },
-  "_also_update": [
-    "llms.txt          → ## Featured Projects section",
-    "profile.json      → projects array (featured: true)",
-    "projects.html JSON-LD is generated from this file by scripts/build_content.py"
-  ],
+  "_generated": "Nothing else to update: the pages, their JSON-LD, profile.json and llms.txt are generated from this file on deploy (scripts/build_content.py).",
 
   "projects": [
     {

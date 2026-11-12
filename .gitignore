@@ -29,7 +29,8 @@ coverage/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -49,3 +50,7 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Generated on deploy by scripts/build_content.py (python3 scripts/build_content.py --clean removes them)
+/profile.json
+/llms.txt

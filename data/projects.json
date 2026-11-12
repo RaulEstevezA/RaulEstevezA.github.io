@@ -5,10 +5,7 @@
     "desc_en/es":  "Short description (1-2 sentences)",
     "links":       "Array of link objects. Each needs 'type' (github | demo | live_demo | web | repo1 | repo2) and 'url'"
   },
-  "_also_update": [
-    "llms.txt     → ## Other Projects section",
-    "profile.json → projects array (featured: false)"
-  ],
+  "_generated": "Nothing else to update: the pages, their JSON-LD, profile.json and llms.txt are generated from this file on deploy (scripts/build_content.py).",
 
   "other": [
     {

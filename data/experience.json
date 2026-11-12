@@ -7,13 +7,11 @@
     "highlights_en/es":   "Array of technical bullet points (optional)",
     "tech":               "Comma-separated technologies (language-neutral)",
     "period_en/es":       "Employment period",
+    "hours":              "Optional total hours (internships)",
+    "recommendation":     "Optional recommendation letter summary: issued_by, date, highlights [{title, text}], conclusion (the PDF is rec_letter)",
     "schema":             "Optional schema.org properties added to this job's JSON-LD Role (e.g. startDate, endDate, worksFor.address)"
   },
-  "_also_update": [
-    "llms.txt          → ## Experience section",
-    "profile.json      → experience array",
-    "experience.html JSON-LD is generated from this file by scripts/build_content.py"
-  ],
+  "_generated": "Nothing else to update: the pages, their JSON-LD, profile.json and llms.txt are generated from this file on deploy (scripts/build_content.py).",
 
   "jobs": [
     {
@@ -62,7 +60,18 @@
       "period_en": "March – June 2026 · 383 h",
       "period_es": "Marzo – Junio 2026 · 383 h",
 
-      "rec_letter": "doc/carta_recomendacion/carta_recomendacion_microvalencia_censura.pdf"
+      "rec_letter": "doc/carta_recomendacion/carta_recomendacion_microvalencia_censura.pdf",
+      "hours": 383,
+      "recommendation": {
+        "issued_by": "Pau Moraleda Martínez",
+        "date": "June 2026",
+        "highlights": [
+          {"title": "Technical autonomy and problem-solving", "text": "Strong theoretical and practical knowledge; handled tasks with a technical criterion above average for an intern profile."},
+          {"title": "Learning capacity", "text": "Rapidly adapted to languages and environments not previously studied."},
+          {"title": "Product impact and professional readiness", "text": "The final product delivered real value to the organisation, and the letter highlights readiness for a real professional environment."}
+        ],
+        "conclusion": "Raúl Estévez is a professional ready for a real work environment and will be a great asset for any organisation that decides to incorporate him into their team."
+      }
     }
   ]
 }

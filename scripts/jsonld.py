@@ -1,7 +1,7 @@
 """Build each page's schema.org JSON-LD from the portfolio data.
 
 Sources:
-- profile.json             -> the person (name, title, contact, profiles, languages, knows_about)
+- data/person.json         -> the person (name, title, contact, profiles, languages, knows_about)
 - data/education.json      -> alumniOf
 - data/certificates.json   -> hasCredential (professional certificates)
 - data/experience.json     -> hasOccupation (one Role per job)
@@ -67,12 +67,12 @@ def page_meta(page: str) -> tuple[str, str]:
 # ---------------------------------------------------------------------------
 
 def person_ref() -> dict:
-    profile = load("profile.json")
+    profile = load("data/person.json")
     return {"@type": "Person", "name": profile["name"], "url": profile["website"] + "/"}
 
 
 def person(page_url: str | None = None, *, full: bool = False) -> dict:
-    profile = load("profile.json")
+    profile = load("data/person.json")
     data = {
         "@type": "Person",
         "name": profile["name"],
@@ -105,7 +105,7 @@ def languages() -> list[dict]:
     return [
         {"@type": "Language", "name": lang["language"],
          "description": " ".join(filter(None, [lang.get("level"), lang.get("cert")]))}
-        for lang in load("profile.json")["languages"]
+        for lang in load("data/person.json")["languages"]
     ]
 
 
@@ -262,7 +262,7 @@ def page_documents() -> dict:
         "contact/index.html": lambda: {
             "@context": "https://schema.org",
             "@type": "ContactPage",
-            "name": f'{page_meta("contact/index.html")[0]} {load("profile.json")["name"]}',
+            "name": f'{page_meta("contact/index.html")[0]} {load("data/person.json")["name"]}',
             "url": BASE_URL + "/contact/",
             "mainEntity": person(),
         },

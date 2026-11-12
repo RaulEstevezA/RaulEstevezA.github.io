@@ -6,11 +6,7 @@
     "year":     "Year of completion (integer)",
     "certs":    "Array of badge objects. Each needs 'label' (EDX | CS50 | Credly | Udemy) and 'url' (direct certificate link)"
   },
-  "_also_update": [
-    "llms.txt          → ## Education / ## Professional Program Certificates section",
-    "profile.json      → courses array",
-    "JSON-LD on index.html and courses.html is generated from this file by scripts/build_content.py"
-  ],
+  "_generated": "Nothing else to update: the pages, their JSON-LD, profile.json and llms.txt are generated from this file on deploy (scripts/build_content.py).",
   "_example_cert": { "label": "EDX", "url": "https://courses.edx.org/certificates/..." },
 
   "programs": [

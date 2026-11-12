@@ -8,11 +8,7 @@
     "logos": "Optional institution icons shown before the title, same height as the contact icons; any aspect ratio (paths under img/education/)",
     "documents": "Optional public documents. Each needs label_en/es and url"
   },
-  "_also_update": [
-    "llms.txt     → ## Education section",
-    "profile.json → education array",
-    "JSON-LD on index.html and courses.html is generated from this file by scripts/build_content.py"
-  ],
+  "_generated": "Nothing else to update: the pages, their JSON-LD, profile.json and llms.txt are generated from this file on deploy (scripts/build_content.py).",
   "education": [
     {
       "title_en": "Bachelor's Degree in Computer Engineering",
