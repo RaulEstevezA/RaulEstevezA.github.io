@@ -6,7 +6,8 @@
 2. Generate each page's schema.org JSON-LD from the data (see jsonld.py).
 3. Pre-render portfolio data from data/*.json into the static HTML pages.
 4. Generate profile.json and llms.txt for agents (see agent_files.py).
-5. Version every local CSS/JS reference with a hash of the file's content
+5. Generate sitemap.xml with accurate lastmod dates (see sitemap.py).
+6. Version every local CSS/JS reference with a hash of the file's content
    (styles.css?v=1a2b3c4d5e), so browsers fetch a file again exactly when it
    changes. The repository keeps the references without ?v=.
 
@@ -45,6 +46,7 @@ from urllib.parse import quote
 
 from agent_files import write_agent_files
 from jsonld import build_jsonld
+from sitemap import write_sitemap
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -633,6 +635,7 @@ def main() -> int:
             path.write_text(updated, encoding="utf-8")
 
     changed += write_agent_files(clean)
+    changed += write_sitemap(clean)
 
     action = "Restored" if clean else "Prepared"
     print(f"{action}: " + ", ".join(changed) if changed else "Nothing to change.")

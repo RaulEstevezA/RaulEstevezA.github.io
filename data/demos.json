@@ -1,4 +1,9 @@
 {
+  "_fields": {
+    "sitemap_pages": "Optional extra pages inside the demo to list in sitemap.xml (paths like /demos/Name/page/)",
+    "schema": "Optional schema.org properties added to the demo's JSON-LD"
+  },
+
   "demos": [
     {
       "name": "ERP Flutter",
@@ -44,6 +49,7 @@
       "technologies": ["Artificial Intelligence", "JavaScript", "HTML", "CSS", "Canvas"],
       "image": "/img/thumbs/harvard_ai_demos.webp",
       "schema": {"applicationCategory": "EducationalApplication"},
+      "sitemap_pages": ["/demos/Harvard_AI/demos/attention/", "/demos/Harvard_AI/demos/crossword/", "/demos/Harvard_AI/demos/degrees/", "/demos/Harvard_AI/demos/heredity/", "/demos/Harvard_AI/demos/knights/", "/demos/Harvard_AI/demos/minesweeper/", "/demos/Harvard_AI/demos/nim/", "/demos/Harvard_AI/demos/pagerank/", "/demos/Harvard_AI/demos/parser/", "/demos/Harvard_AI/demos/shopping/", "/demos/Harvard_AI/demos/tictactoe/", "/demos/Harvard_AI/demos/traffic/"],
       "demo_url": "/demos/Harvard_AI/",
       "repository_url": "https://github.com/RaulEstevezA/harvard_ai_demo"
     },

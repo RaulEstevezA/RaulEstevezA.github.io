@@ -29,6 +29,9 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          # Full history: sitemap.xml dates come from the last commit of each page.
+          fetch-depth: 0
 
       - name: Validate SEO and structured content
         run: python3 scripts/validate_content.py
