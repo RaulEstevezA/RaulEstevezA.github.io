@@ -5,6 +5,7 @@
     "institution": "School or institution",
     "period_en/es": "Study period",
     "grade_en/es": "Final grade",
+    "logos": "Optional institution icons shown before the title, same height as the contact icons; any aspect ratio (paths under img/education/)",
     "documents": "Optional public documents. Each needs label_en/es and url"
   },
   "_also_update": [
@@ -21,6 +22,7 @@
       "period_es": "2026 – Actualidad",
       "grade_en": "In progress",
       "grade_es": "En curso",
+      "logos": ["img/education/uoc.png"],
       "documents": []
     },
     {
@@ -31,6 +33,7 @@
       "period_es": "2024 – 2026",
       "grade_en": "GPA: 9.1 / 10",
       "grade_es": "Nota media: 9,1 / 10",
+      "logos": ["img/education/jesuites.png", "img/education/uoc.png"],
       "documents": [
         {
           "label_en": "Study certificate",

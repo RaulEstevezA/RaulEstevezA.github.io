@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Pre-render portfolio data from data/*.json into the static HTML pages.
+"""Prepare the site pages for publishing.
+
+1. Pre-render portfolio data from data/*.json into the static HTML pages.
+2. Version every local CSS/JS reference with a hash of the file's content
+   (styles.css?v=1a2b3c4d5e), so browsers fetch a file again exactly when it
+   changes. The repository keeps the references without ?v=.
 
 The JSON files stay the single source of truth. Each page marks the blocks this
 script owns with:
@@ -18,12 +23,13 @@ fetching the same JSON and re-render the blocks when the language changes; that
 also keeps local previews working with the empty blocks.
 
 Usage:
-    python3 scripts/build_content.py          # fill the blocks (used by the deploy)
-    python3 scripts/build_content.py --clean  # empty the blocks again before committing
+    python3 scripts/build_content.py          # fill blocks + add versions (used by the deploy)
+    python3 scripts/build_content.py --clean  # back to the committed state, before committing
 """
 
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 import re
@@ -252,9 +258,16 @@ def render_education(item: dict, index: int) -> str:
         + '" data-document-index="' + str(doc_index) + '">' + esc(doc["label_en"]) + "</button>"
         for doc_index, doc in enumerate(item.get("documents") or [])
     )
+    logos = "".join(
+        '<img class="edu-logo" src="' + esc(src) + '" alt="" decoding="async">'
+        for src in item.get("logos") or []
+    )
     return (
         '<article class="edu-card">'
-        + "<p><strong>" + esc(item["title_en"]) + "</strong></p>"
+        + '<p class="edu-title">'
+        + ('<span class="edu-logos">' + logos + "</span>" if logos else "")
+        + "<strong>" + esc(item["title_en"]) + "</strong>"
+        + "</p>"
         + "<p>" + esc(item["institution"]) + "</p>"
         + "<p>" + esc(item["period_en"]) + "</p>"
         + '<div class="edu-footer">'
@@ -470,24 +483,69 @@ def fill_block(html: str, name: str, content: list[str] | str, page: str) -> str
     )
 
 
+# ---------------------------------------------------------------------------
+# Cache busting: ?v=<content hash> on local stylesheets and scripts
+# ---------------------------------------------------------------------------
+
+# Site pages owned by this repository (not the apps under demos/, games/, tools/).
+SITE_PAGES = [
+    "index.html",
+    "experience.html",
+    "projects.html",
+    "courses.html",
+    "contact/index.html",
+    "lab/index.html",
+    "demos/index.html",
+    "games/index.html",
+    "tools/index.html",
+]
+
+# href="..." / src="..." pointing to a local .css or .js file, with or without ?v=.
+ASSET_REF = re.compile(r'\b(?P<attr>href|src)="(?P<path>[^":?#]+\.(?:css|js))(?:\?v=[^"]*)?"')
+
+
+def content_hash(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()[:10]
+
+
+def version_assets(html: str, page: str, clean: bool) -> str:
+    page_dir = (ROOT / page).parent
+
+    def replace(match: re.Match) -> str:
+        ref = match.group("path")
+        if clean:
+            return f'{match.group("attr")}="{ref}"'
+        asset = (page_dir / ref).resolve()
+        if not asset.is_file():
+            raise SystemExit(f"{page}: referenced file does not exist: {ref}")
+        return f'{match.group("attr")}="{ref}?v={content_hash(asset)}"'
+
+    return ASSET_REF.sub(replace, html)
+
+
 def main() -> int:
     clean = "--clean" in sys.argv[1:]
     changed: list[str] = []
 
-    for page, build in PAGES.items():
+    for page in SITE_PAGES:
         path = ROOT / page
         original = path.read_text(encoding="utf-8")
         updated = original
-        for name, content in build().items():
-            if clean:
-                content = "" if isinstance(content, str) else []
-            updated = fill_block(updated, name, content, page)
+
+        build = PAGES.get(page)
+        if build:
+            for name, content in build().items():
+                if clean:
+                    content = "" if isinstance(content, str) else []
+                updated = fill_block(updated, name, content, page)
+
+        updated = version_assets(updated, page, clean)
 
         if updated != original:
             changed.append(page)
             path.write_text(updated, encoding="utf-8")
 
-    action = "Emptied" if clean else "Filled"
+    action = "Restored" if clean else "Prepared"
     print(f"{action}: " + ", ".join(changed) if changed else "Nothing to change.")
     return 0
 

@@ -38,8 +38,12 @@ The `data/*.json` files are the single source of truth. The pages that list them
 - On every push to `main`, `.github/workflows/deploy-pages.yml` runs `python3 scripts/build_content.py`, which fills those blocks from the JSON, and publishes the result to GitHub Pages. The filled pages are never committed: just edit the JSON and push.
 - GitHub Pages must use **Settings → Pages → Source: GitHub Actions**.
 - The published pages are complete on first paint and readable by crawlers and agents. The scripts in `js/` still load the JSON, re-render the blocks when the language changes and resolve platform-specific download buttons. Local previews therefore keep working with the empty blocks.
-- To preview the pre-rendered pages locally, run `python3 scripts/build_content.py`, and `python3 scripts/build_content.py --clean` before committing.
+- To preview the published version locally, run `python3 scripts/build_content.py`, and `python3 scripts/build_content.py --clean` before committing.
 - The generated markup mirrors what `js/*.js` renders in English. If you change how a card is rendered in a script, change `scripts/build_content.py` the same way.
+
+## Cache busting
+
+Never add `?v=` to stylesheet or script references by hand: the site pages reference local CSS/JS files without it. On deploy, `scripts/build_content.py` appends a hash of each file's content (`css/styles.css?v=1a2b3c4d5e`), so browsers download a file again exactly when it changes. `--clean` removes the versions again.
 
 ## Content validation
 

@@ -990,6 +990,28 @@ section + section {
 .edu-card p { margin: 0 0 0.3rem; }
 .edu-card p:last-child { margin-bottom: 0; }
 
+/* Institution icons: same height and corner radius as the GitHub/LinkedIn
+   icons on the contact page (.contact-profile-icon: 1.35rem, rx 3 of 24).
+   The width follows each logo, so rectangular logos keep their shape. */
+.edu-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.edu-logos {
+  display: flex;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.edu-logo {
+  display: block;
+  width: auto;
+  height: 1.35rem;
+  border-radius: 0.17rem;
+}
+
 .edu-footer,
 .edu-documents {
   display: flex;

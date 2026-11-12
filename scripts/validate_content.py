@@ -135,6 +135,12 @@ def validate_llms(profile: dict, tools: list[dict]) -> None:
         check(tool["repository_url"] in llms, f"llms.txt is missing {tool['repository_url']}")
 
 
+def validate_education() -> None:
+    for item in load_json("data/education.json")["education"]:
+        for logo in item.get("logos") or []:
+            check((ROOT / logo).is_file(), f"Missing education logo: {logo}")
+
+
 def validate_sitemap(
     profile: dict, demos: list[dict], tools: list[dict], games: list[dict]
 ) -> None:
@@ -189,6 +195,7 @@ def main() -> int:
         validate_tools(profile, tools)
         validate_llms(profile, tools)
         validate_sitemap(profile, demos, tools, games)
+        validate_education()
     except (KeyError, json.JSONDecodeError, ET.ParseError) as error:
         ERRORS.append(f"Could not parse required content: {error}")
 
