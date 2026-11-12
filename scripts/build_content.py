@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Prepare the site pages for publishing.
 
-1. Pre-render portfolio data from data/*.json into the static HTML pages.
-2. Version every local CSS/JS reference with a hash of the file's content
+1. Fill the shared part of every page's <head> (canonical, Open Graph, Twitter,
+   icons...) from scripts/templates/head.html.
+2. Pre-render portfolio data from data/*.json into the static HTML pages.
+3. Version every local CSS/JS reference with a hash of the file's content
    (styles.css?v=1a2b3c4d5e), so browsers fetch a file again exactly when it
    changes. The repository keeps the references without ?v=.
 
@@ -30,15 +32,18 @@ Usage:
 from __future__ import annotations
 
 import hashlib
+import html as html_lib
 import json
 import math
 import re
 import sys
 from pathlib import Path
+from string import Template
 from urllib.parse import quote
 
 
 ROOT = Path(__file__).resolve().parent.parent
+BASE_URL = "https://raulesteveza.github.io"
 
 
 # ---------------------------------------------------------------------------
@@ -484,6 +489,82 @@ def fill_block(html: str, name: str, content: list[str] | str, page: str) -> str
 
 
 # ---------------------------------------------------------------------------
+# Shared <head>: scripts/templates/head.html
+# ---------------------------------------------------------------------------
+#
+# Each page keeps in its own <head> only what is specific to it: <title>,
+# <meta name="description">, the stylesheet (so local previews are styled)
+# and its JSON-LD. The template provides everything else, plus the preloads
+# listed in PRELOADS.
+#
+# A page can override a template tag by declaring it itself, e.g.
+# <meta property="og:type" content="profile" /> or a custom og:image; the
+# template then skips that tag and uses the page's value where it is reused
+# (a custom og:image also becomes the twitter:image, as a large card).
+
+HEAD_TEMPLATE = ROOT / "scripts" / "templates" / "head.html"
+
+# Data files each page's script fetches on every visit (language switch,
+# download buttons, Spanish reveal): preloaded so the download starts while
+# the HTML is still being parsed.
+PRELOADS = {
+    "experience.html": ["data/experience.json"],
+    "projects.html": ["data/bestProjects.json", "data/projects.json"],
+    "courses.html": ["data/education.json", "data/certificates.json"],
+    "lab/index.html": ["data/demos.json", "data/games.json"],
+    "demos/index.html": ["data/demos.json"],
+    "games/index.html": ["data/games.json"],
+    "tools/index.html": ["data/tools.json"],
+}
+DEFAULT_IMAGE = BASE_URL + "/img/raulestevezio.jpg"
+META_TAG = re.compile(r'<meta\s+(?:name|property)="(?P<key>[^"]+)"\s+content="(?P<value>[^"]*)"')
+
+
+def page_url(page: str) -> str:
+    if page == "index.html":
+        return BASE_URL + "/"
+    if page.endswith("/index.html"):
+        return BASE_URL + "/" + page[: -len("index.html")]
+    return BASE_URL + "/" + page
+
+
+def render_head(html: str, page: str) -> list[str]:
+    head = html[: html.index("</head>")]
+    own = re.sub(r"<!-- generated:start head -->.*?<!-- generated:end head -->", "", head, flags=re.S)
+    own_meta = {m.group("key"): html_lib.unescape(m.group("value")) for m in META_TAG.finditer(own)}
+
+    title_match = re.search(r"<title>(.*?)</title>", own, re.S)
+    if not title_match or not own_meta.get("description"):
+        raise SystemExit(f"{page}: every page needs its own <title> and <meta name=\"description\">")
+
+    custom_image = own_meta.get("og:image")
+    values = {
+        "url": page_url(page),
+        "root": "../" * page.count("/"),
+        "title": esc_attr(html_lib.unescape(title_match.group(1).strip())),
+        "description": esc_attr(own_meta["description"]),
+        "og_type": own_meta.get("og:type", "website"),
+        "image": esc_attr(custom_image or DEFAULT_IMAGE),
+        "twitter_card": "summary_large_image" if custom_image else "summary",
+    }
+    lines = Template(HEAD_TEMPLATE.read_text(encoding="utf-8")).substitute(values).splitlines()
+
+    def declared_by_page(line: str) -> bool:
+        match = META_TAG.search(line)
+        return bool(match) and match.group("key") in own_meta
+
+    preloads = []
+    for data_file in PRELOADS.get(page, []):
+        if not (ROOT / data_file).is_file():
+            raise SystemExit(f"{page}: preloaded file does not exist: {data_file}")
+        preloads.append(
+            f'<link rel="preload" href="{values["root"]}{data_file}" as="fetch" crossorigin="anonymous" />'
+        )
+
+    return [line for line in lines if line.strip() and not declared_by_page(line)] + preloads
+
+
+# ---------------------------------------------------------------------------
 # Cache busting: ?v=<content hash> on local stylesheets and scripts
 # ---------------------------------------------------------------------------
 
@@ -530,7 +611,7 @@ def main() -> int:
     for page in SITE_PAGES:
         path = ROOT / page
         original = path.read_text(encoding="utf-8")
-        updated = original
+        updated = fill_block(original, "head", [] if clean else render_head(original, page), page)
 
         build = PAGES.get(page)
         if build:
