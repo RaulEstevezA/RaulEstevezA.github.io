@@ -58,7 +58,8 @@ def validate_counts() -> tuple[dict, list[dict], list[dict], list[dict]]:
     featured = load_json("data/bestProjects.json")["projects"]
     other = load_json("data/projects.json")["other"]
     demos = load_json("data/demos.json")["demos"]
-    tools = load_json("data/tools.json")["tools"]
+    # "hidden": true keeps a tool in data/tools.json without publishing it.
+    tools = [tool for tool in load_json("data/tools.json")["tools"] if not tool.get("hidden")]
     games = load_json("data/games.json")["games"]
     certificates = load_json("data/certificates.json")
 

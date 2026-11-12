@@ -137,7 +137,7 @@
       return response.json();
     })
     .then(function (data) {
-      tools = Array.isArray(data.tools) ? data.tools : [];
+      tools = (Array.isArray(data.tools) ? data.tools : []).filter(function (tool) { return !tool.hidden; });
       render();
       return detectDesktopArchitecture();
     })

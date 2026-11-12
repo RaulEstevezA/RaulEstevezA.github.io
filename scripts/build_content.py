@@ -82,6 +82,11 @@ def by_display_order(items: list[dict]) -> list[dict]:
     return [item for _, item in sorted(enumerate(items), key=key)]
 
 
+def visible(items: list[dict]) -> list[dict]:
+    """Entries marked "hidden": true stay in the JSON but are not published."""
+    return [item for item in items if not item.get("hidden")]
+
+
 def render_tags(tech: str | None) -> str:
     return "".join(
         '<span class="tag">' + esc(tag.strip()) + "</span>"
@@ -412,7 +417,7 @@ def build_games() -> dict:
 
 
 def build_tools() -> dict:
-    tools = by_display_order(load_json("data/tools.json").get("tools") or [])
+    tools = by_display_order(visible(load_json("data/tools.json").get("tools") or []))
     return {"tools-list": [render_tool(t) for t in tools]}
 
 

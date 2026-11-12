@@ -3,7 +3,7 @@
 > Software developer focused on backend systems, cross-platform applications, data tooling and applied AI. Based in Spain.
 > Specialized in Python, Java, Flutter, TypeScript, SQL and application development.
 
-Last updated: 2026-11-10
+Last updated: 2026-11-12
 
 This file is intended to help language models and search systems understand
 Raúl Estévez's professional profile accurately.
@@ -13,7 +13,7 @@ Raúl Estévez's professional profile accurately.
 - Featured projects: 8 — https://raulesteveza.github.io/projects.html
 - Other projects: 14 — https://raulesteveza.github.io/projects.html
 - Interactive demos: 6 — https://raulesteveza.github.io/demos/
-- Browser tools: 5 (Mapper, DataCleanr, Api2Class, Model2DB and Api2Data) — https://raulesteveza.github.io/tools/
+- Browser tools: 4 (Mapper, DataCleanr, Api2Class and Model2DB) — https://raulesteveza.github.io/tools/
 - Browser games: 3 (BlockFall, SQL Detective and API Quest) — https://raulesteveza.github.io/games/
 - Lab: technical demos and browser games — https://raulesteveza.github.io/lab/
 - Contact: email, GitHub and LinkedIn — https://raulesteveza.github.io/contact/
@@ -111,11 +111,6 @@ Individual course certificates from HarvardX, IBM, UC3Mx, UAMx and UPValenciaX a
   Repository: https://github.com/RaulEstevezA/Model2DB
   Web app: https://raulesteveza.github.io/tools/Model2DB/
   Desktop downloads (Windows, macOS and Linux): https://github.com/RaulEstevezA/Model2DB/releases/latest
-
-- **Api2Data** — Published browser API client for sending HTTP requests directly from the browser and inspecting response status, time, size, headers and formatted JSON or XML.
-  Requests go straight from the user's browser to the target API without an intermediary server.
-  Repository: https://github.com/RaulEstevezA/Api2Data
-  Web app: https://raulesteveza.github.io/tools/Api2Data/
 
 - **Microvalencia ERP App** — Full-featured Flutter mobile app built during an internship at Microvalencia Soluciones Informáticas S.L.
   Stack: Flutter, Dart, PHP, Laravel, REST API, MVVM, SOLID, Dio, FlutterSecureStorage, Geolocator, Flutter Flavors.

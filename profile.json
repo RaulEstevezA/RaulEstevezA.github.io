@@ -7,7 +7,7 @@
   "email": "contact.raulesteveza@gmail.com",
   "github": "https://github.com/RaulEstevezA",
   "linkedin": "https://www.linkedin.com/in/raulesteveza/",
-  "last_updated": "2026-11-10",
+  "last_updated": "2026-11-12",
 
   "summary": "Software developer with a strong academic background and hands-on experience in backend systems, cross-platform applications, privacy-first data tools, and artificial intelligence projects.",
 
@@ -15,7 +15,7 @@
     "featured_projects": 8,
     "other_projects": 14,
     "interactive_demos": 6,
-    "browser_tools": 5,
+    "browser_tools": 4,
     "browser_games": 3,
     "professional_certificates": 8,
     "individual_course_certificates": 32
@@ -99,8 +99,7 @@
     { "name": "Mapper", "url": "https://raulesteveza.github.io/tools/Mapper/", "repository": "https://github.com/RaulEstevezA/Mapper" },
     { "name": "DataCleanr", "url": "https://raulesteveza.github.io/tools/DataCleanr/", "repository": "https://github.com/RaulEstevezA/DataCleanr" },
     { "name": "Api2Class", "url": "https://raulesteveza.github.io/tools/Api2Class/", "repository": "https://github.com/RaulEstevezA/Api2Class" },
-    { "name": "Model2DB", "url": "https://raulesteveza.github.io/tools/Model2DB/", "repository": "https://github.com/RaulEstevezA/Model2DB" },
-    { "name": "Api2Data", "url": "https://raulesteveza.github.io/tools/Api2Data/", "repository": "https://github.com/RaulEstevezA/Api2Data" }
+    { "name": "Model2DB", "url": "https://raulesteveza.github.io/tools/Model2DB/", "repository": "https://github.com/RaulEstevezA/Model2DB" }
   ],
 
   "games": [
@@ -155,17 +154,6 @@
       "repository":  "https://github.com/RaulEstevezA/Model2DB",
       "demo":        "https://raulesteveza.github.io/tools/Model2DB/",
       "downloads":   "https://github.com/RaulEstevezA/Model2DB/releases/latest",
-      "featured":    false
-    },
-    {
-      "name":        "Api2Data",
-      "type":        "Browser API Client and Response Inspector",
-      "context":     "Personal project",
-      "status":      "Published and functional",
-      "description": "Browser tool for sending HTTP requests directly to an API and inspecting response status, time, size, headers and formatted JSON or XML without routing requests through an intermediary server.",
-      "stack":       ["React", "TypeScript", "Vite", "HTTP", "REST APIs", "JSON", "XML"],
-      "repository":  "https://github.com/RaulEstevezA/Api2Data",
-      "demo":        "https://raulesteveza.github.io/tools/Api2Data/",
       "featured":    false
     },
     {

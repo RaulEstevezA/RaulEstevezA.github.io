@@ -106,6 +106,7 @@
     },
     {
       "name": "Api2Data",
+      "hidden": true,
       "display_order": 5,
       "badge_en": "Runs in your browser · Direct requests",
       "badge_es": "Se ejecuta en el navegador · Peticiones directas",

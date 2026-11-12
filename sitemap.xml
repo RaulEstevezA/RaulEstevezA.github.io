@@ -66,11 +66,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://raulesteveza.github.io/tools/Api2Data/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://raulesteveza.github.io/demos/ERP_Flutter/</loc>
     <lastmod>2026-10-26</lastmod>
     <priority>0.8</priority>
@@ -129,12 +124,12 @@
   </url>
   <url>
     <loc>https://raulesteveza.github.io/llms.txt</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://raulesteveza.github.io/profile.json</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>
