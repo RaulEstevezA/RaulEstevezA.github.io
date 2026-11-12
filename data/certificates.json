@@ -9,7 +9,7 @@
   "_also_update": [
     "llms.txt          → ## Education / ## Professional Program Certificates section",
     "profile.json      → courses array",
-    "courses.html      → <script type='application/ld+json'> hasCredential / alumniOf"
+    "JSON-LD on index.html and courses.html is generated from this file by scripts/build_content.py"
   ],
   "_example_cert": { "label": "EDX", "url": "https://courses.edx.org/certificates/..." },
 

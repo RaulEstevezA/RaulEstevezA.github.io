@@ -10,6 +10,7 @@
       "description_es": "Reinterpretación interactiva de la app móvil ERP desarrollada durante mis prácticas en Microvalencia. Reproduce sus principales flujos con datos ficticios y un backend estático local; no contiene código propietario ni datos de la empresa.",
       "technologies": ["Flutter", "Dart", "MVVM", "REST API", "Role-based access"],
       "image": "/img/erp_flutter/demo-card.png",
+      "schema": {"applicationCategory": "BusinessApplication"},
       "demo_url": "/demos/ERP_Flutter/",
       "repository_url": "https://github.com/RaulEstevezA/Erp_Flutter_Demo"
     },
@@ -20,6 +21,7 @@
       "description_es": "Demo para navegador de una aplicación Flutter de gestión de tienda con autenticación, CRUD de productos, formularios validados y subida de imágenes. Utiliza un backend local simulado, por lo que los cambios de cada visitante permanecen en su navegador.",
       "technologies": ["Flutter", "Dart", "Riverpod", "Clean Architecture", "go_router", "Formz"],
       "image": "/img/thumbs/flutter_shop_admin.webp",
+      "schema": {"applicationCategory": "BusinessApplication"},
       "demo_url": "/demos/Flutter_Shop_Admin/",
       "repository_url": "https://github.com/RaulEstevezA/Flutter_Shop_Admin"
     },
@@ -30,6 +32,7 @@
       "description_es": "App Flutter para descubrir películas: cartelera, búsqueda, géneros, ficha con reparto y favoritos. Versión web con datos locales (Wikidata y Wikimedia Commons).",
       "technologies": ["Flutter", "Dart", "Riverpod", "Clean Architecture", "go_router", "Drift · SQLite"],
       "image": "/img/thumbs/cinema_app.webp",
+      "schema": {"applicationCategory": "MultimediaApplication"},
       "demo_url": "/demos/Cinema_App/",
       "repository_url": "https://github.com/RaulEstevezA/Cinema_App"
     },
@@ -40,6 +43,7 @@
       "description_es": "Doce juegos, puzles y demostraciones visuales basados en proyectos de Harvard CS50 AI, con explicaciones paso a paso de algoritmos de búsqueda, conocimiento, optimización y aprendizaje.",
       "technologies": ["Artificial Intelligence", "JavaScript", "HTML", "CSS", "Canvas"],
       "image": "/img/thumbs/harvard_ai_demos.webp",
+      "schema": {"applicationCategory": "EducationalApplication"},
       "demo_url": "/demos/Harvard_AI/",
       "repository_url": "https://github.com/RaulEstevezA/harvard_ai_demo"
     },
@@ -49,6 +53,7 @@
       "description_es": "Tienda de plantas interactiva creada con React y Redux, con categorías de productos y un flujo completo de carrito de compra.",
       "technologies": ["React", "Redux", "Vite", "GitHub Pages"],
       "image": "/img/eplant_shop/eplant_shop.webp",
+      "schema": {"applicationCategory": "WebApplication"},
       "demo_url": "/demos/e-plantShopping/",
       "repository_url": "https://github.com/RaulEstevezA/e-plantShopping"
     },
@@ -58,6 +63,7 @@
       "description_es": "Demo para navegador de una tienda e-commerce de hardware en Django con catálogo por categorías, búsqueda dinámica, carrito con control de stock, descuentos, checkout y perfiles de usuario. El backend Django se simula en el navegador, por lo que los cambios de cada visitante permanecen en local.",
       "technologies": ["Python", "Django", "SQL", "JavaScript", "Bootstrap"],
       "image": "/img/duckstore/menu.webp",
+      "schema": {"applicationCategory": "WebApplication"},
       "demo_url": "/demos/Duckyware_Store/",
       "repository_url": "https://github.com/RaulEstevezA/final_project_cs50w"
     }

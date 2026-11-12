@@ -11,12 +11,13 @@
     "modal_tech":         "Comma-separated tech tags shown in the modal (can be more detailed than card_tech)",
     "modal_images":       "Array of image paths for the modal carousel (first image shown on open)",
     "display_order":      "Optional explicit card position; lower values are shown first",
+    "schema":             "Optional schema.org properties added to this project's JSON-LD (e.g. applicationCategory, operatingSystem, license)",
     "links":              "Array of { type, url } shown as buttons on the card and in the modal, in this order. type is one of: github, demo, live_demo, web, download. Download links may include assets grouped by platform and architecture (x64 or arm64). Each type has its own label and color (github = blue, demo = red/YouTube, live_demo and web = green, download = purple)"
   },
   "_also_update": [
     "llms.txt          → ## Featured Projects section",
     "profile.json      → projects array (featured: true)",
-    "projects.html     → <script type='application/ld+json'> itemListElement"
+    "projects.html JSON-LD is generated from this file by scripts/build_content.py"
   ],
 
   "projects": [
@@ -36,6 +37,7 @@
       "card_desc_es": "Aplicación web y de escritorio para limpiar, normalizar y eliminar duplicados en archivos CSV, Excel, JSON y XML. El procesamiento se ejecuta en local y cada cambio propuesto puede revisarse antes de exportar.",
 
       "card_tech": "Python, React, TypeScript, CSV, Excel, JSON, XML",
+      "schema": {"applicationCategory": "UtilitiesApplication", "operatingSystem": ["Web", "Windows", "macOS", "Linux"], "programmingLanguage": ["Python", "React", "TypeScript"], "isAccessibleForFree": true, "license": "https://opensource.org/license/mit"},
       "links": [
         { "type": "github", "url": "https://github.com/RaulEstevezA/DataCleanr" },
         { "type": "web", "url": "/tools/DataCleanr/" },
@@ -105,6 +107,7 @@
       "card_desc_es": "Herramienta web y de escritorio que convierte respuestas JSON de APIs en modelos tipados para 11 lenguajes, JSON Schema y Smithy. La estructura detectada puede revisarse y editarse antes de generar, y el JSON nunca sale del dispositivo.",
 
       "card_tech": "TypeScript, React, Python, PySide6, JSON, Code Generation",
+      "schema": {"applicationCategory": "DeveloperApplication", "operatingSystem": ["Web", "Windows", "macOS", "Linux"], "programmingLanguage": ["TypeScript", "React", "Python", "PySide6"], "isAccessibleForFree": true, "license": "https://opensource.org/license/mit"},
       "links": [
         { "type": "github", "url": "https://github.com/RaulEstevezA/Api2Class" },
         { "type": "web", "url": "/tools/Api2Class/" },
@@ -173,6 +176,7 @@
       "card_desc_es": "App móvil desarrollada en Flutter durante mis prácticas en Microvalencia, integrada con su ERP mediante APIs REST Laravel/PHP. Cubre fichaje, partes de trabajo, gestión de clientes, mensajería interna, vacaciones y más. Próximamente en Google Play Store y App Store.",
 
       "card_tech": "Flutter, Dart, PHP, Laravel, REST API",
+      "schema": {"applicationCategory": "BusinessApplication", "operatingSystem": ["Android", "iOS"], "programmingLanguage": ["Flutter", "Dart", "PHP", "Laravel"]},
 
       "portrait": true,
       "links": [
@@ -233,6 +237,7 @@
       "card_desc_es": "App de descubrimiento de películas en Flutter que consume 9 endpoints REST de The Movie Database a través de una capa dedicada de datasources y mappers, con Clean Architecture, gestión de estado con Riverpod y persistencia local de favoritos con Drift (SQLite).",
 
       "card_tech": "Flutter, Dart, Riverpod, Drift, go_router, Dio",
+      "schema": {"applicationCategory": "MultimediaApplication", "operatingSystem": ["Android", "iOS"], "programmingLanguage": ["Flutter", "Dart", "Riverpod", "Dio", "Drift"]},
       "portrait": true,
       "links": [
         { "type": "github", "url": "https://github.com/RaulEstevezA/Cinema_App" },
@@ -292,6 +297,7 @@
       "card_desc_es": "Aplicación Flutter para gestionar el catálogo y el stock de una tienda online mediante una API REST autenticada, con CRUD de productos, paginación infinita, formularios validados y subida de imágenes.",
 
       "card_tech": "Flutter, Dart, Riverpod, go_router, Dio, REST API",
+      "schema": {"applicationCategory": "BusinessApplication", "operatingSystem": ["Android", "iOS", "Web", "Windows", "macOS", "Linux"], "programmingLanguage": ["Flutter", "Dart", "Riverpod", "Dio", "NestJS"]},
       "portrait": true,
       "links": [
         { "type": "github", "url": "https://github.com/RaulEstevezA/Flutter_Shop_Admin" },
@@ -347,6 +353,7 @@
       "card_desc_es": "Repositorio estructurado de CS50 IA con 13 ejercicios en Python sobre búsqueda, lógica, incertidumbre, optimización, machine learning, redes neuronales y procesamiento del lenguaje natural.",
 
       "card_tech": "Python, AI, Machine Learning, TensorFlow, scikit-learn, NLTK, Pygame",
+      "schema": {"applicationCategory": "EducationalApplication", "programmingLanguage": ["Python", "Artificial Intelligence", "Machine Learning", "TensorFlow", "scikit-learn", "NLTK", "Pygame"]},
 
       "modal_desc_en": "Structured repository of CS50's Introduction to Artificial Intelligence with Python, organized as a course library with 13 completed exercises across 7 AI units. It covers graph search, adversarial search, propositional logic, probabilistic reasoning, constraint satisfaction, supervised learning, reinforcement learning, neural networks, and natural language processing.",
       "modal_desc_es": "Repositorio estructurado de CS50's Introduction to Artificial Intelligence with Python, organizado como una biblioteca del curso con 13 ejercicios completados en 7 unidades de IA. Cubre búsqueda en grafos, búsqueda adversarial, lógica proposicional, razonamiento probabilístico, satisfacción de restricciones, aprendizaje supervisado, aprendizaje por refuerzo, redes neuronales y procesamiento del lenguaje natural.",
@@ -394,6 +401,7 @@
       "card_desc_es": "Plataforma e-commerce de hardware desarrollada con Python y Django. Implementa catálogo por categorías desde base de datos, carrito con lógica de stock y descuentos, pedidos, perfiles de usuario, búsqueda dinámica e integración de pagos con PayPal.",
 
       "card_tech": "Python, Django, SQL, HTML, CSS, JavaScript",
+      "schema": {"applicationCategory": "WebApplication", "programmingLanguage": ["Python", "Django", "SQL", "HTML", "CSS", "JavaScript"]},
 
       "modal_desc_en": "Complete hardware-focused e-commerce platform built as the CS50W capstone. Beyond a product listing site, it models a real store flow: database-driven catalog navigation, stock-aware carts, order creation, profile and shipping data, PayPal checkout, and JavaScript interactions for search, validation, and smoother updates.",
       "modal_desc_es": "Plataforma e-commerce completa orientada a hardware, desarrollada como proyecto final de CS50W. Va más allá de un listado de productos: modela el flujo real de una tienda con catálogo desde base de datos, carrito sensible al stock, creación de pedidos, perfil y datos de envío, pago con PayPal e interacciones en JavaScript para búsqueda, validación y actualizaciones más fluidas.",
@@ -441,6 +449,7 @@
       "card_desc_es": "Aplicación de escritorio en Java y JavaFX para gestionar clientes, productos, stock y pedidos de una tienda online. Evoluciona desde diseño UML hasta interfaz gráfica, con arquitectura MVC, persistencia MySQL mediante JDBC y Hibernate/JPA, patrones DAO/Factory y pruebas JUnit.",
 
       "card_tech": "Java, JavaFX, ORM, DAO, MVC",
+      "schema": {"applicationCategory": "DesktopApplication", "programmingLanguage": ["Java", "JavaFX", "MySQL", "Hibernate", "JPA", "JDBC", "JUnit"]},
 
       "modal_desc_en": "Java desktop application that simulates the back-office flow of an online store. Developed iteratively from UML design to a JavaFX interface, it separates presentation, controllers, business logic, and persistence with MVC while supporting customer, product, stock, and order operations.",
       "modal_desc_es": "Aplicación de escritorio en Java que simula el flujo de gestión interna de una tienda online. Desarrollada de forma iterativa desde el diseño UML hasta una interfaz JavaFX, separa presentación, controladores, lógica de negocio y persistencia mediante MVC, dando soporte a clientes, productos, stock y pedidos.",

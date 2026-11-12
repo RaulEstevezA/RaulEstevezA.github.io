@@ -7,7 +7,6 @@ import json
 import re
 import sys
 import xml.etree.ElementTree as ET
-from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -24,29 +23,6 @@ def load_json(relative_path: str):
 def check(condition: bool, message: str) -> None:
     if not condition:
         ERRORS.append(message)
-
-
-class JsonLdParser(HTMLParser):
-    def __init__(self) -> None:
-        super().__init__()
-        self.in_json_ld = False
-        self.buffer: list[str] = []
-        self.blocks: list[dict] = []
-
-    def handle_starttag(self, tag: str, attrs) -> None:
-        attributes = dict(attrs)
-        if tag == "script" and attributes.get("type") == "application/ld+json":
-            self.in_json_ld = True
-            self.buffer = []
-
-    def handle_data(self, data: str) -> None:
-        if self.in_json_ld:
-            self.buffer.append(data)
-
-    def handle_endtag(self, tag: str) -> None:
-        if tag == "script" and self.in_json_ld:
-            self.in_json_ld = False
-            self.blocks.append(json.loads("".join(self.buffer)))
 
 
 def public_url(path: str) -> str:
@@ -92,24 +68,9 @@ def validate_tools(profile: dict, tools: list[dict]) -> None:
         "Every public tool must have a structured entry in profile.json projects",
     )
 
-    tools_html = (ROOT / "tools/index.html").read_text(encoding="utf-8")
-    parser = JsonLdParser()
-    parser.feed(tools_html)
-    check(len(parser.blocks) == 1, "tools/index.html must contain one JSON-LD block")
-    if parser.blocks:
-        item_list = parser.blocks[0]["mainEntity"]
-        ordered_tools = sorted(tools, key=lambda tool: tool.get("display_order", 1000))
-        expected_items = [
-            (tool["name"], public_url(tool["tool_url"])) for tool in ordered_tools
-        ]
-        actual_items = [
-            (item["name"], item["url"]) for item in item_list["itemListElement"]
-        ]
-        check(item_list["numberOfItems"] == len(tools), "Tools JSON-LD count is stale")
-        check(actual_items == expected_items, "Tools JSON-LD items are stale or out of order")
-
+    # The tools page JSON-LD and cards are generated from data/tools.json on
+    # deploy (scripts/build_content.py), so they cannot drift from it.
     for tool in tools:
-        check(tool["name"] in tools_html, f"tools/index.html does not mention {tool['name']}")
         local_index = ROOT / tool["tool_url"].lstrip("/") / "index.html"
         check(local_index.exists(), f"Missing deployed tool entry point: {local_index.relative_to(ROOT)}")
 

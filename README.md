@@ -45,9 +45,17 @@ The `data/*.json` files are the single source of truth. The pages that list them
 
 The tags every page needs (canonical, Open Graph, Twitter, icons, `llms.txt`/`profile.json` alternates, theme colour and the language script) live in one file: `scripts/templates/head.html`. On deploy, `scripts/build_content.py` fills each page's `<!-- generated:start head -->` block from it.
 
-- Each page keeps only what is its own: `<title>`, `<meta name="description">`, the stylesheet and its JSON-LD. Open Graph and Twitter reuse the title and description; the canonical URL and relative paths come from the page location.
+- Each page keeps only what is its own: `<title>`, `<meta name="description">` and the stylesheet. Open Graph and Twitter reuse the title and description; the canonical URL and relative paths come from the page location.
 - Do not add `preload`/`prefetch` links to the pages. The data files a page's script needs are preloaded from the `PRELOADS` map in `build_content.py`, and the template's Speculation Rules prefetch any internal page when a link is hovered (Chrome and Edge).
 - To override a template tag on one page, declare it in that page, e.g. `<meta property="og:type" content="profile" />` on the home page or a custom `og:image` on `tools/index.html` (which also switches Twitter to a large image card).
+
+## Structured data (JSON-LD)
+
+The schema.org JSON-LD of every page is generated on deploy by `scripts/jsonld.py` (called from `build_content.py`) into each page's `<!-- generated:start jsonld -->` block. Never write it by hand:
+
+- The person (name, title, contact, profiles, languages, `knows_about`) comes from `profile.json`; studies and certificates from `data/education.json` and `data/certificates.json`; the internship from `data/experience.json`; the lists of Projects, Demos, Games and Tools from their `data/*.json` files.
+- Collection pages take their name and description from the page's `<title>` and `<meta name="description">`.
+- Schema.org properties that the site itself does not display (`applicationCategory`, `operatingSystem`, `license`, exact dates, addresses…) go in an optional `"schema"` object on the item in its data file, and are merged into the JSON-LD as is.
 
 ## Cache busting
 

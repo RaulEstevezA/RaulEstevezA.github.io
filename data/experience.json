@@ -6,12 +6,13 @@
     "paragraphs_en/es":   "Array of main description paragraphs",
     "highlights_en/es":   "Array of technical bullet points (optional)",
     "tech":               "Comma-separated technologies (language-neutral)",
-    "period_en/es":       "Employment period"
+    "period_en/es":       "Employment period",
+    "schema":             "Optional schema.org properties added to this job's JSON-LD Role (e.g. startDate, endDate, worksFor.address)"
   },
   "_also_update": [
     "llms.txt          → ## Experience section",
     "profile.json      → experience array",
-    "experience.html   → <script type='application/ld+json'> hasOccupation"
+    "experience.html JSON-LD is generated from this file by scripts/build_content.py"
   ],
 
   "jobs": [
@@ -20,6 +21,7 @@
       "title_es": "Desarrollador de Software (Prácticas)",
 
       "company": "Microvalencia Soluciones Informáticas S.L.",
+      "schema": {"startDate": "2026-03-23", "endDate": "2026-06-01", "worksFor": {"address": {"@type": "PostalAddress", "addressCountry": "ES", "addressLocality": "Valencia"}}},
 
       "demo_url": "https://raulesteveza.github.io/demos/ERP_Flutter/",
       "demo_note_en": "Explore an independent reinterpretation built with fictional data. It contains no proprietary code or company information.",

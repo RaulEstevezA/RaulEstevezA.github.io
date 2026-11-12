@@ -3,8 +3,9 @@
 
 1. Fill the shared part of every page's <head> (canonical, Open Graph, Twitter,
    icons...) from scripts/templates/head.html.
-2. Pre-render portfolio data from data/*.json into the static HTML pages.
-3. Version every local CSS/JS reference with a hash of the file's content
+2. Generate each page's schema.org JSON-LD from the data (see jsonld.py).
+3. Pre-render portfolio data from data/*.json into the static HTML pages.
+4. Version every local CSS/JS reference with a hash of the file's content
    (styles.css?v=1a2b3c4d5e), so browsers fetch a file again exactly when it
    changes. The repository keeps the references without ?v=.
 
@@ -40,6 +41,8 @@ import sys
 from pathlib import Path
 from string import Template
 from urllib.parse import quote
+
+from jsonld import build_jsonld
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -493,9 +496,9 @@ def fill_block(html: str, name: str, content: list[str] | str, page: str) -> str
 # ---------------------------------------------------------------------------
 #
 # Each page keeps in its own <head> only what is specific to it: <title>,
-# <meta name="description">, the stylesheet (so local previews are styled)
-# and its JSON-LD. The template provides everything else, plus the preloads
-# listed in PRELOADS.
+# <meta name="description"> and the stylesheet (so local previews are
+# styled). The template provides everything else, plus the preloads listed
+# in PRELOADS; the JSON-LD comes from jsonld.py.
 #
 # A page can override a template tag by declaring it itself, e.g.
 # <meta property="og:type" content="profile" /> or a custom og:image; the
@@ -612,6 +615,7 @@ def main() -> int:
         path = ROOT / page
         original = path.read_text(encoding="utf-8")
         updated = fill_block(original, "head", [] if clean else render_head(original, page), page)
+        updated = fill_block(updated, "jsonld", [] if clean else build_jsonld(page), page)
 
         build = PAGES.get(page)
         if build:
