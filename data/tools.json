@@ -2,7 +2,7 @@
   "tools": [
     {
       "name": "Mapper",
-      "display_order": 3,
+      "display_order": 4,
       "badge_en": "Runs in your browser · Privacy first",
       "badge_es": "Se ejecuta en el navegador · Privacidad",
       "featured": false,
@@ -54,7 +54,7 @@
     },
     {
       "name": "Api2Class",
-      "display_order": 2,
+      "display_order": 3,
       "badge_en": "Runs in your browser · Privacy first",
       "badge_es": "Se ejecuta en el navegador · Privacidad",
       "featured": false,
@@ -80,7 +80,7 @@
     },
     {
       "name": "Model2DB",
-      "display_order": 4,
+      "display_order": 5,
       "badge_en": "Runs in your browser · Privacy first",
       "badge_es": "Se ejecuta en el navegador · Privacidad",
       "featured": false,
@@ -106,8 +106,7 @@
     },
     {
       "name": "Api2Data",
-      "hidden": true,
-      "display_order": 5,
+      "display_order": 2,
       "badge_en": "Runs in your browser · Direct requests",
       "badge_es": "Se ejecuta en el navegador · Peticiones directas",
       "featured": false,
@@ -115,7 +114,23 @@
       "description_es": "Envía peticiones HTTP a una API desde el navegador e inspecciona el estado, tiempo, tamaño, cabeceras y respuestas JSON o XML formateadas. Las peticiones van directamente desde tu navegador a la API.",
       "image": "/tools/Api2Data/favicon.svg",
       "tool_url": "/tools/Api2Data/",
-      "repository_url": "https://github.com/RaulEstevezA/Api2Data"
+      "repository_url": "https://github.com/RaulEstevezA/Api2Data",
+      "download": {
+        "releases_url": "https://github.com/RaulEstevezA/Api2Data/releases/latest",
+        "assets": {
+          "macOS": {
+            "arm64": "Api2Data-macOS.dmg"
+          },
+          "Windows": {
+            "x64": "Api2Data-Windows.zip",
+            "arm64": "Api2Data-Windows-ARM64.zip"
+          },
+          "Linux": {
+            "x64": "Api2Data-Linux.tar.gz",
+            "arm64": "Api2Data-Linux-ARM64.tar.gz"
+          }
+        }
+      }
     }
   ]
 }
