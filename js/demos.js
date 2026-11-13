@@ -1,21 +1,44 @@
+/*
+ * Demos page (demos/): renders the demo cards from data/demos.json into
+ * #demos-list, in the current language.
+ *
+ * Re-renders on 'languagechange:site' (js/i18n.js). The English cards are
+ * pre-rendered by scripts/build_content.py (render_demo), which must produce
+ * the same markup: change both together.
+ */
 (function () {
   'use strict';
 
   var demos = [];
   var currentLang = document.documentElement.lang || 'en';
 
+  /**
+   * Escape text for insertion as HTML, using the browser's own serializer.
+   * @param {string} value Plain text.
+   * @returns {string} HTML-safe text.
+   */
   function escapeHtml(value) {
     var element = document.createElement('span');
     element.textContent = value;
     return element.innerHTML;
   }
 
+  /**
+   * Button labels of the cards.
+   * @param {string} lang Language code.
+   * @returns {{open: string, code: string}} Labels for "open demo" and "view code".
+   */
   function getLabels(lang) {
     return lang === 'es'
       ? { open: 'Abrir demo', code: 'Ver código' }
       : { open: 'Open demo', code: 'View code' };
   }
 
+  /**
+   * Render all demo cards.
+   * Order: display_order, then file order for demos without it (stable).
+   * Descriptions and badges fall back to English when missing.
+   */
   function render() {
     var container = document.getElementById('demos-list');
     var labels = getLabels(currentLang);
@@ -64,6 +87,8 @@
     render();
   });
 
+  // Load the data once. Registered in siteReady so a translated page is only
+  // revealed after the cards are rendered (see js/i18n.js).
   (window.siteReady = window.siteReady || []).push(fetch('../data/demos.json')
     .then(function (response) {
       if (!response.ok) throw new Error('Could not load data/demos.json');

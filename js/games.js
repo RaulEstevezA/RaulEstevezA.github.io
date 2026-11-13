@@ -1,15 +1,33 @@
+/*
+ * Games page (games/): renders the game cards from data/games.json into
+ * #games-list, in the current language.
+ *
+ * Re-renders on 'languagechange:site' (js/i18n.js). The English cards are
+ * pre-rendered by scripts/build_content.py (render_game), which must produce
+ * the same markup: change both together.
+ */
 (function () {
   'use strict';
 
   var games = [];
   var currentLang = document.documentElement.lang || 'en';
 
+  /**
+   * Escape text for insertion as HTML, using the browser's own serializer.
+   * @param {string} value Plain text.
+   * @returns {string} HTML-safe text.
+   */
   function escapeHtml(value) {
     var element = document.createElement('span');
     element.textContent = value;
     return element.innerHTML;
   }
 
+  /**
+   * Render all game cards, or show #games-empty when there are none.
+   * Order: display_order, with games without it at the end (1000).
+   * Descriptions fall back to English when the current language has none.
+   */
   function render() {
     var container = document.getElementById('games-list');
     var emptyState = document.getElementById('games-empty');
@@ -46,6 +64,8 @@
     render();
   });
 
+  // Load the data once. Registered in siteReady so a translated page is only
+  // revealed after the cards are rendered (see js/i18n.js).
   (window.siteReady = window.siteReady || []).push(fetch('../data/games.json')
     .then(function (response) {
       if (!response.ok) throw new Error('Could not load data/games.json');

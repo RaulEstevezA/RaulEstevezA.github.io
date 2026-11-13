@@ -58,6 +58,7 @@ BASE_URL = "https://raulesteveza.github.io"
 # ---------------------------------------------------------------------------
 
 def load_json(relative_path: str):
+    """Read a JSON file given its path relative to the repository root."""
     return json.loads((ROOT / relative_path).read_text(encoding="utf-8"))
 
 
@@ -73,6 +74,7 @@ def esc(value) -> str:
 
 
 def esc_attr(value) -> str:
+    """Escape a value for use inside a double-quoted HTML attribute."""
     return esc(value).replace('"', "&quot;")
 
 
@@ -87,12 +89,14 @@ def encode_uri_component(value: str) -> str:
 
 
 def is_finite_number(value) -> bool:
+    """True for int or float values that are finite; booleans are excluded (JavaScript's Number.isFinite)."""
     return isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value)
 
 
 def by_display_order(items: list[dict]) -> list[dict]:
     """Order used by projects.js, demos.js and tools.js."""
     def key(pair):
+        """Sort key: display_order when it is a finite number, otherwise after all ordered items, in file order."""
         index, item = pair
         order = item.get("display_order")
         return order if is_finite_number(order) else 1000 + index
@@ -106,6 +110,7 @@ def visible(items: list[dict]) -> list[dict]:
 
 
 def render_tags(tech: str | None) -> str:
+    """Render a comma-separated technology list as <span class="tag"> elements."""
     return "".join(
         '<span class="tag">' + esc(tag.strip()) + "</span>"
         for tag in (tech or "").split(",")
@@ -113,6 +118,7 @@ def render_tags(tech: str | None) -> str:
 
 
 def new_tab(link_type: str) -> str:
+    """Target attributes for a link: site pages open in the same tab, external links in a new one."""
     return "" if link_type in ("demo", "live_demo", "web") else ' target="_blank" rel="noopener"'
 
 
@@ -140,6 +146,12 @@ OTHER_LINK_LABELS = {
 
 
 def render_featured_project(project: dict) -> str:
+    """Render one featured project card (projects.html), as projects.js does in English.
+
+    The thumbnail wrapper carries the modal content in data-* attributes, in
+    both languages, so lightbox.js can open the project detail without
+    fetching the JSON again.
+    """
     links = project.get("links") or []
     badge_class = (
         "project-badge project-badge-personal"
@@ -191,6 +203,7 @@ def render_featured_project(project: dict) -> str:
 
 
 def render_other_project(project: dict) -> str:
+    """Render one entry of the "other projects" list, with its links separated by commas."""
     links = ", ".join(
         '<a href="' + esc_attr(link["url"]) + '" class="link-' + esc_attr(link["type"]) + '"'
         + new_tab(link["type"]) + ">"
@@ -204,6 +217,7 @@ def render_other_project(project: dict) -> str:
 
 
 def build_projects() -> dict:
+    """Generated blocks of projects.html: featured cards, other projects list and its count."""
     featured = by_display_order(load_json("data/bestProjects.json")["projects"])
     other = load_json("data/projects.json")["other"]
     return {
@@ -218,6 +232,13 @@ def build_projects() -> dict:
 # ---------------------------------------------------------------------------
 
 def render_job(job: dict, index: int) -> str:
+    """Render one job card (experience.html), as experience.js does in English.
+
+    Args:
+        job: The job from experience.json.
+        index: Its position in the file. The recommendation letter button
+            stores it so experience.js can find the letter to open.
+    """
     meta_parts = [esc(part) for part in (job.get("company"), job.get("period_en")) if part]
     meta = '<p class="job-meta">' + " &middot; ".join(meta_parts) + "</p>" if meta_parts else ""
     paragraphs = "".join("<p>" + esc(p) + "</p>" for p in job.get("paragraphs_en") or [])
@@ -256,6 +277,7 @@ def render_job(job: dict, index: int) -> str:
 
 
 def build_experience() -> dict:
+    """Generated blocks of experience.html: the list of job cards."""
     jobs = load_json("data/experience.json")["jobs"]
     return {"experience-list": [render_job(job, i) for i, job in enumerate(jobs)]}
 
@@ -265,6 +287,13 @@ def build_experience() -> dict:
 # ---------------------------------------------------------------------------
 
 def render_education(item: dict, index: int) -> str:
+    """Render one education card (courses.html), as certs.js does in English.
+
+    Args:
+        item: The entry from education.json.
+        index: Its position in the file. Each document button stores it, with the
+            document position, so certs.js can open the right PDF.
+    """
     documents = "".join(
         '<button type="button" class="btn education-document-btn" data-education-index="' + str(index)
         + '" data-document-index="' + str(doc_index) + '">' + esc(doc["label_en"]) + "</button>"
@@ -291,6 +320,7 @@ def render_education(item: dict, index: int) -> str:
 
 
 def cert_badges(certs: list[dict]) -> str:
+    """Render the certificate links of a program or course as badges (one per label: PDF, Credly...)."""
     return "".join(
         '<a href="' + esc(cert["url"]) + '" class="cert-badge cert-badge--' + cert["label"].lower()
         + '" target="_blank" rel="noopener">' + esc(cert["label"]) + "</a>"
@@ -299,6 +329,7 @@ def cert_badges(certs: list[dict]) -> str:
 
 
 def render_program(program: dict) -> str:
+    """Render one professional certificate program card."""
     return (
         '<div class="cert-card">'
         + '<div class="cert-card-meta">'
@@ -312,6 +343,7 @@ def render_program(program: dict) -> str:
 
 
 def render_course(course: dict) -> str:
+    """Render one individual course in the collapsible course list."""
     return (
         '<li class="cert-item">'
         + '<span class="cert-item-name">' + esc(course["name"]) + "</span>"
@@ -322,6 +354,7 @@ def render_course(course: dict) -> str:
 
 
 def build_courses() -> dict:
+    """Generated blocks of courses.html: education, certificate programs, course list and its count."""
     education = load_json("data/education.json")["education"]
     certificates = load_json("data/certificates.json")
     courses = certificates.get("courses") or []
@@ -338,6 +371,7 @@ def build_courses() -> dict:
 # ---------------------------------------------------------------------------
 
 def render_demo(demo: dict) -> str:
+    """Render one demo card (demos/), as demos.js does in English."""
     image = (
         '<img class="demo-card-image" src="' + encode_uri(demo["image"]) + '" alt="" loading="lazy">'
         if demo.get("image") else ""
@@ -366,6 +400,10 @@ def render_demo(demo: dict) -> str:
 
 
 def render_game(game: dict) -> str:
+    """Render one game card (games/), as games.js does in English.
+
+    Logos marked pixel_art_logo get a class that keeps them sharp when scaled.
+    """
     logo_class = " pixel-art-logo" if game.get("pixel_art_logo") else ""
     logo = (
         '<img class="demo-card-image' + logo_class + '" src="' + encode_uri(game["logo"]) + '" alt="'
@@ -393,6 +431,7 @@ TOOL_ICONS = {
 
 
 def render_tool(tool: dict) -> str:
+    """Render one tool card (tools/), as tools.js does in English."""
     image = (
         '<img class="demo-card-image" src="' + encode_uri(tool["image"]) + '" alt="" loading="lazy">'
         if tool.get("image") else ""
@@ -425,16 +464,25 @@ def render_tool(tool: dict) -> str:
 
 
 def format_count(locale: dict, key: str, count: int) -> str:
+    """Format a count with the singular or plural template of a locale.
+
+    Args:
+        locale: The parsed locale file.
+        key: Base key; the template is read from key + '_one' or key + '_other'.
+        count: The number that replaces {count}.
+    """
     template = locale[key + ("_one" if count == 1 else "_other")]
     return template.replace("{count}", str(count))
 
 
 def build_demos() -> dict:
+    """Generated blocks of demos/: the demo cards in display order."""
     demos = by_display_order(load_json("data/demos.json")["demos"])
     return {"demos-list": [render_demo(d) for d in demos]}
 
 
 def build_games() -> dict:
+    """Generated blocks of games/: the game cards in display order."""
     games = load_json("data/games.json").get("games") or []
     # games.js sorts with (display_order || 1000)
     games = sorted(games, key=lambda g: g.get("display_order") or 1000)
@@ -442,11 +490,13 @@ def build_games() -> dict:
 
 
 def build_tools() -> dict:
+    """Generated blocks of tools/: the visible tool cards in display order."""
     tools = by_display_order(visible(load_json("data/tools.json").get("tools") or []))
     return {"tools-list": [render_tool(t) for t in tools]}
 
 
 def build_lab() -> dict:
+    """Generated blocks of lab/: the demo and game counts shown on its two cards."""
     locale = load_json("locales/en/lab.json")
     demos = load_json("data/demos.json").get("demos") or []
     games = load_json("data/games.json").get("games") or []
@@ -520,6 +570,7 @@ META_TAG = re.compile(r'<meta\s+(?:name|property)="(?P<key>[^"]+)"\s+content="(?
 
 
 def page_url(page: str) -> str:
+    """Canonical URL of a page ('contact/index.html' -> '.../contact/')."""
     if page == "index.html":
         return BASE_URL + "/"
     if page.endswith("/index.html"):
@@ -528,6 +579,14 @@ def page_url(page: str) -> str:
 
 
 def render_head(html: str, page: str) -> list[str]:
+    """Build the shared <head> block of a page from scripts/templates/head.html.
+
+    The page's own <title> and description fill the template, and any meta tag
+    the page declares itself is left out of the template output.
+
+    Raises:
+        SystemExit: If the page has no <title> or no meta description.
+    """
     head = html[: html.index("</head>")]
     own = re.sub(r"<!-- generated:start head -->.*?<!-- generated:end head -->", "", head, flags=re.S)
     own_meta = {m.group("key"): html_lib.unescape(m.group("value")) for m in META_TAG.finditer(own)}
@@ -549,6 +608,7 @@ def render_head(html: str, page: str) -> list[str]:
     lines = Template(HEAD_TEMPLATE.read_text(encoding="utf-8")).substitute(values).splitlines()
 
     def declared_by_page(line: str) -> bool:
+        """True if this template line is a meta tag the page already declares."""
         match = META_TAG.search(line)
         return bool(match) and match.group("key") in own_meta
 
@@ -577,13 +637,23 @@ ASSET_REF = re.compile(r'\b(?P<attr>href|src)="(?P<path>[^":?#]+\.(?:css|js))(?:
 
 
 def content_hash(path: Path) -> str:
+    """First 10 hex characters of the SHA-256 of a file, used as its ?v= version."""
     return hashlib.sha256(path.read_bytes()).hexdigest()[:10]
 
 
 def version_assets(html: str, page: str, clean: bool) -> str:
+    """Add (or, with clean, remove) the ?v=<hash> version on local CSS and JS references.
+
+    Paths are resolved relative to the page, so the same file gets the same
+    hash on every page.
+
+    Raises:
+        SystemExit: If a referenced file does not exist.
+    """
     page_dir = (ROOT / page).parent
 
     def replace(match: re.Match) -> str:
+        """Rewrite one href/src reference."""
         ref = match.group("path")
         if clean:
             return f'{match.group("attr")}="{ref}"'
@@ -596,6 +666,15 @@ def version_assets(html: str, page: str, clean: bool) -> str:
 
 
 def main() -> int:
+    """Fill (or, with --clean, empty) every generated part of the site.
+
+    For each page in SITE_PAGES: shared <head>, JSON-LD, the page's content
+    blocks and asset versions. Then profile.json, llms.txt and sitemap.xml.
+    Only files whose content changes are written.
+
+    Returns:
+        The process exit code (always 0; errors stop the script with SystemExit).
+    """
     clean = "--clean" in sys.argv[1:]
     changed: list[str] = []
 

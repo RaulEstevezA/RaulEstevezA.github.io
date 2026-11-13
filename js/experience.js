@@ -1,6 +1,16 @@
+/*
+ * Experience page (experience.html): renders the job cards from
+ * data/experience.json into #experience-list, in the current language, and
+ * opens the recommendation letters in a PDF dialog (#letter-dialog).
+ *
+ * Re-renders on 'languagechange:site' (js/i18n.js). The English cards are
+ * pre-rendered by scripts/build_content.py (render_job), which must produce
+ * the same markup: change both together.
+ */
 (function () {
   'use strict';
 
+  // Interface texts generated here (the job texts come from the JSON).
   var LABELS = {
     tech:         { en: 'Technologies:',                                                          es: 'Tecnologías:' },
     recLetter:    { en: 'View recommendation letter',                                             es: 'Ver carta de recomendación' },
@@ -11,14 +21,25 @@
     recLetterNote:{ en: 'The original unredacted version is available upon request.',             es: 'La versión original sin censura está disponible bajo petición.' }
   };
 
+  // Jobs from experience.json; null until loaded.
   var jobs = null;
 
+  /**
+   * Escape text for insertion as HTML, using the browser's own serializer.
+   * @param {*} str Value to show; null and undefined become ''.
+   * @returns {string} HTML-safe text.
+   */
   function escapeHtml(str) {
     var span = document.createElement('span');
     span.textContent = str == null ? '' : String(str);
     return span.innerHTML;
   }
 
+  /**
+   * Fetch and parse a JSON file.
+   * @param {string} url File URL.
+   * @returns {Promise<Object>} Rejects if the response is not 2xx.
+   */
   function getJson(url) {
     return fetch(url).then(function (response) {
       if (!response.ok) throw new Error('Could not load ' + url);
@@ -26,12 +47,25 @@
     });
   }
 
+  /**
+   * Render a comma-separated technology list as tags.
+   * @param {string} techStr 'Java, Spring, SQL'.
+   * @returns {string} HTML of the tags.
+   */
   function renderTags(techStr) {
     return (techStr || '').split(',').map(function (tag) {
       return '<span class="tag">' + escapeHtml(tag.trim()) + '</span>';
     }).join('');
   }
 
+  /**
+   * Render every job card in the given language. Does nothing until the data is loaded.
+   * Each card shows: title, company and period, paragraphs, highlights,
+   * technologies, an optional interactive demo callout and an optional
+   * recommendation letter button. The button stores the job index
+   * (data-letter-index) so the click handler can find its PDF.
+   * @param {string} lang Language code.
+   */
   function renderJobs(lang) {
     var container = document.getElementById('experience-list');
     if (!container || !jobs) return;
@@ -101,10 +135,18 @@
     container.innerHTML = html;
   }
 
+  /**
+   * Language to render on load (the one js/i18n.js has saved or applied).
+   * @returns {string} Language code.
+   */
   function currentLang() {
     return localStorage.getItem('lang') || document.documentElement.lang || 'en';
   }
 
+  /**
+   * Translate the texts of the recommendation letter dialog.
+   * @param {string} lang Language code.
+   */
   function updateDialogLabels(lang) {
     var title = LABELS.recLetterTitle[lang] || LABELS.recLetterTitle.en;
     document.getElementById('letter-dialog-title').textContent = title;
@@ -120,6 +162,7 @@
     var frame = document.getElementById('letter-dialog-frame');
     var openLink = document.getElementById('letter-dialog-open');
 
+    // One delegated listener: the cards are replaced on every language change.
     document.getElementById('experience-list').addEventListener('click', function (event) {
       var button = event.target.closest('[data-letter-index]');
       if (!button || !jobs) return;
@@ -133,14 +176,18 @@
     document.getElementById('letter-dialog-close').addEventListener('click', function () {
       dialog.close();
     });
+    // A click on the dialog element itself (not its content) is a click on the backdrop.
     dialog.addEventListener('click', function (event) {
       if (event.target === dialog) dialog.close();
     });
+    // Unload the PDF when closing, so it does not keep using memory in the background.
     dialog.addEventListener('close', function () {
       frame.removeAttribute('src');
     });
     updateDialogLabels(currentLang());
 
+    // Registered in siteReady so a translated page is only revealed after the
+    // cards are rendered (see js/i18n.js).
     (window.siteReady = window.siteReady || []).push(getJson('data/experience.json').then(function (data) {
       jobs = data.jobs;
       renderJobs(currentLang());

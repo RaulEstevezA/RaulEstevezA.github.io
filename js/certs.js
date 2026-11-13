@@ -1,20 +1,45 @@
+/*
+ * Courses page (courses.html): renders the education cards
+ * (data/education.json), the professional certificate programs and the
+ * collapsible list of individual courses (data/certificates.json), and opens
+ * education documents (diplomas, transcripts) in a PDF dialog (#education-dialog).
+ *
+ * Only the education cards and the dialog depend on the language; certificates
+ * are shown with their original English names. Re-renders on
+ * 'languagechange:site' (js/i18n.js). The English markup is pre-rendered by
+ * scripts/build_content.py (render_education, render_program, render_course),
+ * which must produce the same markup: change both together.
+ */
 (function () {
   'use strict';
 
+  // Dialog texts generated here (the document labels come from the JSON).
   var LABELS = {
     open:  { en: 'Open PDF', es: 'Abrir PDF' },
     close: { en: 'Close',    es: 'Cerrar' }
   };
 
+  // Entries from education.json; null until loaded.
   var education = null;
+  // Document shown in the dialog, kept to retitle it on a language change.
   var activeDocument = null;
 
+  /**
+   * Escape text for insertion as HTML, using the browser's own serializer.
+   * @param {*} str Value to show; null and undefined become ''.
+   * @returns {string} HTML-safe text.
+   */
   function escapeHtml(str) {
     var span = document.createElement('span');
     span.textContent = str == null ? '' : String(str);
     return span.innerHTML;
   }
 
+  /**
+   * Fetch and parse a JSON file.
+   * @param {string} url File URL.
+   * @returns {Promise<Object>} Rejects if the response is not 2xx.
+   */
   function getJson(url) {
     return fetch(url).then(function (response) {
       if (!response.ok) throw new Error('Could not load ' + url);
@@ -22,10 +47,20 @@
     });
   }
 
+  /**
+   * Language to render on load (the one js/i18n.js has saved or applied).
+   * @returns {string} Language code.
+   */
   function currentLang() {
     return localStorage.getItem('lang') || document.documentElement.lang || 'en';
   }
 
+  /**
+   * Render the education cards in the given language. Does nothing until loaded.
+   * Each document button stores the education and document indexes so the
+   * click handler can find the PDF to open.
+   * @param {string} lang Language code.
+   */
   function renderEducation(lang) {
     var container = document.getElementById('education-list');
     if (!container || !education) return;
@@ -58,6 +93,10 @@
     }).join('');
   }
 
+  /**
+   * Translate the dialog: title of the open document, iframe title and buttons.
+   * @param {string} lang Language code.
+   */
   function updateEducationDialog(lang) {
     var title = activeDocument ? (lang === 'es' ? activeDocument.label_es : activeDocument.label_en) : '';
     document.getElementById('education-dialog-title').textContent = title;
@@ -66,6 +105,12 @@
     document.getElementById('education-dialog-close').setAttribute('aria-label', LABELS.close[lang] || LABELS.close.en);
   }
 
+  /**
+   * Certificate links as badges. The label also sets the badge style
+   * (cert-badge--pdf, cert-badge--credly...).
+   * @param {Array<{label: string, url: string}>} certs Certificate links.
+   * @returns {string} HTML of the badges.
+   */
   function certBadges(certs) {
     return certs.map(function (cert) {
       var cls = 'cert-badge cert-badge--' + cert.label.toLowerCase();
@@ -74,6 +119,10 @@
     }).join('');
   }
 
+  /**
+   * Render the professional certificate program cards, in file order.
+   * @param {Array<Object>} programs certificates.json "programs".
+   */
   function renderPrograms(programs) {
     var container = document.getElementById('certs-programs');
     if (!container) return;
@@ -92,6 +141,10 @@
     container.innerHTML = html;
   }
 
+  /**
+   * Render the individual course list and its count (shown in the list summary).
+   * @param {Array<Object>} courses certificates.json "courses".
+   */
   function renderCourses(courses) {
     var count = document.getElementById('certs-all-count');
     var list = document.getElementById('certs-all-list');
@@ -117,6 +170,7 @@
     var frame = document.getElementById('education-dialog-frame');
     var openLink = document.getElementById('education-dialog-open');
 
+    // One delegated listener: the cards are replaced on every language change.
     document.getElementById('education-list').addEventListener('click', function (event) {
       var button = event.target.closest('[data-document-index]');
       if (!button || !education) return;
@@ -132,15 +186,19 @@
     document.getElementById('education-dialog-close').addEventListener('click', function () {
       dialog.close();
     });
+    // A click on the dialog element itself (not its content) is a click on the backdrop.
     dialog.addEventListener('click', function (event) {
       if (event.target === dialog) dialog.close();
     });
+    // Unload the PDF when closing, so it does not keep using memory in the background.
     dialog.addEventListener('close', function () {
       frame.removeAttribute('src');
       activeDocument = null;
     });
     updateEducationDialog(currentLang());
 
+    // Registered in siteReady so a translated page is only revealed after the
+    // cards are rendered (see js/i18n.js).
     (window.siteReady = window.siteReady || []).push(Promise.all([
       getJson('data/education.json'),
       getJson('data/certificates.json')

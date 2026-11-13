@@ -28,10 +28,12 @@ PHOTO = BASE_URL + "/img/raulestevezio.jpg"
 
 
 def load(relative_path: str):
+    """Read a JSON file given its path relative to the repository root."""
     return json.loads((ROOT / relative_path).read_text(encoding="utf-8"))
 
 
 def absolute(url: str) -> str:
+    """Turn a site-relative URL ('/tools/Mapper/') into an absolute one; leave others unchanged."""
     return BASE_URL + url if url.startswith("/") else url
 
 
@@ -48,6 +50,7 @@ def merge(base: dict, extra: dict | None) -> dict:
 def ordered(items: list[dict]) -> list[dict]:
     """display_order first, then file order (same rule as the page scripts)."""
     def key(pair):
+        """Sort key: display_order when it is a number, otherwise after all ordered items, in file order."""
         index, item = pair
         order = item.get("display_order")
         return order if isinstance(order, (int, float)) and not isinstance(order, bool) else 1000 + index
@@ -67,11 +70,23 @@ def page_meta(page: str) -> tuple[str, str]:
 # ---------------------------------------------------------------------------
 
 def person_ref() -> dict:
+    """Minimal Person reference (type, name, URL) used as the author of collection pages."""
     profile = load("data/person.json")
     return {"@type": "Person", "name": profile["name"], "url": profile["website"] + "/"}
 
 
 def person(page_url: str | None = None, *, full: bool = False) -> dict:
+    """Build the Person entity from data/person.json.
+
+    Args:
+        page_url: When given, set as mainEntityOfPage (the page is about the person).
+        full: Also include the description, knowsAbout, languages, location and
+            occupation. Used on the home page only, so the full profile is
+            published once.
+
+    Returns:
+        The Person object, without @context.
+    """
     profile = load("data/person.json")
     data = {
         "@type": "Person",
@@ -102,6 +117,7 @@ def person(page_url: str | None = None, *, full: bool = False) -> dict:
 
 
 def languages() -> list[dict]:
+    """Spoken languages as schema.org Language objects (level and certificate in the description)."""
     return [
         {"@type": "Language", "name": lang["language"],
          "description": " ".join(filter(None, [lang.get("level"), lang.get("cert")]))}
@@ -110,6 +126,7 @@ def languages() -> list[dict]:
 
 
 def alumni_of() -> list[dict]:
+    """Education entries as EducationalOrganization objects (alumniOf)."""
     return [
         {
             "@type": "EducationalOrganization",
@@ -121,6 +138,10 @@ def alumni_of() -> list[dict]:
 
 
 def credentials() -> list[dict]:
+    """Professional certificate programs as EducationalOccupationalCredential objects.
+
+    The URL of the first certificate of each program is used as the credential URL.
+    """
     result = []
     for program in load("data/certificates.json")["programs"]:
         credential = {
@@ -136,6 +157,11 @@ def credentials() -> list[dict]:
 
 
 def roles() -> list[dict]:
+    """Jobs from experience.json as Role objects (hasOccupation).
+
+    The first English paragraph of each job is used as its description, and the
+    job's optional "schema" object is merged on top.
+    """
     result = []
     for job in load("data/experience.json")["jobs"]:
         role = {
@@ -154,6 +180,12 @@ def roles() -> list[dict]:
 # ---------------------------------------------------------------------------
 
 def collection(page: str, items: list[dict]) -> dict:
+    """Build a CollectionPage whose main entity is an ordered ItemList.
+
+    Args:
+        page: Page path ('demos/index.html'); its <title> and description are reused.
+        items: The list items, already in display order. Positions start at 1.
+    """
     name, description = page_meta(page)
     url = BASE_URL + "/" + page.replace("index.html", "")
     return {
@@ -172,6 +204,12 @@ def collection(page: str, items: list[dict]) -> dict:
 
 
 def project_item(project: dict) -> dict:
+    """Featured project from bestProjects.json as a SoftwareApplication.
+
+    The name is the English title before " — ". Link types map to properties:
+    github -> codeRepository, live_demo or web -> url, download -> downloadUrl,
+    demo (a video) -> video.
+    """
     links = {link["type"]: link for link in project.get("links") or []}
     item = {
         "@type": "SoftwareApplication",
@@ -191,6 +229,7 @@ def project_item(project: dict) -> dict:
 
 
 def demo_item(demo: dict) -> dict:
+    """Demo from demos.json as a web SoftwareApplication."""
     item = {
         "@type": "SoftwareApplication",
         "name": demo["name"],
@@ -204,6 +243,7 @@ def demo_item(demo: dict) -> dict:
 
 
 def game_item(game: dict) -> dict:
+    """Game from games.json as a single-player web VideoGame."""
     item = {
         "@type": "VideoGame",
         "name": game["name"],
@@ -218,6 +258,10 @@ def game_item(game: dict) -> dict:
 
 
 def tool_item(tool: dict) -> dict:
+    """Tool from tools.json as a free SoftwareApplication.
+
+    operatingSystem lists "Web" plus every platform that has a desktop download.
+    """
     download = tool.get("download") or {}
     item = {
         "@type": "SoftwareApplication",
@@ -239,6 +283,12 @@ def tool_item(tool: dict) -> dict:
 # ---------------------------------------------------------------------------
 
 def page_documents() -> dict:
+    """Map each site page to a function that builds its JSON-LD document.
+
+    Functions instead of values, so only the requested page reads its data.
+    To add a page, add an entry here and the page to SITE_PAGES in
+    build_content.py.
+    """
     home = BASE_URL + "/"
     return {
         "index.html": lambda: dict(

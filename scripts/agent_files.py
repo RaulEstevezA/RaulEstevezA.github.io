@@ -24,11 +24,14 @@ OUTPUTS = ("profile.json", "llms.txt")
 
 
 def load(relative_path: str):
+    """Read a JSON file given its path relative to the repository root."""
     return json.loads((ROOT / relative_path).read_text(encoding="utf-8"))
 
 
 def ordered(items: list[dict]) -> list[dict]:
+    """Sort items by display_order, then by file order (same rule as the page scripts)."""
     def key(pair):
+        """Sort key: display_order when it is a number, otherwise after all ordered items, in file order."""
         index, item = pair
         order = item.get("display_order")
         return order if isinstance(order, (int, float)) and not isinstance(order, bool) else 1000 + index
@@ -47,14 +50,17 @@ def last_updated() -> str:
 
 
 def site(person: dict, path: str) -> str:
+    """Turn a site-relative path into an absolute URL on the person's website; leave full URLs unchanged."""
     return person["website"] + path if path.startswith("/") else path
 
 
 def join_names(names: list[str]) -> str:
+    """Join names as readable English: 'A', 'A and B', 'A, B and C'."""
     return names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
 
 
 def split_tags(text: str | None) -> list[str]:
+    """Split a comma-separated technology list into clean tags, dropping empty ones."""
     return [tag.strip() for tag in (text or "").split(",") if tag.strip()]
 
 
@@ -63,6 +69,12 @@ def split_tags(text: str | None) -> list[str]:
 # ---------------------------------------------------------------------------
 
 def collect() -> dict:
+    """Load and order all the data both outputs need, once.
+
+    The order matches what the website shows: certificate programs newest first,
+    projects, tools and demos by display_order, games by display_order or 1000
+    (the rule games.js uses). Hidden tools are excluded.
+    """
     person = load("data/person.json")
     certificates = load("data/certificates.json")
     return {
@@ -93,9 +105,15 @@ def project_links(person: dict, links: list[dict]) -> dict:
 # ---------------------------------------------------------------------------
 
 def build_profile(d: dict) -> dict:
+    """Build the profile.json document from the collected data.
+
+    Empty fields (None, empty lists, empty strings) are dropped so agents only
+    see values that exist.
+    """
     person = d["person"]
 
     def cert(item: dict) -> dict:
+        """Certificate summary: name, provider, year and the URL of its first certificate."""
         entry = {"name": item["name"], "provider": item["provider"], "year": item.get("year")}
         if item.get("certs"):
             entry["url"] = item["certs"][0]["url"]
@@ -146,6 +164,12 @@ def build_profile(d: dict) -> dict:
         projects.append({k: v for k, v in entry.items() if v not in (None, [])})
 
     def item(entry: dict, url_key: str) -> dict:
+        """Tool, demo or game summary.
+
+        Args:
+            entry: The data item.
+            url_key: Field holding its site URL (tool_url, demo_url or game_url).
+        """
         result = {
             "name": entry["name"],
             "description": entry.get("description_en"),
@@ -206,6 +230,11 @@ def build_profile(d: dict) -> dict:
 # ---------------------------------------------------------------------------
 
 def build_llms(d: dict) -> str:
+    """Build the llms.txt document (Markdown) from the collected data.
+
+    Sections are written in a fixed order; to add one, append its lines with
+    add() at the right place.
+    """
     person, out = d["person"], []
     web = person["website"]
     add = out.append

@@ -38,6 +38,7 @@ PAGES = {
 
 
 def load(relative_path: str):
+    """Read a JSON file given its path relative to the repository root."""
     return json.loads((ROOT / relative_path).read_text(encoding="utf-8"))
 
 
@@ -62,6 +63,14 @@ def local_dir(url_path: str) -> str:
 
 
 def entries() -> list[tuple[str, str]]:
+    """List every public URL of the site with its last modification date.
+
+    Returns (path, date) pairs: the pages in PAGES, then each visible tool, each
+    demo (and its sitemap_pages) and each game, then llms.txt and profile.json.
+    The list can contain duplicates; build_sitemap() skips them.
+
+    Raises SystemExit (through local_dir) if a listed URL is not deployed.
+    """
     result = [(path, last_changed(files)) for path, files in PAGES.items()]
 
     tools = [t for t in load("data/tools.json")["tools"] if not t.get("hidden")]
@@ -83,6 +92,10 @@ def entries() -> list[tuple[str, str]]:
 
 
 def build_sitemap() -> str:
+    """Render the sitemap.xml document.
+
+    Keeps the first occurrence of each path, in the order given by entries().
+    """
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     seen = set()
     for path, lastmod in entries():
@@ -95,6 +108,16 @@ def build_sitemap() -> str:
 
 
 def write_sitemap(clean: bool) -> list[str]:
+    """Write sitemap.xml, or remove it when clean is true.
+
+    The file is only rewritten when its content changes.
+
+    Args:
+        clean: True restores the committed state (no sitemap.xml in the repository).
+
+    Returns:
+        The names of the files that were written or removed.
+    """
     path = ROOT / OUTPUT
     if clean:
         if path.exists():

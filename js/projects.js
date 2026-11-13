@@ -1,6 +1,23 @@
+/*
+ * Projects page (projects.html): renders the featured project cards
+ * (data/bestProjects.json) into #projects-featured and the "other projects"
+ * list (data/projects.json) into #projects-other-list, in the current language.
+ *
+ * Each featured card stores its modal content in data-* attributes, in both
+ * languages, for the detail modal (js/lightbox.js). This file also exposes
+ * window.FEATURED_LINK_TYPES and window.resolveFeaturedLink for that modal.
+ *
+ * Download links point straight to the installer for the visitor's system;
+ * the platform and architecture detection is the same as in js/tools.js.
+ *
+ * Re-renders on 'languagechange:site' (js/i18n.js). The English markup is
+ * pre-rendered by scripts/build_content.py (render_featured_project,
+ * render_other_project), which must produce the same markup: change both together.
+ */
 (function () {
   'use strict';
 
+  // Link texts of the "other projects" list (same in both languages).
   var LINK_LABELS = {
     github: 'GitHub',
     demo: 'Demo',
@@ -20,8 +37,16 @@
     download: { label: { en: 'Download app', es: 'Descargar aplicación' }, className: 'btn btn-download' }
   };
   window.FEATURED_LINK_TYPES = FEATURED_LINK_TYPES;
+  // Assumed until detectDesktopArchitecture() answers (most desktops are x64).
   var desktopArchitecture = 'x64';
 
+  /**
+   * Desktop system of the visitor, matching the keys of a download link's assets.
+   * Phones and tablets return null: there is nothing to install on them.
+   * An iPad in desktop mode reports "Mac", so a Mac with touch points is treated
+   * as a tablet. ChromeOS (CrOS) is excluded from Linux.
+   * @returns {?string} 'macOS', 'Windows', 'Linux' or null.
+   */
   function detectDesktopPlatform() {
     var platform = navigator.platform || '';
     var userAgent = navigator.userAgent || '';
@@ -34,6 +59,12 @@
     return null;
   }
 
+  /**
+   * CPU architecture of the visitor. The user agent only reveals ARM on some
+   * systems; Chromium browsers expose it through User-Agent Client Hints.
+   * Safari and Firefox give no reliable answer, so it resolves to null there.
+   * @returns {Promise<?string>} 'arm64', 'x64' or null when unknown.
+   */
   function detectDesktopArchitecture() {
     var device = (navigator.platform || '') + ' ' + (navigator.userAgent || '');
     if (/aarch64|arm64/i.test(device)) return Promise.resolve('arm64');
@@ -51,6 +82,16 @@
     return Promise.resolve(null);
   }
 
+  /**
+   * Installer file for a platform.
+   * assets[platform] is either a file name (one build) or an object keyed by
+   * architecture ({ x64: '...', arm64: '...' }). With several builds, the
+   * detected architecture is used, or the first one listed.
+   * @param {Object} assets The download link's assets.
+   * @param {string} platform Value from detectDesktopPlatform().
+   * @returns {?{file: string, architecture: ?string, hasArchitectures: boolean}}
+   *   null when there is no build for the platform.
+   */
   function resolveAsset(assets, platform) {
     var platformAssets = assets && assets[platform];
     if (!platformAssets) return null;
@@ -68,6 +109,16 @@
     };
   }
 
+  /**
+   * Final URL, label and style of a featured project link.
+   * A download link with an installer for the visitor's system points to that
+   * file of the latest GitHub release and names the platform ("Download for
+   * macOS", plus "ARM64" only when the platform has several builds). Any other
+   * link keeps its URL and the label of its type; unknown types look like github.
+   * @param {{type: string, url: string, assets: Object=}} link Link from bestProjects.json.
+   * @param {string} lang Language code.
+   * @returns {{className: string, label: string, url: string}}
+   */
   function resolveFeaturedLink(link, lang) {
     var type = FEATURED_LINK_TYPES[link.type] || FEATURED_LINK_TYPES.github;
     var platform = link.type === 'download' ? detectDesktopPlatform() : null;
@@ -88,25 +139,47 @@
   }
   window.resolveFeaturedLink = resolveFeaturedLink;
 
+  /**
+   * Target attributes of a link: pages of this site (demos, web apps) open in
+   * the same tab; external links (GitHub, videos, downloads) in a new one.
+   * @param {string} type Link type.
+   * @returns {string} '' or the target/rel attributes.
+   */
   function linkAttributes(type) {
     return ['demo', 'live_demo', 'web'].indexOf(type) !== -1
       ? ''
       : ' target="_blank" rel="noopener"';
   }
 
+  // Data from the JSON files; null until loaded.
   var bestProjects = null;
   var otherProjects = null;
 
+  /**
+   * Escape text for insertion as HTML, using the browser's own serializer.
+   * @param {*} str Value to show; null and undefined become ''.
+   * @returns {string} HTML-safe text.
+   */
   function escapeHtml(str) {
     var span = document.createElement('span');
     span.textContent = str == null ? '' : String(str);
     return span.innerHTML;
   }
 
+  /**
+   * Escape text for a double-quoted HTML attribute.
+   * @param {*} str Value to store.
+   * @returns {string} Attribute-safe text.
+   */
   function escapeAttr(str) {
     return escapeHtml(str).replace(/"/g, '&quot;');
   }
 
+  /**
+   * Fetch and parse a JSON file.
+   * @param {string} url File URL.
+   * @returns {Promise<Object>} Rejects if the response is not 2xx.
+   */
   function getJson(url) {
     return fetch(url).then(function (response) {
       if (!response.ok) throw new Error('Could not load ' + url);
@@ -114,12 +187,25 @@
     });
   }
 
+  /**
+   * Render a comma-separated technology list as tags.
+   * @param {string} techStr 'Java, Spring, SQL'.
+   * @returns {string} HTML of the tags.
+   */
   function renderTags(techStr) {
     return (techStr || '').split(',').map(function (tag) {
       return '<span class="tag">' + escapeHtml(tag.trim()) + '</span>';
     }).join('');
   }
 
+  /**
+   * Render the featured project cards.
+   * Order: display_order, then file order for projects without it (stable).
+   * The thumbnail wrapper keeps the modal content in both languages (data-*),
+   * with lists joined by '|'; a thumbnail that fails to load is hidden.
+   * @param {Array<Object>} projects bestProjects.json "projects".
+   * @param {string} lang Language code.
+   */
   function renderFeatured(projects, lang) {
     var container = document.getElementById('projects-featured');
     if (!container) return;
@@ -182,6 +268,11 @@
     container.innerHTML = html;
   }
 
+  /**
+   * Render the "other projects" list, in file order, and its count.
+   * @param {Array<Object>} projects projects.json "other".
+   * @param {string} lang Language code.
+   */
   function renderOther(projects, lang) {
     var list = document.getElementById('projects-other-list');
     var count = document.getElementById('projects-other-count');
@@ -202,10 +293,18 @@
     if (count) count.textContent = projects.length;
   }
 
+  /**
+   * Language to render on load (the one js/i18n.js has saved or applied).
+   * @returns {string} Language code.
+   */
   function currentLang() {
     return localStorage.getItem('lang') || document.documentElement.lang || 'en';
   }
 
+  /**
+   * Render both sections with the data loaded so far.
+   * @param {string} lang Language code.
+   */
   function renderAll(lang) {
     if (bestProjects) renderFeatured(bestProjects, lang);
     if (otherProjects) renderOther(otherProjects, lang);
@@ -222,8 +321,12 @@
       otherProjects = results[1].other;
       renderAll(currentLang());
     });
+    // Registered in siteReady so a translated page is only revealed after the
+    // cards are rendered (see js/i18n.js).
     (window.siteReady = window.siteReady || []).push(loaded.catch(function () {}));
 
+    // The cards are shown at once with the assumed architecture and rendered
+    // again only if detection finds a different one.
     loaded.then(function () {
       return detectDesktopArchitecture();
     }).then(function (architecture) {

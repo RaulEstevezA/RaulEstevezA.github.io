@@ -36,20 +36,36 @@ PERSON_FIELDS = ["name", "title", "location", "website", "email", "github", "lin
 
 
 def load_json(relative_path: str):
+    """Read a JSON file given its path relative to the repository root."""
     return json.loads((ROOT / relative_path).read_text(encoding="utf-8"))
 
 
 def check(condition: bool, message: str) -> None:
+    """Record message as an error when condition is false.
+
+    Errors are collected in ERRORS so a single run reports all of them.
+    """
     if not condition:
         ERRORS.append(message)
 
 
 def local_target(path: str) -> Path:
+    """Map a site URL path to the file that serves it in the repository.
+
+    A path ending in "/" is served by its index.html ('/tools/Mapper/' ->
+    tools/Mapper/index.html). Query strings and fragments are ignored.
+    """
     local = ROOT / urlparse(path).path.lstrip("/")
     return local / "index.html" if path.endswith("/") else local
 
 
 def validate_data() -> dict:
+    """Read every data file and check that person.json has its required fields.
+
+    Returns:
+        The parsed files keyed by their relative path. A file that cannot be read
+        is missing from the result and recorded in ERRORS.
+    """
     data = {}
     for relative_path in DATA_FILES:
         try:
@@ -76,12 +92,21 @@ def validate_published_entries(data: dict) -> None:
 
 
 def validate_education(data: dict) -> None:
+    """Check that every logo referenced in education.json exists."""
     for item in data["data/education.json"]["education"]:
         for logo in item.get("logos") or []:
             check((ROOT / logo).is_file(), f"Missing education logo: {logo}")
 
 
 def main() -> int:
+    """Run all checks and print the result.
+
+    The checks that read nested fields only run when every data file loaded,
+    so a broken file is reported once instead of as a chain of KeyErrors.
+
+    Returns:
+        The process exit code: 0 when the data is valid, 1 otherwise.
+    """
     data = validate_data()
     if not ERRORS:
         try:
