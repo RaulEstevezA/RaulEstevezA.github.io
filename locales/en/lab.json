@@ -11,6 +11,6 @@
   "games_kicker_one": "{count} browser game",
   "games_kicker_other": "{count} browser games",
   "games_heading": "Games",
-  "games_description": "Play a classic arcade project or learn SQL and REST APIs through interactive challenges.",
+  "games_description": "Play a classic arcade project or learn SQL, REST APIs, and Git through interactive challenges.",
   "games_link": "Explore games →"
 }

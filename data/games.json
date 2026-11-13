@@ -30,6 +30,16 @@
       "game_url": "/games/API_Quest/",
       "repository_url": "https://github.com/RaulEstevezA/API_Quest",
       "display_order": 3
+    },
+    {
+      "name": "Commit Chaos",
+      "description_en": "Learn Git by surviving increasingly chaotic repositories. Practise essential commands through a story-driven terminal adventure with four chapters, progressive challenges, hints, and achievements.",
+      "description_es": "Aprende Git sobreviviendo a repositorios cada vez más caóticos. Practica los comandos esenciales en una aventura narrativa de terminal con cuatro capítulos, retos progresivos, pistas y logros.",
+      "technologies": ["React", "TypeScript", "Git", "Vite"],
+      "logo": "/games/Commit_Chaos/commit-chaos-logo.png",
+      "game_url": "/games/Commit_Chaos/",
+      "repository_url": "https://github.com/RaulEstevezA/Commit_Chaos",
+      "display_order": 4
     }
   ]
 }

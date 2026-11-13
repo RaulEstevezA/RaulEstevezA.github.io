@@ -1,8 +1,8 @@
 {
   "page_title": "Juegos didácticos | Raúl Estévez",
-  "page_desc": "Juega a BlockFall y aprende SQL o APIs REST con SQL Detective y API Quest, directamente en el navegador.",
+  "page_desc": "Juega a BlockFall y aprende SQL, APIs REST o Git con SQL Detective, API Quest y Commit Chaos, directamente en el navegador.",
   "heading": "Juegos",
-  "intro": "Juega a BlockFall, resuelve misterios de bases de datos en SQL Detective o domina las APIs REST con las misiones de API Quest, directamente desde el navegador.",
+  "intro": "Juega a BlockFall, resuelve misterios con SQL Detective, domina las APIs REST en API Quest o aprende Git sobreviviendo a Commit Chaos, directamente desde el navegador.",
   "available_heading": "Juegos disponibles",
   "empty": "No hay juegos disponibles en este momento."
 }
