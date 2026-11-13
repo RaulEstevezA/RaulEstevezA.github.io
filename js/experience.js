@@ -136,11 +136,15 @@
   }
 
   /**
-   * Language to render on load (the one js/i18n.js has saved or applied).
+   * Language currently applied to the page.
+   * Read from <html lang>, which js/i18n.js sets before this script's
+   * DOMContentLoaded handler runs (i18n.js is loaded first). Reading
+   * localStorage here instead would throw when storage is blocked and would
+   * miss a language taken from the browser settings.
    * @returns {string} Language code.
    */
   function currentLang() {
-    return localStorage.getItem('lang') || document.documentElement.lang || 'en';
+    return document.documentElement.lang || 'en';
   }
 
   /**

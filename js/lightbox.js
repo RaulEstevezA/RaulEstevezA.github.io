@@ -122,7 +122,8 @@
       var thumb = card.querySelector('.project-thumb');
       if (!wrap || !thumb) return;
 
-      var isEs = (localStorage.getItem('lang') || 'en') === 'es';
+      // Language applied by js/i18n.js (see currentLang() in js/projects.js).
+      var isEs = document.documentElement.lang === 'es';
       var images = getProjectImages(wrap, thumb);
       var features = (isEs ? wrap.dataset.featuresEs : wrap.dataset.features) || '';
       var featureList = document.getElementById('proj-modal-features');
