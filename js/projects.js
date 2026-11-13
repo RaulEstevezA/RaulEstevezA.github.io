@@ -7,8 +7,8 @@
  * languages, for the detail modal (js/lightbox.js). This file also exposes
  * window.FEATURED_LINK_TYPES and window.resolveFeaturedLink for that modal.
  *
- * Download links point straight to the installer for the visitor's system;
- * the platform and architecture detection is the same as in js/tools.js.
+ * Download links point straight to the installer for the visitor's system,
+ * chosen by js/downloads.js, which must be loaded first.
  *
  * Re-renders on 'languagechange:site' (js/i18n.js). The English markup is
  * pre-rendered by scripts/build_content.py (render_featured_project,
@@ -37,104 +37,27 @@
     download: { label: { en: 'Download app', es: 'Descargar aplicación' }, className: 'btn btn-download' }
   };
   window.FEATURED_LINK_TYPES = FEATURED_LINK_TYPES;
-  // Assumed until detectDesktopArchitecture() answers (most desktops are x64).
-  var desktopArchitecture = 'x64';
-
-  /**
-   * Desktop system of the visitor, matching the keys of a download link's assets.
-   * Phones and tablets return null: there is nothing to install on them.
-   * An iPad in desktop mode reports "Mac", so a Mac with touch points is treated
-   * as a tablet. ChromeOS (CrOS) is excluded from Linux.
-   * @returns {?string} 'macOS', 'Windows', 'Linux' or null.
-   */
-  function detectDesktopPlatform() {
-    var platform = navigator.platform || '';
-    var userAgent = navigator.userAgent || '';
-    var device = platform + ' ' + userAgent;
-
-    if (/android|iphone|ipad|ipod|mobile/i.test(device)) return null;
-    if (/mac/i.test(device)) return navigator.maxTouchPoints > 1 ? null : 'macOS';
-    if (/win/i.test(device)) return 'Windows';
-    if (/linux|x11/i.test(device) && !/cros/i.test(device)) return 'Linux';
-    return null;
-  }
-
-  /**
-   * CPU architecture of the visitor. The user agent only reveals ARM on some
-   * systems; Chromium browsers expose it through User-Agent Client Hints.
-   * Safari and Firefox give no reliable answer, so it resolves to null there.
-   * @returns {Promise<?string>} 'arm64', 'x64' or null when unknown.
-   */
-  function detectDesktopArchitecture() {
-    var device = (navigator.platform || '') + ' ' + (navigator.userAgent || '');
-    if (/aarch64|arm64/i.test(device)) return Promise.resolve('arm64');
-
-    if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
-      return navigator.userAgentData.getHighEntropyValues(['architecture'])
-        .then(function (values) {
-          if (values.architecture === 'arm') return 'arm64';
-          if (values.architecture === 'x86') return 'x64';
-          return null;
-        })
-        .catch(function () { return null; });
-    }
-
-    return Promise.resolve(null);
-  }
-
-  /**
-   * Installer file for a platform.
-   * assets[platform] is either a file name (one build) or an object keyed by
-   * architecture ({ x64: '...', arm64: '...' }). With several builds, the
-   * detected architecture is used, or the first one listed.
-   * @param {Object} assets The download link's assets.
-   * @param {string} platform Value from detectDesktopPlatform().
-   * @returns {?{file: string, architecture: ?string, hasArchitectures: boolean}}
-   *   null when there is no build for the platform.
-   */
-  function resolveAsset(assets, platform) {
-    var platformAssets = assets && assets[platform];
-    if (!platformAssets) return null;
-    if (typeof platformAssets === 'string') {
-      return { file: platformAssets, architecture: null, hasArchitectures: false };
-    }
-
-    var architecture = platformAssets[desktopArchitecture]
-      ? desktopArchitecture
-      : Object.keys(platformAssets)[0];
-    return {
-      file: platformAssets[architecture],
-      architecture: architecture,
-      hasArchitectures: Object.keys(platformAssets).length > 1
-    };
-  }
 
   /**
    * Final URL, label and style of a featured project link.
    * A download link with an installer for the visitor's system points to that
-   * file of the latest GitHub release and names the platform ("Download for
-   * macOS", plus "ARM64" only when the platform has several builds). Any other
-   * link keeps its URL and the label of its type; unknown types look like github.
+   * file and names the platform ("Download for macOS"; see js/downloads.js).
+   * Any other link keeps its URL and the label of its type; unknown types look
+   * like github.
    * @param {{type: string, url: string, assets: Object=}} link Link from bestProjects.json.
    * @param {string} lang Language code.
    * @returns {{className: string, label: string, url: string}}
    */
   function resolveFeaturedLink(link, lang) {
     var type = FEATURED_LINK_TYPES[link.type] || FEATURED_LINK_TYPES.github;
-    var platform = link.type === 'download' ? detectDesktopPlatform() : null;
-    var asset = platform && resolveAsset(link.assets, platform);
-    var platformLabel = asset && asset.architecture === 'arm64' && asset.hasArchitectures
-      ? platform + ' ARM64'
-      : platform;
+    var direct = link.type === 'download' ? window.desktopDownloads.resolve(link.url, link.assets) : null;
 
     return {
       className: type.className,
-      label: asset
-        ? (lang === 'es' ? 'Descargar para ' : 'Download for ') + platformLabel
+      label: direct
+        ? (lang === 'es' ? 'Descargar para ' : 'Download for ') + direct.platform
         : type.label[lang] || type.label.en,
-      url: asset
-        ? link.url.replace(/\/$/, '') + '/download/' + encodeURIComponent(asset.file)
-        : link.url
+      url: direct ? direct.url : link.url
     };
   }
   window.resolveFeaturedLink = resolveFeaturedLink;
@@ -332,12 +255,9 @@
     // The cards are shown at once with the assumed architecture and rendered
     // again only if detection finds a different one.
     loaded.then(function () {
-      return detectDesktopArchitecture();
-    }).then(function (architecture) {
-      if (architecture && architecture !== desktopArchitecture) {
-        desktopArchitecture = architecture;
-        renderAll(currentLang());
-      }
+      return window.desktopDownloads.detectArchitecture();
+    }).then(function (changed) {
+      if (changed) renderAll(currentLang());
     }).catch(function (error) {
       console.error(error);
     });

@@ -7,6 +7,8 @@
  * the system cannot be detected, or it is a phone or tablet, it links to the
  * releases page instead.
  *
+ * The installer is chosen by js/downloads.js, which must be loaded first.
+ *
  * Re-renders on 'languagechange:site' (js/i18n.js). The English cards are
  * pre-rendered by scripts/build_content.py (render_tool), always with the
  * generic releases link: change both together.
@@ -16,8 +18,6 @@
 
   var tools = [];
   var currentLang = document.documentElement.lang || 'en';
-  // Assumed until detectDesktopArchitecture() answers (most desktops are x64).
-  var desktopArchitecture = 'x64';
 
   /**
    * Escape text for insertion as HTML, using the browser's own serializer.
@@ -49,79 +49,9 @@
   };
 
   /**
-   * Desktop system of the visitor, matching the keys of download.assets.
-   * Phones and tablets return null: there is nothing to install on them.
-   * An iPad in desktop mode reports "Mac", so a Mac with touch points is treated
-   * as a tablet. ChromeOS (CrOS) is excluded from Linux.
-   * @returns {?string} 'macOS', 'Windows', 'Linux' or null.
-   */
-  function detectDesktopPlatform() {
-    var platform = navigator.platform || '';
-    var userAgent = navigator.userAgent || '';
-    var device = platform + ' ' + userAgent;
-
-    if (/android|iphone|ipad|ipod|mobile/i.test(device)) return null;
-    if (/mac/i.test(device)) return navigator.maxTouchPoints > 1 ? null : 'macOS';
-    if (/win/i.test(device)) return 'Windows';
-    if (/linux|x11/i.test(device) && !/cros/i.test(device)) return 'Linux';
-    return null;
-  }
-
-  /**
-   * CPU architecture of the visitor. The user agent only reveals ARM on some
-   * systems; Chromium browsers expose it through User-Agent Client Hints.
-   * Safari and Firefox give no reliable answer, so it resolves to null there.
-   * @returns {Promise<?string>} 'arm64', 'x64' or null when unknown.
-   */
-  function detectDesktopArchitecture() {
-    var device = (navigator.platform || '') + ' ' + (navigator.userAgent || '');
-    if (/aarch64|arm64/i.test(device)) return Promise.resolve('arm64');
-
-    if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
-      return navigator.userAgentData.getHighEntropyValues(['architecture'])
-        .then(function (values) {
-          if (values.architecture === 'arm') return 'arm64';
-          if (values.architecture === 'x86') return 'x64';
-          return null;
-        })
-        .catch(function () { return null; });
-    }
-
-    return Promise.resolve(null);
-  }
-
-  /**
-   * Installer file for a platform.
-   * download.assets[platform] is either a file name (one build) or an object
-   * keyed by architecture ({ x64: '...', arm64: '...' }). With several builds,
-   * the detected architecture is used, or the first one listed.
-   * @param {Object} assets The tool's download.assets.
-   * @param {string} platform Value from detectDesktopPlatform().
-   * @returns {?{file: string, architecture: ?string, hasArchitectures: boolean}}
-   *   null when there is no build for the platform.
-   */
-  function resolveAsset(assets, platform) {
-    var platformAssets = assets && assets[platform];
-    if (!platformAssets) return null;
-    if (typeof platformAssets === 'string') {
-      return { file: platformAssets, architecture: null, hasArchitectures: false };
-    }
-
-    var architecture = platformAssets[desktopArchitecture]
-      ? desktopArchitecture
-      : Object.keys(platformAssets)[0];
-    return {
-      file: platformAssets[architecture],
-      architecture: architecture,
-      hasArchitectures: Object.keys(platformAssets).length > 1
-    };
-  }
-
-  /**
    * Download button of a tool card.
-   * With a matching installer it links to the file of the latest GitHub release
-   * (<releases_url>/download/<file>) and names the platform, adding "ARM64" only
-   * when that platform has several builds. Otherwise it links to releases_url.
+   * With an installer for the visitor's system it links to that file and names
+   * the platform (js/downloads.js); otherwise it links to releases_url.
    * @param {Object} tool Entry from tools.json.
    * @param {Object} labels Result of getLabels().
    * @returns {string} The button HTML, or '' when the tool has no desktop version.
@@ -130,15 +60,9 @@
     var download = tool.download;
     if (!download || !download.releases_url) return '';
 
-    var platform = detectDesktopPlatform();
-    var asset = platform && resolveAsset(download.assets, platform);
-    var url = asset
-      ? download.releases_url.replace(/\/$/, '') + '/download/' + encodeURIComponent(asset.file)
-      : download.releases_url;
-    var platformLabel = asset && asset.architecture === 'arm64' && asset.hasArchitectures
-      ? platform + ' ARM64'
-      : platform;
-    var label = asset ? labels.downloadFor + platformLabel : labels.download;
+    var direct = window.desktopDownloads.resolve(download.releases_url, download.assets);
+    var url = direct ? direct.url : download.releases_url;
+    var label = direct ? labels.downloadFor + direct.platform : labels.download;
 
     return '<a class="btn btn-download" href="' + encodeURI(url) + '" target="_blank" rel="noopener">' + icons.download + label + '</a>';
   }
@@ -205,13 +129,10 @@
     .then(function (data) {
       tools = (Array.isArray(data.tools) ? data.tools : []).filter(function (tool) { return !tool.hidden; });
       render();
-      return detectDesktopArchitecture();
+      return window.desktopDownloads.detectArchitecture();
     })
-    .then(function (architecture) {
-      if (architecture && architecture !== desktopArchitecture) {
-        desktopArchitecture = architecture;
-        render();
-      }
+    .then(function (changed) {
+      if (changed) render();
     })
     .catch(function (error) {
       console.error(error);
