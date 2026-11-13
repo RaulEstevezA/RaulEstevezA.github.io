@@ -1,0 +1,88 @@
+/*
+ * Fade protocol shared with personal_web_style. Screen changes in this game happen
+ * inside one document, so app.js starts the View Transition; navigation out of the
+ * game uses the same animations through cross-document View Transitions.
+ */
+
+@view-transition {
+  navigation: auto;
+}
+
+.site-header {
+  view-transition-name: site-header;
+}
+
+::view-transition-old(root) {
+  animation: fade-out var(--fade-page-out) both;
+}
+
+::view-transition-new(root) {
+  animation: fade-in var(--fade-page-in) both;
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+
+/* The first rendered screen enters with the same timing as every later screen. */
+#app {
+  animation: fade-in var(--fade-page-in) both;
+}
+
+/* Native dialog entry and exit. The JS fallback only runs without overlay support. */
+.modal[open],
+.modal[open]::backdrop {
+  transition: opacity var(--fade-modal-in), transform var(--fade-modal-in);
+}
+
+@starting-style {
+  .modal[open] {
+    opacity: 0;
+    transform: scale(var(--fade-modal-scale));
+  }
+
+  .modal[open]::backdrop {
+    opacity: 0;
+  }
+}
+
+@supports (overlay: auto) {
+  .modal,
+  .modal::backdrop {
+    transition:
+      opacity var(--fade-modal-out),
+      transform var(--fade-modal-out),
+      overlay var(--fade-modal-out) allow-discrete,
+      display var(--fade-modal-out) allow-discrete;
+  }
+
+  .modal:not([open]) {
+    opacity: 0;
+    transform: scale(var(--fade-modal-scale));
+  }
+
+  .modal:not([open])::backdrop {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+
+  #app {
+    animation: none;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

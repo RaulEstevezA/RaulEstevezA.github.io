@@ -6,6 +6,7 @@
 import { localize } from '../../core/localize.js';
 import { uiText } from '../../content/ui-text.js';
 import { h } from '../dom.js';
+import { addDialogCloseTransition } from '../motion.js';
 
 /**
  * Opens a modal window. It removes itself from the page when it closes.
@@ -64,6 +65,7 @@ export function openModal({ language, title, eyebrow, body, actions, onClose, cl
   );
 
   document.body.append(dialog);
+  addDialogCloseTransition(dialog);
   dialog.showModal();
   return { close };
 }

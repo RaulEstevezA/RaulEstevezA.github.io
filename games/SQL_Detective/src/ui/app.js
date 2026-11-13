@@ -17,6 +17,7 @@ import { renderCase } from './screens/case-screen.js';
 import { renderEnding } from './screens/ending-screen.js';
 import { renderMenu } from './screens/menu-screen.js';
 import { renderMissions } from './screens/missions-screen.js';
+import { prefersReducedMotion } from './motion.js';
 
 const SCREENS = {
   menu: renderMenu,
@@ -45,13 +46,30 @@ export function startApp({ root, storage, store, loadSql }) {
     storageAvailable: saved.available,
     loadSql,
 
-    /** Shows a screen. Each one is a new page for the player, so it starts at the top. */
-    navigate(name, params) {
+    /**
+     * Shows a screen with the shared page exit/entry fade. Each screen starts at the top.
+     *
+     * @param {string} name Registered screen name.
+     * @param {object} [params] Parameters passed to its renderer.
+     * @param {function(): void} [afterRender] Work that must run against the new DOM.
+     * @returns {void}
+     */
+    navigate(name, params, afterRender) {
       current = { name, params };
-      // A window of the screen being left must not stay open over the new one.
-      document.querySelectorAll('dialog[open]').forEach((dialog) => dialog.close());
-      root.replaceChildren(...SCREENS[name](app, params));
-      globalThis.scrollTo?.(0, 0);
+      const update = () => {
+        // A window of the screen being left must not stay open over the new one.
+        document.querySelectorAll('dialog[open]').forEach((dialog) => dialog.close());
+        root.replaceChildren(...SCREENS[name](app, params));
+        globalThis.scrollTo?.(0, 0);
+        afterRender?.();
+      };
+
+      if (!root.hasChildNodes() || !document.startViewTransition || prefersReducedMotion()) {
+        update();
+        return;
+      }
+
+      document.startViewTransition(update);
     },
 
     /** Applies a transition from `core/progress.js` and saves the result. */
@@ -69,9 +87,10 @@ export function startApp({ root, storage, store, loadSql }) {
       app.language = language;
       saveLanguage(storage, language);
       syncDocument();
-      app.navigate(current.name, current.params);
-      globalThis.scrollTo?.(0, scrollPosition);
-      root.querySelector('.language-switch__button[aria-pressed="true"]')?.focus({ preventScroll: true });
+      app.navigate(current.name, current.params, () => {
+        globalThis.scrollTo?.(0, scrollPosition);
+        root.querySelector('.language-switch__button[aria-pressed="true"]')?.focus({ preventScroll: true });
+      });
     },
 
     /** Erases the saved game. */

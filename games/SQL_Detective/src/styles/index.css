@@ -5,6 +5,7 @@
 
 @import './tokens.css';
 @import './base.css';
+@import './fade-in.css';
 @import './header.css';
 @import './art.css';
 @import './title-screen.css';

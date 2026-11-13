@@ -68,6 +68,13 @@
 
   --shadow-window: 0 20px 60px rgba(0, 0, 0, 0.6);
   --transition-fast: 0.15s ease;
+
+  /* Shared fade protocol from personal_web_style. */
+  --fade-page-out: 0.16s ease-in;
+  --fade-page-in: 0.28s ease-out;
+  --fade-modal-in: 0.2s ease;
+  --fade-modal-out: 0.18s ease-in;
+  --fade-modal-scale: 0.97;
 }
 
 /* Each chapter has its own light over the same city. */
