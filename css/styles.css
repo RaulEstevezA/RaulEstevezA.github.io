@@ -993,7 +993,7 @@ section + section {
 /* Institution icons: same height and corner radius as the GitHub/LinkedIn
    icons on the contact page (.contact-profile-icon: 1.35rem, rx 3 of 24).
    The width follows each logo, so rectangular logos keep their shape. */
-.edu-title {
+.edu-institution {
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -1245,7 +1245,11 @@ ul li {
 
   .site-actions .btn,
   .site-actions .btn:nth-child(-n + 2) {
-    grid-column: span 2;
+    grid-column: span 3;
+  }
+
+  .site-actions .btn:first-child:nth-last-child(odd) {
+    grid-column: 1 / -1;
   }
 
   .project-card { padding: 1.25rem 0; }
@@ -1272,11 +1276,6 @@ ul li {
 @media (max-width: 480px) {
   h1 { font-size: 1.5rem; }
   .window-content { padding: 1.25rem 1rem; }
-
-  .site-actions .btn,
-  .site-actions .btn:nth-child(-n + 2) {
-    grid-column: span 3;
-  }
 }
 
 /* =====================================================

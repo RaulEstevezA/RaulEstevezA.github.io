@@ -77,17 +77,19 @@
           '" data-document-index="' + documentIndex + '">' + escapeHtml(label) + '</button>';
       }).join('');
 
-      // Institution names are written right below, so the icons are decorative.
+      // The institution name follows the logos, so the icons are decorative.
       var logos = (item.logos || []).map(function (src) {
         return '<img class="edu-logo" src="' + escapeHtml(src) + '" alt="" decoding="async">';
       }).join('');
 
       return '<article class="edu-card">' +
         '<p class="edu-title">' +
-          (logos ? '<span class="edu-logos">' + logos + '</span>' : '') +
           '<strong>' + escapeHtml(isEs ? item.title_es : item.title_en) + '</strong>' +
         '</p>' +
-        '<p>' + escapeHtml(item.institution) + '</p>' +
+        '<p class="edu-institution">' +
+          (logos ? '<span class="edu-logos">' + logos + '</span>' : '') +
+          '<span>' + escapeHtml(item.institution) + '</span>' +
+        '</p>' +
         '<p>' + escapeHtml(isEs ? item.period_es : item.period_en) + '</p>' +
         '<div class="edu-footer">' +
           '<p><em>' + escapeHtml(isEs ? item.grade_es : item.grade_en) + '</em></p>' +

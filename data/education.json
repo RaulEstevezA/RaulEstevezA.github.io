@@ -29,7 +29,7 @@
       "period_es": "2024 – 2026",
       "grade_en": "GPA: 9.1 / 10",
       "grade_es": "Nota media: 9,1 / 10",
-      "logos": ["img/education/jesuites.png", "img/education/uoc.png"],
+      "logos": ["img/education/jesuites.png"],
       "documents": [
         {
           "label_en": "Study certificate",

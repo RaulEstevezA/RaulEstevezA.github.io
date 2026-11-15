@@ -306,10 +306,12 @@ def render_education(item: dict, index: int) -> str:
     return (
         '<article class="edu-card">'
         + '<p class="edu-title">'
-        + ('<span class="edu-logos">' + logos + "</span>" if logos else "")
         + "<strong>" + esc(item["title_en"]) + "</strong>"
         + "</p>"
-        + "<p>" + esc(item["institution"]) + "</p>"
+        + '<p class="edu-institution">'
+        + ('<span class="edu-logos">' + logos + "</span>" if logos else "")
+        + "<span>" + esc(item["institution"]) + "</span>"
+        + "</p>"
         + "<p>" + esc(item["period_en"]) + "</p>"
         + '<div class="edu-footer">'
         + "<p><em>" + esc(item["grade_en"]) + "</em></p>"
