@@ -1,5 +1,5 @@
 /* Fallback for animations that modern CSS handles natively in some browsers
-   (see the TRANSITIONS section of styles.css):
+   (see css/transitions.css):
    - collapsible lists (<details class="certs-details">) open and close smoothly
      -> native with `interpolate-size`;
    - PDF dialogs fade out when closed -> native with `overlay`.

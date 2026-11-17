@@ -1,0 +1,35 @@
+/*
+ * Home page (index.html).
+ */
+
+/* =====================================================
+   PROFILE (photo + heading row)
+===================================================== */
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.profile-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.profile-text { flex: 1; min-width: 0; }
+.profile-text h1 { margin-bottom: 0.2rem; }
+.profile-text h2 { margin-bottom: 0.5rem; }
+.profile-text .stack { margin-top: 0; }
+
+@media (max-width: 560px) {
+  .profile { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+  .profile-photo { width: 88px; height: 88px; }
+}

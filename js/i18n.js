@@ -175,7 +175,7 @@
 
   /**
    * Change the language from the selector, cross-fading the page where View
-   * Transitions are supported (animation defined in css/styles.css, TRANSITIONS).
+   * Transitions are supported (animation defined in css/transitions.css).
    * Without support, or with reduced motion, the change is instant.
    * @param {string} lang Code from SUPPORTED.
    * @returns {Promise} Resolves when the language is applied and the fade ends.

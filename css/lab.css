@@ -1,0 +1,226 @@
+/*
+ * Lab (lab/) and the card pages inside it and next to it: demos/, games/ and tools/.
+ */
+
+/* =====================================================
+   LAB CATEGORIES
+===================================================== */
+
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.lab-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+  padding: 1.5rem;
+  color: inherit;
+  background: var(--btn-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.lab-card:hover {
+  transform: translateY(-2px);
+  background: var(--btn-hover);
+  border-color: var(--accent);
+}
+
+.lab-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.lab-card-kicker {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lab-card h2 {
+  margin: 0.75rem 0 0.5rem;
+  color: var(--text);
+  font-size: 1.4rem;
+  font-weight: 650;
+}
+
+.lab-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.lab-card-link {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* =====================================================
+   DEMO, GAME AND TOOL CARDS
+===================================================== */
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+#tools-list,
+#games-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.demo-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.demo-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  background: var(--page-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.demo-card-featured {
+  border-color: rgba(63, 185, 80, 0.55);
+  box-shadow: 0 0 0 1px rgba(63, 185, 80, 0.12), 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.demo-card .project-badge { align-self: flex-start; }
+
+.demo-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.35rem;
+}
+
+.demo-card-image {
+  width: calc(100% + 2.5rem);
+  height: 180px;
+  margin: -1.25rem -1.25rem 1.25rem;
+  object-fit: cover;
+  object-position: top center;
+  border-bottom: 1px solid var(--border);
+  border-radius: 10px 10px 0 0;
+}
+
+.demo-card p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.demo-card .tech-tags { margin-top: auto; }
+
+.demo-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.demo-card-actions .btn { margin: 0; }
+
+/* Tools: open button on its own row, download and code below */
+.tool-card-actions { margin-top: auto; }
+
+.tool-card-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+}
+
+.tool-card-actions .btn svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.tool-card-actions .btn-web { flex: 1 1 100%; }
+.tool-card-actions .btn-download { flex: 3 1 auto; }
+.tool-card-actions .btn-code { flex: 1 1 auto; background: transparent; }
+.tool-card-actions .btn-code:hover { background: var(--btn-bg); }
+
+.demo-card-row {
+  display: grid;
+  grid-template-columns: minmax(240px, 36%) 1fr;
+  height: 320px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.demo-card-row .demo-card-image {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  border: 0;
+  border-right: 1px solid var(--border);
+  border-radius: 0;
+}
+
+.demo-card-content {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 1.25rem 1.5rem;
+}
+
+.demo-card-row .demo-card-content p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.demo-card-content .tech-tags { margin-top: auto; }
+
+#tools-list .demo-card-image,
+#games-list .demo-card-image {
+  object-fit: contain;
+  padding: 3rem;
+  background: linear-gradient(135deg, #111820, #1a2740);
+}
+
+#games-list .pixel-art-logo { image-rendering: pixelated; }
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+  .lab-grid,
+  #tools-list,
+  #games-list { grid-template-columns: 1fr; }
+
+  .demo-card-row {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .demo-card-row .demo-card-content p {
+    display: block;
+    overflow: visible;
+  }
+
+  .demo-card-row .demo-card-image {
+    height: 210px;
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+}

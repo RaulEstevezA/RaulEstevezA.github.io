@@ -1,0 +1,145 @@
+/*
+ * Base: colour tokens, page defaults, layout, the window panel, typography,
+ * sections and lists. Loaded first; everything else builds on it.
+ */
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+  --page-bg:    #0d1117;
+  --window-bg:  #161b22;
+  --text:       #e6edf3;
+  --muted:      #8b949e;
+  --accent:     #58a6ff;
+  --btn-bg:     #21262d;
+  --btn-text:   #c9d1d9;
+  --btn-border: #30363d;
+  --btn-hover:  #30363d;
+  --border:     #30363d;
+  --tag-bg:     #1a2740;
+  --tag-text:   #79c0ff;
+}
+
+/* =====================================================
+   BASE
+===================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--page-bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+::selection {
+  background: rgba(88, 166, 255, 0.25);
+  color: var(--text);
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar              { width: 8px; height: 8px; }
+::-webkit-scrollbar-track        { background: var(--page-bg); }
+::-webkit-scrollbar-thumb        { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover  { background: var(--muted); }
+
+/* =====================================================
+   LAYOUT
+===================================================== */
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* =====================================================
+   WINDOW (macOS style)
+===================================================== */
+
+.window {
+  background: var(--window-bg);
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 1px 0 rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.window-content { padding: 2.25rem 2.5rem; }
+
+/* =====================================================
+   TYPOGRAPHY & HERO
+===================================================== */
+
+.hero { margin-top: 2rem; }
+.home .hero { margin-top: 4rem; }
+
+h1 { font-size: 2.4rem; margin: 0 0 0.4rem; }
+h2 { font-size: 1.35rem; font-weight: 400; color: var(--muted); margin: 0 0 1rem; }
+h3 { font-size: 1.1rem; margin: 0 0 0.75rem; }
+
+.stack {
+  margin: 1rem 0 0;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.intro {
+  max-width: none;
+  margin: 1.25rem 0 0;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+section { margin-top: 2rem; }
+
+section + section {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+/* =====================================================
+   LISTS
+===================================================== */
+
+ul {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 0;
+}
+
+ul li {
+  margin-bottom: 0.45rem;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+  .container      { padding: 1rem; }
+  .hero           { margin-top: 1rem; }
+  .home .hero     { margin-top: 2rem; }
+  .window-content { padding: 1.5rem 1.25rem; }
+
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.1rem; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.5rem; }
+  .window-content { padding: 1.25rem 1rem; }
+}

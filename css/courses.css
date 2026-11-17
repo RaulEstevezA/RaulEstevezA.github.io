@@ -1,0 +1,181 @@
+/*
+ * Courses page (courses.html): education cards, certificate programs and the
+ * individual course list.
+ */
+
+/* =====================================================
+   EDUCATION CARD (courses)
+===================================================== */
+
+.edu-card {
+  padding: 1.25rem 1.5rem;
+  background: var(--page-bg);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.education-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.edu-card p { margin: 0 0 0.3rem; }
+.edu-card p:last-child { margin-bottom: 0; }
+
+/* Institution icons: same height and corner radius as the GitHub/LinkedIn
+   icons on the contact page (.contact-profile-icon: 1.35rem, rx 3 of 24).
+   The width follows each logo, so rectangular logos keep their shape. */
+.edu-institution {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.edu-logos {
+  display: flex;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.edu-logo {
+  display: block;
+  width: auto;
+  height: 1.35rem;
+  border-radius: 0.17rem;
+}
+
+.edu-footer,
+.edu-documents {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.edu-footer {
+  gap: 0.75rem 1rem;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.edu-footer p { margin: 0; }
+
+.edu-documents {
+  gap: 0.65rem;
+  margin-left: auto;
+}
+
+/* =====================================================
+   CERTIFICATE GRID (professional programs)
+===================================================== */
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cert-card {
+  padding: 1.1rem 1.25rem;
+  background: var(--page-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.15s;
+}
+
+.cert-card:hover { border-color: var(--muted); }
+
+.cert-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.cert-provider {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.cert-year {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.cert-name {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* =====================================================
+   CERTIFICATE BADGES (link buttons)
+===================================================== */
+
+.cert-badges { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.cert-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: opacity 0.15s;
+}
+
+.cert-badge:hover { opacity: 0.75; }
+
+.cert-badge--edx    { background: #02262b; color: #ffffff; }
+.cert-badge--cs50   { background: #c00000; color: #ffffff; }
+.cert-badge--credly { background: #f47920; color: #ffffff; }
+.cert-badge--udemy  { background: #a435f0; color: #ffffff; }
+
+/* =====================================================
+   INDIVIDUAL COURSES LIST
+===================================================== */
+
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--border);
+}
+
+.cert-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cert-item:last-child { border-bottom: none; }
+
+.cert-item-name {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.cert-item-provider {
+  font-size: 0.78rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .cert-item {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+}

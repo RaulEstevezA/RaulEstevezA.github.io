@@ -15,7 +15,7 @@
   /* Hide <main> until it is translated when the page will not be shown in English,
      so the English HTML does not flash first. Runs before the first paint; uses the
      same language rule as js/i18n.js, which removes the class once translated
-     (css/styles.css fades the content in and shows it anyway after 1.5s). */
+     (css/transitions.css fades the content in and shows it anyway after 1.5s). */
   try {
     var l = localStorage.getItem('lang');
     if (l !== 'en' && l !== 'es') l = (navigator.language || '').slice(0, 2).toLowerCase();

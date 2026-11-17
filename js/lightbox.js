@@ -8,7 +8,7 @@
  * languages by scripts/build_content.py, and the links are copies of the
  * card's buttons, so nothing is fetched here.
  *
- * The open/close animation is CSS (css/styles.css, TRANSITIONS).
+ * The open/close animation is CSS (css/transitions.css).
  */
 (function () {
   'use strict';
