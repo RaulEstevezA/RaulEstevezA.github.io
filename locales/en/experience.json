@@ -5,5 +5,9 @@
   "page_desc":  "Professional experience in software development within real-world environments.",
 
   "heading": "Experience",
-  "intro":   "Professional experience in software development within real-world environments."
+  "intro":   "Professional experience in software development within real-world environments.",
+  "tech_label": "Technologies:",
+  "live_demo": "Explore the interactive demo",
+  "rec_letter": "View recommendation letter",
+  "rec_letter_note": "The original unredacted version is available upon request."
 }

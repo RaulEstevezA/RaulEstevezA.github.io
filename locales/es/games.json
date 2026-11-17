@@ -4,5 +4,6 @@
   "heading": "Juegos",
   "intro": "Juega a BlockFall, resuelve misterios con SQL Detective, domina las APIs REST en API Quest o aprende Git sobreviviendo a Commit Chaos, directamente desde el navegador.",
   "available_heading": "Juegos disponibles",
-  "empty": "No hay juegos disponibles en este momento."
+  "empty": "No hay juegos disponibles en este momento.",
+  "play": "Jugar"
 }

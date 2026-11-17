@@ -96,7 +96,7 @@ def is_finite_number(value) -> bool:
 
 
 def by_display_order(items: list[dict]) -> list[dict]:
-    """Order used by projects.js, demos.js and tools.js."""
+    """Order of the cards: display_order first, then the rest in file order."""
     def key(pair):
         """Sort key: display_order when it is a finite number, otherwise after all ordered items, in file order."""
         index, item = pair
@@ -119,23 +119,116 @@ def render_tags(tech: str | None) -> str:
     )
 
 
+def render_tag_list(technologies: list[str] | None) -> str:
+    """Render a list of technologies as <span class="tag"> elements."""
+    return "".join('<span class="tag">' + esc(t) + "</span>" for t in technologies or [])
+
+
 def new_tab(link_type: str) -> str:
     """Target attributes for a link: site pages open in the same tab, external links in a new one."""
     return "" if link_type in ("demo", "live_demo", "web") else ' target="_blank" rel="noopener"'
 
 
 # ---------------------------------------------------------------------------
-# projects.html  (js/projects.js)
+# Translations inside the generated markup
+# ---------------------------------------------------------------------------
+#
+# The cards are rendered only here, never in the browser. They are written in
+# English and carry what js/i18n.js needs to show them in Spanish:
+#
+# - Texts from the data (titles, descriptions...): data-en / data-es with both
+#   versions (tr, bilingual, bilingual_list).
+# - Interface texts (button labels...): data-i18n="<page>.<key>", the same
+#   mechanism as the rest of the page, with the English text taken from
+#   locales/en/<page>.json (label).
+
+LANGS = ("en", "es")
+_locales: dict[tuple[str, str], dict] = {}
+
+
+def locale(lang: str, page: str) -> dict:
+    """Parsed locales/<lang>/<page>.json, read once."""
+    if (lang, page) not in _locales:
+        _locales[lang, page] = load_json(f"locales/{lang}/{page}.json")
+    return _locales[lang, page]
+
+
+def tr(tag: str, texts: dict[str, str], attrs: str = "") -> str:
+    """Element showing the English text that also carries every translation.
+
+    Args:
+        tag: Element name ('strong', 'p'...).
+        texts: Text per language code; all of LANGS are required.
+        attrs: Extra attributes, written right after the tag name (' class="x"').
+    """
+    data = "".join(f' data-{lang}="{esc_attr(texts[lang])}"' for lang in LANGS)
+    return f"<{tag}{attrs}{data}>{esc(texts['en'])}</{tag}>"
+
+
+def bilingual(tag: str, item: dict, field: str, attrs: str = "") -> str:
+    """tr() for a translated data field: item[field + '_en'] and item[field + '_es'].
+
+    A missing Spanish text falls back to English.
+    """
+    en = item.get(field + "_en") or ""
+    return tr(tag, {"en": en, "es": item.get(field + "_es") or en}, attrs)
+
+
+def bilingual_list(tag: str, item: dict, field: str) -> str:
+    """One tr() element per entry of a translated list (paragraphs, highlights).
+
+    Raises:
+        SystemExit: If the English and Spanish lists have different lengths,
+            since each entry is shown in place of its translation.
+    """
+    en = item.get(field + "_en") or []
+    es = item.get(field + "_es") or en
+    if len(en) != len(es):
+        raise SystemExit(f"{field}_en and {field}_es must have the same number of entries ({len(en)} vs {len(es)})")
+    return "".join(tr(tag, {"en": a, "es": b}) for a, b in zip(en, es))
+
+
+def label(tag: str, page: str, key: str, attrs: str = "") -> str:
+    """Interface text from the locale files, translated by js/i18n.js through data-i18n."""
+    return f'<{tag}{attrs} data-i18n="{page}.{key}">{esc(locale("en", page)[key])}</{tag}>'
+
+
+def download_link(page: str, key: str, releases_url: str, assets, attrs: str, icon: str = "") -> str:
+    """Download button resolved per visitor by js/downloads.js.
+
+    The static link goes to the releases page with the generic label
+    (<page>.<key>). downloads.js reads data-releases-url and data-assets and,
+    when there is an installer for the visitor's system, links to it and uses
+    the <page>.<key>_for label ('Download for {platform}'), in every language.
+    """
+    texts = {lang: locale(lang, page)[key] for lang in LANGS}
+    templates = "".join(
+        f' data-{lang}-for="{esc_attr(locale(lang, page)[key + "_for"])}"' for lang in LANGS
+    )
+    data = ' data-releases-url="' + esc_attr(releases_url) + '"'
+    if assets:
+        data += ' data-assets="' + esc_attr(json.dumps(assets, ensure_ascii=False, separators=(",", ":"))) + '"'
+    return (
+        "<a" + attrs + data + ' target="_blank" rel="noopener">'
+        + icon + tr("span", texts, " data-download-label" + templates)
+        + "</a>"
+    )
+
+
+# ---------------------------------------------------------------------------
+# projects.html
 # ---------------------------------------------------------------------------
 
-FEATURED_LINK_TYPES = {
-    "github": ("View on GitHub", "btn primary"),
-    "demo": ("Watch demo", "btn btn-demo"),
-    "live_demo": ("Open demo", "btn btn-web"),
-    "web": ("View website", "btn btn-web"),
-    "download": ("Download app", "btn btn-download"),
+# Style of each featured-project link type; the label is projects.link_<type>.
+FEATURED_LINK_CLASSES = {
+    "github": "btn primary",
+    "demo": "btn btn-demo",
+    "live_demo": "btn btn-web",
+    "web": "btn btn-web",
+    "download": "btn btn-download",
 }
 
+# Link texts of the "other projects" list (same in both languages).
 OTHER_LINK_LABELS = {
     "github": "GitHub",
     "demo": "Demo",
@@ -147,30 +240,31 @@ OTHER_LINK_LABELS = {
 }
 
 
+def render_featured_link(link: dict) -> str:
+    """One button of a featured project. Unknown types look like github."""
+    link_type = link["type"] if link["type"] in FEATURED_LINK_CLASSES else "github"
+    cls = ' class="' + FEATURED_LINK_CLASSES[link_type] + '"'
+    if link_type == "download":
+        return download_link("projects", "link_download", link["url"], link.get("assets"), ' href="' + esc_attr(link["url"]) + '"' + cls)
+    return (
+        '<a href="' + esc_attr(link["url"]) + '"' + cls + new_tab(link["type"]) + ">"
+        + label("span", "projects", "link_" + link_type) + "</a>"
+    )
+
+
 def render_featured_project(project: dict) -> str:
-    """Render one featured project card (projects.html), as projects.js does in English.
+    """Render one featured project card (projects.html).
 
     The thumbnail wrapper carries the modal content in data-* attributes, in
-    both languages, so lightbox.js can open the project detail without
-    fetching the JSON again.
+    both languages, so lightbox.js can open the project detail; the modal
+    copies the card's own buttons.
     """
-    links = project.get("links") or []
     badge_class = (
         "project-badge project-badge-personal"
         if project.get("badge_variant") == "personal"
         else "project-badge"
     )
-    # The download button is resolved per platform in the browser; the static
-    # version links to the releases page with the generic label.
-    buttons = "".join(
-        '<a href="' + esc_attr(link["url"]) + '" class="'
-        + FEATURED_LINK_TYPES.get(link["type"], FEATURED_LINK_TYPES["github"])[1] + '"'
-        + new_tab(link["type"]) + ">"
-        + esc(FEATURED_LINK_TYPES.get(link["type"], FEATURED_LINK_TYPES["github"])[0])
-        + "</a>"
-        for link in links
-    )
-    links_json = json.dumps(links, ensure_ascii=False, separators=(",", ":"))
+    buttons = "".join(render_featured_link(link) for link in project.get("links") or [])
 
     return (
         '<article class="project-card">'
@@ -183,7 +277,6 @@ def render_featured_project(project: dict) -> str:
         + ' data-features-es="' + esc_attr("|".join(project["modal_features_es"])) + '"'
         + ' data-tech="' + esc_attr(project["modal_tech"]) + '"'
         + ' data-images="' + esc_attr("|".join(project["modal_images"])) + '"'
-        + ' data-links="' + esc_attr(links_json) + '"'
         + (' data-portrait="true"' if project.get("portrait") else "") + ">"
         + '<img src="' + esc_attr(project["thumb"]) + '"'
         + ' alt="' + esc_attr(project["thumb_alt"]) + '"'
@@ -192,9 +285,9 @@ def render_featured_project(project: dict) -> str:
         + " onerror=\"this.parentElement.style.display='none'\">"
         + "</div>"
         + '<div class="project-card-body">'
-        + ('<span class="' + badge_class + '">' + esc(project["badge_en"]) + "</span>" if project.get("badge_en") else "")
-        + "<h3>" + esc(project["title_en"]) + "</h3>"
-        + "<p>" + esc(project["card_desc_en"]) + "</p>"
+        + (bilingual("span", project, "badge", ' class="' + badge_class + '"') if project.get("badge_en") else "")
+        + bilingual("h3", project, "title")
+        + bilingual("p", project, "card_desc")
         + "</div>"
         + '<div class="project-card-footer">'
         + '<p class="tech-tags">' + render_tags(project.get("card_tech")) + "</p>"
@@ -214,7 +307,7 @@ def render_other_project(project: dict) -> str:
     )
     return (
         "<li><strong>" + esc(project["name"]) + "</strong> &mdash; "
-        + esc(project["desc_en"]) + " " + links + "</li>"
+        + bilingual("span", project, "desc") + " " + links + "</li>"
     )
 
 
@@ -230,47 +323,50 @@ def build_projects() -> dict:
 
 
 # ---------------------------------------------------------------------------
-# experience.html  (js/experience.js)
+# experience.html  (js/experience.js only opens the recommendation letters)
 # ---------------------------------------------------------------------------
 
-def render_job(job: dict, index: int) -> str:
-    """Render one job card (experience.html), as experience.js does in English.
+def render_job(job: dict) -> str:
+    """Render one job card (experience.html).
 
-    Args:
-        job: The job from experience.json.
-        index: Its position in the file. The recommendation letter button
-            stores it so experience.js can find the letter to open.
+    The recommendation letter button carries the PDF URL (data-url) that
+    experience.js opens in its dialog.
     """
-    meta_parts = [esc(part) for part in (job.get("company"), job.get("period_en")) if part]
+    meta_parts = []
+    if job.get("company"):
+        meta_parts.append(esc(job["company"]))
+    if job.get("period_en"):
+        meta_parts.append(bilingual("span", job, "period"))
     meta = '<p class="job-meta">' + " &middot; ".join(meta_parts) + "</p>" if meta_parts else ""
-    paragraphs = "".join("<p>" + esc(p) + "</p>" for p in job.get("paragraphs_en") or [])
-    highlights = job.get("highlights_en") or []
-    bullets = "<ul>" + "".join("<li>" + esc(h) + "</li>" for h in highlights) + "</ul>" if highlights else ""
+    highlights = bilingual_list("li", job, "highlights")
 
     demo = ""
     if job.get("demo_url"):
-        note = job.get("demo_note_en")
         demo = (
             '<div class="job-demo-callout">'
-            + "<div><strong>Explore the interactive demo</strong>"
-            + ("<p>" + esc(note) + "</p>" if note else "") + "</div>"
-            + '<a class="btn btn-web" href="' + esc(job["demo_url"]) + '">Explore the interactive demo</a>'
+            + "<div>" + label("strong", "experience", "live_demo")
+            + (bilingual("p", job, "demo_note") if job.get("demo_note_en") else "") + "</div>"
+            + label("a", "experience", "live_demo", ' class="btn btn-web" href="' + esc_attr(job["demo_url"]) + '"')
             + "</div>"
         )
 
     letter = ""
     if job.get("rec_letter"):
         letter = (
-            '<p class="job-letter"><button type="button" class="btn primary letter-btn" data-letter-index="'
-            + str(index) + '">View recommendation letter</button></p>'
-            + '<p class="job-meta">The original unredacted version is available upon request.</p>'
+            '<p class="job-letter">'
+            + label("button", "experience", "rec_letter",
+                    ' type="button" class="btn primary letter-btn" data-url="' + esc_attr(job["rec_letter"]) + '"')
+            + "</p>"
+            + label("p", "experience", "rec_letter_note", ' class="job-meta"')
         )
 
     return (
         '<article class="job-card">'
-        + "<h3>" + esc(job["title_en"]) + "</h3>"
-        + meta + paragraphs + bullets
-        + "<p><strong>Technologies:</strong> "
+        + bilingual("h3", job, "title")
+        + meta
+        + bilingual_list("p", job, "paragraphs")
+        + ("<ul>" + highlights + "</ul>" if highlights else "")
+        + "<p>" + label("strong", "experience", "tech_label") + " "
         + '<span class="tech-tags">' + render_tags(job.get("tech")) + "</span>"
         + "</p>"
         + demo + letter
@@ -281,38 +377,18 @@ def render_job(job: dict, index: int) -> str:
 def build_experience() -> dict:
     """Generated blocks of experience.html: the list of job cards."""
     jobs = load_json("data/experience.json")["jobs"]
-    return {"experience-list": [render_job(job, i) for i, job in enumerate(jobs)]}
+    return {"experience-list": [render_job(job) for job in jobs]}
 
 
 # ---------------------------------------------------------------------------
-# courses.html: only rendered here; js/certs.js just opens the documents
+# courses.html  (js/certs.js only opens the education documents)
 # ---------------------------------------------------------------------------
-
-def bilingual(tag: str, item: dict, field: str, attrs: str = "") -> str:
-    """Element showing item[field + '_en'] that also carries both translations.
-
-    The text is written in English; data-en and data-es hold both versions,
-    and js/i18n.js swaps the text when the language changes, so the markup
-    itself only exists here.
-
-    Args:
-        tag: Element name ('strong', 'p'...).
-        item: Data entry with <field>_en and <field>_es.
-        field: Base name of the translated field ('title' -> title_en, title_es).
-        attrs: Extra attributes, written right after the tag name (' class="x"').
-    """
-    en, es = item[field + "_en"], item[field + "_es"]
-    return (
-        f'<{tag}{attrs} data-en="{esc_attr(en)}" data-es="{esc_attr(es)}">'
-        + esc(en) + f"</{tag}>"
-    )
-
 
 def render_education(item: dict) -> str:
-    """Render one education card (courses.html) in both languages (see bilingual).
+    """Render one education card (courses.html).
 
-    Each document button carries its PDF URL and its label in both languages,
-    which is all certs.js needs to open it in the dialog.
+    Each document button carries its PDF URL (data-url) and its label in both
+    languages, which is all certs.js needs to open it in the dialog.
     """
     documents = "".join(
         bilingual(
@@ -352,7 +428,7 @@ def cert_badges(certs: list[dict]) -> str:
 
 
 def render_program(program: dict) -> str:
-    """Render one professional certificate program card."""
+    """Render one professional certificate program card (shown in English in both languages)."""
     return (
         '<div class="cert-card">'
         + '<div class="cert-card-meta">'
@@ -390,31 +466,29 @@ def build_courses() -> dict:
 
 
 # ---------------------------------------------------------------------------
-# demos/, games/, tools/ and lab/  (js/demos.js, games.js, tools.js, lab.js)
+# demos/, games/, tools/ and lab/
 # ---------------------------------------------------------------------------
 
 def render_demo(demo: dict) -> str:
-    """Render one demo card (demos/), as demos.js does in English."""
+    """Render one demo card (demos/). Badge and description fall back to English."""
     image = (
         '<img class="demo-card-image" src="' + encode_uri(demo["image"]) + '" alt="" loading="lazy">'
         if demo.get("image") else ""
     )
-    tags = "".join('<span class="tag">' + esc(t) + "</span>" for t in demo["technologies"])
-    badge = demo.get("badge_en")
     code = (
-        '<a class="btn" href="' + encode_uri(demo["repository_url"]) + '" target="_blank" rel="noopener">View code</a>'
+        label("a", "demos", "view_code", ' class="btn" href="' + encode_uri(demo["repository_url"]) + '" target="_blank" rel="noopener"')
         if demo.get("repository_url") else ""
     )
     return (
         '<article class="demo-card demo-card-row' + (" demo-card-featured" if demo.get("featured") else "") + '">'
         + image
         + '<div class="demo-card-content">'
-        + ('<span class="project-badge">' + esc(badge) + "</span>" if badge else "")
+        + (bilingual("span", demo, "badge", ' class="project-badge"') if demo.get("badge_en") else "")
         + "<h3>" + esc(demo["name"]) + "</h3>"
-        + "<p>" + esc(demo.get("description_en")) + "</p>"
-        + '<div class="tech-tags">' + tags + "</div>"
+        + bilingual("p", demo, "description")
+        + '<div class="tech-tags">' + render_tag_list(demo["technologies"]) + "</div>"
         + '<div class="demo-card-actions">'
-        + '<a class="btn btn-web" href="' + encode_uri(demo["demo_url"]) + '">Open demo</a>'
+        + label("a", "demos", "open_demo", ' class="btn btn-web" href="' + encode_uri(demo["demo_url"]) + '"')
         + code
         + "</div>"
         + "</div>"
@@ -423,7 +497,7 @@ def render_demo(demo: dict) -> str:
 
 
 def render_game(game: dict) -> str:
-    """Render one game card (games/), as games.js does in English.
+    """Render one game card (games/).
 
     Logos marked pixel_art_logo get a class that keeps them sharp when scaled.
     """
@@ -433,15 +507,14 @@ def render_game(game: dict) -> str:
         + esc(game["name"]) + ' logo" loading="lazy">'
         if game.get("logo") else ""
     )
-    tags = "".join('<span class="tag">' + esc(t) + "</span>" for t in game.get("technologies") or [])
     return (
         '<article class="demo-card">'
         + logo
         + "<h3>" + esc(game["name"]) + "</h3>"
-        + "<p>" + esc(game.get("description_en") or "") + "</p>"
-        + '<div class="tech-tags">' + tags + "</div>"
+        + bilingual("p", game, "description")
+        + '<div class="tech-tags">' + render_tag_list(game.get("technologies")) + "</div>"
         + '<div class="demo-card-actions tool-card-actions">'
-        + '<a class="btn btn-web" href="' + encode_uri(game["game_url"]) + '">Play</a>'
+        + label("a", "games", "play", ' class="btn btn-web" href="' + encode_uri(game["game_url"]) + '"')
         + "</div>"
         + "</article>"
     )
@@ -454,47 +527,51 @@ TOOL_ICONS = {
 
 
 def render_tool(tool: dict) -> str:
-    """Render one tool card (tools/), as tools.js does in English."""
+    """Render one tool card (tools/). Badge and description fall back to English."""
     image = (
         '<img class="demo-card-image" src="' + encode_uri(tool["image"]) + '" alt="" loading="lazy">'
         if tool.get("image") else ""
     )
-    badge = tool.get("badge_en")
     download = tool.get("download") or {}
-    # Resolved per platform in the browser; the static version links to releases.
-    download_link = (
-        '<a class="btn btn-download" href="' + encode_uri(download["releases_url"])
-        + '" target="_blank" rel="noopener">' + TOOL_ICONS["download"] + "Download</a>"
+    download_button = (
+        download_link("tools", "download", download["releases_url"], download.get("assets"),
+                      ' class="btn btn-download" href="' + encode_uri(download["releases_url"]) + '"',
+                      TOOL_ICONS["download"])
         if download.get("releases_url") else ""
     )
     code = (
         '<a class="btn btn-code" href="' + encode_uri(tool["repository_url"]) + '" target="_blank" rel="noopener">'
-        + TOOL_ICONS["code"] + "View code</a>"
+        + TOOL_ICONS["code"] + label("span", "tools", "view_code") + "</a>"
         if tool.get("repository_url") else ""
     )
     return (
         '<article class="demo-card' + (" demo-card-featured" if tool.get("featured") else "") + '">'
         + image
-        + ('<span class="project-badge">' + esc(badge) + "</span>" if badge else "")
+        + (bilingual("span", tool, "badge", ' class="project-badge"') if tool.get("badge_en") else "")
         + "<h3>" + esc(tool["name"]) + "</h3>"
-        + "<p>" + esc(tool.get("description_en") or "") + "</p>"
+        + bilingual("p", tool, "description")
         + '<div class="demo-card-actions tool-card-actions">'
-        + '<a class="btn btn-web" href="' + encode_uri(tool["tool_url"]) + '">Open tool</a>'
-        + download_link + code
+        + label("a", "tools", "open_tool", ' class="btn btn-web" href="' + encode_uri(tool["tool_url"]) + '"')
+        + download_button + code
         + "</div>"
         + "</article>"
     )
 
 
-def format_count(locale: dict, key: str, count: int) -> str:
+def empty_state(page: str, items: list) -> list[str]:
+    """The "nothing available" message of a list page, only when the list is empty."""
+    return [] if items else [label("p", page, "empty", ' class="empty-state"')]
+
+
+def format_count(locale_data: dict, key: str, count: int) -> str:
     """Format a count with the singular or plural template of a locale.
 
     Args:
-        locale: The parsed locale file.
+        locale_data: The parsed locale file.
         key: Base key; the template is read from key + '_one' or key + '_other'.
         count: The number that replaces {count}.
     """
-    template = locale[key + ("_one" if count == 1 else "_other")]
+    template = locale_data[key + ("_one" if count == 1 else "_other")]
     return template.replace("{count}", str(count))
 
 
@@ -505,28 +582,27 @@ def build_demos() -> dict:
 
 
 def build_games() -> dict:
-    """Generated blocks of games/: the game cards in display order."""
-    games = load_json("data/games.json").get("games") or []
-    # games.js sorts with (display_order || 1000)
-    games = sorted(games, key=lambda g: g.get("display_order") or 1000)
-    return {"games-list": [render_game(g) for g in games]}
+    """Generated blocks of games/: the game cards in display order, or the empty message."""
+    games = by_display_order(load_json("data/games.json").get("games") or [])
+    return {"games-list": [render_game(g) for g in games], "games-empty": empty_state("games", games)}
 
 
 def build_tools() -> dict:
-    """Generated blocks of tools/: the visible tool cards in display order."""
+    """Generated blocks of tools/: the visible tool cards in display order, or the empty message."""
     tools = by_display_order(visible(load_json("data/tools.json").get("tools") or []))
-    return {"tools-list": [render_tool(t) for t in tools]}
+    return {"tools-list": [render_tool(t) for t in tools], "tools-empty": empty_state("tools", tools)}
 
 
 def build_lab() -> dict:
-    """Generated blocks of lab/: the demo and game counts shown on its two cards."""
-    locale = load_json("locales/en/lab.json")
+    """Generated blocks of lab/: the demo and game counts shown on its two cards, in both languages."""
     demos = load_json("data/demos.json").get("demos") or []
     games = load_json("data/games.json").get("games") or []
-    return {
-        "lab-demos-count": format_count(locale, "demos_kicker", len(demos)),
-        "lab-games-count": format_count(locale, "games_kicker", len(games)),
-    }
+
+    def kicker(name: str, count: int) -> list[str]:
+        texts = {lang: format_count(locale(lang, "lab"), name + "_kicker", count) for lang in LANGS}
+        return [tr("span", texts, f' id="lab-{name}-count" class="lab-card-kicker"')]
+
+    return {"lab-demos-count": kicker("demos", len(demos)), "lab-games-count": kicker("games", len(games))}
 
 
 PAGES = {
@@ -703,13 +779,13 @@ def render_header(page: str) -> list[str]:
 def render_footer(page: str) -> list[str]:
     """Contact prompt and email shown below every page."""
     email = load_json("data/person.json")["email"]
-    prompt = load_json("locales/en/common.json")["contact_prompt"]
+    prompt = locale("en", "common")["contact_prompt"]
     return render_template("footer.html", {"email": esc_attr(email), "contact_prompt": esc(prompt)})
 
 
 def render_nav(page: str) -> list[str]:
     """Row of section buttons, with the page's own section marked or left out."""
-    labels = load_json("locales/en/common.json")
+    labels = locale("en", "common")
     current = NAV_CURRENT.get(page)
     links = []
     for key, target in NAV_ITEMS:

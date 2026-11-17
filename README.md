@@ -38,8 +38,11 @@ The `data/*.json` files are the single source of truth. The pages that list them
 - GitHub Pages must use **Settings → Pages → Source: GitHub Actions**.
 - The published pages are complete on first paint and readable by crawlers and agents.
 - To preview the site locally, run `python3 scripts/preview.py` and open http://localhost:8000/. It fills the pages, serves them and restores the committed state when you stop it (Ctrl+C). Opening the HTML files directly shows the pages without their header, navigation and generated content.
-- **Courses** (`courses.html`): the cards are rendered only by `scripts/build_content.py`, in both languages: each translated text carries `data-en` / `data-es`, and `js/i18n.js` swaps them when the language changes. To change a card's markup, edit only `build_content.py` (and the CSS).
-- **Other pages** (projects, experience, demos, games, tools): the generated markup still mirrors what `js/*.js` renders in English, and the scripts re-render the blocks when the language changes. If you change how one of those cards is rendered, change both the script and `scripts/build_content.py`.
+- Every card is rendered **only** by `scripts/build_content.py`, already in both languages; no script in `js/` builds cards. To change a card's markup, edit only `build_content.py` (and the CSS).
+  - Texts from the data (titles, descriptions…) carry both versions in `data-en` / `data-es`; `js/i18n.js` swaps them when the language changes. Translated lists (paragraphs, highlights) must have the same number of entries in both languages, or the build stops with an error.
+  - Interface texts (button labels…) use `data-i18n="<page>.<key>"` like the rest of the page, so they live in `locales/<lang>/<page>.json`.
+  - Download buttons link to the releases page and carry the installer list; `js/downloads.js` points them to the installer for the visitor's system ("Download for macOS").
+- The scripts left in `js/` only add behaviour: language (`i18n.js`), PDF dialogs (`certs.js`, `experience.js`), project modal (`lightbox.js`), downloads (`downloads.js`) and animations (`motion.js`).
 
 ## Shared layout
 

@@ -9,9 +9,9 @@
  * - Swaps the text of every element with data-en / data-es attributes (data
  *   cards pre-rendered in both languages by scripts/build_content.py).
  * - Announces the change with the 'languagechange:site' event ({ detail: { lang } }).
- *   Page scripts (projects.js, tools.js...) listen to it to re-render their data.
+ *   The page scripts that build texts themselves (the PDF dialogs) listen to it.
  * - Reveals the content hidden by html.i18n-pending (set in the <head> by
- *   scripts/templates/head.html) once the page and its data are translated.
+ *   scripts/templates/head.html) once the page is translated.
  *
  * The HTML is written in English, so English pages are complete before this runs.
  */
@@ -20,10 +20,6 @@
 
   var SUPPORTED = ['en', 'es'];
   var DEFAULT = 'en';
-
-  // Page scripts push the promise of their first render here, so a page shown
-  // in another language is only revealed once texts and data are translated.
-  window.siteReady = window.siteReady || [];
 
   /**
    * Language saved by the user on any page of the site.
@@ -207,12 +203,7 @@
       });
     });
 
-    // First render: translate, wait for the page scripts to re-render their data
-    // (failures included), then reveal. reveal also runs if anything rejects.
-    setLang(detectLang()).then(function () {
-      return Promise.all(window.siteReady.map(function (promise) {
-        return Promise.resolve(promise).catch(function () {});
-      }));
-    }).then(reveal, reveal);
+    // First render: translate, then reveal (setLang never rejects).
+    setLang(detectLang()).then(reveal);
   });
 }());

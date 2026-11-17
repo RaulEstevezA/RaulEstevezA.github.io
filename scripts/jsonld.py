@@ -48,7 +48,7 @@ def merge(base: dict, extra: dict | None) -> dict:
 
 
 def ordered(items: list[dict]) -> list[dict]:
-    """display_order first, then file order (same rule as the page scripts)."""
+    """display_order first, then file order (same rule as the pages, see build_content.py)."""
     def key(pair):
         """Sort key: display_order when it is a number, otherwise after all ordered items, in file order."""
         index, item = pair
@@ -338,8 +338,7 @@ def page_documents() -> dict:
         ),
         "games/index.html": lambda: collection(
             "games/index.html",
-            # games.js sorts with (display_order || 1000)
-            [game_item(g) for g in sorted(load("data/games.json")["games"], key=lambda g: g.get("display_order") or 1000)],
+            [game_item(g) for g in ordered(load("data/games.json")["games"])],
         ),
         "tools/index.html": lambda: collection(
             "tools/index.html",

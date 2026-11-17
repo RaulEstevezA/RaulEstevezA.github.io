@@ -6,5 +6,7 @@
   "available_heading": "Herramientas disponibles",
   "empty": "No hay herramientas disponibles en este momento.",
   "open_tool": "Abrir herramienta",
-  "view_code": "Ver código"
+  "view_code": "Ver código",
+  "download": "Descargar",
+  "download_for": "Descargar para {platform}"
 }

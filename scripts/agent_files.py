@@ -72,8 +72,7 @@ def collect() -> dict:
     """Load and order all the data both outputs need, once.
 
     The order matches what the website shows: certificate programs newest first,
-    projects, tools and demos by display_order, games by display_order or 1000
-    (the rule games.js uses). Hidden tools are excluded.
+    projects, tools, demos and games by display_order. Hidden tools are excluded.
     """
     person = load("data/person.json")
     certificates = load("data/certificates.json")
@@ -88,7 +87,7 @@ def collect() -> dict:
         "other": load("data/projects.json")["other"],
         "tools": ordered([t for t in load("data/tools.json")["tools"] if not t.get("hidden")]),
         "demos": ordered(load("data/demos.json")["demos"]),
-        "games": sorted(load("data/games.json")["games"], key=lambda g: g.get("display_order") or 1000),
+        "games": ordered(load("data/games.json")["games"]),
     }
 
 

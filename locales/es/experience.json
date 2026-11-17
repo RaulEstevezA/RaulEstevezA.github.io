@@ -5,5 +5,9 @@
   "page_desc":  "Experiencia profesional en desarrollo de software en entornos reales.",
 
   "heading": "Experiencia",
-  "intro":   "Experiencia profesional en desarrollo de software en entornos reales."
+  "intro":   "Experiencia profesional en desarrollo de software en entornos reales.",
+  "tech_label": "Tecnologías:",
+  "live_demo": "Explorar la demo interactiva",
+  "rec_letter": "Ver carta de recomendación",
+  "rec_letter_note": "La versión original sin censura está disponible bajo petición."
 }

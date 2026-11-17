@@ -6,5 +6,7 @@
   "available_heading": "Available tools",
   "empty": "No tools are available right now.",
   "open_tool": "Open tool",
-  "view_code": "View code"
+  "view_code": "View code",
+  "download": "Download",
+  "download_for": "Download for {platform}"
 }

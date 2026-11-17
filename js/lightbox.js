@@ -3,13 +3,11 @@
  *
  * Clicking a featured project card (anywhere except its links and buttons)
  * opens the modal with the project's title, description, features,
- * technologies, links and an image carousel. All of it is read from the
+ * technologies, links and an image carousel. The texts are read from the
  * data-* attributes of the card's .project-thumb-wrap, written in both
- * languages by js/projects.js and scripts/build_content.py, so nothing is
- * fetched here.
+ * languages by scripts/build_content.py, and the links are copies of the
+ * card's buttons, so nothing is fetched here.
  *
- * Link labels, styles and the per-platform download link come from
- * window.FEATURED_LINK_TYPES and window.resolveFeaturedLink (js/projects.js).
  * The open/close animation is CSS (css/styles.css, TRANSITIONS).
  */
 (function () {
@@ -112,8 +110,7 @@
     var closeButton = document.getElementById('proj-modal-close');
     if (!modal) return;
 
-    // Delegated on the document: project cards are re-rendered on every
-    // language change. Clicks on the card's own links and buttons are ignored.
+    // One listener for every card. Clicks on the card's own links and buttons are ignored.
     document.addEventListener('click', function (event) {
       var card = event.target.closest('.project-card');
       if (!card || event.target.closest('a, button')) return;
@@ -122,7 +119,7 @@
       var thumb = card.querySelector('.project-thumb');
       if (!wrap || !thumb) return;
 
-      // Language applied by js/i18n.js (see currentLang() in js/projects.js).
+      // Language applied by js/i18n.js.
       var isEs = document.documentElement.lang === 'es';
       var images = getProjectImages(wrap, thumb);
       var features = (isEs ? wrap.dataset.featuresEs : wrap.dataset.features) || '';
@@ -143,33 +140,14 @@
         appendTag(techList, tag);
       });
 
-      // Links: same labels and styles as the card. If projects.js is not loaded,
-      // the stored URL is used as is, without per-platform downloads.
-      var linkTypes = window.FEATURED_LINK_TYPES || {};
+      // Links: copies of the card's own buttons, already labeled in the current
+      // language and, for downloads, pointing to the visitor's installer
+      // (js/downloads.js). Their translation attributes keep them translated.
       var modalLinks = document.getElementById('proj-modal-links');
       if (modalLinks) {
-        var projectLinks = [];
-        try {
-          projectLinks = JSON.parse(wrap.dataset.links || '[]');
-        } catch (error) {
-          projectLinks = [];
-        }
-
         modalLinks.innerHTML = '';
-        projectLinks.forEach(function (link) {
-          var type = linkTypes[link.type] || linkTypes.github;
-          var resolved = window.resolveFeaturedLink
-            ? window.resolveFeaturedLink(link, isEs ? 'es' : 'en')
-            : { url: link.url, className: type.className, label: type.label[isEs ? 'es' : 'en'] || type.label.en };
-          var a = document.createElement('a');
-          a.href = resolved.url;
-          a.className = resolved.className;
-          if (!['demo', 'live_demo', 'web'].includes(link.type)) {
-            a.target = '_blank';
-            a.rel = 'noopener';
-          }
-          a.textContent = resolved.label;
-          modalLinks.appendChild(a);
+        card.querySelectorAll('.project-card-buttons a').forEach(function (link) {
+          modalLinks.appendChild(link.cloneNode(true));
         });
       }
 

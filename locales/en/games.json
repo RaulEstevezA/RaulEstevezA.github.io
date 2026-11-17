@@ -4,5 +4,6 @@
   "heading": "Games",
   "intro": "Play BlockFall, solve mysteries with SQL Detective, master REST APIs in API Quest, or learn Git by surviving Commit Chaos, directly in your browser.",
   "available_heading": "Available games",
-  "empty": "No games are available right now."
+  "empty": "No games are available right now.",
+  "play": "Play"
 }

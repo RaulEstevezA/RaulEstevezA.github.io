@@ -9,5 +9,11 @@
   "featured_heading": "Proyectos Destacados",
   "other_heading":    "Otros Proyectos Académicos y Técnicos",
 
-  "other_toggle": "Ver todos los proyectos"
+  "other_toggle": "Ver todos los proyectos",
+  "link_github": "Ver en GitHub",
+  "link_demo": "Ver demo",
+  "link_live_demo": "Abrir demo",
+  "link_web": "Ver web",
+  "link_download": "Descargar aplicación",
+  "link_download_for": "Descargar para {platform}"
 }
