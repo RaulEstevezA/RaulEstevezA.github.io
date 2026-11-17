@@ -29,3 +29,5 @@
 <meta name="theme-color" content="#0d1117" />
 <!-- Prefetch same-site pages when the visitor is about to open them (Chromium only); downloads and PDFs are excluded. -->
 <script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/*.pdf","/*.apk","/*.gz","/*.zip","/*.dmg","/*.exe"]}}]},"eagerness":"moderate"}]}</script>
+<!-- Cloudflare Web Analytics (a module script, so it runs after the page is parsed, as it did at the end of <body>) -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "e39c213b71d04ecea667fe1a7c72f355"}'></script>

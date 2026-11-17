@@ -36,13 +36,23 @@ The `data/*.json` files are the single source of truth. The pages that list them
 
 - On every push to `main`, `.github/workflows/deploy-pages.yml` runs `python3 scripts/build_content.py`, which fills those blocks from the JSON, and publishes the result to GitHub Pages. The filled pages are never committed: just edit the JSON and push.
 - GitHub Pages must use **Settings → Pages → Source: GitHub Actions**.
-- The published pages are complete on first paint and readable by crawlers and agents. The scripts in `js/` still load the JSON, re-render the blocks when the language changes and resolve platform-specific download buttons. Local previews therefore keep working with the empty blocks.
-- To preview the published version locally, run `python3 scripts/build_content.py`, and `python3 scripts/build_content.py --clean` before committing.
-- The generated markup mirrors what `js/*.js` renders in English. If you change how a card is rendered in a script, change `scripts/build_content.py` the same way.
+- The published pages are complete on first paint and readable by crawlers and agents.
+- To preview the site locally, run `python3 scripts/preview.py` and open http://localhost:8000/. It fills the pages, serves them and restores the committed state when you stop it (Ctrl+C). Opening the HTML files directly shows the pages without their header, navigation and generated content.
+- **Courses** (`courses.html`): the cards are rendered only by `scripts/build_content.py`, in both languages: each translated text carries `data-en` / `data-es`, and `js/i18n.js` swaps them when the language changes. To change a card's markup, edit only `build_content.py` (and the CSS).
+- **Other pages** (projects, experience, demos, games, tools): the generated markup still mirrors what `js/*.js` renders in English, and the scripts re-render the blocks when the language changes. If you change how one of those cards is rendered, change both the script and `scripts/build_content.py`.
+
+## Shared layout
+
+The header (logo and language selector), the row of section buttons and the footer are the same on every page and are never written in the pages. Each page only has empty `header`, `nav` and `footer` generated blocks, filled on deploy:
+
+- Header and footer: `scripts/templates/header.html` and `scripts/templates/footer.html`. The footer email comes from `data/person.json`.
+- Section buttons: `NAV_ITEMS` in `scripts/build_content.py` (order and targets). `NAV_CURRENT` says which section each page belongs to (its button gets `aria-current="page"`), and `NAV_HIDE_CURRENT` lists the pages that leave their own button out. Links are made relative to each page automatically.
+- English texts come from `locales/en/common.json` (`btn_*`, `contact_prompt`), so they always match the translations.
+- Cloudflare Web Analytics is part of `scripts/templates/head.html`.
 
 ## Shared head
 
-The tags every page needs (canonical, Open Graph, Twitter, icons, `llms.txt`/`profile.json` alternates, theme colour and the language script) live in one file: `scripts/templates/head.html`. On deploy, `scripts/build_content.py` fills each page's `<!-- generated:start head -->` block from it.
+The tags every page needs (canonical, Open Graph, Twitter, icons, `llms.txt`/`profile.json` alternates, theme colour, the language script and analytics) live in one file: `scripts/templates/head.html`. On deploy, `scripts/build_content.py` fills each page's `<!-- generated:start head -->` block from it.
 
 - Each page keeps only what is its own: `<title>`, `<meta name="description">` and the stylesheet. Open Graph and Twitter reuse the title and description; the canonical URL and relative paths come from the page location.
 - Do not add `preload`/`prefetch` links to the pages. The data JSON is not preloaded on purpose (the content is already in the HTML, and Safari downloads preloaded `fetch()` files twice); the template's Speculation Rules prefetch any internal page when a link is hovered (Chrome and Edge).

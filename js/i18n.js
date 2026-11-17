@@ -6,6 +6,8 @@
  * - Translates every element with data-i18n="file.key" using
  *   locales/<lang>/common.json and locales/<lang>/<page>.json, where <page> is
  *   <body data-page>.
+ * - Swaps the text of every element with data-en / data-es attributes (data
+ *   cards pre-rendered in both languages by scripts/build_content.py).
  * - Announces the change with the 'languagechange:site' event ({ detail: { lang } }).
  *   Page scripts (projects.js, tools.js...) listen to it to re-render their data.
  * - Reveals the content hidden by html.i18n-pending (set in the <head> by
@@ -101,6 +103,19 @@
   }
 
   /**
+   * Show the text of every element that carries its own translations
+   * (data-en="..." data-es="..."), as rendered by scripts/build_content.py
+   * for the data cards. Missing translations fall back to English.
+   * @param {string} lang Code from SUPPORTED.
+   */
+  function applyInlineTranslations(lang) {
+    document.querySelectorAll('[data-' + DEFAULT + ']').forEach(function (el) {
+      var val = el.getAttribute('data-' + lang);
+      el.textContent = val === null ? el.getAttribute('data-' + DEFAULT) : val;
+    });
+  }
+
+  /**
    * Translate the document title and meta description.
    * @param {Object} pageData The page's locale file (page_title, page_desc).
    */
@@ -142,6 +157,9 @@
     document.querySelectorAll('.lang a[data-lang]').forEach(function (link) {
       link.classList.toggle('active', link.dataset.lang === lang);
     });
+
+    // These carry their translations in the HTML: no file to wait for.
+    applyInlineTranslations(lang);
 
     return Promise.all([
       getJson(base + 'common.json'),

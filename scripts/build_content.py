@@ -22,14 +22,16 @@ In the repository these blocks stay empty. The deploy workflow
 (.github/workflows/deploy-pages.yml) runs this script on every push and
 publishes the filled pages, so the generated markup never gets committed.
 
-The generated markup mirrors what js/*.js renders in English, so every page is
-complete on first paint (and readable by crawlers and agents). The scripts keep
-fetching the same JSON and re-render the blocks when the language changes; that
-also keeps local previews working with the empty blocks.
+Every page is complete on first paint (and readable by crawlers and agents).
+Some blocks are rendered only here, in both languages (the shared layout and
+courses.html: see bilingual()); js/i18n.js translates them. The other content
+blocks mirror what js/*.js renders in English, and those scripts re-render them
+when the language changes, so a change to one of those cards goes in both places.
 
 Usage:
     python3 scripts/build_content.py          # fill blocks + add versions (used by the deploy)
     python3 scripts/build_content.py --clean  # back to the committed state, before committing
+    python3 scripts/preview.py                # local preview: build, serve, clean on exit
 """
 
 from __future__ import annotations
@@ -283,38 +285,57 @@ def build_experience() -> dict:
 
 
 # ---------------------------------------------------------------------------
-# courses.html  (js/certs.js)
+# courses.html: only rendered here; js/certs.js just opens the documents
 # ---------------------------------------------------------------------------
 
-def render_education(item: dict, index: int) -> str:
-    """Render one education card (courses.html), as certs.js does in English.
+def bilingual(tag: str, item: dict, field: str, attrs: str = "") -> str:
+    """Element showing item[field + '_en'] that also carries both translations.
+
+    The text is written in English; data-en and data-es hold both versions,
+    and js/i18n.js swaps the text when the language changes, so the markup
+    itself only exists here.
 
     Args:
-        item: The entry from education.json.
-        index: Its position in the file. Each document button stores it, with the
-            document position, so certs.js can open the right PDF.
+        tag: Element name ('strong', 'p'...).
+        item: Data entry with <field>_en and <field>_es.
+        field: Base name of the translated field ('title' -> title_en, title_es).
+        attrs: Extra attributes, written right after the tag name (' class="x"').
+    """
+    en, es = item[field + "_en"], item[field + "_es"]
+    return (
+        f'<{tag}{attrs} data-en="{esc_attr(en)}" data-es="{esc_attr(es)}">'
+        + esc(en) + f"</{tag}>"
+    )
+
+
+def render_education(item: dict) -> str:
+    """Render one education card (courses.html) in both languages (see bilingual).
+
+    Each document button carries its PDF URL and its label in both languages,
+    which is all certs.js needs to open it in the dialog.
     """
     documents = "".join(
-        '<button type="button" class="btn education-document-btn" data-education-index="' + str(index)
-        + '" data-document-index="' + str(doc_index) + '">' + esc(doc["label_en"]) + "</button>"
-        for doc_index, doc in enumerate(item.get("documents") or [])
+        bilingual(
+            "button", doc, "label",
+            ' type="button" class="btn education-document-btn" data-url="' + esc_attr(doc["url"]) + '"',
+        )
+        for doc in item.get("documents") or []
     )
+    # The institution name follows the logos, so the icons are decorative.
     logos = "".join(
-        '<img class="edu-logo" src="' + esc(src) + '" alt="" decoding="async">'
+        '<img class="edu-logo" src="' + esc_attr(src) + '" alt="" decoding="async">'
         for src in item.get("logos") or []
     )
     return (
         '<article class="edu-card">'
-        + '<p class="edu-title">'
-        + "<strong>" + esc(item["title_en"]) + "</strong>"
-        + "</p>"
+        + '<p class="edu-title">' + bilingual("strong", item, "title") + "</p>"
         + '<p class="edu-institution">'
         + ('<span class="edu-logos">' + logos + "</span>" if logos else "")
         + "<span>" + esc(item["institution"]) + "</span>"
         + "</p>"
-        + "<p>" + esc(item["period_en"]) + "</p>"
+        + bilingual("p", item, "period")
         + '<div class="edu-footer">'
-        + "<p><em>" + esc(item["grade_en"]) + "</em></p>"
+        + "<p>" + bilingual("em", item, "grade") + "</p>"
         + ('<div class="edu-documents">' + documents + "</div>" if documents else "")
         + "</div>"
         + "</article>"
@@ -361,7 +382,7 @@ def build_courses() -> dict:
     certificates = load_json("data/certificates.json")
     courses = certificates.get("courses") or []
     return {
-        "education-list": [render_education(item, i) for i, item in enumerate(education)],
+        "education-list": [render_education(item) for item in education],
         "certs-programs": [render_program(p) for p in certificates.get("programs") or []],
         "certs-all-list": [render_course(c) for c in courses],
         "certs-all-count": str(len(courses)),
@@ -600,7 +621,7 @@ def render_head(html: str, page: str) -> list[str]:
     custom_image = own_meta.get("og:image")
     values = {
         "url": page_url(page),
-        "root": "../" * page.count("/"),
+        "root": page_root(page),
         "title": esc_attr(html_lib.unescape(title_match.group(1).strip())),
         "description": esc_attr(own_meta["description"]),
         "og_type": own_meta.get("og:type", "website"),
@@ -615,6 +636,101 @@ def render_head(html: str, page: str) -> list[str]:
         return bool(match) and match.group("key") in own_meta
 
     return [line for line in lines if line.strip() and not declared_by_page(line)]
+
+
+# ---------------------------------------------------------------------------
+# Shared layout: header, navigation buttons and footer
+# ---------------------------------------------------------------------------
+#
+# Every page has the same three blocks; they are written once here and in
+# scripts/templates/, never in the pages:
+#
+#   <!-- generated:start header -->  logo and language selector  (templates/header.html)
+#   <!-- generated:start nav -->     the row of section buttons   (NAV_ITEMS below)
+#   <!-- generated:start footer -->  contact prompt and email     (templates/footer.html)
+#
+# English texts come from locales/en/common.json and the email from
+# data/person.json; js/i18n.js translates them through their data-i18n keys.
+
+TEMPLATES = ROOT / "scripts" / "templates"
+
+# Section buttons, in order: (locale key common.btn_<key>, target relative to the site root).
+NAV_ITEMS = [
+    ("experience", "experience.html"),
+    ("projects", "projects.html"),
+    ("tools", "tools/"),
+    ("lab", "lab/"),
+    ("courses", "courses.html"),
+    ("contact", "contact/"),
+]
+
+# The button highlighted as the main call to action.
+NAV_PRIMARY = "experience"
+
+# Section each page belongs to. Its button is marked with aria-current="page"
+# (Demos and Games belong to the Lab)...
+NAV_CURRENT = {
+    "experience.html": "experience",
+    "projects.html": "projects",
+    "courses.html": "courses",
+    "tools/index.html": "tools",
+    "contact/index.html": "contact",
+    "lab/index.html": "lab",
+    "demos/index.html": "lab",
+    "games/index.html": "lab",
+}
+
+# ...except on these pages, which leave their own button out.
+NAV_HIDE_CURRENT = {"experience.html", "projects.html", "courses.html", "tools/index.html"}
+
+
+def page_root(page: str) -> str:
+    """Relative path from a page back to the site root ('' or '../')."""
+    return "../" * page.count("/")
+
+
+def render_template(name: str, values: dict) -> list[str]:
+    """Fill a template from scripts/templates/ and return its non-empty lines."""
+    text = Template((TEMPLATES / name).read_text(encoding="utf-8")).substitute(values)
+    return [line for line in text.splitlines() if line.strip()]
+
+
+def render_header(page: str) -> list[str]:
+    """Logo (linking to the home page) and EN/ES language selector."""
+    return render_template("header.html", {"root": page_root(page)})
+
+
+def render_footer(page: str) -> list[str]:
+    """Contact prompt and email shown below every page."""
+    email = load_json("data/person.json")["email"]
+    prompt = load_json("locales/en/common.json")["contact_prompt"]
+    return render_template("footer.html", {"email": esc_attr(email), "contact_prompt": esc(prompt)})
+
+
+def render_nav(page: str) -> list[str]:
+    """Row of section buttons, with the page's own section marked or left out."""
+    labels = load_json("locales/en/common.json")
+    current = NAV_CURRENT.get(page)
+    links = []
+    for key, target in NAV_ITEMS:
+        is_current = key == current
+        if is_current and page in NAV_HIDE_CURRENT:
+            continue
+        href = "./" if page == target + "index.html" else page_root(page) + target
+        cls = "btn primary" if key == NAV_PRIMARY else "btn"
+        aria = ' aria-current="page"' if is_current else ""
+        links.append(
+            f'  <a href="{href}" class="{cls}" data-i18n="common.btn_{key}"{aria}>'
+            + esc(labels["btn_" + key]) + "</a>"
+        )
+    return ['<div class="actions site-actions">', *links, "</div>"]
+
+
+LAYOUT_BLOCKS = {
+    "header": render_header,
+    "nav": render_nav,
+    "footer": render_footer,
+}
 
 
 # ---------------------------------------------------------------------------
@@ -685,6 +801,8 @@ def main() -> int:
         original = path.read_text(encoding="utf-8")
         updated = fill_block(original, "head", [] if clean else render_head(original, page), page)
         updated = fill_block(updated, "jsonld", [] if clean else build_jsonld(page), page)
+        for name, render in LAYOUT_BLOCKS.items():
+            updated = fill_block(updated, name, [] if clean else render(page), page)
 
         build = PAGES.get(page)
         if build:
