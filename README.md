@@ -49,7 +49,7 @@ The `data/*.json` files are the single source of truth. The pages that list them
 The header (logo and language selector), the row of section buttons and the footer are the same on every page and are never written in the pages. Each page only has empty `header`, `nav` and `footer` generated blocks, filled on deploy:
 
 - Header and footer: `scripts/templates/header.html` and `scripts/templates/footer.html`. The footer email comes from `data/person.json`.
-- Section buttons: `NAV_ITEMS` in `scripts/build_content.py` (order and targets). `NAV_CURRENT` says which section each page belongs to (its button gets `aria-current="page"`), and `NAV_HIDE_CURRENT` lists the pages that leave their own button out. Links are made relative to each page automatically.
+- Section buttons: `NAV_ITEMS` in `scripts/build_content.py` (order and targets). `NAV_CURRENT` says which section each page belongs to: every page shows all the buttons, and the one of its section is outlined in the accent colour. On the section's own page it gets `aria-current="page"` and is not clickable; on a page inside the section (Demos and Games, in the Lab) it gets `aria-current="true"` and still links back to it. Links are made relative to each page automatically.
 - English texts come from `locales/en/common.json` (`btn_*`, `contact_prompt`), so they always match the translations.
 - Cloudflare Web Analytics is part of `scripts/templates/head.html`.
 

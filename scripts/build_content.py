@@ -743,8 +743,10 @@ NAV_ITEMS = [
 # The button highlighted as the main call to action.
 NAV_PRIMARY = "experience"
 
-# Section each page belongs to. Its button is marked with aria-current="page"
-# (Demos and Games belong to the Lab)...
+# Section each page belongs to (Demos and Games belong to the Lab). Its button
+# is highlighted by css/styles.css: not clickable on the section's own page
+# (aria-current="page"), still a link back on a page inside it (aria-current="true").
+# Every page shows all the buttons, so the row never changes.
 NAV_CURRENT = {
     "experience.html": "experience",
     "projects.html": "projects",
@@ -755,9 +757,6 @@ NAV_CURRENT = {
     "demos/index.html": "lab",
     "games/index.html": "lab",
 }
-
-# ...except on these pages, which leave their own button out.
-NAV_HIDE_CURRENT = {"experience.html", "projects.html", "courses.html", "tools/index.html"}
 
 
 def page_root(page: str) -> str:
@@ -784,17 +783,18 @@ def render_footer(page: str) -> list[str]:
 
 
 def render_nav(page: str) -> list[str]:
-    """Row of section buttons, with the page's own section marked or left out."""
+    """Row of section buttons, with the page's own section marked."""
     labels = locale("en", "common")
     current = NAV_CURRENT.get(page)
     links = []
     for key, target in NAV_ITEMS:
         is_current = key == current
-        if is_current and page in NAV_HIDE_CURRENT:
-            continue
+        is_own_page = page in (target, target + "index.html")
         href = "./" if page == target + "index.html" else page_root(page) + target
         cls = "btn primary" if key == NAV_PRIMARY else "btn"
-        aria = ' aria-current="page"' if is_current else ""
+        # "page" on the section's own page (nothing to open); "true" on a page
+        # inside it (Demos, Games in the Lab), where the button leads back to it.
+        aria = f' aria-current="{"page" if is_own_page else "true"}"' if is_current else ""
         links.append(
             f'  <a href="{href}" class="{cls}" data-i18n="common.btn_{key}"{aria}>'
             + esc(labels["btn_" + key]) + "</a>"

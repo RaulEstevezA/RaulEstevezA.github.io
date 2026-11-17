@@ -194,6 +194,26 @@ h3 { font-size: 1.1rem; margin: 0 0 0.75rem; }
 
 .btn.primary:hover { background: #79c0ff; border-color: #79c0ff; }
 
+/* Button of the section the page belongs to (aria-current, set by
+   scripts/build_content.py): outlined in the accent colour. Wins over .primary,
+   so the current section never looks like a call to action.
+   - aria-current="page": the section's own page; not clickable.
+   - aria-current="true": a page inside the section (Demos, Games in the Lab);
+     still a link back to the section. */
+.site-actions .btn[aria-current],
+.site-actions .btn.primary[aria-current] {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.site-actions .btn[aria-current="true"]:hover { background: var(--btn-hover); }
+
+.site-actions .btn[aria-current="page"] {
+  pointer-events: none;
+  cursor: default;
+}
+
 .btn:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
@@ -1246,10 +1266,6 @@ ul li {
   .site-actions .btn,
   .site-actions .btn:nth-child(-n + 2) {
     grid-column: span 3;
-  }
-
-  .site-actions .btn:first-child:nth-last-child(odd) {
-    grid-column: 1 / -1;
   }
 
   .project-card { padding: 1.25rem 0; }
