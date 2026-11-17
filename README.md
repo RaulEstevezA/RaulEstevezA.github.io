@@ -8,6 +8,22 @@ Personal website and professional portfolio for Raúl Estévez, a software devel
 - `llms.txt` (AI-readable profile summary) and `profile.json` (structured profile data) are published at the site root. They are generated on deploy from `data/*.json` and are not in the repository (see *Generated files*).
 - `robots.txt` points crawlers to `sitemap.xml` and the AI-readable profile files; `sitemap.xml` is generated on deploy (see *Generated files*).
 
+## Local preview
+
+The pages in the repository have empty generated blocks (header, navigation, cards…), so opening the HTML files directly, or with a static server such as Live Server, shows them incomplete. Preview them with:
+
+```bash
+python3 scripts/preview.py          # http://localhost:8000/
+python3 scripts/preview.py 8080     # another port
+```
+
+It fills the pages as the deploy does, serves the repository and, when you stop it with **Ctrl+C**, restores the committed state, so you can commit right away.
+
+- Changes to CSS or JS: reload the page.
+- Changes to `data/*.json`, `locales/`, `scripts/templates/` or `scripts/build_content.py`: stop and run it again (the HTML is generated when it starts).
+- A CORS error from `cloudflareinsights.com` in the console is expected locally; analytics only works on the published domain.
+- If it was not stopped cleanly and `git status` shows pages with filled blocks or `?v=` versions, run `python3 scripts/build_content.py --clean`.
+
 ## Project Curation Notes
 
 Featured projects prioritize larger, more independently scoped work: CS50 AI, DuckyWare and OnlineStore.
@@ -37,7 +53,7 @@ The `data/*.json` files are the single source of truth. The pages that list them
 - On every push to `main`, `.github/workflows/deploy-pages.yml` runs `python3 scripts/build_content.py`, which fills those blocks from the JSON, and publishes the result to GitHub Pages. The filled pages are never committed: just edit the JSON and push.
 - GitHub Pages must use **Settings → Pages → Source: GitHub Actions**.
 - The published pages are complete on first paint and readable by crawlers and agents.
-- To preview the site locally, run `python3 scripts/preview.py` and open http://localhost:8000/. It fills the pages, serves them and restores the committed state when you stop it (Ctrl+C). Opening the HTML files directly shows the pages without their header, navigation and generated content.
+- To see the pages locally, use `python3 scripts/preview.py` (see *Local preview*).
 - Every card is rendered **only** by `scripts/build_content.py`, already in both languages; no script in `js/` builds cards. To change a card's markup, edit only `build_content.py` (and the CSS).
   - Texts from the data (titles, descriptions…) carry both versions in `data-en` / `data-es`; `js/i18n.js` swaps them when the language changes. Translated lists (paragraphs, highlights) must have the same number of entries in both languages, or the build stops with an error.
   - Interface texts (button labels…) use `data-i18n="<page>.<key>"` like the rest of the page, so they live in `locales/<lang>/<page>.json`.
