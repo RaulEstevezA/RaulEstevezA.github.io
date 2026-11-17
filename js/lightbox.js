@@ -18,6 +18,8 @@
   var modalTimer = null;
   // Element that had the focus when the modal opened, to restore it on close.
   var focusBeforeModal = null;
+  // .project-thumb-wrap of the project shown in the modal; null while closed.
+  var openWrap = null;
 
   /**
    * Carousel images of a project: data-images ('a.png|b.png'), or the thumbnail alone.
@@ -57,6 +59,7 @@
     if (!modal.classList.contains('active')) return;
     stopModalCarousel();
     modal.classList.remove('active');
+    openWrap = null;
     // Return focus to whatever opened the modal, if it is still on the page
     if (focusBeforeModal && document.contains(focusBeforeModal)) focusBeforeModal.focus();
     focusBeforeModal = null;
@@ -105,6 +108,27 @@
     container.appendChild(tag);
   }
 
+  /**
+   * Write the translated texts of the modal: title, description and features.
+   * Called when the modal opens and again when the language changes while it
+   * is open (its links translate themselves, see the click handler).
+   * @param {Element} wrap The card's .project-thumb-wrap, with the texts in data-*.
+   * @param {string} lang Language code.
+   */
+  function fillModalTexts(wrap, lang) {
+    var isEs = lang === 'es';
+    var features = (isEs ? wrap.dataset.featuresEs : wrap.dataset.features) || '';
+    var featureList = document.getElementById('proj-modal-features');
+
+    document.getElementById('proj-modal-title').textContent = isEs ? wrap.dataset.titleEs : wrap.dataset.title;
+    document.getElementById('proj-modal-desc').textContent = isEs ? wrap.dataset.descEs : wrap.dataset.desc;
+
+    featureList.innerHTML = '';
+    features.split('|').filter(Boolean).forEach(function (feature) {
+      appendTextLi(featureList, feature);
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     var modal = document.getElementById('proj-modal');
     var closeButton = document.getElementById('proj-modal-close');
@@ -119,21 +143,13 @@
       var thumb = card.querySelector('.project-thumb');
       if (!wrap || !thumb) return;
 
-      // Language applied by js/i18n.js.
-      var isEs = document.documentElement.lang === 'es';
       var images = getProjectImages(wrap, thumb);
-      var features = (isEs ? wrap.dataset.featuresEs : wrap.dataset.features) || '';
-      var featureList = document.getElementById('proj-modal-features');
       var techList = document.getElementById('proj-modal-tech');
 
+      openWrap = wrap;
+      // Language applied by js/i18n.js.
+      fillModalTexts(wrap, document.documentElement.lang || 'en');
       document.getElementById('proj-modal-img').setAttribute('alt', thumb.getAttribute('alt') || '');
-      document.getElementById('proj-modal-title').textContent = isEs ? wrap.dataset.titleEs : wrap.dataset.title;
-      document.getElementById('proj-modal-desc').textContent = isEs ? wrap.dataset.descEs : wrap.dataset.desc;
-
-      featureList.innerHTML = '';
-      features.split('|').filter(Boolean).forEach(function (feature) {
-        appendTextLi(featureList, feature);
-      });
 
       techList.innerHTML = '';
       (wrap.dataset.tech || '').split(',').filter(Boolean).forEach(function (tag) {
@@ -179,5 +195,10 @@
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape') closeModal(modal);
     });
+  });
+
+  // Translate the open modal when the language changes (js/i18n.js).
+  document.addEventListener('languagechange:site', function (event) {
+    if (openWrap) fillModalTexts(openWrap, event.detail.lang);
   });
 }());
