@@ -6,7 +6,8 @@ http://localhost:8000/ and, on Ctrl+C, restores the committed state
 (build_content.py --clean), so the generated markup never gets committed.
 
 After editing data/*.json, a template or build_content.py, stop and run it
-again. Changes to CSS and JS only need a page reload.
+again. Changes to CSS (css/*.css, joined again on every request of
+css/styles.css) and JS only need a page reload.
 
 Usage:
     python3 scripts/preview.py          # http://localhost:8000/
@@ -22,8 +23,25 @@ import subprocess
 import sys
 from pathlib import Path
 
+from build_content import write_stylesheet
+
 ROOT = Path(__file__).resolve().parent.parent
 BUILD = [sys.executable, str(ROOT / "scripts" / "build_content.py")]
+
+
+class PreviewHandler(http.server.SimpleHTTPRequestHandler):
+    """Static server that joins css/*.css again whenever css/styles.css is requested,
+    so a page reload shows CSS changes without restarting the preview."""
+
+    def do_GET(self):
+        if self.path.split("?")[0] == "/css/styles.css":
+            write_stylesheet(clean=False)
+        super().do_GET()
+
+    def end_headers(self):
+        # A development server: always fetch the latest version of every file.
+        self.send_header("Cache-Control", "no-store")
+        super().end_headers()
 
 
 def main() -> int:
@@ -34,7 +52,7 @@ def main() -> int:
         signal.signal(sig, signal.default_int_handler)
     subprocess.run(BUILD, check=True)
     try:
-        handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(ROOT))
+        handler = functools.partial(PreviewHandler, directory=str(ROOT))
         with http.server.ThreadingHTTPServer(("127.0.0.1", port), handler) as server:
             print(f"Serving http://localhost:{port}/  (Ctrl+C to stop and restore the committed files)")
             server.serve_forever()

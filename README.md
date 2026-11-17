@@ -19,7 +19,7 @@ python3 scripts/preview.py 8080     # another port
 
 It fills the pages as the deploy does, serves the repository and, when you stop it with **Ctrl+C**, restores the committed state, so you can commit right away.
 
-- Changes to CSS or JS: reload the page.
+- Changes to CSS (`css/*.css`) or JS: reload the page. The preview joins the CSS files again on every reload.
 - Changes to `data/*.json`, `locales/`, `scripts/templates/` or `scripts/build_content.py`: stop and run it again (the HTML is generated when it starts).
 - A CORS error from `cloudflareinsights.com` in the console is expected locally; analytics only works on the published domain.
 - If it was not stopped cleanly and `git status` shows pages with filled blocks or `?v=` versions, run `python3 scripts/build_content.py --clean`.
